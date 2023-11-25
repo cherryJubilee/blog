@@ -1,0 +1,67 @@
+site_name: hyehye_hye's blog
+
+theme:
+  name: material
+  # logo: cherry.svg
+  font:
+    text: "Noto Sans Korean"
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - content.tabs.link
+  palette:
+    primary: red
+
+extra:
+  homepage: https://cherryjubilee.github.io/blog
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/cherryjubilee/
+    - icon: fontawesome/brands/github
+      link: https://github.com/cherryJubilee
+
+copyright: Copyright &copy; 2023 Hyewon Park
+
+plugins:
+  - blog:
+      blog_dir: blog
+      post_date_format: medium
+      post_excerpt_separator: <!-- more -->
+      post_excerpt: required
+      archive_date_format: yyyy MMMM
+      post_readtime_words_per_minute: 150
+      archive_url_date_format: yyyy/MM
+      pagination_format: "$link_first $link_previous ~2~ $link_next $link_last"
+      draft_on_serve: true
+      draft: true
+      
+
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      
