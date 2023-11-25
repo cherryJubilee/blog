@@ -12,13 +12,13 @@ theme:
     - navigation.footer
     - content.tabs.link
   palette:
-    primary: red
+    primary: pink
 
 extra:
   homepage: https://cherryjubilee.github.io/blog
   social:
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/cherryjubilee/
+      link: https://www.linkedin.com/in/cherryJubilee/
     - icon: fontawesome/brands/github
       link: https://github.com/cherryJubilee
 
