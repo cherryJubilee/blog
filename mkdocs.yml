@@ -4,7 +4,7 @@ theme:
   name: material
   logo: cherry.svg
   font:
-    text: "Noto Sans Korean"
+    text: "Nanum Gothic"
   features:
     - content.code.copy
     - navigation.expand

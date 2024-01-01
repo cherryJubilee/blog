@@ -1,6 +1,6 @@
 # 배움에 욕심이 많은 주니어 개발자 박혜원입니다.
 
-Backend Developer
+## Backend Developer
 
 Email   |  hyewon5026@gmail.com   
 Phone   |  010-9917-5026   
@@ -17,7 +17,7 @@ Github  |  https://github.com/cherryJubilee
 
 
 --- 
-## **프로젝트 경험**
+## 프로젝트 경험
 ### <span style="background-color:#fff5b1"> Livart Life 가구 구독 서비스 </span>
 
 > 기간
