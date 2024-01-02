@@ -28,6 +28,9 @@ HTTP request 메세지는 크게 3부분으로 구성된다
 - **HTTP 메소드**: 요청의 의도를 담고 있는 GET, POST, PUT, DELETE 등이 있다.
 - **Request target**: HTTP Request가 전송되는 목표 주소입니다.
 - **HTTP version**: version에 따라 Request 메시지 구조나 데이터가 다를 수 있어서 version을 명시한다.
+```
+GET / search?q=hello&hi-ko HTTP/1.1
+``` 
 
 ### 1-2. Header
 
@@ -102,3 +105,12 @@ HTTPS를 사용하는 2가지 이유
     - 암호 가능한 키를 클라이언트한테 주기 + 해독 가능한 키는 google서버만 갖고 있고 (완전 비밀)
 2. 접속한 사이트가 믿을만한 곳인지를 알려준다.
     - HTTPS를 사용하는 웹사이트는 신뢰할 수 있는 기관(인증 기관, CA)으로부터 SSL/TLS 인증서를 받게 되며 인증서를 가지고 있지 않은 브라우저는 경고를 표시를 해준다.  
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -7,19 +7,20 @@ categories:
   - study
   - web
 ---
-# www.google.com을 주소창에 쳤을 때 화면이 나오기까지의 과정
+# 웹 브라우저와 네트워크 통신의 이해
 <!-- more -->
+## www.google.com을 주소창에 쳤을 때 화면이 나오기까지의 과정
 
-1. 사용자가 브라우저에 URL([www.google.com](http://www.google.com/) )를 입력한다. <span style="background-color:#fff5b1"> HTTP request message </span> 를 생성한다.
+1. 사용자가 브라우저에 URL([www.google.com](http://www.google.com/) )를 입력한다. HTTP request message를 생성한다.
 2. IP 주소를 알아야 전송을 할 수 있으므로, DNS lookup을 통해 해당 domain의 server의 IP주소를 알아낸다.
 3. 반환된 IP 주소(google의 server IP)로 HTTP 요청 메시지(request message) 전송 요청한다.
     - 생성된  HTTP 요청 메시지(request message)를 TCP/IP층에 전달한다. 
     - HTTP 요청 메시지에 헤더(TCP + IP)를 추가해서 TCP/IP패킷을 생성한다.
 4. 패킷은 전기신호로 랜선을 통해 네트워크로 전송되고, 목적하는 google 서버에  전기적인 신호로 도달한다.
-5. google 서버에 도착한 패킷은 encapsulation ↔ decapsulation를 통해 메시지를 복원하고(http 데이터만 남게 된다), 서버의 어플리케이션(tomcat 등)으로 보낸다.
-6. 서버 어플리케이션은 요청 메시지에 대한 response data를 가지고 HTTP응답 메시지( response message)를 생성한다.
+5. google 서버에 도착한 패킷은 decapsulation(↔ encapsulation)를 통해 메시지를 복원하고(http 데이터만 남게 된다), 서버의 어플리케이션(tomcat 등)으로 보낸다.
+6. 서버 어플리케이션은 요청 메시지에 대한 response data를 가지고 HTTP응답 메시지(response message)를 생성한다.
 7. HTTP 응답 메시지를 전달 받은 방식 그대로 client IP로 전송한다.
-8. HTTP response message에 담긴 데이터를 토대로 웹브라우저에서  HTML 렌더링을 하여 모니터에 google화면 보여진다.
+8. HTTP response message에 담긴 데이터를 토대로 웹브라우저에서 HTML 렌더링을 하여 모니터에 google화면 보여진다.
 ---
 
 ## 🍏 OSI 7계층
