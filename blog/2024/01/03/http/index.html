@@ -433,6 +433,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 안전성 &amp; 멱등성
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -528,6 +545,76 @@
 
 <h1 id="http">HTTP 멱등성</h1>
 <!-- more -->
+<h3 id="_1">📌 안전성 &amp; 멱등성</h3>
+<ol>
+<li>안전성이 좋다 = 서버 상태를 변경하지 않는 것</li>
+<li>멱등성이 있다 = 서버의 상태에 변경을 일으킬 수도 있지만, 동일한 요청을 여러 번 수행해도 최종적으로 서버의 상태가 동일하다는 것</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>HTTP 메서드</th>
+<th>안전한 메서드</th>
+<th>안전하지 않은 메서드</th>
+<th>멱등성이 있는 메서드</th>
+<th>멱등성이 없는 메서드</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>X</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>X</td>
+<td>O</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+<tr>
+<td>OPTION</td>
+<td>O</td>
+<td>X</td>
+<td>O</td>
+<td>X</td>
+</tr>
+</tbody>
+</table>
+<p>[POST - 멱등성이 없다 예시]
+댓글 같은 경우 같은 경우 같은 내용의 댓글(동일한 요청)을 다시 서버에 보내면 서버는 이 요청을 새로운 댓글로 인식하고, 데이터베이스에 또 다른 댓글로 저장하게 된다.</p>
+<p>[PATCH - 멱등성이 없다 예시]</p>
 
 
 
