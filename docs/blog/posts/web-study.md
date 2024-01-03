@@ -9,10 +9,18 @@ categories:
   - HTTP
 ---
 # HTTP란?
+> HTTP의 특징과, HTTP request/response 구조 그리고 더 안전해진 HTTPS 이해하기
 <!-- more -->
+## HTTP 정의
+- HyperText Transfer Protocol
 - 웹 브라우저와 웹 서버가 통신을 할 때 사용하는 통신규칙  
 - HTTP는 서버와 클라이언트 간에 HTTP라는 양식에 맞춰 데이터를 요청하고 응답하는 방식이다. 
 - Request는 클라이언트가 서버로 전달하는 메시지이고, Response는 Request에 대한 서버의 답변이다.
+
+## HTTP 특징 (Connectionless / Stateless)
+HTTP는 서버에 연결 후 요청에 대한 응답을 받으면 연결을 끊어버리는 Connectionless 특성을 가진다.
+이로 인해 많은 사람들이 웹을 이용하더라도 실제 동시 접속을 최소화하여 더 많은 유저의 요청을 처리할 수 있다.  
+하지만 연결을 끊었기 때문에, 클라이언트의 이전 상태(login 유무)를 알 수가 없다는 Stateless의 특성이 생기게 된다. 정보를 유지할 수 없는 Connectionless와 Stateless의 특성을 가진 HTTP의 단점을 해결하기 위해 cookie, session, jwt가 도입되었다.
 
 ## 1. HTTP request
 HTTP request 메세지는 크게 3부분으로 구성된다

@@ -8,6 +8,7 @@ categories:
   - Web
 ---
 # 웹 브라우저와 네트워크 통신의 이해
+> 웹 동작 방식 및 [개념] OSI 7계층 + TCP/IP 4계층 + L7, L4 로드밸런서 + DNS
 <!-- more -->
 ## www.google.com을 주소창에 쳤을 때 화면이 나오기까지의 과정
 
