@@ -861,7 +861,7 @@
 <li>애플리케이션 계층에서 전송 계층으로 사용자가 보내는 요청 값들이 <span style="background-color:#fff5b1">캡슐화</span> 과정을 통해 전달된다. 그리고 다시 링크 계층을 통해 해당 서버와 통신하고, 서버의 링크계층으로 부터 애플리케이션까지 <span style="background-color:#fff5b1">비캡슐화</span> 과정을 거쳐 데이터가 전송된다.</li>
 <li>아래 그림과 같이 각 계층을 지날때마다(4 -&gt; 1) 각 계층에서 Header가 붙게되고 수신측은 역순(1 -&gt; 4)으로 헤더를 분석하게 된다.</li>
 </ul>
-<h2 id="_3"><img alt="OSI7계층/TCP/IP" src="./woong1/date_trans.png" /></h2>
+<h2 id="_3"><img alt="OSI7계층/TCP/IP" src="../../../web-study/woong1/date_trans.png" /></h2>
 <h2 id="encapsulation-decapsulation">캡슐화(encapsulation) ↔ 비캡슐화(decapsulation)</h2>
 <h3 id="1"><strong>1️⃣ 캡슐화</strong></h3>
 <p>캡슐화 과정은 상위 계층의 헤더와 데이터를 하위 계층의 데이터 부분에 포함시키고 해당 계층의 헤더를 삽입 하는 과정이다.  </p>
@@ -879,7 +879,7 @@
 </ul>
 </li>
 </ol>
-<p><img alt="캡슐화" src="./woong1/encapsulation.png" />  </p>
+<p><img alt="캡슐화" src="../../../web-study/woong1/encapsulation.png" />  </p>
 <hr />
 <h3 id="2"><strong>2️⃣ 비캡슐화</strong></h3>
 <ul>
@@ -887,7 +887,7 @@
 <li>캡슐화된 데이터를 받게 되면 링크 계층에서부터 올라오면서 프레임화된 데이터는 다시 패킷화를 거쳐 세그먼트, 데이터그램화를 거쳐 메시지화가 되는 비캡슐화 과정이 일어난다.   </li>
 <li>최종적으로 애플리케이션에게 데이터를 전달하게 된다!</li>
 </ul>
-<h2 id="_4"><img alt="비캡슐화" src="./woong1/decapsulation.png" /></h2>
+<h2 id="_4"><img alt="비캡슐화" src="../../../web-study/woong1/decapsulation.png" /></h2>
 <p><br>
 <br></p>
 <h3 id="l7-l4">애플리케이션 계층을 처리하는 기기 (L7, L4)</h3>
@@ -898,7 +898,7 @@
 <li>주로 TCP 및 UDP 프로토콜을 기반으로 클라이언트와 서버 간의 트래픽을 분산시킨다.</li>
 <li>클라이언트의 IP 주소와 포트, nlbP 주소와 포트를 기반으로 로드 밸런싱을 수행한다.</li>
 <li>NLB(Network Load Balance)
-<img alt="NLB" src="./woong1/NLB.png" /></li>
+<img alt="NLB" src="../../../web-study/woong1/NLB.png" /></li>
 </ul>
 <h3 id="l7"><strong>L7 로드 밸런서</strong></h3>
 <ul>
@@ -910,7 +910,7 @@
 </ul>
 </li>
 <li>ALB (Application Load Balance)
-<img alt="ALB" src="./woong1/ALB.png" /></li>
+<img alt="ALB" src="../../../web-study/woong1/ALB.png" /></li>
 </ul>
 <h3 id="l7-vs-l4"><strong>L7 vs L4 차이점</strong></h3>
 <p>만약 <a href="http://bookstore.com/search/book/21이라는">http://bookstore.com/search/book/21이라는</a> url이 있다면,<br />
@@ -965,7 +965,7 @@ L7 로드 밸런서는 HTTP 헤더, URL의 경로를 분석하여 적절한 서�
 <li>정해진 규칙에 따라 도메인 이름을 계층적 구조로 저장하는 것이다.  </li>
 <li>하위 조직의 네임 스페이스를 할당하고 관리하는 방식은 각 하위 기관의 관리 책임자에게 위임된다.<br />
     예를 들어, hyewon.com 도메인은 .com 도메인(Root 도메인)이 있고, 아래 hyewon.com이라는 서브도메인 아래 <a href="http://www.hyewon.com라는">www.hyewon.com라는</a> 또 다른 서브도메인이다. 
-<img alt="DNS" src="./woong1/dns.png" />  </li>
+<img alt="DNS" src="../../../web-study/woong1/dns.png" />  </li>
 </ul>
 <h3 id="2-dns-server-name-server">2. 네임 서버(DNS Server, Name Server)</h3>
 <ul>
