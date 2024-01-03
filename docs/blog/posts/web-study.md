@@ -6,6 +6,7 @@ date: 2024-01-01
 categories:
   - Study
   - Web
+  - HTTP
 ---
 # HTTP란?
 <!-- more -->
