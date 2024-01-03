@@ -4,8 +4,8 @@ authors:
   - hyewon
 date: 2024-01-01
 categories:
-  - study
-  - web
+  - Study
+  - Web
 ---
 # 웹 브라우저와 네트워크 통신의 이해
 <!-- more -->
