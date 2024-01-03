@@ -9,6 +9,7 @@ categories:
   - HTTP
 ---
 # HTTP 멱등성
+> HTTP Request Method의 멱등성에 대해 알아보기
 <!-- more -->
 ## 멱등성(Idempotency)이란?
 프로그래밍과 수학에서 널리 사용되는 개념으로 연산을 여러 번 적용하더라도 결과가 달라지지 않는 성질을 의미한다.
