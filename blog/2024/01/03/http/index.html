@@ -440,11 +440,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#idempotency" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 안전성 &amp; 멱등성
+      멱등성(Idempotency)이란?
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP 메서드의 멱등성
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      멱등성 예
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="멱등성 예">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#http_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⭕️ 멱등한 HTTP 메서드
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❌ 멱등하지 않은 HTTP 메서드
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -523,7 +565,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -545,76 +587,104 @@
 
 <h1 id="http">HTTP 멱등성</h1>
 <!-- more -->
-<h3 id="_1">📌 안전성 &amp; 멱등성</h3>
-<ol>
-<li>안전성이 좋다 = 서버 상태를 변경하지 않는 것</li>
-<li>멱등성이 있다 = 서버의 상태에 변경을 일으킬 수도 있지만, 동일한 요청을 여러 번 수행해도 최종적으로 서버의 상태가 동일하다는 것</li>
-</ol>
+<h2 id="idempotency">멱등성(Idempotency)이란?</h2>
+<p>프로그래밍과 수학에서 널리 사용되는 개념으로 연산을 여러 번 적용하더라도 결과가 달라지지 않는 성질을 의미한다.</p>
+<h2 id="http_1">HTTP 메서드의 멱등성</h2>
+<p>HTTP 메서드가 멱등하다는 것은, 동일한 요청을 여러번 보내도 서버의 상태가 첫 번째 요청 이후에는 변하지 않는다는 것을 의미한다.
+서버의 상태에 변경을 일으킬 수도 있지만, 동일한 요청을 여러 번 수행해도 최종적으로 서버의 상태가 동일하다는 것이다.<br />
+즉 멱등성은 <span style="background-color:#fff5b1">서버의 상태가 "최종적으로" 어떻게 변화하는지</span>에 초점을 맞춥니다. 첫 번째 요청에서 변화가 있을 수 있지만, 동일한 요청을 반복했을 때 추가적인 변화가 없으면 그 메서드는 멱등한 것으로 간주된다.</p>
+<h2 id="_1">멱등성 예</h2>
 <table>
 <thead>
 <tr>
-<th>HTTP 메서드</th>
-<th>안전한 메서드</th>
-<th>안전하지 않은 메서드</th>
-<th>멱등성이 있는 메서드</th>
-<th>멱등성이 없는 메서드</th>
+<th style="text-align: center;">HTTP 메서드</th>
+<th style="text-align: center;">멱등성이 있는 메서드</th>
+<th style="text-align: center;">멱등성이 없는 메서드</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td>O</td>
-<td>X</td>
-<td>O</td>
-<td>X</td>
+<td style="text-align: center;">GET</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>POST</td>
-<td>X</td>
-<td>O</td>
-<td>X</td>
-<td>O</td>
+<td style="text-align: center;">POST</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">O</td>
 </tr>
 <tr>
-<td>PUT</td>
-<td>X</td>
-<td>O</td>
-<td>O</td>
-<td>X</td>
+<td style="text-align: center;">PUT</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>DELETE</td>
-<td>X</td>
-<td>O</td>
-<td>O</td>
-<td>X</td>
+<td style="text-align: center;">DELETE</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>PATCH</td>
-<td>X</td>
-<td>O</td>
-<td>X</td>
-<td>O</td>
+<td style="text-align: center;">PATCH</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">O</td>
 </tr>
 <tr>
-<td>HEAD</td>
-<td>O</td>
-<td>X</td>
-<td>O</td>
-<td>X</td>
+<td style="text-align: center;">HEAD</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
 </tr>
 <tr>
-<td>OPTION</td>
-<td>O</td>
-<td>X</td>
-<td>O</td>
-<td>X</td>
+<td style="text-align: center;">OPTION</td>
+<td style="text-align: center;">O</td>
+<td style="text-align: center;">X</td>
 </tr>
 </tbody>
 </table>
-<p>[POST - 멱등성이 없다 예시]
-댓글 같은 경우 같은 경우 같은 내용의 댓글(동일한 요청)을 다시 서버에 보내면 서버는 이 요청을 새로운 댓글로 인식하고, 데이터베이스에 또 다른 댓글로 저장하게 된다.</p>
-<p>[PATCH - 멱등성이 없다 예시]</p>
+<h3 id="http_2">⭕️ 멱등한 HTTP 메서드</h3>
+<ol>
+<li><strong>GET</strong><ul>
+<li>서버의 데이터를 읽기만 하므로, 요청을 반복해도 서버의 상태에 변화가 없다.</li>
+<li>[예시] 사용자 프로필 페이지를 여러 번 조회하더라도 서버의 데이터는 변하지 않는다.</li>
+</ul>
+</li>
+<li><strong>PUT</strong><ul>
+<li>동일한 리소스에 대한 PUT 요청을 여러 번 수행해도, 서버의 해당 리소스 상태는 마지막 PUT 요청의 상태를 반영한다.  </li>
+<li>[예시] 사용자의 이메일 주소를 동일한 값으로 여러 번 업데이트해도 결과는 동일하게 유지된다.</li>
+</ul>
+</li>
+<li><strong>DELETE</strong><ul>
+<li>한 번 삭제된 리소스에 대해 DELETE 요청을 반복해도, 리소스는 이미 삭제된 상태이므로 서버의 상태가 변하지 않는다.</li>
+<li>[예시] 특정 게시글을 삭제한 후, 같은 DELETE 요청을 다시 보내도 게시글은 이미 삭제된 상태이므로 추가적인 변화는 없다.</li>
+</ul>
+</li>
+<li><strong>OPTION</strong><ul>
+<li>OPTION 메서드는 서버가 지원하는 메서드를 조회하는 데 사용되며, 서버의 상태를 변경하지 않는다.</li>
+<li>[예시] 웹서버가 지원하는 HTTP 메서드를 여러 번 조회해도 서버의 상태는 변하지 않는다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="http_3">❌ 멱등하지 않은 HTTP 메서드</h3>
+<ol>
+<li>
+<p><strong>POST</strong>  </p>
+<ul>
+<li>POST 메서드는 서버에 새로운 리소스를 생성한다. 동일한 POST 요청을 여러 번 수행하면, 서버에 같은 데이터의 복사본이 여러 개 생성될 수 있다. 따라서 POST는 멱등하지 않다.     </li>
+<li>[예시] 같은 내용의 댓글(동일한 요청)을 다시 서버에 보내면 서버는 이 요청을 새로운 댓글로 인식하고, 데이터베이스에 또 다른 댓글로 저장하게 된다.</li>
+</ul>
+</li>
+<li>
+<p><strong>PATCH</strong></p>
+<ul>
+<li>PATCH 메서드는 리소스의 일부를 수정합니다. 같은 PATCH 요청을 여러 번 수행하면, 각 요청이 서버의 상태에 영향을 미칠 수 있다.</li>
+<li>[예시] 사용자의 프로필 설명을 같은 내용으로 여러 번 수정하면, 각 요청마다 서버의 데이터가 갱신된다.</li>
+</ul>
+</li>
+</ol>
+<p><br>
+<br>
+<br>
+<br>
+<br></p>
 
 
 
