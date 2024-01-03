@@ -9,9 +9,9 @@ categories:
   - HTTP
 ---
 # HTTP Method
-GET과 POST 이외의 메서드는 보안에 취약한가? HTTP 메서드의 개념과 안전성에 대해 살펴보기
+> GET과 POST 이외의 메서드는 보안에 취약한가? HTTP 메서드의 개념과 안전성에 대해 살펴보기
 <!-- more -->
-## HTTP Requet Method란?
+## 👀 HTTP Requet Method란?
 HTTP(HyperText Transfer Protocol) Request Method는 클라이언트와 서버 간의 통신에서 클라이언트가 웹 서버에게 요청의 목적이나 종류를 알리는 수단이다. 웹에서의 모든 데이터 교환은 HTTP 요청을 통해 이루어지며, 이러한 요청은 특정한 메서드를 사용하여 서버에 전달됩된다.
 
 ---
@@ -100,8 +100,6 @@ HTTP(HyperText Transfer Protocol) Request Method는 클라이언트와 서버 �
 
 3. API 설계와 보안 조치 (?)  
     - 적절한 인증 및 권한 부여 메커니즘의 부재는 어떤 HTTP 메서드를 사용하든지 간에 보안 취약점을 초래할 수 있습니다. 또한, SQL 인젝션, 크로스 사이트 스크립팅(XSS) 등과 같은 일반적인 웹 보안 위협에 대응하는 것도 중요하다.
-
-
 
 
 <br>
