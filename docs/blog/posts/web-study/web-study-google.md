@@ -81,7 +81,7 @@ categories:
 
 ---
 
-![OSI7계층/TCP/IP](./woong1/OSI:TCP:IP.png)
+![OSI7계층/TCP/IP](./posts/woong1/OSI:TCP:IP.png)
 
 - 서로간의 계층이 완벽하게 일치 하지 않고 세션, 표현 계층이 TCP/IP에는 없다.
 - TCP/IP 4계층이 OSI 7계층보다 먼저 개발 되었다. TCP/IP 4계층은 인터넷이 발전 되면서 표준화되어 신뢰성이 우수하다.
