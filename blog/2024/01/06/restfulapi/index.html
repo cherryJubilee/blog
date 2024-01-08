@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../01/mysql-vs-postgresql/">
+        <link rel="prev" href="../../03/binary-search/">
       
-      
-        <link rel="next" href="../http/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>HTTP Method - hyehye_hye's blog</title>
+        <title>RESTfulAPI - hyehye_hye's blog</title>
       
     
     
@@ -71,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#http-method" class="md-skip">
+        <a href="#restfulapi" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HTTP Method
+              RESTfulAPI
             
           </span>
         </div>
@@ -482,73 +480,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#http-request-method" class="md-nav__link">
+  <a href="#api" class="md-nav__link">
     <span class="md-ellipsis">
-      👀 HTTP Request Method란?
+      API란?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#method" class="md-nav__link">
+  <a href="#rest" class="md-nav__link">
     <span class="md-ellipsis">
-      ✏️ Method의 안전성
+      REST란?(구성 요소)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Method 종류
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Method 종류">
+    <nav class="md-nav" aria-label="REST란?(구성 요소)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-get" class="md-nav__link">
+  <a href="#1-resource" class="md-nav__link">
     <span class="md-ellipsis">
-      1. GET
+      1. 자원(RESOURCE)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-post" class="md-nav__link">
+  <a href="#2-verb-http-method" class="md-nav__link">
     <span class="md-ellipsis">
-      2. POST
+      2. 행위(Verb) - HTTP Method
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-put" class="md-nav__link">
+  <a href="#3-representations" class="md-nav__link">
     <span class="md-ellipsis">
-      3. PUT
+      3. 표현(Representations)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-delete" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      4. DELETE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-patch" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. PATCH
+      🚀 정리
     </span>
   </a>
   
@@ -560,9 +540,162 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#http" class="md-nav__link">
+  <a href="#rest-6" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ HTTP 요청 메서드에 따른 보안성 차이
+      Rest의 기본 원칙 6가지
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rest의 기본 원칙 6가지">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 클라이언트-서버 모델
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 무상태(Stateless)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-cacheable" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 캐시 가능(Cacheable)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-uniform-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 인터페이스 일관성 (Uniform Interface)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-layered-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 계층형 구조 (Layered System)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-self-descriptiveness" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 자체 표현 구조 (Self-descriptiveness)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restful-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      RESTful API란?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RESTful API란?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API의 설계 규칙
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST의 장단점
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="REST의 장단점">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      장점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      단점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-restful-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      👀 REST API와 RESTful API의 차이는 뭘까?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uri-http-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST 아키텍처 스타일
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API 설계 예시
     </span>
   </a>
   
@@ -619,7 +752,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-01-03 00:00:00" class="md-ellipsis">Jan 3, 2024</time>
+                        <time datetime="2024-01-06 00:00:00" class="md-ellipsis">Jan 6, 2024</time>
                       </div>
                     </li>
                     
@@ -631,8 +764,7 @@
                             in
                             
                               <a href="../../../../category/study/">Study</a>, 
-                              <a href="../../../../category/web/">Web</a>, 
-                              <a href="../../../../category/http/">HTTP</a></span>
+                              <a href="../../../../category/web/">Web</a></span>
                         </div>
                       </li>
                     
@@ -643,7 +775,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              8 min read
                             
                           </span>
                         </div>
@@ -663,126 +795,270 @@
         
 
 
-<h1 id="http-method">HTTP Method</h1>
-<blockquote>
-<p>GET과 POST 이외의 메서드는 보안에 취약한가? HTTP 메서드의 개념과 안전성에 대해 살펴보기</p>
-</blockquote>
+<h1 id="restfulapi">RESTfulAPI</h1>
 <!-- more -->
-<h2 id="http-request-method">👀 HTTP Request Method란?</h2>
-<ul>
-<li>HTTP(HyperText Transfer Protocol) Request Method는 클라이언트와 서버 간의 통신에서 클라이언트가 웹 서버에게 요청의 목적이나 종류를 알리는 수단이다.  </li>
-<li>웹에서의 데이터 교환은 HTTP 요청을 통해 이루어지며, 이러한 요청은 특정한 메서드를 사용하여 서버에 전달된다.</li>
-</ul>
-<h2 id="method">✏️ Method의 안전성</h2>
+
+<h2 id="api">API란?</h2>
+<blockquote>
+<p>응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다.
+프로그램들이 서로 상호작용하는 것을 도와주는 매개체 = 점원</p>
+<blockquote>
+<p>손님(프로그램)이 주문할 수 있게 메뉴(명령 목록)를 정리하고, 주문(명령)을 받으면 요리사(응용프로그램)와 상호작용하여 요청된 메뉴(명령에 대한 값)를 전달하는 과정</p>
+</blockquote>
+</blockquote>
+<p>API의 역할은? 
+1. API는 서버와 데이터베이스에 대한 출입구 역할을 한다.
+: 데이터베이스에는 소중한 정보들이 저장되는데요. 모든 사람들이 이 데이터베이스에 접근할 수 있으면 안 되겠지요. API는 이를 방지하기 위해 여러분이 가진 서버와 데이터베이스에 대한 출입구 역할을 하며, 허용된 사람들에게만 접근성을 부여해줍니다.</p>
 <ol>
-<li>안전한 메서드<br />
-: 서버의 데이터를 변경하지 않는 메서드<br />
-    -&gt; 서버의 데이터베이스나 파일 시스템에 저장된 데이터에 영향을 미치지 않는 메서드</li>
-<li>안전하지 않은 메서드 <br />
-: 서버의 데이터를 변경할 수 있는 메서드</li>
+<li>
+<p>API는 애플리케이션과 기기가 원활하게 통신할 수 있도록 한다.
+: 여기서 애플리케이션이란 우리가 흔히 알고 있는 스마트폰 어플이나 프로그램을 말합니다. API는 애플리케이션과 기기가 데이터를 원활히 주고받을 수 있도록 돕는 역할을 합니다.</p>
+</li>
+<li>
+<p>API는 모든 접속을 표준화한다.
+API는 모든 접속을 표준화하기 때문에 기계/ 운영체제 등과 상관없이 누구나 동일한 액세스를 얻을 수 있습니다. 쉽게 말해, API는 범용 플러그처럼 작동한다고 볼 수 있습니다.</p>
+</li>
 </ol>
+<p>1) private API
+- 내부 API
+- 회사 개발자가 자체 제품과 서비스를 개선하기 위해 내부적으로 발행합니다. 
+- 제 3자에게 노출되지 않습니다.</p>
+<p>2) public API
+- 개방형 API로, 모두에게 공개됩니다. 누구나 제한 없이 API를 사용할 수 있다.
+- 접속하는 대상에 대한 제약이 없는 경우를 OpenAPI 라고 한다.
+    - 영화진흥위원회 API, 공공데이터, Kakao Developers(카카오 로그인)</p>
+<p>3) partner API
+- 기업이 데이터 공유에 동의하는 특정인들만 사용할 수 있다. 
+- 비즈니스 관계에서 사용되는 편이며, 종종 파트너 회사 간에 소프트웨어를 통합하기 위해 사용된다.</p>
+<hr />
+<h2 id="rest">REST란?(구성 요소)</h2>
+<h3 id="1-resource">1. 자원(RESOURCE)</h3>
+<ul>
+<li>REST는 자원에 접근할 때 URI(Uniform Resource Identifier)를 이용</li>
+<li>URI는 자원의 위치를 나타내는 식별자</li>
+<li>DB 안에 있는 데이터<ul>
+<li>ex) 유저 , 주문 등</li>
+</ul>
+</li>
+<li>이미지, 문서 </li>
+<li>리소스명은 동사보다는 명사를 사용해야 한다. 행위에 대한 표현X</li>
+<li>예시1)URI: /blog/posts/678<ul>
+<li>블로그 포스트에 대한 자원</li>
+</ul>
+</li>
+<li>예시2) URI: /weather/today?city=Seoul<ul>
+<li>서울의 오늘 날씨 정보에 대한 자원</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># bad
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GET /getTodos/1
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>GET /todos/show/1
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>GET /members/delete/1
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># good
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>GET /orders/book/1
+</code></pre></div>
+<h3 id="2-verb-http-method">2. 행위(Verb) - HTTP Method</h3>
+<ul>
+<li>HTTP 프로토콜의 Method를 사용하여 원하는 자원에 대한 조작 요청</li>
+<li>POST : 생성 [Create]  - 예&gt; HTTP POST,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 생성한다.   </li>
+<li>GET : 조회 [Select, Read]  - 예&gt; HTTP GET,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 모두 조회한다.   </li>
+<li>PUT : 업데이트 [Update]  - 예&gt; HTTP PUT,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목에 정보를 업데이트 한다.    </li>
+<li>DELETE : 삭제 [Delete] - 예&gt; HTTP DELETE,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목들을 삭제 한다.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># bad
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GET /members/delete/1
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a># good
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>DELETE /members/1
+</code></pre></div></li>
+</ul>
+<h3 id="3-representations">3. 표현(Representations)</h3>
+<ul>
+<li>Client와 Server가 데이터를 주고받는 형태<ul>
+<li>JSON, XML, TEXT, RSS등</li>
+</ul>
+</li>
+</ul>
+<h3 id="_1">🚀 정리</h3>
+<blockquote>
+<p>REST의 구체적인 개념은 클라이언트와 서버사이에서, HTTP URL을 통해 자원을 명시하고,<br />
+HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작을 요청하고,  <br />
+이에 대한 응답을 받는 것을 의미한다.</p>
+</blockquote>
+<hr />
+<h2 id="rest-6">Rest의 기본 원칙 6가지</h2>
+<h3 id="1-">1. 클라이언트-서버 모델</h3>
+<ul>
+<li>클라이언트와 서버의 역할을 분리하여 유지보수가 용이함<ul>
+<li>REST 서버는 API 제공, 클라이언트는 사용자 인증이나 컨텍스트(세션, 로그인 정보)등을 직접 관리하는 구조</li>
+</ul>
+</li>
+<li>서버의 기능 개선이 클라이언트에 영향을 미치지 않고, 클라이언트 인터페이스 개선이 서버에 영향을 주지 않는다. </li>
+<li>서로간 의존성 줄어든다.</li>
+</ul>
+<h3 id="2-stateless">2. 무상태(Stateless)</h3>
+<ul>
+<li>서버가 클라이언트의 상태(세션정보 등)를 저장하지 않는다.</li>
+<li>필요에 따라 외부DB에 저장한다.</li>
+<li>서버의 처리가 단순화 되어, 확장성이 증가한다.</li>
+<li>서버는 단순히 클라이언트의 요청에 대한 응답을 보내는 역할만하며, 세션관리는 클라이언트에게 책임이 있다.</li>
+<li>모든 클라이언트 요청은 서버가 해당 요청을 이해하고 처리하는 데 필요한 모든 정보를 포함해야 한다.
+stateful의 경우 세션 정보가 scaled out된 server#2에 저장되어 있지 않다. 
+<img alt="stateful" src="../../../../web-study/woong1/stateful.png" />
+stateless의 경우 서버는 클라이언트 세션정보를 관리 하지 않으므로 고려하지 않아도 된다.
+<img alt="stateless" src="../../../../web-study/woong1/stateless.png" /></li>
+</ul>
+<p>❓ 그럼 로그인 정보를 저장하는 방법인 쿠키,세션에서 세션 정보를 Redis와 같은데 따로 저장하면 stateless인가..?</p>
+<h3 id="3-cacheable">3. 캐시 가능(Cacheable)</h3>
+<ul>
+<li>REST는 웹 표준인 HTTP를 그대로 사용하기 때문에, 웹에서 사용하는 기존 인프라를 그대로 사용할 수 있다. 따라서 HTTP가 가진 캐싱 기능을 적용할 수 있다.</li>
+<li>클라이언트가 응답을 캐시하여 재사용함으로써 효율성을 높이고, 서버의 부담을 줄인다.</li>
+<li>캐싱 처리는 보통 GET 요청에서 처리된다.</li>
+<li>Last-Modified태그, E-Tag을 통해 캐싱 구현</li>
+<li>대량의 요청을 효율적으로 처리 가능</li>
+</ul>
+<h3 id="4-uniform-interface">4. 인터페이스 일관성 (Uniform Interface)</h3>
+<ul>
+<li>URI로 지정한 리소스에 대한 조작을 통일되고 한정적인 인터페이스로 수행하는 아키텍처 스타일</li>
+<li>HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용이 가능하다. 따라서 특정 언어나 기술에 종속되지 않는다.</li>
+</ul>
+<h3 id="5-layered-system">5. 계층형 구조 (Layered System)</h3>
+<ul>
+<li>REST 서버는 다중 계층으로 구성될 수 있으며 보안, 로드 밸런싱, 암호화 계층을 추가해 구조상의 유연성을 둘 수 있고 PROXY, 게이트웨이 같은 네트워크 기반의 중간매체를 사용할 수 있게 합니다.</li>
+</ul>
+<h3 id="6-self-descriptiveness">6. 자체 표현 구조 (Self-descriptiveness)</h3>
+<ul>
+<li>REST API 메시지만 보고도 이를 쉽게 이해 할 수 있는 자체 표현 구조로 되어 있다.</li>
+</ul>
+<hr />
+<h2 id="restful-api">RESTful API란?</h2>
+<ul>
+<li>REST의 특징을 기반으로 서비스 API를 구현한 것</li>
+<li>URI 형식으로 HTTP 메서드(GET, POST, PUT, DELETE)를 요청해 자원을 조회, 생성, 수정, 삭제할 수 있는 것</li>
+<li>⭐️ 각 요청이 어떤 동작이나 정보를 위한 것인지를 그 요청의 모습 자체로 추론이 가능한 것 </li>
+</ul>
+<h3 id="rest-api">REST API의 설계 규칙</h3>
+<ol>
+<li>
+<p>URI는 명사를 사용한다.(리소스명은 동사가 아닌 명사를 사용해야 한다.)<br />
+  1-1. 아래와 같은 동사를 사용하지 말 것</p>
+<blockquote>
+<p>/getAllUsers<br />
+/getUserById<br />
+/createNewUser<br />
+/updateUser<br />
+/deleteUser  </p>
+</blockquote>
+</li>
+<li>
+<p>슬래시( / )로 계층 관계를 표현한다.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://restapi.example.com/houses/apartments  
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>http://restapi.example.com/animals/mammals/whales
+</code></pre></div></p>
+</li>
+<li>URI 마지막 문자로 슬래시 ( / )를 포함하지 않는다.</li>
+<li>밑줄( _ )을 사용하지 않고, 하이픈( - )을 사용한다.</li>
+<li>URI는 소문자로만 구성한다.</li>
+<li>파일확장자는 URI에 포함하지 않는다.<br />
+Ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.github.io/restapi/7/photo.jpg</a> (X)</li>
+<li>HTTP 응답 상태 코드 사용</li>
+<li>
+<p>클라이언트는 해당 요청에 대한 실패, 처리완료 또는 잘못된 요청 등에 대한 피드백을 받아야 한다.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">HTTP 메서드</th>
-<th style="text-align: center;">메서드 안전성 여부</th>
+<th>상태 코드</th>
+<th>설명</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">GET</td>
-<td style="text-align: center;">O</td>
+<td>200</td>
+<td>클라이언트의 요청을 정상적으로 수행함.</td>
 </tr>
 <tr>
-<td style="text-align: center;">POST</td>
-<td style="text-align: center;">X</td>
+<td>201</td>
+<td>클라이언트가 어떠한 리소스 생성을 요청하고, 해당 리소스가 성공적으로 생성됨 (POST를 통한 리소스 생성 작업 시 사용).</td>
 </tr>
 <tr>
-<td style="text-align: center;">PUT</td>
-<td style="text-align: center;">X</td>
+<td>301</td>
+<td>클라이언트가 요청한 리소스에 대한 URI가 변경되었을 때 사용하는 응답 코드. <br> (응답 시 Location header에 변경된 URI를 적어 줘야 함).</td>
 </tr>
 <tr>
-<td style="text-align: center;">DELETE</td>
-<td style="text-align: center;">X</td>
+<td>400</td>
+<td>클라이언트의 요청이 부적절할 경우 사용하는 응답 코드.</td>
 </tr>
 <tr>
-<td style="text-align: center;">PATCH</td>
-<td style="text-align: center;">X</td>
+<td>401</td>
+<td>클라이언트가 인증되지 않은 상태에서 보호된 리소스를 요청했을 때 사용하는 응답 코드. <br> (로그인하지 않은 유저가 로그인 했을 때 요청 가능한 리소스를 요청했을 때 사용).</td>
+</tr>
+<tr>
+<td>403</td>
+<td>유저 인증 상태와 관계 없이 응답하고 싶지 않은 리소스를 클라이언트가 요청했을 때 사용하는 응답 코드. <br> (403보다는 400이나 404를 사용할 것을 권고. 403 자체가 리소스가 존재한다는 뜻).</td>
+</tr>
+<tr>
+<td>405</td>
+<td>클라이언트가 요청한 리소스에서는 사용 불가능한 Method를 이용했을 경우 사용하는 응답 코드.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>서버에 문제가 있을 경우 사용하는 응답 코드.</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ol>
+<h2 id="rest_1">REST의 장단점</h2>
+<h3 id="_2">장점</h3>
+<ul>
+<li>확장성 : 서버와 클라이언트 사이의 인터페이스가 명확하여 서로간의 의존성이 낮음</li>
+<li>유연성</li>
+<li>독립성</li>
+</ul>
+<h3 id="_3">단점</h3>
+<ul>
+<li>HTTP 프로토콜에 의존</li>
+<li>URI 설계가 복잡할 수 있음</li>
+<li>상태 정보가 클라이언트 서버 간에 전송될 수 있음</li>
+<li>필요한 문서화와 테스트 등의 추가 작업 필요</li>
+</ul>
+<h3 id="rest-api-restful-api">👀 REST API와 RESTful API의 차이는 뭘까?</h3>
+<p>RESTful은 REST의 설계 규칙을 잘 지켜서 설계된 API를 RESTful한 API라고 합니다.
+즉, REST의 원리를 잘 따르는 시스템을 RESTful이란 용어로 지칭됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>API</th>
+<th>RESTful API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>제약 조건</strong></td>
+<td>제약 조건이 없거나 제한적</td>
+<td>아키텍처의 제약 조건을 모두 따르도록 설계</td>
+</tr>
+<tr>
+<td><strong>호환성 및 이식성</strong></td>
+<td>다양한 프로그래밍 언어나 플랫폼에서 호환성 있도록 개발</td>
+<td>표준 HTTP 메소드 사용, 인터페이스 일관성, 다양한 클라이언트에서 쉽게 사용</td>
+</tr>
+<tr>
+<td><strong>보안성과 안정성</strong></td>
+<td>제한적인 보안성과 안정성</td>
+<td>클라이언트-서버 구조, 무상태성, 캐시, 계층화, 유니폼 인터페이스 등 제약 조건으로 보안성 높음</td>
+</tr>
+</tbody>
+</table>
+<h3 id="uri-http-method">📌 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!</h3>
 <hr />
-<h2 id="method_1">Method 종류</h2>
-<h3 id="1-get">1. GET</h3>
-<ul>
-<li>URI 형식으로 웹 서버측 리소스(데이터)를 요청 <ul>
-<li>.../order/book/2132</li>
-</ul>
-</li>
-<li>데이터를 검색하는 데 사용되며, 같은 리소스에 대한 GET 요청을 여러번 해도 서버의 데이터(상태)를 변경하지 않는다.  <ul>
-<li>예를 들어, 웹 페이지나 이미지를 불러올 때 GET 요청이 사용된다.</li>
-</ul>
-</li>
-<li>안전한 메서드</li>
-</ul>
-<h3 id="2-post">2. POST</h3>
-<ul>
-<li>클라이언트에서 서버로 전달하고자하는 정보를 request body에 실어서 서버로 전송</li>
-<li>주로 새 리소스를 생성하거나 데이터를 서버에 제출할 때 사용되며, 서버의 상태를 변경할 수 있다. <ul>
-<li>예를들어 사용자가 웹페이지에서 회원가입 폼을 작성하고 제출할 때, 사용자의 정보(이름, 이메일, 비밀번호 등)는 Body 담겨 서버로 전송</li>
-<li>서버에서 새로운 사용자 계정을 생성 = 서버의 데이터를 변경</li>
-</ul>
-</li>
-<li>안전하지 않은 메서드</li>
-<li>
-<p>URL에 데이터를 포함시키지 않기 때문에 GET 메서드보다 더 많은 양의 정보를 전송할 수 있고, 데이터가 URL에 노출되지 않아 보안 측면에서도 유리하다. ⭐️  </p>
-<p><br></p>
-<blockquote>
-<p>POST Request Body 형태</p>
-</blockquote>
-<ul>
-<li>application/x-www-form-urlencoded: 이는 HTML 폼을 통해 데이터를 전송할 때 주로 사용되는 형식입니다. 데이터가 key-value 쌍으로 인코딩되어 전송됩니다.</li>
-<li>multipart/form-data: 파일 업로드와 같이 큰 데이터 또는 바이너리 데이터를 전송할 때 사용</li>
-<li>application/json: JSON 형식으로 데이터를 전송할 때 사용되며, 주로 웹 API에서 많이 사용</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-put">3. PUT</h3>
-<ul>
-<li>서버에 있는 리소스 전체를 새로운 데이터로 대채한다. 즉, 서버의 상태를 변경한다.<ul>
-<li>예를 들어, 사용자 프로필 정보를 업데이트할 때 PUT 요청을 사용할 수 있다.</li>
-<li>사용자 프로필의 '주소' 필드가 "Old Address"로 설정된 상태</li>
-<li>첫 번째 PUT 요청: 주소를 "New Address 1"로 업데이트</li>
-<li>두 번째 PUT 요청: 주소를 "New Address 2"로 업데이트</li>
-<li>최종 결과는 "New Address 2"로 업데이트 된다.</li>
-</ul>
-</li>
-<li>안전하지 않은 메서드</li>
-</ul>
-<h3 id="4-delete">4. DELETE</h3>
-<ul>
-<li>특정 리소스를 삭제하여 데이터의 상태를 변경한다.<ul>
-<li>사용자가 자신의 계정을 삭제하는 경우 서버의 db에서 해당 데이터 제거한다. </li>
-</ul>
-</li>
-<li>안전하지 않은 메서드</li>
-</ul>
-<h3 id="5-patch">5. PATCH</h3>
-<ul>
-<li>리소스의 부분적인 변경을 위해 사용한다. <ul>
-<li>사용자의 정보 중 취미 필드가 "독서"로 설정된 상태</li>
-<li>취미 필드에 "등산" 추가 </li>
-<li>취미 필드에 "요리" 추가</li>
-<li>최종 결과는  "독서, 등산, 요리"로 업데이트 된다.</li>
-</ul>
-</li>
-<li>PUT과 차이점: 전체 리소스를 대체하지 않고 일부만 수정한다.</li>
-<li>안전하지 않은 메서드</li>
-</ul>
-<hr />
-<h2 id="http">🛠️ HTTP 요청 메서드에 따른 보안성 차이</h2>
-<p>중요한 데이터를 GET 요청의 URL 파라미터로 전송하는 것은 데이터가 로그나 웹 브라우저의 기록에 남을 수 있기 때문에 안전하지 않다. 반면, POST, PUT, DELETE 같은 메서드는 HTTP Body를 통해 데이터를 전송하기 때문에, 이러한 정보 노출 위험을 줄일 수 있다.</p>
+<h2 id="rest_2">REST 아키텍처 스타일</h2>
+<h2 id="rest-api_1">REST API 설계 예시</h2>
 <p><br>
+<br>
 <br>
 <br>
 <br>
@@ -820,7 +1096,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../01/mysql-vs-postgresql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MySQL vs PostgreSQL 차이점">
+          <a href="../../03/binary-search/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Binary Search(이분탐색)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -830,27 +1106,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MySQL vs PostgreSQL 차이점
+                Binary Search(이분탐색)
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../http/" class="md-footer__link md-footer__link--next" aria-label="Next: HTTP 멱등성">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                HTTP 멱등성
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
