@@ -204,8 +204,21 @@ RESTful은 REST의 설계 규칙을 잘 지켜서 설계된 API를 RESTful한 AP
 
 
 ## REST API 설계 예시
+```java
+@PostMapping("/review")
+@ResponseBody
+public ResponseEntity<BasicResponse> createReview(ReviewRequestVo reviewRequestVo){
+    // 리뷰 등록 로직
+}
 
+@DeleteMapping("/review")
+@ResponseBody
+public ResponseEntity<BasicResponse> deleteReview(int lfReviewId){
 
+    int result = standardService.deleteReview(lfReviewId);
+    // 리뷰삭제 로직
+}
+```
 <br>
 <br>
 <br>
