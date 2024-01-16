@@ -20,7 +20,7 @@
     
     
       
-        <title>3 way handshake, 4 way handshake - hyehye_hye's blog</title>
+        <title>TCP/UDP와 3 -Way Handshake & 4 -Way Handshake - hyehye_hye's blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#3-way-handshake-4-way-handshake" class="md-skip">
+        <a href="#tcpudp-3-way-handshake-4-way-handshake" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3 way handshake, 4 way handshake
+              TCP/UDP와 3 -Way Handshake & 4 -Way Handshake
             
           </span>
         </div>
@@ -482,29 +482,86 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tcp" class="md-nav__link">
+  <a href="#tcp-udp" class="md-nav__link">
     <span class="md-ellipsis">
-      TCP 란
+      TCP와 UDP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP와 UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp-transmission-control-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 TCP (Transmission Control Protocol)
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#udp-user-datagram-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 UDP (User Datagram Protocol)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-udp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 TCP와 UDP의 차이점
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
+  <a href="#3-way-handshake-4-way-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      3-Way Handshake와 4-Way Handshake
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3-Way Handshake와 4-Way Handshake">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 플래그 정보
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#3-way-handshake" class="md-nav__link">
     <span class="md-ellipsis">
-      3-Way handshake
+      🍎 3-Way handshake
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#4-way-handshake" class="md-nav__link">
     <span class="md-ellipsis">
-      4-Way handshake
+      🍎 4-Way handshake
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -582,7 +639,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -602,32 +659,130 @@
         
 
 
-<h1 id="3-way-handshake-4-way-handshake">3 way handshake, 4 way handshake</h1>
+<h1 id="tcpudp-3-way-handshake-4-way-handshake">TCP/UDP와 3 -Way Handshake &amp; 4 -Way Handshake</h1>
+<blockquote>
+<p>TCP의 3-Way Handshake 와 4-Way Handshake에 대해 알아보기 전에 전송(Transport) 프로토콜인 TCP와 UDP에 대해 알아보자</p>
+</blockquote>
 <!-- more -->
 
-<h2 id="tcp">TCP 란</h2>
-<p>Transmission Control Protocol = 연결형 통신 프로토콜. (신뢰성 &gt; 효율성)</p>
-<p>handshaking 과정을 통해서 신뢰성을 보장한다.  </p>
-<p>UDP 에 비해 더 정확한 정보를 정확하지만, UDP에 비해 통신 속도가 느리다.  </p>
-<p>TCP에 의해 연결 확립, 재전송 제어, 윈도우 제어가 일어난다.  </p>
-<p>SMTP, HTTP, HTTPS, FPS 등 우리에게 친숙한 인터넷 서비스 대부분이 TCP/IP로 이뤄져 있다. TCP/IP 에서 IP는 데이터 순서, 손실에 고려하지 않는 반면, TCP는 느리지만 신뢰도가 높다.  </p>
+<h2 id="tcp-udp">TCP와 UDP</h2>
+<ul>
+<li>OSI 7계층 중 4계층이다.</li>
+<li>트랜스포트 계층의 패킷을 "세그먼트"라고 한다.</li>
+<li>UDP 에서는 "데이터그램"이라고 하기도 한다.</li>
+</ul>
 <hr />
-<h2 id="3-way-handshake">3-Way handshake</h2>
-<p>3-Way handshake는TCP/IP 프로토콜로 통신하기 전 정확한 정보 전송을 위해 상대방 컴퓨터과 세션을 연결/수립 하는 과정입니다. (=TCP 연결 초기화)
-클라이언트가 서버에게 접속을 요청하는 SYN신호을 보내면, 서버는 요청을 수락하는 ACK를 포함하여 SYN+ACK신호를 클라이언트에게 발송합니다. 그러면 클라이언트가 이것을 수신한 후 다시 ACK를 서버에게 발송하면 연결이 이루어지고, 이로써 데이터를 주고받을 수 있게 됩니다.</p>
+<h3 id="tcp-transmission-control-protocol">🍎 TCP (Transmission Control Protocol)</h3>
+<ul>
+<li>인터넷상에서 데이터를 메세지의 형태로 보내기 위해 IP와 함께 사용하는 프로토콜</li>
+<li>TCP는 애플리케이션에게 신뢰적이고 연결지향성 서비스 제공</li>
+<li>일반적으로 TCP와 IP는 함께 사용되며 IP는 배달을, TCP는 패킷의 추적 및 관리  </li>
+<li>TCP는 연결형 서비스로, 신뢰적인 전송을 보장하기에 hanshaking하고 데이터의 흐름제어와 혼잡제어를 수행<ul>
+<li>3-way handshaking과정을 통해 연결을 설정하고 4-way handshaking을 통해 해제</li>
+</ul>
+</li>
+<li>속도가 느림</li>
+</ul>
+<hr />
+<h3 id="udp-user-datagram-protocol">🍏 UDP (User Datagram Protocol)</h3>
+<ul>
+<li>데이터를 데이터그램 단위로 처리하는 프로토콜<ul>
+<li>데이터그램 : 독립적인 관계를 지니는 패킷</li>
+</ul>
+</li>
+<li>비연결형 프로토콜<ul>
+<li>할당되는 논리적인 경로가 없고 각각의 데이터(패킷)를 서로 다른 경로로 독립 처리하는 프로토콜</li>
+</ul>
+</li>
+<li>연결을 설정하고 해제하는 과정이 존재하지 않는다. 서로 다른 경로로 독립적으로 처리함에도 패킷에 순서를 부여하여 재조립하거나 흐름제어 및 혼잡제어를 수행하지 않는다.</li>
+<li>신뢰성이 낮다</li>
+<li>TCP보다 속도가 빠르다</li>
+</ul>
+<hr />
+<h3 id="tcp-udp_1">🌟 TCP와 UDP의 차이점</h3>
+<blockquote>
+<p>신뢰란? 데이터를 수신하는 입장에서 생각하기!   <br />
+-&gt; 전달 받은 데이터가 완벽하지 않아도 되는 경우(영상통화) → UDP 사용</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>TCP (Transmission Control Protocol)</th>
+<th>UDP (User Datagram Protocol)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>연결 지향적 프로토콜</td>
+<td>비연결 지향적 프로토콜</td>
+</tr>
+<tr>
+<td>높은 신뢰성 (데이터 패킷의 손실, 순서 바뀜, 중복 등을 감지하고 수정), 느린 속도</td>
+<td>빠른 전송, 낮은 신뢰성</td>
+</tr>
+<tr>
+<td>handshake 과정을 통한 연결</td>
+<td>Unicasting</td>
+</tr>
+<tr>
+<td>특정 아이피를 지정하여 데이터를 전송하는 유니캐스팅</td>
+<td>Broadcasting</td>
+</tr>
+<tr>
+<td>수신 여부 확인</td>
+<td>수신 여부 확인 x</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-way-handshake-4-way-handshake">3-Way Handshake와 4-Way Handshake</h2>
+<blockquote>
+<p>3-Way Handshake 는 TCP의 접속, 4-Way Handshake는 TCP의 접속 해제 과정이다.</p>
+</blockquote>
+<h3 id="_1">🍏 플래그 정보</h3>
+<ul>
+<li>SYN(Synchronize Sequence Number) / 000010<ul>
+<li>연결 설정. Sequence Number를 랜덤으로 설정하여 세션을 연결하는 데 사용하며, 초기에 Sequence Number를 전송한다.</li>
+</ul>
+</li>
+<li>ACK(Acknowledgement) / 010000<ul>
+<li>응답 확인. 패킷을 받았다는 것을 의미한다.</li>
+</ul>
+</li>
+<li>FIN(Finish) / 000001<ul>
+<li>연결 해제. 세션 연결을 종료시킬 때 사용되며, 더 이상 전송할 데이터가 없음을 의미한다.</li>
+</ul>
+</li>
+</ul>
+<p><br>
+<br></p>
+<h3 id="3-way-handshake">🍎 3-Way handshake</h3>
+<p>3-Way handshake는TCP/IP 프로토콜로 통신하기 전 정확한 정보 전송을 위해 상대방 컴퓨터과 세션을 연결/수립 하는 과정 (=TCP 연결 초기화)</p>
+<p><br></p>
+<blockquote>
+<p>3-way handshake의 작동 방식</p>
+</blockquote>
+<ol>
+<li>클라이언트가 서버에게 접속을 요청하는 SYN신호을 보낸다.</li>
+<li>서버는 요청을 수락하는 ACK를 포함하여 SYN+ACK신호를 클라이언트에게 발송한다. </li>
+<li>클라이언트가 이것을 수신한 후 다시 ACK를 서버에게 발송하면 연결이 이루어지고, 이로써 데이터를 주고받을 수 있게 된다.</li>
+</ol>
 <pre class="mermaid"><code>sequenceDiagram
     participant Client
     participant Server
 
-    Client-&gt;&gt;Server: SYN: 연결해줘
+    Client-&gt;&gt;Server: 1. SYN: 연결해줘
     note right of Server: 서버는 클라이언트의 &lt;br/&gt; 연결 요청을 받음
-    Server-&gt;&gt;Client: SYN + ACK
+    Server-&gt;&gt;Client: 2. SYN + ACK
     note left of Client: 서버: 요청 받았어(ACK) &lt;br/&gt; 나도 연결해줘(SYN)
-    Client-&gt;&gt;Server: ACK
+    Client-&gt;&gt;Server: 3. ACK
     note right of Server: 클라이언트: 요청 확인했어</code></pre>
 <hr />
-<h2 id="4-way-handshake">4-Way handshake</h2>
-<p>3-Way handshake를 통해 Connection Setup을 했다면, TCP연결을 종료하는 Connection Termination 과정은 4-Way handshake를 통해 이루어집니다.</p>
+<h3 id="4-way-handshake">🍎 4-Way handshake</h3>
+<p>3-Way handshake를 통해 Connection Setup을 했다면, TCP연결을 종료하는 Connection Termination 과정은 4-Way handshake를 통해 이루어집니</p>
+<p><br></p>
+<blockquote>
+<p>4-way handshake의 작동 방식</p>
+</blockquote>
 <ol>
 <li>Client 에서 Process 종료할 떄 FIN 신호를 보낸다.</li>
 <li>Server는 FIN 신호를 받았다는 응답에 대한 ACK를 Client로 보냅니다. 단, 서버에서 클라이언트로 데이터 전송이 완료가 아직 안 된 상태일 수 있습니다.</li>
@@ -638,19 +793,17 @@
     participant 클라이언트
     participant 서버
 
-    클라이언트-&gt;&gt;서버: FIN: 내가 보낼 건 다 보냈어, 연결 끊자
-    서버-&gt;&gt;클라이언트: ACK: 알겠어, 남은 패킷 보내줄게
+    클라이언트-&gt;&gt;서버: 1. FIN: 내가 보낼 건 다 보냈어, 연결 끊자
+    서버-&gt;&gt;클라이언트: 2. ACK: 알겠어, 남은 패킷 보내줄게
     Note over 서버: 서버가 남은 데이터를 전송 완료
-    서버-&gt;&gt;클라이언트: FIN: 나도 보낼 거 다 보냈어, 이제 끝내자
-    클라이언트-&gt;&gt;서버: ACK: 알겠어
+    서버-&gt;&gt;클라이언트: 3. FIN: 나도 보낼 거 다 보냈어, 이제 끝내자
+    클라이언트-&gt;&gt;서버: 4. ACK: 알겠어
     Note over 클라이언트,서버: TCP 연결 종료 완료
 </code></pre>
-<blockquote>
-<p>연결을 시작하려고 할 때는 = 아무런 데이터 전달이 없는 상태<br />
-SYN -&gt; ACK/SYN -&gt; ACK<br />
-연결을 끊으려고 할 때는 = 데이터가 전송중인 상태일 수 있다<br />
-FIN -&gt; ACK -&gt; 하지만 네이버에서 혜원이로 아직 데이터가 전송중이야 -&gt; 전송이 끝나면 -&gt; FIN -&gt; ACK  </p>
-</blockquote>
+<p><br>
+<br>
+<br>
+<br></p>
 
 
 

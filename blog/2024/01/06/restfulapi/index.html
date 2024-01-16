@@ -12,7 +12,7 @@
         <link rel="prev" href="../../03/binary-search/">
       
       
-        <link rel="next" href="../3-way-handshake-4-way-handshake/">
+        <link rel="next" href="../tcpudp-3-way-handshake-4-way-handshake/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -484,7 +484,25 @@
         <li class="md-nav__item">
   <a href="#api" class="md-nav__link">
     <span class="md-ellipsis">
-      API란?
+      🍎 API란?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 API의 역할
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 API 종류
     </span>
   </a>
   
@@ -493,11 +511,11 @@
         <li class="md-nav__item">
   <a href="#rest" class="md-nav__link">
     <span class="md-ellipsis">
-      REST란?(구성 요소)
+      🍎 REST란?(구성 요소)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="REST란?(구성 요소)">
+    <nav class="md-nav" aria-label="🍎 REST란?(구성 요소)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -544,11 +562,11 @@
         <li class="md-nav__item">
   <a href="#rest-6" class="md-nav__link">
     <span class="md-ellipsis">
-      Rest의 기본 원칙 6가지
+      🍎 Rest의 기본 원칙 6가지
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Rest의 기본 원칙 6가지">
+    <nav class="md-nav" aria-label="🍎 Rest의 기본 원칙 6가지">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -613,11 +631,11 @@
         <li class="md-nav__item">
   <a href="#restful-api" class="md-nav__link">
     <span class="md-ellipsis">
-      RESTful API란?
+      🍎 RESTful API란?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="RESTful API란?">
+    <nav class="md-nav" aria-label="🍎 RESTful API란?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -637,11 +655,11 @@
         <li class="md-nav__item">
   <a href="#rest_1" class="md-nav__link">
     <span class="md-ellipsis">
-      REST의 장단점
+      🍎 REST의 장단점
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="REST의 장단점">
+    <nav class="md-nav" aria-label="🍎 REST의 장단점">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -674,7 +692,7 @@
           <li class="md-nav__item">
   <a href="#uri-http-method" class="md-nav__link">
     <span class="md-ellipsis">
-      📌 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!
+      🚀 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!
     </span>
   </a>
   
@@ -682,15 +700,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rest_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      REST 아키텍처 스타일
-    </span>
-  </a>
   
 </li>
       
@@ -800,49 +809,62 @@
 <h1 id="restfulapi">RESTfulAPI</h1>
 <!-- more -->
 
-<h2 id="api">API란?</h2>
+<h2 id="api">🍎 API란?</h2>
 <blockquote>
-<p>응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다.
-프로그램들이 서로 상호작용하는 것을 도와주는 매개체 = 점원</p>
-<blockquote>
-<p>손님(프로그램)이 주문할 수 있게 메뉴(명령 목록)를 정리하고, 주문(명령)을 받으면 요리사(응용프로그램)와 상호작용하여 요청된 메뉴(명령에 대한 값)를 전달하는 과정</p>
+<p>응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스</p>
+<p>프로그램들이 서로 상호작용하는 것을 도와주는 매개체 = 점원
+손님(프로그램)이 주문할 수 있게 메뉴(명령 목록)를 정리하고, 주문(명령)을 받으면 요리사(응용프로그램)와 상호작용하여 요청된 메뉴(명령에 대한 값)를 전달하는 과정</p>
 </blockquote>
-</blockquote>
-<p>API의 역할은? 
-1. API는 서버와 데이터베이스에 대한 출입구 역할을 한다.
-: 데이터베이스에는 소중한 정보들이 저장되는데요. 모든 사람들이 이 데이터베이스에 접근할 수 있으면 안 되겠지요. API는 이를 방지하기 위해 여러분이 가진 서버와 데이터베이스에 대한 출입구 역할을 하며, 허용된 사람들에게만 접근성을 부여해줍니다.</p>
+<h2 id="api_1">🍎 API의 역할</h2>
 <ol>
 <li>
-<p>API는 애플리케이션과 기기가 원활하게 통신할 수 있도록 한다.
-: 여기서 애플리케이션이란 우리가 흔히 알고 있는 스마트폰 어플이나 프로그램을 말합니다. API는 애플리케이션과 기기가 데이터를 원활히 주고받을 수 있도록 돕는 역할을 합니다.</p>
+<p>API는 서버와 데이터베이스에 대한 출입구 역할을 하며, 허용된 사람들에게만 접근성을 부여한다.</p>
 </li>
 <li>
-<p>API는 모든 접속을 표준화한다.
-API는 모든 접속을 표준화하기 때문에 기계/ 운영체제 등과 상관없이 누구나 동일한 액세스를 얻을 수 있습니다. 쉽게 말해, API는 범용 플러그처럼 작동한다고 볼 수 있습니다.</p>
+<p>API는 애플리케이션과 기기가 원활하게 통신(데이터를 주고 받음)할 수 있도록 한다.</p>
+<ul>
+<li>애플리케이션: 우리가 흔히 알고 있는 스마트폰 어플이나 프로그램</li>
+</ul>
+</li>
+<li>
+<p>API는 모든 접속을 표준화한다.</p>
+<ul>
+<li>API는 모든 접속을 표준화하기 때문에 기계/운영체제 등과 상관없이 누구나 동일한 액세스 한다. </li>
+</ul>
 </li>
 </ol>
-<p>1) private API
-- 내부 API
-- 회사 개발자가 자체 제품과 서비스를 개선하기 위해 내부적으로 발행합니다. 
-- 제 3자에게 노출되지 않습니다.</p>
-<p>2) public API
-- 개방형 API로, 모두에게 공개됩니다. 누구나 제한 없이 API를 사용할 수 있다.
-- 접속하는 대상에 대한 제약이 없는 경우를 OpenAPI 라고 한다.
-    - 영화진흥위원회 API, 공공데이터, Kakao Developers(카카오 로그인)</p>
-<p>3) partner API
-- 기업이 데이터 공유에 동의하는 특정인들만 사용할 수 있다. 
-- 비즈니스 관계에서 사용되는 편이며, 종종 파트너 회사 간에 소프트웨어를 통합하기 위해 사용된다.</p>
+<h2 id="api_2">🍎 API 종류</h2>
+<p>1) private API  </p>
+<ul>
+<li>내부 API  </li>
+<li>회사 개발자가 자체 제품과 서비스를 개선하기 위해 내부적으로 발행  </li>
+<li>제 3자에게 노출되지 않는다.</li>
+</ul>
+<p>2) public API  </p>
+<ul>
+<li>개방형 API, 누구나 제한 없이 API를 사용할 수 있다.</li>
+<li>OpenAPI: 접속하는 대상에 대한 제약이 없는 경우<ul>
+<li>영화진흥위원회 API, 공공데이터, Kakao Developers(카카오 로그인)</li>
+</ul>
+</li>
+</ul>
+<p>3) partner API  </p>
+<ul>
+<li>기업이 데이터 공유에 동의하는 특정인들만 사용할 수 있다. </li>
+<li>비즈니스 관계에서 사용되는 편이며, 종종 파트너 회사 간에 소프트웨어를 통합하기 위해 사용됨</li>
+</ul>
 <hr />
-<h2 id="rest">REST란?(구성 요소)</h2>
+<h2 id="rest">🍎 REST란?(구성 요소)</h2>
 <h3 id="1-resource">1. 자원(RESOURCE)</h3>
 <ul>
-<li>REST는 자원에 접근할 때 URI(Uniform Resource Identifier)를 이용</li>
-<li>URI는 자원의 위치를 나타내는 식별자</li>
 <li>DB 안에 있는 데이터<ul>
 <li>ex) 유저 , 주문 등</li>
 </ul>
 </li>
-<li>이미지, 문서 </li>
+<li>REST는 자원에 접근할 때 URI(Uniform Resource Identifier)를 이용<ul>
+<li>URI는 자원의 위치를 나타내는 식별자</li>
+</ul>
+</li>
 <li>리소스명은 동사보다는 명사를 사용해야 한다. 행위에 대한 표현X</li>
 <li>예시1)URI: /blog/posts/678<ul>
 <li>블로그 포스트에 대한 자원</li>
@@ -865,17 +887,29 @@ API는 모든 접속을 표준화하기 때문에 기계/ 운영체제 등과 �
 <h3 id="2-verb-http-method">2. 행위(Verb) - HTTP Method</h3>
 <ul>
 <li>HTTP 프로토콜의 Method를 사용하여 원하는 자원에 대한 조작 요청</li>
-<li>POST : 생성 [Create]  - 예&gt; HTTP POST,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 생성한다.   </li>
-<li>GET : 조회 [Select, Read]  - 예&gt; HTTP GET,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 모두 조회한다.   </li>
-<li>PUT : 업데이트 [Update]  - 예&gt; HTTP PUT,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목에 정보를 업데이트 한다.    </li>
-<li>DELETE : 삭제 [Delete] - 예&gt; HTTP DELETE,  <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목들을 삭제 한다.
+<li>POST : 생성 [Create]  <ul>
+<li>예) <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 생성한다.   </li>
+</ul>
+</li>
+<li>GET : 조회 [Select, Read] <ul>
+<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 모두 조회한다.   </li>
+</ul>
+</li>
+<li>PUT : 업데이트 [Update]  <ul>
+<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목에 정보를 업데이트 한다.    </li>
+</ul>
+</li>
+<li>DELETE : 삭제 [Delete] <ul>
+<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목들을 삭제 한다.</li>
+</ul>
+</li>
+</ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># bad
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GET /members/delete/1
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a># good
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>DELETE /members/1
-</code></pre></div></li>
-</ul>
+</code></pre></div>
 <h3 id="3-representations">3. 표현(Representations)</h3>
 <ul>
 <li>Client와 Server가 데이터를 주고받는 형태<ul>
@@ -885,34 +919,45 @@ API는 모든 접속을 표준화하기 때문에 기계/ 운영체제 등과 �
 </ul>
 <h3 id="_1">🚀 정리</h3>
 <blockquote>
-<p>REST의 구체적인 개념은 클라이언트와 서버사이에서, HTTP URL을 통해 자원을 명시하고,<br />
+<p>REST은 클라이언트와 서버 사이에서, HTTP URL을 통해 자원을 명시하고,<br />
 HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작을 요청하고,  <br />
 이에 대한 응답을 받는 것을 의미한다.</p>
 </blockquote>
 <hr />
-<h2 id="rest-6">Rest의 기본 원칙 6가지</h2>
+<h2 id="rest-6">🍎 Rest의 기본 원칙 6가지</h2>
 <h3 id="1-">1. 클라이언트-서버 모델</h3>
 <ul>
 <li>클라이언트와 서버의 역할을 분리하여 유지보수가 용이함<ul>
 <li>REST 서버는 API 제공, 클라이언트는 사용자 인증이나 컨텍스트(세션, 로그인 정보)등을 직접 관리하는 구조</li>
 </ul>
 </li>
-<li>서버의 기능 개선이 클라이언트에 영향을 미치지 않고, 클라이언트 인터페이스 개선이 서버에 영향을 주지 않는다. </li>
-<li>서로간 의존성 줄어든다.</li>
+<li>서버의 기능 개선이 클라이언트에 영향을 미치지 않고, 클라이언트 인터페이스 개선이 서버에 영향을 주지 않는다. 
+    -&gt; 의존성 감소</li>
 </ul>
 <h3 id="2-stateless">2. 무상태(Stateless)</h3>
 <ul>
-<li>서버가 클라이언트의 상태(세션정보 등)를 저장하지 않는다.</li>
-<li>필요에 따라 외부DB에 저장한다.</li>
+<li>서버가 클라이언트의 상태(세션정보 등)를 저장하지 않는다. 필요에 따라 외부DB에 저장한다.</li>
 <li>서버의 처리가 단순화 되어, 확장성이 증가한다.</li>
 <li>서버는 단순히 클라이언트의 요청에 대한 응답을 보내는 역할만하며, 세션관리는 클라이언트에게 책임이 있다.</li>
-<li>모든 클라이언트 요청은 서버가 해당 요청을 이해하고 처리하는 데 필요한 모든 정보를 포함해야 한다.
-stateful의 경우 세션 정보가 scaled out된 server#2에 저장되어 있지 않다. 
-<img alt="stateful" src="../../../../web-study/woong1/stateful.png" />
-stateless의 경우 서버는 클라이언트 세션정보를 관리 하지 않으므로 고려하지 않아도 된다.
-<img alt="stateless" src="../../../../web-study/woong1/stateless.png" /></li>
+<li>모든 클라이언트 요청에는 서버가 해당 요청을 이해하고 처리하는 데 필요한 모든 정보를 포함해야 한다.</li>
 </ul>
-<p>❓ 그럼 로그인 정보를 저장하는 방법인 쿠키,세션에서 세션 정보를 Redis와 같은데 따로 저장하면 stateless인가..?</p>
+<blockquote>
+<p>stateful의 경우 세션 정보가 scaled out된 server#2에 저장되어 있지 않다. </p>
+</blockquote>
+<ul>
+<li>서버가 클라이언트의 상태 정보(예: 사용자 세션 데이터)를 저장</li>
+<li>상태 유지 환경에서 클라이언트의 세션 정보는 특정 서버에만 저장되며, 클라이언트가 다른 서버(예: server#1에서 server#2로)로 요청을 보내면, 새 서버는 사용자의 세션 정보를 갖고 있지 않아 문제가 발생할 수 있다.</li>
+</ul>
+<p><img alt="stateful" src="../../../../web-study/woong1/stateful.png" /></p>
+<blockquote>
+<p>stateless의 경우 서버는 클라이언트 세션정보를 관리 하지 않으므로 고려하지 않아도 된다.</p>
+</blockquote>
+<ul>
+<li>서버가 클라이언트의 상태 정보를 저장하지 않는다.</li>
+<li>서버가 클라이언트의 세션 정보를 저장하거나 관리하지 않으므로, 클라이언트가 어떤 서버에 요청을 보내든 상관없다.</li>
+<li>각 요청은 필요한 모든 정보를 포함하고 있어, 서버 간의 세션 정보 공유에 대한 걱정이 없다.</li>
+</ul>
+<p><img alt="stateless" src="../../../../web-study/woong1/stateless.png" /></p>
 <h3 id="3-cacheable">3. 캐시 가능(Cacheable)</h3>
 <ul>
 <li>REST는 웹 표준인 HTTP를 그대로 사용하기 때문에, 웹에서 사용하는 기존 인프라를 그대로 사용할 수 있다. 따라서 HTTP가 가진 캐싱 기능을 적용할 수 있다.</li>
@@ -935,7 +980,7 @@ stateless의 경우 서버는 클라이언트 세션정보를 관리 하지 않�
 <li>REST API 메시지만 보고도 이를 쉽게 이해 할 수 있는 자체 표현 구조로 되어 있다.</li>
 </ul>
 <hr />
-<h2 id="restful-api">RESTful API란?</h2>
+<h2 id="restful-api">🍎 RESTful API란?</h2>
 <ul>
 <li>REST의 특징을 기반으로 서비스 API를 구현한 것</li>
 <li>URI 형식으로 HTTP 메서드(GET, POST, PUT, DELETE)를 요청해 자원을 조회, 생성, 수정, 삭제할 수 있는 것</li>
@@ -964,7 +1009,7 @@ stateless의 경우 서버는 클라이언트 세션정보를 관리 하지 않�
 <li>밑줄( _ )을 사용하지 않고, 하이픈( - )을 사용한다.</li>
 <li>URI는 소문자로만 구성한다.</li>
 <li>파일확장자는 URI에 포함하지 않는다.<br />
-Ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.github.io/restapi/7/photo.jpg</a> (X)</li>
+    ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.github.io/restapi/7/photo.jpg</a> (X)</li>
 <li>HTTP 응답 상태 코드 사용</li>
 <li>
 <p>클라이언트는 해당 요청에 대한 실패, 처리완료 또는 잘못된 요청 등에 대한 피드백을 받아야 한다.</p>
@@ -1012,7 +1057,7 @@ Ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.gi
 </table>
 </li>
 </ol>
-<h2 id="rest_1">REST의 장단점</h2>
+<h2 id="rest_1">🍎 REST의 장단점</h2>
 <h3 id="_2">장점</h3>
 <ul>
 <li>확장성 : 서버와 클라이언트 사이의 인터페이스가 명확하여 서로간의 의존성이 낮음</li>
@@ -1055,9 +1100,8 @@ Ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.gi
 </tr>
 </tbody>
 </table>
-<h3 id="uri-http-method">📌 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!</h3>
+<h3 id="uri-http-method">🚀 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!</h3>
 <hr />
-<h2 id="rest_2">REST 아키텍처 스타일</h2>
 <h2 id="rest-api_1">REST API 설계 예시</h2>
 <p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/review&quot;</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nd">@ResponseBody</span>
@@ -1129,13 +1173,13 @@ Ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.gi
         
         
           
-          <a href="../3-way-handshake-4-way-handshake/" class="md-footer__link md-footer__link--next" aria-label="Next: 3 way handshake, 4 way handshake">
+          <a href="../tcpudp-3-way-handshake-4-way-handshake/" class="md-footer__link md-footer__link--next" aria-label="Next: TCP/UDP와 3 -Way Handshake &amp; 4 -Way Handshake">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                3 way handshake, 4 way handshake
+                TCP/UDP와 3 -Way Handshake & 4 -Way Handshake
               </div>
             </div>
             <div class="md-footer__button md-icon">
