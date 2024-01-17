@@ -22,7 +22,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/cherryJubilee
 
-copyright: Copyright &copy; 2023 Hyewon Park
+copyright: Copyright &copy; 2024 Hyewon Park
 
 plugins:
   - blog:
