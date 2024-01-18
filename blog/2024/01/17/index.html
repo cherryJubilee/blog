@@ -14,15 +14,15 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
     
     
       
-        <title>Index란? - hyehye_hye's blog</title>
+        <title>Index - hyehye_hye's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.78cf6014.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index란?
+              Index
             
           </span>
         </div>
@@ -480,65 +480,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#column" class="md-nav__link">
-    인덱스를 어떤 column에 사용하는 것이 좋을까?
+  <a href="#index_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📎 Index란?
+    </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#b-tree" class="md-nav__link">
-    B-Tree 인덱스
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hash" class="md-nav__link">
-    Hash 인덱스
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#btree" class="md-nav__link">
-    B+Tree 인덱스
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    좋은 인덱스 설계 조건
-  </a>
-  
-    <nav class="md-nav" aria-label="좋은 인덱스 설계 조건">
+    <nav class="md-nav" aria-label="📎 Index란?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-cardinality" class="md-nav__link">
-    1. Cardinality(기수성)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-selectivity" class="md-nav__link">
-    2. 선택도(Selectivity)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-size" class="md-nav__link">
-    3. 크기(Size)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-access-patterns" class="md-nav__link">
-    4. 접근 패턴(Access Patterns)
+  <a href="#sql" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 sql문을 효율적으로 짜고, 인덱스 생성은 마지막 수단으로 사용하자!
+    </span>
   </a>
   
 </li>
@@ -549,37 +504,131 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#null" class="md-nav__link">
-    인덱스 설계시 Null값 고려
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📎 인덱스 자료구조
+    </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-null" class="md-nav__link">
-    - 인덱스 설계시 Null 값을 고려하는 것은 중요하다.
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    클러스터 인덱스 논클러스터인덱스 차이
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#index-server" class="md-nav__link">
-    인덱스(Index Server) 샤딩 방식
-  </a>
-  
-    <nav class="md-nav" aria-label="인덱스(Index Server) 샤딩 방식">
+    <nav class="md-nav" aria-label="📎 인덱스 자료구조">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#1-hash-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Hash Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-b-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. B-Tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-btree" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. B+Tree
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 결론
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-tree-btree" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 B-Tree &amp; B+Tree 정리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    % 계산법
+    <span class="md-ellipsis">
+      📎 좋은 인덱스 설계 조건
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📎 좋은 인덱스 설계 조건">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cardinality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Cardinality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-selectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 선택도(Selectivity)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 활용도
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 중복도
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharding" class="md-nav__link">
+    <span class="md-ellipsis">
+      📎 인덱스 샤딩(Sharding) 방식
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📎 인덱스 샤딩(Sharding) 방식">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      % 계산법
+    </span>
   </a>
   
 </li>
@@ -663,7 +712,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -683,101 +732,243 @@
         
 
 
-<h1 id="index">Index란?</h1>
+<h1 id="index">Index</h1>
 <blockquote>
 <p>B-Tree / Hash Index / B+Tree 개념 알아보자</p>
 </blockquote>
 <!-- more -->
+
+<h2 id="index_1">📎 Index란?</h2>
 <ul>
-<li>RDBMS에서 검색 속도를 높이기 위한 기술</li>
-<li>인덱스가 검색 범위를 제한시켜주기 때문에 빠르게 데이터를 검색할 수 있다.</li>
+<li>데이터베이스 테이블에 저장된 데이터의 검색 속도를 높이기 위한 자료구조</li>
+<li>특정 컬럼에 인덱스를 생성하면, 해당 컬럼의 데이터들을 정렬하여 별도의 메모리 공간에 데이터의 물리적 주소와 함께 저장된다.</li>
 </ul>
-<h2 id="column">인덱스를 어떤 column에 사용하는 것이 좋을까?</h2>
-<ul>
-<li>자주 조회</li>
-<li>수정 빈도 낮은</li>
-<li>카디널리티 높은 (데이터가 중복되지 않는 정도가 높은, 예를들어 주민번호는 카디널리티 높음)</li>
-<li>그냥 자주 조회되고, 수정 잘 안되고, 중복이 적은 컬럼에 사용하는게 좋다.</li>
-<li>데이터 양 자체가 적을 때보단 양이 많을 때 사용하는 것이 좋다.</li>
-</ul>
-<h2 id="b-tree">B-Tree 인덱스</h2>
-<ul>
-<li>자식 2개만을 가지는 이진트리에서 확장된 것으로 N개의 자식을 가진다.<ul>
-<li>노드의 개수를 늘리고 트리의 전체 높이를 줄여서 빠른 탐색 속도</li>
+<blockquote>
+<p>📚 예시  </p>
+</blockquote>
+<p>데이터 -&gt; 책의 내용<br />
+인덱스 -&gt; 책의 목차<br />
+물리적주소 -&gt; 책의 페이지 번호     </p>
+<p><br></p>
+<blockquote>
+<p>장점</p>
+</blockquote>
+<ol>
+<li>검색 대상 레코드의 범위를 줄일 수 있다 -&gt; 검색 속도 향상  </li>
+<li>중복데이터를 방지하거나 특정 컬러의 유일성을 보장할 수 있다.</li>
+<li>데이터가 정렬 되어 있다.<ul>
+<li>Where절: 특정 조건에 맞는 데이터를 찾기 위해 데이터를 처음부터 끝까지 다 비교지 않고, 인덱스를 통해 데이터가 정렬되어 있으면 빠르게 찾아낼 수 있다.</li>
+<li>Order by: 인덱스를 사용하면 Order by에 의한 Sort과정을 피할 수 있다.</li>
+<li>MIN, MAX: 인덱스로 정렬된 데이터에서 MIN, MAX를 효율적으로 추출할 수 있다.</li>
 </ul>
 </li>
-<li>메모리에 담기 어려운 큰 크기의 데이터를 다루기 위해 사용된다.<ul>
-<li>파일 시스템 혹은 데이터베이스</li>
+</ol>
+<blockquote>
+<p>단점</p>
+</blockquote>
+<ol>
+<li>정렬된 상태를 계속 유지시켜야 한다는 것<ul>
+<li>CREATE(삽입), DELETE(삭제), UPDATE(수정) 명령어가 수행된다면, 계속 정렬을 해줘야 하기 때문에 하므로 성능 저하가 발생할 수 있다.  </li>
 </ul>
 </li>
-<li>인덱스는 보통 B-Tree 자료구조로 이루어져 있다.</li>
-<li>인덱스 키를 바탕으로 항상 정렬된 상태를 유지⭐️<ul>
-<li>조회 속도는 빠르지만, 삽입/수정/삭제 느리다.</li>
+<li>인덱스를 잘못 사용할 경우 오히려 성능이 저하되는 역효과가 발생할 수 있다.<ul>
+<li>100만개의 데이터가 있는 테이블이라면 인덱스 스캔이 유리하지만, 1개의 데이터 들어 있는 테이블의 경우 풀스캔이 효율적이다.</li>
 </ul>
 </li>
-<li>최상위에 단 하나의 노드 만이 존재하는데, 이를 루트 노드(Root Node)라고 한다. 그리고 중간 노드를 브랜치 노드(Branch Node), 최하위 노드를 리프 노드(Leaf Node)라고 한다.
-  <img alt="" src="../../../db-study/db_images/b%2Btree.png" /></li>
+<li>인덱스를 관리하기 위해서는 DB의 약 10%에 해당하는 저장공간이 추가로 필요하다.</li>
+</ol>
+<h3 id="sql">🚀 sql문을 효율적으로 짜고, 인덱스 생성은 마지막 수단으로 사용하자!</h3>
+<p><br></p>
+<hr />
+<h2 id="_1">📎 인덱스 자료구조</h2>
+<h3 id="1-hash-table">1. Hash Table</h3>
+<ul>
+<li>컬럼의 값, 물리적 주소를 (Key, Value) 한 쌍으로 데이터를 저장하는 자료구조</li>
+<li>정렬되어 있지 않다. </li>
+<li>key값을 이용해 고유한 index를 생성하여, 그 index에 저장된 값을 꺼내오는 구조</li>
+<li>빠른 데이터 검색 가능
+    <img alt="Hash" src="../../../db-study/db_images/hash.png" /></li>
+</ul>
+<blockquote>
+<p>해시테이블이 실제로 잘 사용되지 않는 이유?</p>
+</blockquote>
+<ul>
+<li>등호 연산(=)에 최적화되어 있기 때문이다. <br />
+ db에서는 부등호(&lt;, &gt;)연산이 자주 사용되는데, 해시 테이블내의 데이터들은 정렬되어 있지 않기 때문에 특정 기준보다 크거나 작은 값을 빠른시간 내에 찾을 수 없다.</li>
+</ul>
+<hr />
+<blockquote>
+<p>노드 구분하기 </p>
+</blockquote>
+<ul>
+<li>루트 노드(Root Node) : 최상단에 위치한 노드 </li>
+<li>브랜치 노드(Branch Node) : 루트, 리프 노드 제외 </li>
+<li>리프 노드(Leaf Node) : 자식이 없는 최하위 노드</li>
+</ul>
+<p><img alt="" src="../../../db-study/db_images/b%2Btree.png" />  </p>
+<h3 id="2-b-tree">2. B-Tree</h3>
+<ul>
+<li>이진 트리와는 다르게 하나의 노드에 많은 정보를 가지거나, 두 개 이상의 자식을 가질 수도 있다.</li>
+<li>인덱스 키를 바탕으로 항상 정렬된 상태를 유지 ⭐️</li>
+<li>검색(조회)속도 빠름</li>
+<li>삽입/수정/삭제 느림</li>
 <li>균형트리이다<ul>
+<li>노드에 데이터가 너무 많아지면 자동으로 분할(split)되며, 반대로 데이터가 적어지면 병합(merge) 됨.</li>
 <li>루트로부터 리프까지의 거리가 일정한 트리 구조</li>
-<li>성능 안정화</li>
 <li>처음에는 균형 트리이지만 테이블 갱신(INSERT, UPDATE, DELETE)을 반복하다 보면 균형이 깨지고, 성능 악화됨</li>
 </ul>
 </li>
 </ul>
-<h2 id="hash">Hash 인덱스</h2>
+<p><img alt="b-tree" src="../../../db-study/db_images/b-tree.png" /></p>
+<h3 id="3-btree">3. B+Tree</h3>
 <ul>
-<li>Key-Value 쌍으로 데이터를 저장하는 자료구조<ul>
-<li>데이터의 Key를 알고 있으면, 데이터에 O(1)의 시간복잡도로 접근 가능</li>
+<li>B-Tree의 단점을 개선한 자료구조이다</li>
+<li>모든 리프노드가 LinkedList로 연결되어 있고, 순차적으로 저장되어 있다.⭐️</li>
+<li>실제 데이터는 리프노드에만 저장된다.⭐️<ul>
+<li>Leaf Node만 인덱스(Key)와 함께 데이터(Value)를 가지고 있어 풀 스캔시에도 모든 데이터를 한 번 순회하는 B-Tree 보다 유리하다.</li>
 </ul>
 </li>
-<li>정렬할 필요가 없어서 삽입/삭제가 빠르다.</li>
-<li>해싱된 데이터 값에 따라 저장될 버킷 위치를 저장하기 떄문에 빠른 속도록 검색 영역을 제한할 수 있다. 동등비교(=)에서 효과적이다.</li>
 </ul>
+<p><img alt="b+tree" src="../../../db-study/db_images/b%2Btree2.png" /></p>
 <blockquote>
-<p>DBMS들은 Hash 테이블을 사용하지 않는 이유?</p>
+<p>B+Tree 장점  </p>
 </blockquote>
 <ul>
-<li>부등호 연산에 부적합 </li>
-<li>정렬이 되어 있지 않다.<ul>
-<li>'Key가 500보다 작은 데이터'를 찾기 위해서는 하기 위해서는 모든 데이터에 접근해야한다.</li>
+<li>leaf node에만 데이터 저장하므로 메모리 최적화  </li>
+<li>링크드 리스트로 연결되어 있기 full scan 시 리프 노드들만 순차 탐색하면 되기 때문에 탐색에 유리하다.</li>
 </ul>
-</li>
-</ul>
-<h2 id="btree">B+Tree 인덱스</h2>
+<blockquote>
+<p>B+Tree 단점  </p>
+</blockquote>
+<p>반드시 특정 key에 접근하기 위해서 leaf node까지 가야하고, 브랜치 노드에서 키를 올바르게 찾아가기 위해 중복된 키가 존재할 수도 있다.</p>
+<h3 id="_2">🚀 결론</h3>
+<p>db에서 부등호를 이용한 순차 검색 연산이 자주 발생하기 때문에 B+Tree를 주로 사용한다!  </p>
+<h3 id="b-tree-btree">💡 B-Tree &amp; B+Tree 정리</h3>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>B-Tree</th>
+<th>B+Tree</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 저장</td>
+<td>모든 노드에서 데이터 저장 가능</td>
+<td>리프노드에만 데이터 저장 가능</td>
+</tr>
+<tr>
+<td>트리의 높이</td>
+<td>높음 (한 노드 당 Key를 적게 담을 수 있음)</td>
+<td>낮음 (한 노드 당 Key를 많이 담을 수 있음)</td>
+</tr>
+<tr>
+<td>풀 스캔시 <br>검색 속도</td>
+<td>모든 노드 탐색, 느림</td>
+<td>리프 노드에서 선형 탐색, 빠르고 정확</td>
+</tr>
+<tr>
+<td>삭제</td>
+<td>브랜치 노드의 삭제는 복잡하고 트리 변형이 많다</td>
+<td>어떠한 노드든 리프에 있기 때문에 삭제가 쉽다</td>
+</tr>
+<tr>
+<td>키 중복</td>
+<td>없음</td>
+<td>있음 (리프 노드에 모든 데이터가 있기 때문에)</td>
+</tr>
+<tr>
+<td>검색</td>
+<td>자주 access 되는 노드를 루트 노드에 가까이 배치하여 루트 노드에서 가까울 경우, <br> 브랜치 노드에도 데이터가 존재하기 때문에 빠름</td>
+<td>리프 노드까지 가야 데이터 존재</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">📎 좋은 인덱스 설계 조건</h2>
+<table>
+<thead>
+<tr>
+<th>기준</th>
+<th>정도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>카디널리티 (Cardinality)</td>
+<td>높을 수록 적합</td>
+</tr>
+<tr>
+<td>선택도 (Selectivity)</td>
+<td>낮을 수록 적합 (5~10% 적정)</td>
+</tr>
+<tr>
+<td>활용도</td>
+<td>높을 수록 적합</td>
+</tr>
+<tr>
+<td>중복도</td>
+<td>없을 수록 적합</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-cardinality">1. Cardinality</h3>
 <ul>
-<li>B-tree의 확장된 개념이다.</li>
-<li>모든 key, data가 리프에 모여있다. (리프까지 가야만 데이터 탐색 가능)</li>
-<li>모든 리프노드가 연결리스트 형태를 가진다.</li>
-</ul>
-<h2 id="_1">좋은 인덱스 설계 조건</h2>
-<h3 id="1-cardinality">1. Cardinality(기수성)</h3>
-<ul>
-<li>Cardinality 높으면 중복도 낮아짐 = 유니크한 값 많다 =&gt; 검색 대상 수 감소</li>
+<li>Cardinality가 높을 수록 인덱스 설정에 좋은 컬럼이다.   </li>
+<li>Cardinality 높다 = 중복도 낮아짐 = 유니크한 값 많다 =&gt; 검색 대상 수 감소</li>
 </ul>
 <h3 id="2-selectivity">2. 선택도(Selectivity)</h3>
-<h3 id="3-size">3. 크기(Size)</h3>
-<h3 id="4-access-patterns">4. 접근 패턴(Access Patterns)</h3>
-<h2 id="null">인덱스 설계시 Null값 고려</h2>
-<h2 id="-null">- 인덱스 설계시 Null 값을 고려하는 것은 중요하다.</h2>
-<h2 id="_2">클러스터 인덱스 논클러스터인덱스 차이</h2>
-<h2 id="index-server">인덱스(Index Server) 샤딩 방식</h2>
-<p>대규모 데이터베이스에서 검색 성능을 향상시키기 위해 인덱스를 여러 샤드(데이터베이스 조각)으로 분산하는 방법
-- 데이터를 샤드에 고르게 분배할 것</p>
-<h3 id="_3">% 계산법</h3>
+<ul>
+<li>데이터에서 특정 값을 얼마나 잘 선택할 수 있는지에 대한 지표</li>
+<li>5~10% 적정</li>
+<li>특정 필드값을 지정했을 때 선택되는 레코드 수를 테이블 전체 레코드 수로 나눈 것<blockquote>
+<p>= 컬럼의 특정 값의 row 수 / 테이블의 총 row 수 * 100<br />
+= 컬럼의 값들의 평균 row 수 / 테이블의 총 row 수 * 100  </p>
+</blockquote>
+</li>
+</ul>
+<h3 id="3">3. 활용도</h3>
+<ul>
+<li>활용도가 높을 수록 인덱스 설정에 좋은 컬럼이다.</li>
+<li>해당 컬럼이 실제 작업에서 얼마나 활용되는지에 대한 값</li>
+<li>수동 쿼리 조회, 로직과 서비스에서 쿼리를 날릴 때 WHERE 절에 자주 활용되는지를 판단  </li>
+</ul>
+<h3 id="4">4. 중복도</h3>
+<ul>
+<li>중복도가 없을 수록 인덱스 설정에 좋은 컬럼이다.</li>
+</ul>
+<hr />
+<h2 id="sharding">📎 인덱스 샤딩(Sharding) 방식</h2>
+<ul>
+<li>대규모 데이터베이스에서 검색 성능을 향상시키기 위해 인덱스를 여러 샤드(데이터베이스 조각)으로 분산하는 방법</li>
+</ul>
+<h3 id="_4">% 계산법</h3>
 <ul>
 <li>% 계산법을 통해 각 데이터를 적절한 샤드에 배치한다.</li>
 <li>해시 값을 샤드의 수로 나누고, 그 나머지를 이용하는 방식이다.</li>
 </ul>
+<p><br></p>
 <blockquote>
 <p>예시 </p>
 </blockquote>
 <ol>
-<li>데이터 키: "사용자123"</li>
-<li>해시 함수 적용: hash("사용자123") = 예를 들어, 45678이라고 가정</li>
+<li>데이터 키: "user1"</li>
+<li>해시 함수 적용: hash("user1") = 예를 들어, 45678이라고 가정</li>
 <li>샤드 개수: 10개</li>
 <li>할당 샤드 계산: 45678 % 10 = 8</li>
-<li>따라서, "사용자123"은 8번 샤드에 저장됩니다</li>
+<li>따라서, "user1"은 8번 샤드에 저장됩니다</li>
 </ol>
+<p><br></p>
+<blockquote>
+<p>인덱스 샤딩 단점</p>
+</blockquote>
+<ol>
+<li>복잡성 증가: 관리해야 할 대상이 늘어남.</li>
+<li>복잡한 쿼리 처리: 샤드간에 데이터가 분산되어 있기 때문에, 복잡한 쿼리나 조인이 필요한 경우 성능 문제가 발생할 수 있다</li>
+</ol>
+<hr />
+<p>(추가) 인덱스 설계시 Null값 고려, 클러스터 인덱스 논클러스터인덱스 차이</p>
 <p><br>
 <br>
 <br>
@@ -890,7 +1081,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   </body>
