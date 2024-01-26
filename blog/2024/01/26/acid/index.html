@@ -9,23 +9,25 @@
       
       
       
-        <link rel="prev" href="../../../../../category/http/">
+        <link rel="prev" href="../../17/">
       
       
+        <link rel="next" href="../db-key/">
       
-      <link rel="icon" href="../../../../../../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
     
     
       
-        <title>2024 January - hyehye_hye's blog</title>
+        <title>트렌잭션과 ACID - hyehye_hye's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78cf6014.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.356b1318.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2024-january" class="md-skip">
+        <a href="#acid" class="md-skip">
           Skip to content
         </a>
       
@@ -87,7 +89,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://cherryjubilee.github.io/blog" title="hyehye_hye&#39;s blog" class="md-header__button md-logo" aria-label="hyehye_hye's blog" data-md-component="logo">
       
-  <img src="../../../../../../cherry.svg" alt="logo">
+  <img src="../../../../../cherry.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2024 January
+              트렌잭션과 ACID
             
           </span>
         </div>
@@ -132,7 +134,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -143,7 +147,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="https://cherryjubilee.github.io/blog" title="hyehye_hye&#39;s blog" class="md-nav__button md-logo" aria-label="hyehye_hye's blog" data-md-component="logo">
       
-  <img src="../../../../../../cherry.svg" alt="logo">
+  <img src="../../../../../cherry.svg" alt="logo">
 
     </a>
     hyehye_hye's blog
@@ -157,7 +161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../.." class="md-nav__link">
+      <a href="../../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -212,9 +216,11 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../../../" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -232,20 +238,20 @@
                 
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -259,7 +265,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Archive
@@ -270,18 +276,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="../../" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -290,7 +287,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -348,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../category/study/" class="md-nav__link">
+      <a href="../../../../category/study/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -368,7 +364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../category/db/" class="md-nav__link">
+      <a href="../../../../category/db/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -388,7 +384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../category/web/" class="md-nav__link">
+      <a href="../../../../category/web/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -408,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../category/algorithm/" class="md-nav__link">
+      <a href="../../../../category/algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -428,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../category/http/" class="md-nav__link">
+      <a href="../../../../category/http/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -465,6 +461,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -484,215 +482,105 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="2024-january">2024 January</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-01-03 00:00:00">Jan 3, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="../../../../../category/study/" class="md-meta__link">Study</a>, 
-              <a href="../../../../../category/web/" class="md-meta__link">Web</a>, 
-              <a href="../../../../../category/http/" class="md-meta__link">HTTP</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>Hyewon Park</strong><br>
+                      Backend Developer
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-01-26 00:00:00" class="md-ellipsis">Jan 26, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/study/">Study</a>, 
+                              <a href="../../../../category/db/">db</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              1 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
           
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="http-method"><a class="toclink" href="../../../../../2024/01/03/http-method/">HTTP Method</a></h2>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="acid">트렌잭션과 ACID</h1>
 <blockquote>
-<p>GET과 POST 이외의 메서드는 보안에 취약한가? HTTP 메서드의 개념과 안전성에 대해 살펴보기</p>
+<p>ACID 트랜잭션의 장점, Atomicity, Consistency, Isolation, Durability</p>
 </blockquote>
-
-    <nav class="md-post__action">
-      <a href="../../../../../2024/01/03/http-method/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-01-01 00:00:00">Jan 1, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../../category/study/" class="md-meta__link">Study</a>, 
-              <a href="../../../../../category/db/" class="md-meta__link">db</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="mysql-vs-postgresql"><a class="toclink" href="../../../../../2024/01/01/mysql-vs-postgresql/">MySQL vs PostgreSQL 차이점</a></h2>
-
-    <nav class="md-post__action">
-      <a href="../../../../../2024/01/01/mysql-vs-postgresql/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-01-01 00:00:00">Jan 1, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../../category/study/" class="md-meta__link">Study</a>, 
-              <a href="../../../../../category/web/" class="md-meta__link">Web</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              9 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="../../../../../2024/01/01/">웹 브라우저와 네트워크 통신의 이해</a></h2>
-<blockquote>
-<p>웹 동작 방식 및 [개념] OSI 7계층 + TCP/IP 4계층 + L7, L4 로드밸런서 + DNS</p>
-</blockquote>
-
-    <nav class="md-post__action">
-      <a href="../../../../../2024/01/01/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-01-01 00:00:00">Jan 1, 2024</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../../../category/study/" class="md-meta__link">Study</a>, 
-              <a href="../../../../../category/web/" class="md-meta__link">Web</a>, 
-              <a href="../../../../../category/http/" class="md-meta__link">HTTP</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="http"><a class="toclink" href="../../../../../2024/01/01/http/">HTTP란?</a></h2>
-<blockquote>
-<p>HTTP의 특징과, HTTP request/response 구조 그리고 더 안전해진 HTTPS 이해하기</p>
-</blockquote>
-
-    <nav class="md-post__action">
-      <a href="../../../../../2024/01/01/http/">
-        Continue reading
-      </a>
-    </nav>
-  </div>
-</article>
-      
-      
-        
-          
+<!-- more -->
 
 
 
-<nav class="md-pagination">
-  <a class="md-pagination__link" href="../../"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.41 7.41 17 6l-6 6 6 6 1.41-1.41L13.83 12l4.58-4.59m-6 0L11 6l-6 6 6 6 1.41-1.41L7.83 12l4.58-4.59Z"/></svg></a> <a class="md-pagination__link" href="../../"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 16.58 10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.42Z"/></svg></a> <a class="md-pagination__link" href="../../">1</a> <span class="md-pagination__current">2</span>  
-</nav>
-        
+  
+
+
+
       
-    </div>
+    </article>
   </div>
 
           
@@ -712,10 +600,12 @@
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../../../category/http/" class="md-footer__link md-footer__link--prev" aria-label="Previous: HTTP">
+          <a href="../../17/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -725,11 +615,27 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                HTTP
+                Index
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../db-key/" class="md-footer__link md-footer__link--next" aria-label="Next: DB의 KEY">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                DB의 KEY
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
@@ -786,10 +692,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   </body>
