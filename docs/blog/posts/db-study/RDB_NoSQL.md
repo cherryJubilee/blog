@@ -5,7 +5,7 @@ authors:
 date: 2024-01-14
 categories:
   - Study
-  - db
+  - 데이터베이스
 ---
 # RDB / NoSQL
 > 데이터베이스 스키마, 관계형 데이터베이스, NoSQL 데이터베이스

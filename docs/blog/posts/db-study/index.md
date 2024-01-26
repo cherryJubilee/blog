@@ -5,7 +5,7 @@ authors:
 date: 2024-01-17
 categories:
   - Study
-  - db
+  - 데이터베이스
 ---
 # Index
 > B-Tree / Hash Index / B+Tree 개념 알아보자

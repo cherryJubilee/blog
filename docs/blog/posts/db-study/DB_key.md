@@ -5,7 +5,7 @@ authors:
 date: 2024-01-26
 categories:
   - Study
-  - db
+  - 데이터베이스
 ---
 # DB의 KEY
 > Primary key, Unieque key, Foreign key, Candidate key, Super key
