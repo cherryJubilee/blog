@@ -495,6 +495,107 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      트랜잭션이란?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="트랜잭션이란?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-atomic" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Atomic (원자성)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Consistency (일관성)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-isoliation" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Isoliation (고립성)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-durability" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Durability (지속성)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dbms" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⭐️ DBMS에서는 트랜잭션 동시성제어를 제공한다.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      트랜잭션 격리수준
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commit-rollback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commit, Rollback
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Commit, Rollback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 정리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -567,7 +668,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -592,6 +693,63 @@
 <p>ACID 트랜잭션의 장점, Atomicity, Consistency, Isolation, Durability</p>
 </blockquote>
 <!-- more -->
+
+<h2 id="_1">트랜잭션이란?</h2>
+<p><img alt="트렌잭션" src="https://velog.velcdn.com/images/heyksw/post/06affeb2-a615-453e-9003-9623254d82ab/image.png" /></p>
+<ul>
+<li>
+<p>데이터베이스에서 송금과 입금 처럼 뗄래야 뗄 수 없는 작업의 흐름 단위.</p>
+</li>
+<li>
+<p>데이터베이스 무결성을 유지하고, 데이터를 복구하는 단위가 된다.</p>
+</li>
+<li>
+<p>데이터베이스의 회복과 병행제어를 가능하게 한다.</p>
+</li>
+<li>
+<p>데이터베이스 관리 시스템은 데이터베이스가 항상 정확하고 일관된 상태를 유지할 수 있도록 다양한 기능을 제공하는데, 그 중심에 트랜잭션이 있다.</p>
+</li>
+</ul>
+<hr />
+<blockquote>
+<p>트랜잭션은 ACID 조건을 만족해야한다.</p>
+</blockquote>
+<h3 id="1-atomic">1. Atomic (원자성)</h3>
+<p>트랜잭션은 원자처럼 쪼개지지 않아야한다. 전부 실행되거나, 전부 실행되지 않거나.</p>
+<h3 id="2-consistency">2. Consistency (일관성)</h3>
+<p>트랜잭션은 항상 일관된 결과를 낳아야한다.</p>
+<h3 id="3-isoliation">3. Isoliation (고립성)</h3>
+<p>트랜잭션끼리는 서로 독립적으로 수행되어야 한다. 영향을 줘서는 안된다.</p>
+<h3 id="4-durability">4. Durability (지속성)</h3>
+<p>트랜잭션으로 낳은 결과는 건드리지 않는 이상 계속 그 결과를 유지해야한다.</p>
+<h3 id="dbms">⭐️ DBMS에서는 트랜잭션 동시성제어를 제공한다.</h3>
+<p>수많은 트랜잭션들이 동시적으로 수행될 때 어떤 트랜잭션 작업이 무효화 되지 않도록 한다.<br />
+예) 수정중에 있는 transaction에 lock 을 걸어두고 다른 transaction 이 접근하지 못하게 한다.</p>
+<hr />
+<h2 id="_2">트랜잭션 격리수준</h2>
+<p><img alt="트랜잭션 격리수준" src="https://velog.velcdn.com/images/heyksw/post/8cb22236-dd11-4f5e-b738-da7e6de64f3b/image.png" /></p>
+<p>트랜잭션에서 동시성과 일관성은 반비례 관계에 있다.
+동시에 실행할 수 있는 트랜잭션이 많아질수록, 트랜잭션 결과의 일관성은 떨어진다.</p>
+<p>🚀 트랜잭션 격리수준 = 동시에 여러 트랜잭션이 처리될 때, 트랜잭션이 얼마나 서로 고립되어있는지의 정도를 나타내는 수준</p>
+<p>각 트랜잭션은 Lock을 통해 다른 트랜잭션의 접근을 막는다. 하지만 무조건 Lock하면 동시성 측면에서 효율적이지 못하기 때문에 적절한 격리 수준으로 성능을 향상시킬 수 있다.</p>
+<hr />
+<h2 id="commit-rollback">Commit, Rollback</h2>
+<p><img alt="Commit, Rollback" src="https://velog.velcdn.com/images/heyksw/post/4914edf5-5b0f-4b5e-98ed-fb2aca184668/image.png" /></p>
+<p>트랜잭션은 5가지의 상태를 가진다.</p>
+<p>트랜잭션은 commit, rollback을 이용해서 데이터베이스 무결성을 보장한다.</p>
+<p>Commit = 트랜잭션이 성공적으로 수행되어 일을 완료했음을 의미하고, 이 변경하상을 데이터베이스에 영구적으로 반영하는 것
+Rollback = 트랜잭션 실행 중 오류가 발생하거나 다른 이유로 중단될 때, 데이터베이스를 트랜잭션 시작 전 상태로 되돌리는 것.
+<br></p>
+<h3 id="_3">📌 정리</h3>
+<ul>
+<li>여러 트랜잭션이 동시에 실행될 때 데이터 무결성과 일관성을 보장하기 위해 트랜잭션 동시성 제어 메커니즘 사용.</li>
+<li>트랜잭션 격리 수준은 동시성과 데이터 일관성 사이에서 반비례 관계로 균형을 유지함.</li>
+<li>커밋은 트랜잭션의 성공적 완료를 확정하고, 롤백은 오류 발생 시 이전 상태로 되돌려 데이터 무결성을 유지함.
+<br>
+<br>
+<br>
+<br></li>
+</ul>
 
 
 
