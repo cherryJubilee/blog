@@ -278,6 +278,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../archive/2024/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 February
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../archive/2024/01/" class="md-nav__link">
         
   
@@ -344,31 +364,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/study/" class="md-nav__link">
+      <a href="../../../../category/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Study
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    데이터베이스
+    docker
   </span>
   
 
@@ -608,8 +608,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/study/">Study</a>, 
-                              <a href="../../../../category/">데이터베이스</a></span>
+                              <a href="../../../../category/db/">db</a></span>
                         </div>
                       </li>
                     
@@ -649,65 +648,48 @@
 <h2 id="schema">스키마 (Schema)</h2>
 <ul>
 <li>데이터베이스에 저장되는 데이터 구조와 제약 조건을 정하는 것</li>
-<li>데이터베이스 내의 테이블, 열, 데이터 타입, 관계 등을 포함<ul>
+<li>데이터베이스 내의 테이블, 열, 데이터 타입, 관계 등을 포함</li>
 <li>예를들어 데이터베이스는 데이터에 INT, CHAR 등의 데이터 타입을 지정한다거나, 중복된 값을 허용하지 않는 등의 제약조건을 지정할 수 있다.</li>
-</ul>
-</li>
-<li>개체(entity),속성(Attribute),관계(Relationship) 및 데이터 조작시 데이터 값들이 갖는 제약 조건등에 관해 전반적으로 정의<ul>
+<li>개체(entity),속성(Attribute),관계(Relationship) 및 데이터 조작시 데이터 값들이 갖는 제약 조건등에 관해 전반적으로 정의</li>
 <li>개체 : 데이터로 표현하려고 하는 객체(여러 속성들로 구성)<br />
-    ex) 학생,과목  </li>
+     ex) 학생,과목</li>
 <li>속성 : 개체가 갖는 속성<br />
-    ex) 홍길동(학생),이순신(학생),수학(과목),영어(과목)  </li>
-<li>관계 : 개체와 개체 사이의 연관  성<br />
-    ex) 학생과 과목 간의 "수강"이라는 관계를 가짐  </li>
-</ul>
-</li>
+     ex) 홍길동(학생),이순신(학생),수학(과목),영어(과목)</li>
+<li>관계 : 개체와 개체 사이의 연관 성<br />
+     ex) 학생과 과목 간의 "수강"이라는 관계를 가짐</li>
 </ul>
 <blockquote>
 <p>스키마 3계층</p>
 </blockquote>
 <ol>
-<li>외부 스키마(External Schema) = 사용자 뷰(View) <ul>
+<li>외부 스키마(External Schema) = 사용자 뷰(View)</li>
 <li>개별 사용자들의 입장에서 데이터 베이스의 논리적 구조를 정의한 것이다.</li>
 <li>동일한 데이터에 대해, 서로 다른 관점을 정의할 수 있도록 허용한다.</li>
 <li>사용자의 관점에 따라 스키마가 구성된다</li>
 <li>ex) 같은 회사의 CEOdhk 직원은 같은 회사에 대해 서로 다른 요구와 인식을 갖는다</li>
-</ul>
-</li>
-<li>개념 스키마<ul>
+<li>개념 스키마</li>
 <li>DB 전체의 논리적인 구조를 정의</li>
 <li>논리적 스키마라고도 함</li>
 <li>데이터베이스의 엔티티와 해당 속성 및 관계를 정의</li>
 <li>ER모델링(엔티티 관계 모델링)은 엔티티 유형간의 관계가 무엇인지 지정한다. ER 모델링은 논리적 스키마를 생성하기 위한 도구이다.</li>
-</ul>
-</li>
-<li>내부 스키마<ul>
-<li>물리적 스키마라고도 함</li>
-<li>실제로 데이터베이스에 저장될 레코드의 물리적인 구조를 정의</li>
-<li>데이터가 디스크 스토리지에 저장되는 방식을 나타낸다.<br />
-<br>
-  <img alt="scheme" src="../../../../db-study/db_images/scheme.png" /></li>
-</ul>
-</li>
+<li>내부 스키마 - 물리적 스키마라고도 함 - 실제로 데이터베이스에 저장될 레코드의 물리적인 구조를 정의 - 데이터가 디스크 스토리지에 저장되는 방식을 나타낸다.<br />
+   <br>
+   <img alt="scheme" src="../../../../db-study/db_images/scheme.png" /></li>
 </ol>
 <hr />
 <h2 id="1-relational-database">1️⃣ Relational Database (관계형 테이더베이스)</h2>
 <ul>
 <li>엄격한 스키마와 테이블 형태로 데이터를 관리.</li>
 <li>ex) MySQL, Oracle, PostgreSQL, SQLite</li>
-<li>Schema-on-write 방식<ul>
+<li>Schema-on-write 방식</li>
 <li>데이터를 데이터베이스에 저장하기 전에 스키마를 미리 정의해야 하고, 모든 데이터는 이 스키마에 맞게 저장</li>
-</ul>
-</li>
 </ul>
 <h2 id="2-nosql-not-only-sql">2️⃣ NoSQL (Not Only SQL 비관계형 데이터베이스)</h2>
 <ul>
 <li>테이블 형태가 아니고, 엄격하지 않은 Key-Value 형태로 데이터를 관리.</li>
-<li>Schema-on-read 방식<ul>
+<li>Schema-on-read 방식</li>
 <li>데이터를 저장할 때 스키마를 엄격하게 정의하지 않고, 데이터를 읽을 때 필요한 구조로 해석</li>
 <li>데이터 형식이 자주 변경되거나, 미리 정의되지 않은 형식의 데이터를 다룰 때 유용함</li>
-</ul>
-</li>
 <li>Transaction과 SQL을 지원하지 않음.</li>
 <li>ex) MongoDB, DynamoDB, Cassandra, Bigtable</li>
 </ul>
@@ -764,10 +746,8 @@
 <p>유리한 경우</p>
 </blockquote>
 <ol>
-<li>데이터 구조가 비정형이거나 빈번하게 변경될 때<ul>
+<li>데이터 구조가 비정형이거나 빈번하게 변경될 때</li>
 <li>NoSQL은 유연한 스키마를 가지기 때문</li>
-</ul>
-</li>
 <li>수평적 확장(scale out)이 필요할 때</li>
 <li>읽기 및 쓰기 연산이 매우 높은 어플리케이션인 경우</li>
 <li>분산형 시스템에서 작업하는 경우 (샤딩, %계산)</li>
@@ -778,10 +758,8 @@
 </blockquote>
 <ol>
 <li>데이터 간 복잡한 관계를 맺고 있을 때</li>
-<li>무결성과 일관성이 매우 중요할 때<ul>
+<li>무결성과 일관성이 매우 중요할 때</li>
 <li>금융서비스</li>
-</ul>
-</li>
 <li>복잡한 보고와 데이터 분석을 필요로 하는 시스템</li>
 </ol>
 <p><br>

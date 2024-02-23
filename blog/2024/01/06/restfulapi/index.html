@@ -278,6 +278,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../archive/2024/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 February
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../archive/2024/01/" class="md-nav__link">
         
   
@@ -344,31 +364,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/study/" class="md-nav__link">
+      <a href="../../../../category/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Study
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    데이터베이스
+    docker
   </span>
   
 
@@ -794,7 +794,6 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/study/">Study</a>, 
                               <a href="../../../../category/web/">Web</a></span>
                         </div>
                       </li>
@@ -842,58 +841,58 @@
 </li>
 <li>
 <p>API는 애플리케이션과 기기가 원활하게 통신(데이터를 주고 받음)할 수 있도록 한다.</p>
-<ul>
-<li>애플리케이션: 우리가 흔히 알고 있는 스마트폰 어플이나 프로그램</li>
-</ul>
+</li>
+<li>
+<p>애플리케이션: 우리가 흔히 알고 있는 스마트폰 어플이나 프로그램</p>
 </li>
 <li>
 <p>API는 모든 접속을 표준화한다.</p>
-<ul>
-<li>API는 모든 접속을 표준화하기 때문에 기계/운영체제 등과 상관없이 누구나 동일한 액세스 한다. </li>
-</ul>
 </li>
+<li>API는 모든 접속을 표준화하기 때문에 기계/운영체제 등과 상관없이 누구나 동일한 액세스 한다.</li>
 </ol>
 <h2 id="api_2">🍎 API 종류</h2>
-<p>1) private API  </p>
-<ul>
-<li>내부 API  </li>
-<li>회사 개발자가 자체 제품과 서비스를 개선하기 위해 내부적으로 발행  </li>
-<li>제 3자에게 노출되지 않는다.</li>
-</ul>
-<p>2) public API  </p>
-<ul>
-<li>개방형 API, 누구나 제한 없이 API를 사용할 수 있다.</li>
-<li>OpenAPI: 접속하는 대상에 대한 제약이 없는 경우<ul>
-<li>영화진흥위원회 API, 공공데이터, Kakao Developers(카카오 로그인)</li>
-</ul>
+<ol>
+<li>
+<p>private API</p>
 </li>
-</ul>
-<p>3) partner API  </p>
-<ul>
-<li>기업이 데이터 공유에 동의하는 특정인들만 사용할 수 있다. </li>
+<li>
+<p>내부 API</p>
+</li>
+<li>회사 개발자가 자체 제품과 서비스를 개선하기 위해 내부적으로 발행</li>
+<li>
+<p>제 3자에게 노출되지 않는다.</p>
+</li>
+<li>
+<p>public API</p>
+</li>
+<li>
+<p>개방형 API, 누구나 제한 없이 API를 사용할 수 있다.</p>
+</li>
+<li>OpenAPI: 접속하는 대상에 대한 제약이 없는 경우</li>
+<li>
+<p>영화진흥위원회 API, 공공데이터, Kakao Developers(카카오 로그인)</p>
+</li>
+<li>
+<p>partner API</p>
+</li>
+<li>
+<p>기업이 데이터 공유에 동의하는 특정인들만 사용할 수 있다.</p>
+</li>
 <li>비즈니스 관계에서 사용되는 편이며, 종종 파트너 회사 간에 소프트웨어를 통합하기 위해 사용됨</li>
-</ul>
+</ol>
 <hr />
 <h2 id="rest">🍎 REST란?(구성 요소)</h2>
 <h3 id="1-resource">1. 자원(RESOURCE)</h3>
 <ul>
-<li>DB 안에 있는 데이터<ul>
+<li>DB 안에 있는 데이터</li>
 <li>ex) 유저 , 주문 등</li>
-</ul>
-</li>
-<li>REST는 자원에 접근할 때 URI(Uniform Resource Identifier)를 이용<ul>
+<li>REST는 자원에 접근할 때 URI(Uniform Resource Identifier)를 이용</li>
 <li>URI는 자원의 위치를 나타내는 식별자</li>
-</ul>
-</li>
 <li>리소스명은 동사보다는 명사를 사용해야 한다. 행위에 대한 표현X</li>
-<li>예시1)URI: /blog/posts/678<ul>
+<li>예시1)URI: /blog/posts/678</li>
 <li>블로그 포스트에 대한 자원</li>
-</ul>
-</li>
-<li>예시2) URI: /weather/today?city=Seoul<ul>
+<li>예시2) URI: /weather/today?city=Seoul</li>
 <li>서울의 오늘 날씨 정보에 대한 자원</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># bad
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>GET /getTodos/1
@@ -907,22 +906,14 @@
 <h3 id="2-verb-http-method">2. 행위(Verb) - HTTP Method</h3>
 <ul>
 <li>HTTP 프로토콜의 Method를 사용하여 원하는 자원에 대한 조작 요청</li>
-<li>POST : 생성 [Create]  <ul>
-<li>예) <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 생성한다.   </li>
-</ul>
-</li>
-<li>GET : 조회 [Select, Read] <ul>
-<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 모두 조회한다.   </li>
-</ul>
-</li>
-<li>PUT : 업데이트 [Update]  <ul>
-<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목에 정보를 업데이트 한다.    </li>
-</ul>
-</li>
-<li>DELETE : 삭제 [Delete] <ul>
+<li>POST : 생성 [Create]</li>
+<li>예) <a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 생성한다.</li>
+<li>GET : 조회 [Select, Read]</li>
+<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 책 항목을 모두 조회한다.</li>
+<li>PUT : 업데이트 [Update]</li>
+<li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목에 정보를 업데이트 한다.</li>
+<li>DELETE : 삭제 [Delete]</li>
 <li>예)<a href="http://bookseller/books">http://bookseller/books</a> -&gt; 해당 책 항목들을 삭제 한다.</li>
-</ul>
-</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># bad
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GET /members/delete/1
@@ -932,27 +923,23 @@
 </code></pre></div>
 <h3 id="3-representations">3. 표현(Representations)</h3>
 <ul>
-<li>Client와 Server가 데이터를 주고받는 형태<ul>
+<li>Client와 Server가 데이터를 주고받는 형태</li>
 <li>JSON, XML, TEXT, RSS등</li>
-</ul>
-</li>
 </ul>
 <h3 id="_1">🚀 정리</h3>
 <blockquote>
 <p>REST은 클라이언트와 서버 사이에서, HTTP URL을 통해 자원을 명시하고,<br />
-HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작을 요청하고,  <br />
+HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작을 요청하고,<br />
 이에 대한 응답을 받는 것을 의미한다.</p>
 </blockquote>
 <hr />
 <h2 id="rest-6">🍎 Rest의 기본 원칙 6가지</h2>
 <h3 id="1-">1. 클라이언트-서버 모델</h3>
 <ul>
-<li>클라이언트와 서버의 역할을 분리하여 유지보수가 용이함<ul>
+<li>클라이언트와 서버의 역할을 분리하여 유지보수가 용이함</li>
 <li>REST 서버는 API 제공, 클라이언트는 사용자 인증이나 컨텍스트(세션, 로그인 정보)등을 직접 관리하는 구조</li>
-</ul>
-</li>
-<li>서버의 기능 개선이 클라이언트에 영향을 미치지 않고, 클라이언트 인터페이스 개선이 서버에 영향을 주지 않는다. 
-    -&gt; 의존성 감소</li>
+<li>서버의 기능 개선이 클라이언트에 영향을 미치지 않고, 클라이언트 인터페이스 개선이 서버에 영향을 주지 않는다.
+  -&gt; 의존성 감소</li>
 </ul>
 <h3 id="2-stateless">2. 무상태(Stateless)</h3>
 <ul>
@@ -962,7 +949,7 @@ HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작
 <li>모든 클라이언트 요청에는 서버가 해당 요청을 이해하고 처리하는 데 필요한 모든 정보를 포함해야 한다.</li>
 </ul>
 <blockquote>
-<p>stateful의 경우 세션 정보가 scaled out된 server#2에 저장되어 있지 않다. </p>
+<p>stateful의 경우 세션 정보가 scaled out된 server#2에 저장되어 있지 않다.</p>
 </blockquote>
 <ul>
 <li>서버가 클라이언트의 상태 정보(예: 사용자 세션 데이터)를 저장</li>
@@ -1004,35 +991,39 @@ HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작
 <ul>
 <li>REST의 특징을 기반으로 서비스 API를 구현한 것</li>
 <li>URI 형식으로 HTTP 메서드(GET, POST, PUT, DELETE)를 요청해 자원을 조회, 생성, 수정, 삭제할 수 있는 것</li>
-<li>⭐️ 각 요청이 어떤 동작이나 정보를 위한 것인지를 그 요청의 모습 자체로 추론이 가능한 것 </li>
+<li>⭐️ 각 요청이 어떤 동작이나 정보를 위한 것인지를 그 요청의 모습 자체로 추론이 가능한 것</li>
 </ul>
 <h3 id="rest-api">REST API의 설계 규칙</h3>
 <ol>
-<li>
-<p>URI는 명사를 사용한다.(리소스명은 동사가 아닌 명사를 사용해야 한다.)<br />
-  1-1. 아래와 같은 동사를 사용하지 말 것</p>
+<li>URI는 명사를 사용한다.(리소스명은 동사가 아닌 명사를 사용해야 한다.)<br />
+   1-1. 아래와 같은 동사를 사용하지 말 것</li>
+</ol>
 <blockquote>
 <p>/getAllUsers<br />
 /getUserById<br />
 /createNewUser<br />
 /updateUser<br />
-/deleteUser  </p>
+/deleteUser</p>
 </blockquote>
-</li>
-<li>
-<p>슬래시( / )로 계층 관계를 표현한다.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://restapi.example.com/houses/apartments  
+<ol>
+<li>슬래시( / )로 계층 관계를 표현한다.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://restapi.example.com/houses/apartments
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>http://restapi.example.com/animals/mammals/whales
-</code></pre></div></p>
-</li>
+</code></pre></div>
+<ol>
 <li>URI 마지막 문자로 슬래시 ( / )를 포함하지 않는다.</li>
 <li>밑줄( _ )을 사용하지 않고, 하이픈( - )을 사용한다.</li>
 <li>URI는 소문자로만 구성한다.</li>
 <li>파일확장자는 URI에 포함하지 않는다.<br />
-    ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.github.io/restapi/7/photo.jpg</a> (X)</li>
-<li>HTTP 응답 상태 코드 사용</li>
+   ex) <a href="http://hyehyehey.github.io/restapi/7/photo.jpg">http://hyehyehey.github.io/restapi/7/photo.jpg</a> (X)</li>
+<li>
+<p>HTTP 응답 상태 코드 사용</p>
+</li>
 <li>
 <p>클라이언트는 해당 요청에 대한 실패, 처리완료 또는 잘못된 요청 등에 대한 피드백을 받아야 한다.</p>
+</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1075,8 +1066,6 @@ HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작
 </tr>
 </tbody>
 </table>
-</li>
-</ol>
 <h2 id="rest_1">🍎 REST의 장단점</h2>
 <h3 id="_2">장점</h3>
 <ul>
@@ -1123,7 +1112,7 @@ HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작
 <h3 id="uri-http-method">🚀 결론: URI는 정보의 자원만 표현해야 하며, 자원의 행위는 HTTP Method에 명시한다!</h3>
 <hr />
 <h2 id="rest-api_1">REST API 설계 예시</h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/review&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/review&quot;</span><span class="p">)</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nd">@ResponseBody</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">public</span><span class="w"> </span><span class="n">ResponseEntity</span><span class="o">&lt;</span><span class="n">BasicResponse</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">createReview</span><span class="p">(</span><span class="n">ReviewRequestVo</span><span class="w"> </span><span class="n">reviewRequestVo</span><span class="p">){</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="c1">// 리뷰 등록 로직</span>
@@ -1137,7 +1126,7 @@ HTTP Method(POST, GET, DELETE, PUT 등)를 통해 해당 자원에 대한 조작
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1">// 리뷰삭제 로직</span>
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
 </code></pre></div>
-<br>
+<p><br>
 <br>
 <br>
 <br>
