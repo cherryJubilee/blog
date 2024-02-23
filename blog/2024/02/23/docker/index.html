@@ -564,7 +564,7 @@
           <li class="md-nav__item">
   <a href="#step1-install-using-the-apt-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      step1. Install using the apt repository
+      Step1. Install using the apt repository
     </span>
   </a>
   
@@ -573,7 +573,7 @@
           <li class="md-nav__item">
   <a href="#step2-install-the-docker-packages" class="md-nav__link">
     <span class="md-ellipsis">
-      step2. Install the Docker packages.
+      Step2. Install the Docker packages.
     </span>
   </a>
   
@@ -800,7 +800,7 @@ npm run build</p>
 <li>Docker 공식문서에 따라서 진행한다.<br />
 <a href="https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository">https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository</a></li>
 </ul>
-<h4 id="step1-install-using-the-apt-repository">step1. Install using the apt repository</h4>
+<h4 id="step1-install-using-the-apt-repository">Step1. Install using the apt repository</h4>
 <p>EC2 인스턴스에서 Docker를 설치하기 전에, Docker의 공식 GPG 키를 추가하고, Docker 저장소를 시스템의 APT 소스 목록에 추가한다.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Add Docker&#39;s official GPG key:</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
@@ -816,7 +816,7 @@ npm run build</p>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.list<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </code></pre></div>
-<h4 id="step2-install-the-docker-packages">step2. Install the Docker packages.</h4>
+<h4 id="step2-install-the-docker-packages">Step2. Install the Docker packages.</h4>
 <p>위의 저장소가 설정되면, Docker CE, Docker CE CLI, containerd.io, Docker Buildx 플러그인 및 Docker Compose 플러그인을 설치한다.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
 </code></pre></div>
