@@ -502,11 +502,11 @@
         <li class="md-nav__item">
   <a href="#docker_1" class="md-nav__link">
     <span class="md-ellipsis">
-      로컬 환경에서 Docker 컨테이너를 빌드하고 실행하는 과정
+      📎 로컬 환경에서 Docker 컨테이너를 빌드하고 실행하는 과정
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="로컬 환경에서 Docker 컨테이너를 빌드하고 실행하는 과정">
+    <nav class="md-nav" aria-label="📎 로컬 환경에서 Docker 컨테이너를 빌드하고 실행하는 과정">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -544,11 +544,11 @@
         <li class="md-nav__item">
   <a href="#aws-ec2-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      AWS EC2에 Docker 컨테이너를 배포하는 과정
+      📎 AWS EC2에 Docker 컨테이너를 배포하는 과정
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="AWS EC2에 Docker 컨테이너를 배포하는 과정">
+    <nav class="md-nav" aria-label="📎 AWS EC2에 Docker 컨테이너를 배포하는 과정">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -684,7 +684,7 @@
 
 <p>npm run dev<br />
 npm run build</p>
-<h2 id="docker_1">로컬 환경에서 Docker 컨테이너를 빌드하고 실행하는 과정</h2>
+<h2 id="docker_1">📎 로컬 환경에서 Docker 컨테이너를 빌드하고 실행하는 과정</h2>
 <h3 id="1-dockerfile">1. Dockerfile 작성</h3>
 <ul>
 <li>
@@ -770,7 +770,7 @@ CMD [ &quot;node&quot;, &quot;app.js&quot; ]
 </ul>
 <p><br>
 <br></p>
-<h2 id="aws-ec2-docker">AWS EC2에 Docker 컨테이너를 배포하는 과정</h2>
+<h2 id="aws-ec2-docker">📎 AWS EC2에 Docker 컨테이너를 배포하는 과정</h2>
 <ul>
 <li>Prisma는 AWS RDS와의 연결을 통해 데이터베이스 스키마와 데이터를 관리하고 있다. AWS EC2를 통해 Docker 컨테이너를 배포할 것이다.</li>
 </ul>
@@ -798,9 +798,11 @@ EC2 인스턴스에서 Docker를 설치하기 전에, Docker의 공식 GPG 키�
 위의 저장소가 설정되면, Docker CE, Docker CE CLI, containerd.io, Docker Buildx 플러그인 및 Docker Compose 플러그인을 설치한다.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
 </code></pre></div>
+<p><br></p>
 <h3 id="2-ssh-ec2">2. SSH를 통한 EC2 인스턴스 접속</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>~/Downloads/<span class="o">{</span>pem키<span class="w"> </span>이름.pem<span class="o">}</span><span class="w"> </span>ubuntu@<span class="o">{</span>퍼블릭<span class="w"> </span>IP<span class="w"> </span>주소<span class="o">}</span>
 </code></pre></div>
+<p><br></p>
 <h3 id="3-docker_1">3. Docker 이미지 빌드 및 푸시</h3>
 <p>⭐️ Apple MAC M1 에서 linux/amd64로 docker 빌드하기</p>
 <ul>
