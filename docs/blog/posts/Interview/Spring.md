@@ -4,7 +4,7 @@ authors:
   - hyewon
 date: 2024-05-14
 categories:
-  - Study
+  - study
   - spring
 ---
 # Spring 면접 준비
@@ -21,6 +21,7 @@ categories:
 
 ### 객체주입 방식 3가지
 
-1. @Autowired
-2. setter 주입
-3. 생성자
+1. `@Autowired`
+2. `setter 주입`
+3. `생성자`
+
