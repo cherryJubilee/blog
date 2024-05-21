@@ -49,3 +49,14 @@ categories:
     
     - 스프링은 프로젝트 초기에 다양한 환경설정을 해야 하지만, 부트는 설정의 많은 부분을 자동화하여 사용자가 편하게 스프링을 활용할 수 있도록 한다.
     - spring boot starter dependency만 추가해주면 설정은 끝나고, 내장된 톰캣을 제공해 서버를 바로 실행할 수 있습니다.
+  
+
+### VO와 BO, DAO, DTO에 대해 설명해주세요.
+
+  - `DAO(Data Access Object)` DB의 데이터에 접근을 위한 객체를 말합니다. (Repository 또는 Mapper에 해당)
+  
+  - `BO(Business Object)` 여러 DAO를 활용해 비즈니스 로직을 처리하는 객체를 말합니다. (Service에 해당)
+  
+  - `DTO(Data Transfer Object)` 각 계층간의 데이터 교환을 위한 객체를 말합니다. (여기서 말하는 계층은 Controller, View, Business Layer, Persistent Layer)
+  
+  - `VO (Value Object)` 실제 데이터만을 저장하는 객체를 말합니다.
