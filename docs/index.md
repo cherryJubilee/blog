@@ -2,22 +2,23 @@
 
 ## Backend Developer
 
-Email   |  hyewon5026@gmail.com   
-Phone   |  010-9917-5026   
+Email  |  hyewon5026@gmail.com  
+Phone   |  010-9917-5026  
 Github  |  https://github.com/cherryJubilee
 
 <span style="background-color:#FFDAE3">생각</span>  
-생각하는 것을 좋아합니다. 새로운 기술을 배우거나 기능을 개발할 때, 단순히 따라하지 않고 이해하고 응용할 수 있도록 노력하고 있습니다.  
+생각하는 것을 좋아합니다. 새로운 기술을 배우거나 기능을 개발할 때, 단순히 따라하지 않고 이해하고 응용할 수 있도록 노력하고 있습니다.
 
 <span style="background-color:#FFDAE3">끝까지</span>  
-한 번 시작했다 하면 높은 완성도록 끝까지 완수해냅니다.  
+한 번 시작했다 하면 높은 완성도록 끝까지 완수해냅니다.
 
 <span style="background-color:#FFDAE3">문서화</span>  
 정리화 문서화를 좋아합니다.
 
+---
 
---- 
 ## 프로젝트 경험
+
 ### <span style="background-color:#fff5b1"> Livart Life 가구 구독 서비스 </span>
 
 > 기간
@@ -35,13 +36,14 @@ Github  |  https://github.com/cherryJubilee
 - 대규모 트래픽 대응된 채팅 서비스 (Kafka, MongoDB)
 - AWS Cloud 인프라에 개발환경 구축 (Kafka, Redis, MongoDB, OracleDB) With Docker
 - Git을 이용한 소스버전 관리
--Jenkins를 이용한 CI/CD 구축
+  -Jenkins를 이용한 CI/CD 구축
 - Datadog을 이용한 인프라지표 수집
 - Jira를 이용한 프로젝트 진척도 관리
 
 https://github.com/village-as-I-wish
 
 ---
+
 ### <span style="background-color:#fff5b1"> wHereRU 빠르고 안전한 실종 대상 찾기 </span>
 
 > 기간
@@ -59,9 +61,8 @@ https://github.com/village-as-I-wish
 - 플로팅 버튼을 이용해 사용자에 따른 게시글 조회
 - 게시글 작성 시 이미지 여러장 업로드
 
-https://github.com/it-e-7/wHereRU
+https://github.com/cherryJubilee/wHereRU
 
----
 ### <span style="background-color:#fff5b1">  TheBeauty 1:1 화상 컨설팅 서비스 </span>
 
 > 기간
@@ -79,4 +80,4 @@ https://github.com/it-e-7/wHereRU
 - 상품 검색, 카테고리 별 조회
 - 장바구니 구현
 
-https://github.com/Hyundai-IT-E-11Team/TheBeauty
+https://github.com/cherryJubilee/TheBeauty
