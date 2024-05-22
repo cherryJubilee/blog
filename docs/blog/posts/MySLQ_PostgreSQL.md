@@ -1,10 +1,10 @@
 ---
 draft: false
 authors:
-  - hyewon
+    - hyewon
 date: 2024-01-01
 categories:
-  - db
+    - db
 ---
 
 # MySQL vs PostgreSQL 차이점
