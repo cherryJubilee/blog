@@ -60,3 +60,5 @@ categories:
   - `DTO(Data Transfer Object)` 각 계층간의 데이터 교환을 위한 객체를 말합니다. (여기서 말하는 계층은 Controller, View, Business Layer, Persistent Layer)
   
   - `VO (Value Object)` 실제 데이터만을 저장하는 객체를 말합니다.
+
+
