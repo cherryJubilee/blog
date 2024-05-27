@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../01/mysql-vs-postgresql/">
+        <link rel="prev" href="../">
       
-      
-        <link rel="next" href="../http/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>HTTP Method - hyehye_hye's blog</title>
+        <title>Java의 역사 - hyehye_hye's blog</title>
       
     
     
@@ -71,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#http-method" class="md-skip">
+        <a href="#java" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              HTTP Method
+              Java의 역사
             
           </span>
         </div>
@@ -642,73 +640,124 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#http-request-method" class="md-nav__link">
+  <a href="#java_1" class="md-nav__link">
     <span class="md-ellipsis">
-      👀 HTTP Request Method란?
+      📚Java의 역사
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#method" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      ✏️ Method의 안전성
+      📌 자바 파일과 컴파일
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#method_1" class="md-nav__link">
+  <a href="#jvm" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 종류
+      📌 자바와 JVM
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Method 종류">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 자바 특징
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 자바 코드 구조
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 자바 코드 구조">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-get" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. GET
+      1. 클래스
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-post" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. POST
+      2. 메소드
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-put" class="md-nav__link">
+  <a href="#access-modifiers" class="md-nav__link">
     <span class="md-ellipsis">
-      3. PUT
+      접근 제어자 (Access Modifiers)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="접근 제어자 (Access Modifiers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public" class="md-nav__link">
+    <span class="md-ellipsis">
+      public
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-delete" class="md-nav__link">
+  <a href="#default" class="md-nav__link">
     <span class="md-ellipsis">
-      4. DELETE
+      default
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-patch" class="md-nav__link">
+  <a href="#protected" class="md-nav__link">
     <span class="md-ellipsis">
-      5. PATCH
+      protected
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#private" class="md-nav__link">
+    <span class="md-ellipsis">
+      private
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 명령문
     </span>
   </a>
   
@@ -720,9 +769,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#http" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      🛠️ HTTP 요청 메서드에 따른 보안성 차이
+      📌 자바 변수와 자료형
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 코드 스타일 (컨벤션)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 주석
     </span>
   </a>
   
@@ -779,7 +846,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-01-03 00:00:00" class="md-ellipsis">Jan 3, 2024</time>
+                        <time datetime="2024-05-27 00:00:00" class="md-ellipsis">May 27, 2024</time>
                       </div>
                     </li>
                     
@@ -790,8 +857,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/web/">Web</a>, 
-                              <a href="../../../../category/http/">HTTP</a></span>
+                              <a href="../../../../category/java/">Java</a></span>
                         </div>
                       </li>
                     
@@ -822,117 +888,164 @@
         
 
 
-<h1 id="http-method">HTTP Method</h1>
+<h1 id="java">Java의 역사</h1>
 <blockquote>
-<p>GET과 POST 이외의 메서드는 보안에 취약한가? HTTP 메서드의 개념과 안전성에 대해 살펴보기</p>
+<p>Java의 역사</p>
 </blockquote>
 <!-- more -->
 
-<h2 id="http-request-method">👀 HTTP Request Method란?</h2>
-<ul>
-<li>HTTP(HyperText Transfer Protocol) Request Method는 클라이언트와 서버 간의 통신에서 클라이언트가 웹 서버에게 요청의 목적이나 종류를 알리는 수단이다.</li>
-<li>웹에서의 데이터 교환은 HTTP 요청을 통해 이루어지며, 이러한 요청은 특정한 메서드를 사용하여 서버에 전달된다.</li>
-</ul>
-<h2 id="method">✏️ Method의 안전성</h2>
+<h2 id="java_1">📚Java의 역사</h2>
 <ol>
-<li>안전한 메서드<br />
-   : 서버의 데이터를 변경하지 않는 메서드<br />
-    -&gt; 서버의 데이터베이스나 파일 시스템에 저장된 데이터에 영향을 미치지 않는 메서드</li>
-<li>안전하지 않은 메서드<br />
-   : 서버의 데이터를 변경할 수 있는 메서드</li>
+<li>제임스 고슬링을 필두로</li>
 </ol>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">HTTP 메서드</th>
-<th style="text-align: center;">메서드 안전성 여부</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">GET</td>
-<td style="text-align: center;">O</td>
-</tr>
-<tr>
-<td style="text-align: center;">POST</td>
-<td style="text-align: center;">X</td>
-</tr>
-<tr>
-<td style="text-align: center;">PUT</td>
-<td style="text-align: center;">X</td>
-</tr>
-<tr>
-<td style="text-align: center;">DELETE</td>
-<td style="text-align: center;">X</td>
-</tr>
-<tr>
-<td style="text-align: center;">PATCH</td>
-<td style="text-align: center;">X</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="method_1">Method 종류</h2>
-<h3 id="1-get">1. GET</h3>
-<ul>
-<li>URI 형식으로 웹 서버측 리소스(데이터)를 요청</li>
-<li>.../order/book/2132</li>
-<li>데이터를 검색하는 데 사용되며, 같은 리소스에 대한 GET 요청을 여러번 해도 서버의 데이터(상태)를 변경하지 않는다.</li>
-<li>예를 들어, 웹 페이지나 이미지를 불러올 때 GET 요청이 사용된다.</li>
-<li>안전한 메서드</li>
+<h2 id="_1">📌 자바 파일과 컴파일</h2>
+<ol>
+<li>소스코드 작성(Kosta.java)</li>
+<li>컴파일로가 kosta.java를 kosta.class로 변환<ul>
+<li>JVM이 인식할 수 있는 Binary file</li>
 </ul>
-<h3 id="2-post">2. POST</h3>
+</li>
+</ol>
+<h2 id="jvm">📌 자바와 JVM</h2>
+<ol>
+<li>JVM = Java Virtual Machine<ul>
+<li>자바를 실행하기 위한 가상머신</li>
+</ul>
+</li>
+<li>Java 애플리케이션은 JVM 위에서 동작하기 때문에 OS에 종속적이지 않다.</li>
+</ol>
+<h2 id="_2">📌 자바 특징</h2>
+<ol>
+<li>객체지향 언어<ul>
+<li>object 클래스에서 모든 클래스가 파생</li>
+</ul>
+</li>
+<li>독립적인 플랫폼<ul>
+<li>JVM위에서 동작하기 때문에 OS에 종속적이지 않다.</li>
+</ul>
+</li>
+<li>메모리 관련<ul>
+<li>garbage collector가 존재하기 때문에 개발자가 직접 메모리에 할당/해제를 해주지 않아도 된다.</li>
+</ul>
+</li>
+</ol>
+<h2 id="_3">📌 자바 코드 구조</h2>
+<ol>
+<li>클래스 블록, 메소드 블록, 명령문으로 구성됨</li>
+</ol>
+<h3 id="1">1. 클래스</h3>
 <ul>
-<li>클라이언트에서 서버로 전달하고자하는 정보를 request body에 실어서 서버로 전송</li>
-<li>주로 새 리소스를 생성하거나 데이터를 서버에 제출할 때 사용되며, 서버의 상태를 변경할 수 있다.</li>
-<li>예를들어 사용자가 웹페이지에서 회원가입 폼을 작성하고 제출할 때, 사용자의 정보(이름, 이메일, 비밀번호 등)는 Body 담겨 서버로 전송</li>
-<li>서버에서 새로운 사용자 계정을 생성 = 서버의 데이터를 변경</li>
-<li>안전하지 않은 메서드</li>
-<li>
-<p>URL에 데이터를 포함시키지 않기 때문에 GET 메서드보다 더 많은 양의 정보를 전송할 수 있고, 데이터가 URL에 노출되지 않아 보안 측면에서도 유리하다. ⭐️</p>
-<p><br></p>
+<li>자바코드의 가장 바깥쪽 영역을 의미</li>
+<li>클래스명은 자유롭게 설정 가능</li>
+<li>크래스명은 소스파일의 이름과 동일행 함</li>
+<li>하나의 클래스 블록은 여러메소드 블록을 포함할 수 있음</li>
+<li>클래스 블록은 중괄호 {}로 감싸져야 한다</li>
+</ul>
+<h3 id="2">2. 메소드</h3>
+<ul>
+<li>접근제어자: private, protected, default, public</li>
+<li>static은 static 메소드를 만들기 위해 사용</li>
+<li>void는 해당 메소드 블록이 수행된 후 반환되는 데이터 구조를 의미</li>
+<li>반환되는 데이터 구조는 메소드 당 하나임</li>
+<li>메소드 명 역시 자유롭게 정할 수 있음</li>
+</ul>
+<h3 id="access-modifiers">접근 제어자 (Access Modifiers)</h3>
+<p>: 접근 제어자는 클래스의 멤버(변수와 메서드)에 대한 접근을 제어하는 키워드입니다. 자바에서 사용되는 주요 접근 제어자는 다음과 같습니다.</p>
+<h4 id="public"><code>public</code></h4>
+<ul>
+<li><strong>정의</strong>: 모든 클래스에서 접근 가능합니다.</li>
+<li><strong>접근 범위</strong>: 어떤 클래스에서도 접근할 수 있으며 가장 넓은 접근 범위를 가집니다.</li>
+</ul>
+<h4 id="default"><code>default</code></h4>
+<ul>
+<li><strong>정의</strong>: 접근 제어자를 명시적으로 설정하지 않을 때 사용됩니다.</li>
+<li><strong>접근 범위</strong>: 같은 패키지 내의 클래스들만 접근 가능합니다.</li>
+</ul>
+<h4 id="protected"><code>protected</code></h4>
+<ul>
+<li><strong>정의</strong>: 같은 패키지에 속한 클래스나 해당 클래스를 상속받은 자식 클래스에서 접근이 가능합니다.</li>
+<li><strong>접근 범위</strong>: 동일 패키지 또는 상속 관계의 클래스에서만 접근할 수 있습니다.</li>
+</ul>
+<h4 id="private"><code>private</code></h4>
+<ul>
+<li><strong>정의</strong>: 해당 클래스 내부에서만 접근이 가능합니다.</li>
+<li><strong>접근 범위</strong>: 오직 그 클래스 내에서만 사용할 수 있으며, 가장 제한적인 접근 범위를 제공합니다.</li>
+</ul>
+<h3 id="3">3. 명령문</h3>
+<ul>
+<li>메소드가 실행되면 실제로 수행하는 코드 블록</li>
+<li>각 명령문은 세미콜론 ;으로명령문이 끝났다는 것을 의미</li>
+</ul>
+<h2 id="_4">📌 자바 변수와 자료형</h2>
+<ol>
+<li>변수(Variable): 다양한 값을 대입하며 사용할 수 있음<ul>
+<li>변수 = 자료형 + 변수명</li>
+</ul>
+</li>
+<li>자료형</li>
+</ol>
+<p><code>Private Type</code></p>
+<ul>
+<li>데이터를 저장하기 위해 사용하는 자료형</li>
+<li>변수에 "실제 값"을 가짐</li>
+<li>null로 초기화 불가능</li>
+<li>숫자 간 산술 연산 가능</li>
+<li>== 연산자로 값 비교 가능</li>
+<li>byte, short, int, long, char, float, double, boolean, void</li>
+</ul>
+<p><code>Reference Type</code></p>
+<ul>
+<li>데이터가 저장된 메모리의 주소값을 가지는 자료형</li>
+<li>String(문자열)</li>
+<li>배열, 동적 배열(collection)</li>
+<li>커스텀하게 생성한 참조 자료형</li>
+<li>null로 초기화 가능<ul>
+<li>new ~~()</li>
+</ul>
+</li>
+<li>숫자 간 산술 연산 불가능</li>
+<li>equals() 메소드를 활용 하여 값 비교</li>
+<li><code>래퍼클래스</code> -&gt; Byte, Short, Integer, Long, Character, Float, Double, Void<ul>
+<li><code>boxing</code> -&gt; 기본 타입을 래퍼 클래스로 변환하는 과정</li>
+<li>위와 반대의 과정 : <code>unboxing</code></li>
+</ul>
 </li>
 </ul>
-<blockquote>
-<p>POST Request Body 형태</p>
-</blockquote>
+<h2 id="_5">📌 코드 스타일 (컨벤션)</h2>
+<ol>
+<li>
+<p>CamelCase</p>
 <ul>
-<li>application/x-www-form-urlencoded: 이는 HTML 폼을 통해 데이터를 전송할 때 주로 사용되는 형식입니다. 데이터가 key-value 쌍으로 인코딩되어 전송됩니다.</li>
-<li>multipart/form-data: 파일 업로드와 같이 큰 데이터 또는 바이너리 데이터를 전송할 때 사용</li>
-<li>application/json: JSON 형식으로 데이터를 전송할 때 사용되며, 주로 웹 API에서 많이 사용</li>
+<li>각 단어의 맨 처음 글자를 대문자로 표기</li>
+<li>lowerCamelCase, UpperCamelCase로 구분 될 수 있음</li>
+<li>lowerCamelCase 예<ul>
+<li>helloWorld, myBook(메소드 명)</li>
 </ul>
-<h3 id="3-put">3. PUT</h3>
+</li>
+<li>UpperCamelCase 예<ul>
+<li>HelloWorld, MyBook(클래스 명)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>snake_case</p>
 <ul>
-<li>서버에 있는 리소스 전체를 새로운 데이터로 대채한다. 즉, 서버의 상태를 변경한다.</li>
-<li>예를 들어, 사용자 프로필 정보를 업데이트할 때 PUT 요청을 사용할 수 있다.</li>
-<li>사용자 프로필의 '주소' 필드가 "Old Address"로 설정된 상태</li>
-<li>첫 번째 PUT 요청: 주소를 "New Address 1"로 업데이트</li>
-<li>두 번째 PUT 요청: 주소를 "New Address 2"로 업데이트</li>
-<li>최종 결과는 "New Address 2"로 업데이트 된다.</li>
-<li>안전하지 않은 메서드</li>
+<li>각 단어를 언더바로 연결</li>
+<li>하이픈을 사용할 수도 있음</li>
+<li>예<ul>
+<li>hello_world, my_book</li>
 </ul>
-<h3 id="4-delete">4. DELETE</h3>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="_6">📌 주석</h2>
 <ul>
-<li>특정 리소스를 삭제하여 데이터의 상태를 변경한다.</li>
-<li>사용자가 자신의 계정을 삭제하는 경우 서버의 db에서 해당 데이터 제거한다.</li>
-<li>안전하지 않은 메서드</li>
+<li>라인 주석, 블록 주석</li>
+<li>누구나 알 만한 내용의 주석은 지양</li>
 </ul>
-<h3 id="5-patch">5. PATCH</h3>
-<ul>
-<li>리소스의 부분적인 변경을 위해 사용한다.</li>
-<li>사용자의 정보 중 취미 필드가 "독서"로 설정된 상태</li>
-<li>취미 필드에 "등산" 추가</li>
-<li>취미 필드에 "요리" 추가</li>
-<li>최종 결과는 "독서, 등산, 요리"로 업데이트 된다.</li>
-<li>PUT과 차이점: 전체 리소스를 대체하지 않고 일부만 수정한다.</li>
-<li>안전하지 않은 메서드</li>
-</ul>
-<hr />
-<h2 id="http">🛠️ HTTP 요청 메서드에 따른 보안성 차이</h2>
-<p>중요한 데이터를 GET 요청의 URL 파라미터로 전송하는 것은 데이터가 로그나 웹 브라우저의 기록에 남을 수 있기 때문에 안전하지 않다. 반면, POST, PUT, DELETE 같은 메서드는 HTTP Body를 통해 데이터를 전송하기 때문에, 이러한 정보 노출 위험을 줄일 수 있다.</p>
 <p><br>
-<br>
-<br>
 <br>
 <br></p>
 
@@ -968,7 +1081,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../01/mysql-vs-postgresql/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MySQL vs PostgreSQL 차이점">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: 객체지향 프로그래밍과 클래스">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -978,27 +1091,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                MySQL vs PostgreSQL 차이점
+                객체지향 프로그래밍과 클래스
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../http/" class="md-footer__link md-footer__link--next" aria-label="Next: HTTP 멱등성">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                HTTP 멱등성
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
