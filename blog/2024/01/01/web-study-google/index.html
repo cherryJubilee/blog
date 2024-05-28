@@ -1,0 +1,1264 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../web-study/">
+      
+      
+        <link rel="next" href="../MySLQ_PostgreSQL/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>웹 브라우저와 네트워크 통신의 이해 - hyehye_hye's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nanum Gothic";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://cherryjubilee.github.io/blog" title="hyehye_hye&#39;s blog" class="md-header__button md-logo" aria-label="hyehye_hye's blog" data-md-component="logo">
+      
+  <img src="../../../../../cherry.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hyehye_hye's blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              웹 브라우저와 네트워크 통신의 이해
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://cherryjubilee.github.io/blog" title="hyehye_hye&#39;s blog" class="md-nav__button md-logo" aria-label="hyehye_hye's blog" data-md-component="logo">
+      
+  <img src="../../../../../cherry.svg" alt="logo">
+
+    </a>
+    hyehye_hye's blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    배움에 욕심이 많은 주니어 개발자 박혜원입니다.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 May
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 February
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 January
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/study/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    study
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/spring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    react
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    project
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/db/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    db
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wwwgooglecom" class="md-nav__link">
+    www.google.com을 주소창에 쳤을 때 화면이 나오기까지의 과정
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osi-7" class="md-nav__link">
+    🍏 OSI 7계층
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip-4" class="md-nav__link">
+    🍎 TCP/IP 4계층
+  </a>
+  
+    <nav class="md-nav" aria-label="🍎 TCP/IP 4계층">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    계층 간 데이터 송수신 과정
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encapsulation-decapsulation" class="md-nav__link">
+    캡슐화(encapsulation) ↔ 비캡슐화(decapsulation)
+  </a>
+  
+    <nav class="md-nav" aria-label="캡슐화(encapsulation) ↔ 비캡슐화(decapsulation)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1️⃣ 캡슐화
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2️⃣ 비캡슐화
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    
+  </a>
+  
+    <nav class="md-nav" aria-label="">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l7-l4" class="md-nav__link">
+    애플리케이션 계층을 처리하는 기기 (L7, L4)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l4" class="md-nav__link">
+    L4 로드 밸런서
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l7" class="md-nav__link">
+    L7 로드 밸런서
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l7-vs-l4" class="md-nav__link">
+    L7 vs L4 차이점
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dnsdomain-name-system" class="md-nav__link">
+    DNS(Domain Name System)
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS(Domain Name System)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-domain-name-space" class="md-nav__link">
+    1. 도메인 네임 스페이스(Domain Name Space)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dns-server-name-server" class="md-nav__link">
+    2. 네임 서버(DNS Server, Name Server)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-resolver" class="md-nav__link">
+    3. 리졸버(Resolver)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>Hyewon Park</strong><br>
+                      Backend Developer
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-01-01 00:00:00" class="md-ellipsis">Jan 1, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/web/">Web</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              9 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="_1">웹 브라우저와 네트워크 통신의 이해</h1>
+<blockquote>
+<p>웹 동작 방식 및 [개념] OSI 7계층 + TCP/IP 4계층 + L7, L4 로드밸런서 + DNS</p>
+</blockquote>
+<!-- more -->
+
+<h2 id="wwwgooglecom"><a href="http://www.google.com을">www.google.com을</a> 주소창에 쳤을 때 화면이 나오기까지의 과정</h2>
+<ol>
+<li>사용자가 브라우저에 URL(<a href="http://www.google.com/">www.google.com</a> )를 입력한다. HTTP request message를 생성한다.</li>
+<li>IP 주소를 알아야 전송을 할 수 있으므로, DNS lookup을 통해 해당 domain의 server의 IP주소를 알아낸다.</li>
+<li>반환된 IP 주소(google의 server IP)로 HTTP 요청 메시지(request message) 전송 요청한다.</li>
+<li>생성된 HTTP 요청 메시지(request message)를 TCP/IP층에 전달한다.</li>
+<li>HTTP 요청 메시지에 헤더(TCP + IP)를 추가해서 TCP/IP패킷을 생성한다.</li>
+<li>패킷은 전기신호로 랜선을 통해 네트워크로 전송되고, 목적하는 google 서버에 전기적인 신호로 도달한다.</li>
+<li>google 서버에 도착한 패킷은 decapsulation(↔ encapsulation)를 통해 메시지를 복원하고(http 데이터만 남게 된다), 서버의 어플리케이션(tomcat 등)으로 보낸다.</li>
+<li>서버 어플리케이션은 요청 메시지에 대한 response data를 가지고 HTTP응답 메시지(response message)를 생성한다.</li>
+<li>HTTP 응답 메시지를 전달 받은 방식 그대로 client IP로 전송한다.</li>
+<li>HTTP response message에 담긴 데이터를 토대로 웹브라우저에서 HTML 렌더링을 하여 모니터에 google화면 보여진다.</li>
+</ol>
+<hr />
+<h2 id="osi-7">🍏 OSI 7계층</h2>
+<ul>
+<li>네트워크 통신이 일어나는 과정을 7단계로 나눈 국제 표준화 기구(ISO)에서 정의한 네트워크 표준 모델</li>
+<li>7계층으로 나누는 이유?<br />
+   통신이 일어나는 과정을 단계별로 알 수 있고, 특정한 곳에 이상이 생기면 그 단계만 수정할 수 있다.</li>
+</ul>
+<hr />
+<p>7계층 - 응용 계층(Application Layer)</p>
+<ul>
+<li>최종 목적지로, 사용자와 직적접으로 상호작용며 눈에 보이는 부분이다. (크롬, 사파리)</li>
+<li>User Interface 제공하는 계층</li>
+<li>HTTP, FTP, DNS 등</li>
+</ul>
+<p>6계층 - 표현 계층(Presentation Layer)</p>
+<ul>
+<li>전송하는 데이터의 **표현**방식을 결정(ex. 데이터변환, 압축, 암호화, 복호화 등)</li>
+<li>JPEG, MPEG, GIF, ASCII 등</li>
+</ul>
+<p>5계층 - 세션 계층(Session Layer)</p>
+<ul>
+<li>사용자와 서버간에 데이터가 통신하기 위한 논리적 연결을 담당한다.</li>
+<li>TCP/IP 세션을 만들고 없애는 책임을 지니고 있다.</li>
+<li>API, Socket</li>
+</ul>
+<p>4계층 - 전송 계층(Transport Layer)</p>
+<ul>
+<li>TCP와 UDP 프로토콜을 통해 통신을 활성화한다.</li>
+<li>포트를 열어두고, 프로그램들이 전송을 할 수 있도록 제공해준다</li>
+<li>TCP : 신뢰성, 연결지향적</li>
+<li>UDP : 비신뢰성, 비연결성, 실시간</li>
+</ul>
+<p>3계층 - 네트워크 계층(Network Layer)</p>
+<ul>
+<li>데이터를 목적지까지 가장 안전하고 빠르게 전달</li>
+<li>라우터(Router)를 통해 경로를 선택하고 주소를 정하고(IP) 경로(Route)에 따라 패킷을 전달<br />
+  -&gt; IP 헤더 붙음</li>
+<li>이 계층에서 전송되는 단위 : 패킷(Packet)</li>
+<li>장비 : 라우터</li>
+</ul>
+<p>2계층 - 데이터 링크계층(DataLink Layer)</p>
+<ul>
+<li>물리적 매체에 패킷 데이터를 실어 보내는 계층이다.</li>
+<li>이 계층에서 전송되는 단위 : 프레임</li>
+<li>장비 : 브리지, 스위치, 이더넷</li>
+</ul>
+<p>1계층 - 물리계층(PhysicalLayer)</p>
+<ul>
+<li>전기적, 기계적, 기능적인 특성을 이용해서 통신 케이블로 데이터를 전송하는 물리적인 장비</li>
+<li>단지 데이터 전기적인 신호로 변환해서 주고받는 기능만 한다.</li>
+<li>이 계층에서 사용되는 통신 단위: Bit</li>
+<li>장비 : 통신 케이블, 리피터, 허브</li>
+</ul>
+<hr />
+<p><img alt="OSI7계층/TCP/IP" src="./woong1/OSI:TCP:IP.png" /></p>
+<ul>
+<li>서로간의 계층이 완벽하게 일치 하지 않고 세션, 표현 계층이 TCP/IP에는 없다.</li>
+<li>TCP/IP 4계층이 OSI 7계층보다 먼저 개발 되었다. TCP/IP 4계층은 인터넷이 발전 되면서 표준화되어 신뢰성이 우수하다.</li>
+<li>그림에서 보면 OSI 7계층이 네트워크 전송의 데이터 표준을 정립 했다면, TCP/IP 4계층은 이를 실제로 사용하는 인터넷 표준인 것이다.</li>
+</ul>
+<p><br></p>
+<h2 id="tcpip-4">🍎 TCP/IP 4계층</h2>
+<p>4계층 - 응용 계층(Application Layer)</p>
+<ul>
+<li>OSI 7계층의 세션 계층(5), 표현 계층(6), 응용 계층(7)에 해당한다.</li>
+</ul>
+<p>3계층 - 전송 계층(Transport Layer)</p>
+<ul>
+<li>OSI 7계층의 전송 계층(4)에 해당</li>
+</ul>
+<p>2계층 - 인터넷 계층(Internet Layer)</p>
+<ul>
+<li>OSI 7계층의 네트워크 계층(3)에 해당</li>
+</ul>
+<p>1계층 - 네트워크 액세스 계층(Network Access Layer)</p>
+<ul>
+<li>OSI 7계층의 물리계층(1)과 데이터 링크 계층(2)에 해당</li>
+</ul>
+<hr />
+<h3 id="_2">계층 간 데이터 송수신 과정</h3>
+<blockquote>
+<p>사용자가 컴퓨터를 통해 다른 컴퓨터로 데이터를 요청한다면?</p>
+</blockquote>
+<ul>
+<li>애플리케이션 계층에서 전송 계층으로 사용자가 보내는 요청 값들이 <span style="background-color:#fff5b1">캡슐화</span> 과정을 통해 전달된다. 그리고 다시 링크 계층을 통해 해당 서버와 통신하고, 서버의 링크계층으로 부터 애플리케이션까지 <span style="background-color:#fff5b1">비캡슐화</span> 과정을 거쳐 데이터가 전송된다.</li>
+<li>아래 그림과 같이 각 계층을 지날때마다(4 -&gt; 1) 각 계층에서 Header가 붙게되고 수신측은 역순(1 -&gt; 4)으로 헤더를 분석하게 된다.</li>
+</ul>
+<h2 id="_3"><img alt="OSI7계층/TCP/IP" src="../../../../web-study/woong1/date_trans.png" /></h2>
+<h2 id="encapsulation-decapsulation">캡슐화(encapsulation) ↔ 비캡슐화(decapsulation)</h2>
+<h3 id="1"><strong>1️⃣ 캡슐화</strong></h3>
+<p>캡슐화 과정은 상위 계층의 헤더와 데이터를 하위 계층의 데이터 부분에 포함시키고 해당 계층의 헤더를 삽입 하는 과정이다.</p>
+<ol>
+<li>애플리케이션 계층 데이터 -&gt; 전송 계층</li>
+<li>'세그먼트' or '데이터그램'화 되며 TCP(L4)화 된다.</li>
+<li>전송 계층 -&gt; 인터넷 계층</li>
+<li>IP(L3) 헤더가 붙여지며 '패킷'화 된다.</li>
+<li>인터넷 계층 -&gt; 링크 계층</li>
+<li>프레임 헤더와 프레임 트레일러가 붙어 '프레임'화 된다.</li>
+</ol>
+<p><img alt="캡슐화" src="../../../../web-study/woong1/encapsulation.png" /></p>
+<hr />
+<h3 id="2"><strong>2️⃣ 비캡슐화</strong></h3>
+<ul>
+<li>비캡슐화 과정은 하위 계층에서 상위 계층으로 가며 각 계층의 헤더 부분을 제거하는 과정이다.</li>
+<li>캡슐화된 데이터를 받게 되면 링크 계층에서부터 올라오면서 프레임화된 데이터는 다시 패킷화를 거쳐 세그먼트, 데이터그램화를 거쳐 메시지화가 되는 비캡슐화 과정이 일어난다.</li>
+<li>최종적으로 애플리케이션에게 데이터를 전달하게 된다!</li>
+</ul>
+<h2 id="_4"><img alt="비캡슐화" src="../../../../web-study/woong1/decapsulation.png" /></h2>
+<p><br>
+<br></p>
+<h3 id="l7-l4">애플리케이션 계층을 처리하는 기기 (L7, L4)</h3>
+<blockquote>
+<p>로드밸런서란?</p>
+</blockquote>
+<ul>
+<li>여러대의 서버에 부하를 분산하는 기기로 클라이언트로 부터 들어오는 요청들을 뒤쪽의 여러 서버로 나누는 역할</li>
+<li>수많은 트래픽이 몰려왔을 때, 서버 부하를 방지하기 위해 서버 여러 대에 일을 분산 시켜 처리하는 방법.</li>
+</ul>
+<blockquote>
+<p>로드밸런서 특징</p>
+</blockquote>
+<ol>
+<li>고가용성</li>
+<li>서버 중 하나가 실패하더라도, 트래픽을 다른 서버로 재분배한다.</li>
+<li>서비스의 지속성을 보장한다.</li>
+<li>스케일링</li>
+<li>Scale-Out: 비슷한 사양의 서버를 추가로 연결해서 처리 가능한 데이터의 용량을 증가시킨다. 기존 서버의 부하를 분담해 성능 향상 효과를 기대할 수 있다.</li>
+<li>Scale-Up: 기본 서버를 높은 사양으로 업그레이드 하는 방법이다. CPU, 메모리를 업그레이드 시킨다.</li>
+</ol>
+<h3 id="l4"><strong>L4 로드 밸런서</strong></h3>
+<ul>
+<li><strong>전송 계층(Transport Layer, Layer 4)</strong> 에서 작동하는 로드 밸런서이다.</li>
+<li>주로 TCP 및 UDP 프로토콜을 기반으로 클라이언트와 서버 간의 트래픽을 분산시킨다.</li>
+<li>클라이언트의 IP 주소와 포트, nlbP 주소와 포트를 기반으로 로드 밸런싱을 수행한다.</li>
+<li>NLB(Network Load Balance)
+  <img alt="NLB" src="../../../../web-study/woong1/NLB.png" /></li>
+</ul>
+<h3 id="l7"><strong>L7 로드 밸런서</strong></h3>
+<ul>
+<li><strong>애플리케이션 계층(Application Layer, Layer 7)</strong> 에서 작동하는 로드 밸런서이다.</li>
+<li>주로 HTTP 및 HTTPS 프로토콜을 기반으로 클라이언트와 서버 간의 트래픽을 분산시킨다.</li>
+<li>요청 내용(URL, 캐시, 헤더, 쿠키 등)을 기반으로 트래픽을 분산한다.</li>
+<li>만약 장애가 발생한 서버가 있다면 이를 트래픽 분산 대상에서 제외 해야 하는데, health check를 통해 이루어진다.</li>
+<li>서버에게 "잘 살아있니?" "네!" -&gt; 대략 30초 마다 한번씩 체크한다.</li>
+<li>ALB (Application Load Balance)
+  <img alt="ALB" src="../../../../web-study/woong1/ALB.png" /></li>
+</ul>
+<h3 id="l7-vs-l4"><strong>L7 vs L4 차이점</strong></h3>
+<p>만약 <a href="http://bookstore.com/search/book/21이라는">http://bookstore.com/search/book/21이라는</a> url이 있다면,<br />
+L7 로드 밸런서는 HTTP 헤더, URL의 경로를 분석하여 적절한 서버로 트래픽을 라우팅하는 반면, L4 로드 밸런서는 이러한 세부 내용을 고려하지 않고 IP 주소와 포트 번호를 기반으로 모든 요청을 여러 서버중 하나로 단순하게 라우팅한다.</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>L4 로드 밸런서</th>
+<th>L7 로드 밸런서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작동 계층</td>
+<td>전송 계층(Layer 4)</td>
+<td>애플리케이션 계층(Layer 7)</td>
+</tr>
+<tr>
+<td>주요 프로토콜</td>
+<td>TCP, UDP</td>
+<td>HTTP, HTTPS</td>
+</tr>
+<tr>
+<td>로드 밸런싱 기준</td>
+<td>IP 주소, 포트</td>
+<td>요청 내용(URL, 헤더, 쿠키 등)</td>
+</tr>
+<tr>
+<td>처리 속도</td>
+<td>상대적으로 빠름</td>
+<td>상대적으로 느림</td>
+</tr>
+<tr>
+<td>기능 및 유연성</td>
+<td>상대적으로 제한적</td>
+<td>다양한 기능 및 유연성</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="dnsdomain-name-system">DNS(Domain Name System)</h2>
+<ul>
+<li>인터넷의 전화번호부!</li>
+<li>사용자가 google.com과 같은 도메인 이름을 웹 브라우저에 입력하는 경우 DNS는 해당 사이트의 IP주소를 찾아주는 역할을 한다.</li>
+<li>웹사이트에 접속 할 때 우리는 외우기 어려운 IP 주소 대신 도메인 이름을 사용한다. 도메인 이름을 사용했을 때 입력한 도메인을 실제 네트워크상에서 사용하는 IP 주소로 바꾸고 해당 IP 주소로 접속하는 과정이 필요하다. 이러한 과정을 DNS라고 한다.</li>
+</ul>
+<p><br></p>
+<p>💡 DNS 구성요소 3가지는 다음과 같다.</p>
+<h3 id="1-domain-name-space">1. 도메인 네임 스페이스(Domain Name Space)</h3>
+<ul>
+<li>정해진 규칙에 따라 도메인 이름을 계층적 구조로 저장하는 것이다.</li>
+<li>하위 조직의 네임 스페이스를 할당하고 관리하는 방식은 각 하위 기관의 관리 책임자에게 위임된다.<br />
+   예를 들어, hyewon.com 도메인은 .com 도메인(Root 도메인)이 있고, 아래 hyewon.com이라는 서브도메인 아래 <a href="http://www.hyewon.com라는">www.hyewon.com라는</a> 또 다른 서브도메인이다.
+  <img alt="DNS" src="../../../../web-study/woong1/dns.png" /></li>
+</ul>
+<h3 id="2-dns-server-name-server">2. 네임 서버(DNS Server, Name Server)</h3>
+<ul>
+<li>문자열로 표현된 도메인 이름을 실제 컴퓨터가 통신할 때 사용하는 IP주소로 변환시키기 위해 수 많은 IP주소의 도메인 정보를 가지고 있는 곳이다.</li>
+<li>리졸버(Resolver)로부터 요청 받은 도메인 이름에 대한 IP 정보를 다시 리졸버(Resolver)로 전달해주는 역할을 한다.</li>
+</ul>
+<h3 id="3-resolver">3. 리졸버(Resolver)</h3>
+<ul>
+<li>DNS 클라이언트 요청을 네임 서버로 전달하고 찾은 정보를 클라이언트에게 제공하는 기능을 수행한다.</li>
+<li>루트 DNS 서버로부터 시작하여 필요한 DNS 정보를 차례대로 얻어서 IP 주소를 최종적으로 찾아낸다.</li>
+<li>즉 어떤 서버에서 찾아야 하는지, 이미 캐싱되어있는지 등을 찾아서 클라이언트에게 전달하는 역할을 수행한다.</li>
+</ul>
+<p><br>
+<br>
+<br>
+<br>
+<br></p>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../web-study/" class="md-footer__link md-footer__link--prev" aria-label="Previous: HTTP란?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                HTTP란?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../MySLQ_PostgreSQL/" class="md-footer__link md-footer__link--next" aria-label="Next: MySQL vs PostgreSQL 차이점">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MySQL vs PostgreSQL 차이점
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Hyewon Park
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/cherryJubilee/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cherryJubilee" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
