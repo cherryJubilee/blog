@@ -16,15 +16,15 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>참조자료형 - hyehye_hye's blog</title>
+        <title>생성자 - hyehye_hye's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35e1ed30.min.css">
       
         
         <link rel="stylesheet" href="../../../../assets/stylesheets/palette.356b1318.min.css">
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              참조자료형
+              생성자
             
           </span>
         </div>
@@ -662,10 +662,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      참조 자료형
-    </span>
+  <a href="#constructor" class="md-nav__link">
+    생성자(constructor)란?
   </a>
   
 </li>
@@ -763,16 +761,57 @@
         
 
 
-<h1 id="_1">참조자료형</h1>
+<h1 id="_1">생성자</h1>
 <blockquote>
-<p>참조자료형에 대해서 알아보자</p>
+<p>생성자 대해서 알아보자</p>
 </blockquote>
 <!-- more -->
 
-<h2 id="_2">참조 자료형</h2>
+<h2 id="constructor">생성자(constructor)란?</h2>
 <ol>
-<li>클래스 자료형으로 선언하는 참조 자료형 변수</li>
+<li>클래스를 정의할 때 Order() 같은 메서드를 생성자라고 함</li>
+<li>클래스의 멤버 변수나 상수를 초기화하는 것<ul>
+<li>처음 객체를 생성할 떄 값을 정함</li>
+</ul>
+</li>
+<li>
+<p>디폴트 생성자(default constructor)</p>
+<ul>
+<li>생성자는 객체를 생성할 때 호출함</li>
+<li>생성자 이름은 클래스 이름과 같고, 생성자는 반환 값이 없음</li>
+<li>자바 컴파일러에서 자동으로 생성자를 만들어줌<ul>
+<li>프로그래머가 생성자를 직접 만드는 경우에는 생성하지 않음</li>
+</ul>
+</li>
+<li>매개변수가 없고 구현 코드도 없음</li>
+</ul>
+</li>
 </ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Order</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="n">orderId</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">customerId</span><span class="p">;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">orderDate</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="c1">// default 생성자</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Order</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OrderTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">            </span><span class="n">Order</span><span class="w"> </span><span class="n">order</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Order</span><span class="p">();</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="n">order</span><span class="p">.</span><span class="na">orderId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20240050001L</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="n">order</span><span class="p">.</span><span class="na">customerId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;kosta100&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="n">order</span><span class="p">.</span><span class="na">orderDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2024년 5월 28일&quot;</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">orderId</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">orderDate</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">order</span><span class="p">.</span><span class="na">customerName</span><span class="p">);</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<p>생성자 목적 : 멤버변수 초기화</p>
 
 
 
@@ -823,13 +862,13 @@
         
         
           
-          <a href="./" class="md-footer__link md-footer__link--next" aria-label="Next: 생성자">
+          <a href="./" class="md-footer__link md-footer__link--next" aria-label="Next: 객체지향 프로그래밍과 클래스">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                생성자
+                객체지향 프로그래밍과 클래스
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -896,7 +935,7 @@
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
