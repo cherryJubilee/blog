@@ -14,15 +14,15 @@
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>static - hyehye_hye's blog</title>
+        <title>static 과 final - hyehye_hye's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35e1ed30.min.css">
       
         
         <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.356b1318.min.css">
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#static" class="md-skip">
+        <a href="#static-final" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              static
+              static 과 final
             
           </span>
         </div>
@@ -660,28 +660,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    static
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#static_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      static
-    </span>
+    💡 static 변수
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#static_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 static 변수
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#static_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 static 메서드
-    </span>
+    💡 static 메서드
   </a>
   
     <nav class="md-nav" aria-label="💡 static 메서드">
@@ -689,9 +683,7 @@
         
           <li class="md-nav__item">
   <a href="#vs" class="md-nav__link">
-    <span class="md-ellipsis">
-      클래스 메서드 vs 인스턴스 메서드
-    </span>
+    클래스 메서드 vs 인스턴스 메서드
   </a>
   
 </li>
@@ -702,10 +694,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#static_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 static 응용(싱글톤 패턴)
-    </span>
+  <a href="#static_3" class="md-nav__link">
+    💡 static 응용(싱글톤 패턴)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final" class="md-nav__link">
+    💡 final
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-vs" class="md-nav__link">
+    💡 final 필드 - 생성자 초기화 vs  필드 초기화 차이
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 final 필드 - 생성자 초기화 vs 필드 초기화 차이">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-final_1" class="md-nav__link">
+    🌸 static final
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constant" class="md-nav__link">
+    💡 상수(constant)
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 상수(constant)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    🍀 상수 사용 예시 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final_1" class="md-nav__link">
+    💡 final 변수와 참조형 변수
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final_2" class="md-nav__link">
+    💡 final 사용 예시
   </a>
   
 </li>
@@ -783,7 +834,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              5 min read
                             
                           </span>
                         </div>
@@ -803,19 +854,19 @@
         
 
 
-<h1 id="static">static</h1>
+<h1 id="static-final">static 과 final</h1>
 <blockquote>
-<p>static 변수와 static 메서드에 대해서 알아보자</p>
+<p>static 변수와 static 메서드 그리고 final에 대해서 알아보자</p>
 </blockquote>
 <!-- more -->
 
-<h2 id="static_1">static</h2>
+<h2 id="static">static</h2>
 <ul>
 <li>인스턴스를 생성하지 않고 바로 붕어빵 틀을 불러 오는 것.</li>
 <li>class에있는 메서드를 바로 호출 할 수 있다.</li>
 </ul>
-<h2 id="static_2">💡 static 변수</h2>
-<h2 id="static_3">💡 static 메서드</h2>
+<h2 id="static_1">💡 static 변수</h2>
+<h2 id="static_2">💡 static 메서드</h2>
 <h3 id="vs">클래스 메서드 vs 인스턴스 메서드</h3>
 <blockquote>
 <p>클래스 메서드</p>
@@ -848,7 +899,7 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">     </span><span class="p">}</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="static_4">💡 static 응용(싱글톤 패턴)</h2>
+<h2 id="static_3">💡 static 응용(싱글톤 패턴)</h2>
 <ol>
 <li>
 <p>싱글톤 패턴 (Singleton Pattern)</p>
@@ -865,6 +916,123 @@
 </ul>
 </li>
 </ol>
+<h2 id="final">💡 final</h2>
+<ul>
+<li>final의 값은 최초 한번만 할당 가능하다<ol>
+<li>. <code>final</code> 을 지역 변수 선언시 바로 초기화 한 경우 이미 값이 할당되었기 때문에 값을 할당할 수 없다.</li>
+<li>매개변수에 <code>final</code> 이 붙으면 메서드 내부에서 매개변수의 값을 변경할 수 없다. 따라서 메서드 호출 시점에 사용 된 값이 끝까지 사용된다.</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FinalLocalMain</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//final 지역 변수1</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">data1</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">data1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">//최초 한번만 할당 가능 //data1 = 20; //컴파일 오류</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="c1">//final 지역 변수2</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">//data2 = 20; //컴파일 오류</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="n">method</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="c1">//final 매개변수</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">method</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">parameter</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="c1">//parameter = 20; 컴파일 오류</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="final-vs">💡 final 필드 - 생성자 초기화 vs  필드 초기화 차이</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FinalFieldMain</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="c1">//final 필드 - 생성자 초기화</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;생성자 초기화&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">ConstructInit</span><span class="w"> </span><span class="n">constructInit1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConstructInit</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="n">ConstructInit</span><span class="w"> </span><span class="n">constructInit2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ConstructInit</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">constructInit1</span><span class="p">.</span><span class="na">value</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">constructInit2</span><span class="p">.</span><span class="na">value</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="c1">//final 필드 - 필드 초기화 </span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;필드 초기화&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="n">FieldInit</span><span class="w"> </span><span class="n">fieldInit1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FieldInit</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="n">FieldInit</span><span class="w"> </span><span class="n">fieldInit2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FieldInit</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="n">FieldInit</span><span class="w"> </span><span class="n">fieldInit3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FieldInit</span><span class="p">();</span><span class="w"> </span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fieldInit1</span><span class="p">.</span><span class="na">value</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fieldInit2</span><span class="p">.</span><span class="na">value</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fieldInit3</span><span class="p">.</span><span class="na">value</span><span class="p">);</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="c1">//상수</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;상수&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">FieldInit</span><span class="p">.</span><span class="na">CONST_VALUE</span><span class="p">);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>필드 초기화</p>
+</blockquote>
+<ul>
+<li><code>FieldInit</code> 과 같이 <code>final</code> 필드를 필드에서 초기화 하는 경우, 모든 인스턴스가 다음 오른쪽 그림과 같이 같 은 값을 가진다.</li>
+<li>모든 인스턴스가 같은 값을 사용하기 때문에 메모리가 낭비된다.</li>
+<li>이를 보완하기 위해 나온 것이 static final</li>
+<li><img alt="alt text" src="../../../../kosta/JavaNote/image-10.png" /></li>
+</ul>
+<h3 id="static-final_1">🌸 static final</h3>
+<ul>
+<li><code>FieldInit.MY_VALUE</code> 는 <code>static</code> 영역에 존재한다. 그리고 <code>final</code> 키워드를 사용해서 초기화 값이 변하지 않는다.</li>
+<li><code>static</code> 영역은 단 하나만 존재하는 영역이다. <code>MY_VALUE</code> 변수는 JVM 상에서 하나만 존재하므로 앞서 설명 한 중복과 메모리 비효율 문제를 모두 해결할 수 있다.</li>
+<li>이런 이유로 필드에 <code>final</code> + 필드 초기화를 사용하는 경우 <code>static</code> 을 붙여서 사용하는 것이 효과적이다.</li>
+<li>상수(constant)라고 불린다.</li>
+</ul>
+<h2 id="constant">💡 상수(constant)</h2>
+<ul>
+<li>변하지 않고 항상 일정한 값을 갖는 수 = 단 하나만 존재하는 변하지 않는 고정된 값.</li>
+<li>필드에 직접 접근해서 사용한다.</li>
+<li>대문자 사용, _로 구분한다.</li>
+<li>상수는 런타임에 변경할 수 없다. 변경하려면 프로그램을 종료하고, 코드를 변경한 다음 프로그램을 다시 실행해야 한다.</li>
+</ul>
+<h3 id="1">🍀 상수 사용 예시 1</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">//상수</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Constant</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="c1">//애플리케이션 설정 상수</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">MAX_USERS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ConstantMain1</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;프로그램 최대 참여자 수 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Constant</span><span class="p">.</span><span class="na">MAX_USERS</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">currentUserCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">999</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="n">process</span><span class="p">(</span><span class="n">currentUserCount</span><span class="o">++</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="n">process</span><span class="p">(</span><span class="n">currentUserCount</span><span class="o">++</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="n">process</span><span class="p">(</span><span class="n">currentUserCount</span><span class="o">++</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">     </span><span class="p">}</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">currentUserCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;참여자 수:&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">currentUserCount</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">currentUserCount</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Constant</span><span class="p">.</span><span class="na">MAX_USERS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;대기자로 등록합니다.&quot;</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;게임에 참가합니다.&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="final_1">💡 final 변수와 참조형 변수</h2>
+<ul>
+<li>참조형 변수는 객체의 참조값을 보관한다.</li>
+<li>참조형 변수 data에 final이 붙은 상태이다<ul>
+<li>더이상 다른 객체를 참조할 수 없게 된다. 참조형 변수에 들어있는 참조값만 변경하지 못하며, 이 변수 이외에 다른 곳에 영향을 주지 않는다.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">final</span><span class="w"> </span><span class="n">Data</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Data</span><span class="p">()</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">// data = new Data() // final 변경 불가 컴파일 오류</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">//참조 대상의 값은 변경 가능 </span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">data</span><span class="p">.</span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">value</span><span class="p">);</span><span class="w">  </span><span class="c1">//data.value = 10 </span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">data</span><span class="p">.</span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="na">value</span><span class="p">);</span><span class="w">  </span><span class="c1">//data.value = 20</span>
+</code></pre></div>
+<h2 id="final_2">💡 final 사용 예시</h2>
+<p>예를들어 고객 id를 변경했을 때 큰 문제가 발생한다면 final로 선언하고 생성자로 값을 할당하자.
+어디선가 실수로 id 값을 변경한다면 컴파일러가 문제를 알려줄 것이다.</p>
 
 
 
@@ -972,7 +1140,7 @@
     <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
     
   </body>
