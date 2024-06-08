@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../04/25.%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/">
+        <link rel="prev" href="../../04/25.%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/">
       
       
         <link rel="next" href="../../07/OCP%28Open-Closed%20Principle%29%20%EC%9B%90%EC%B9%99/">
@@ -708,6 +708,134 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#java-object" class="md-nav__link">
+    💡 java에서 Object 클래스가 최상위 부모 클래스인 이유?
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 java에서 Object 클래스가 최상위 부모 클래스인 이유?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1️⃣ 공통기능 제공
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2️⃣ 다형성의 기본 구현
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ 다형성의 기본 구현">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object_2" class="md-nav__link">
+    ⭕️ Object 다형성 장점
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object_3" class="md-nav__link">
+    ❌ Object 다형성 한계
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object_4" class="md-nav__link">
+    💡 Object 배열
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    💡 toString() 메서드
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 toString() 메서드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tostring_1" class="md-nav__link">
+    🍀 toString() 오버라이딩 예제
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    ⚒️ 참고) 정적 vs 동적 의존관계
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-equalsobject-obj" class="md-nav__link">
+    💡 boolean equals(Object obj) 메서드
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 boolean equals(Object obj) 메서드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equals" class="md-nav__link">
+    ⚒️ 동일성(==)과 동등성(equals())
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equals_1" class="md-nav__link">
+    ⚒️ equals 언제 사용하는걸까?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#int-hashcode" class="md-nav__link">
+    💡 int hashCode() 메서드
+  </a>
+  
+    <nav class="md-nav" aria-label="💡 int hashCode() 메서드">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    두 인스턴스가 같음
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -781,7 +909,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              11 min read
                             
                           </span>
                         </div>
@@ -825,34 +953,408 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">Student</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="kd">class</span> <span class="nc">abstract</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Object</span>
 </code></pre></div>
 </li>
-<li>
-<p>String toString() 메서드</p>
+</ol>
+<p><br></p>
+<h2 id="java-object">💡 java에서 Object 클래스가 최상위 부모 클래스인 이유?</h2>
+<ul>
+<li>객체의 정보를 제공하고, 이 객체가 다른 객체와 같은지 비교하고, 객체가 어떤 클래스로 만들어졌는지 확인하는 기능은 모든 객체에게 필요한 기본 기능이다. 이런 기능을 객체로 만들 때마다 개발자가 새로운 메서드로 정의해서 만든다면 일관성이 없다. 따라서 모든 객체에 필요한 공통기능을 제공하기 위해 최상위 부모클래스로 제공하고, 모든 객체들은 상속(제공) 받을 수 있다.</li>
+</ul>
+<h3 id="1">1️⃣ 공통기능 제공</h3>
+<ol>
+<li>객체의 정보를 제공하는 <code>toString()</code></li>
+<li>객체의 같음을 비교하는 <code>equals()</code></li>
+<li>객체의 클래스 정보를 제공하는 <code>getClass()</code> </li>
+<li>기타 여러가지 기능</li>
+</ol>
+<p><br></p>
+<h3 id="2">2️⃣ 다형성의 기본 구현</h3>
+<ul>
+<li>부모는 자식을 담을 수 있다. <code>Object</code> 는 모든 클래스의 부모 클래스이다. 따라서 모든 객체를 참조할 수 있다. -&gt; 타입이 다른 객체들을 어딘가에 보관해야 한다면 바로 <code>Object</code> 에 보관하면 된다.  </li>
+<li><code>Object</code> 클래스는 다형성을 지원하는 기본적인 메커니즘을 제공한다. 모든 자바 객체는 <code>Object</code> 타입으로 처리될 수 있으며, 이는 다양한 타입의 객체를 통합적으로 처리할 수 있게 해준다.</li>
+</ul>
+<p><br></p>
+<h4 id="object_2">⭕️ Object 다형성 장점</h4>
+<blockquote>
+<p><code>action(Object obj)</code></p>
+</blockquote>
+<ul>
+<li><code>Object</code> 타입의 매개변수를 사용한다. 그런데 <code>Object</code> 는 모든 객체의 부모다. 따라서 어떤 객체든지 인 자로 전달할 수 있다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">sound</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;멍멍&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">move</span><span class="p">(){</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">       </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;자동차 이동&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">   </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="n">action</span><span class="p">(</span><span class="n">dog</span><span class="p">);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="n">action</span><span class="p">(</span><span class="n">car</span><span class="p">);</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">action</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">object</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="c1">// Object는 Dog, Car를 모른다. 다운캐스팅이 필요하다</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="c1">// object.sound();  //object는 sound()가 없다</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="c1">// object.move();  //object는 move()가 없다</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="c1">// dog, car에 맞게 다운캐스팅</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">            </span><span class="n">dog</span><span class="p">.</span><span class="na">sound</span><span class="p">();</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">            </span><span class="n">car</span><span class="p">.</span><span class="na">move</span><span class="p">();</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="p">}</span>
+</code></pre></div>
+<p><br></p>
+<h4 id="object_3">❌ Object 다형성 한계</h4>
+<ol>
+<li>메서드 오버라이딩 불가!!!<ul>
+<li>Object는 모든 객체의 부모이므로 모든 객체를 대상으로 다형적 참조를 할 수 있다. 하지만 Object에는 Dog.sound()와 같은 다른 객체의 메서드가 정의 되어 있지 않다.</li>
+</ul>
+</li>
+<li>다운캐스팅 필요<ul>
+<li>각 객체의 기능을 호출하려면 다운캐스팅이 필요하다. 물론 Object가 보유한 toString()은 오버라이딩 가능.</li>
+</ul>
 </li>
 </ol>
+<blockquote>
+<p><code>obj</code> 는 <code>Object</code> 타입이기 때문에 최종부모로서 위로 올라가서 <code>sound()</code> 메서드를 찾을 수 없기 때문에 오류 발생</p>
+</blockquote>
+<p><img alt="alt text" src="../../../../kosta/JavaNote/image-31.png" /></p>
+<blockquote>
+<p>다운캐스팅을 통해 해결</p>
+</blockquote>
+<p><img alt="alt text" src="../../../../kosta/JavaNote/image-30.png" /></p>
+<p><br></p>
+<h2 id="object_4">💡 Object 배열</h2>
+<ul>
+<li>어떤 객체든 담을 수 있는 배열이다.</li>
+<li>size() 메서드는 Object타입만 사용한다. Object 타입은 세상의 모든 객체를 담을 수 있기 때문에, 새로운 클래스가 추가되거나 변경되어도 이 메서드는 수정하지 않아도 된다. </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObjectPolyExample2</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">();</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">();</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Object</span><span class="p">();</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">objects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">dog</span><span class="p">,</span><span class="w"> </span><span class="n">car</span><span class="p">,</span><span class="w"> </span><span class="n">object</span><span class="p">};</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="n">objects</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">size</span><span class="p">(</span><span class="n">Object</span><span class="o">[]</span><span class="w"> </span><span class="n">objects</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;전달된 객체의 수는: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w">  </span><span class="n">objects</span><span class="p">.</span><span class="na">length</span><span class="p">);</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="c1">// 전달된 객체의 수는: 3</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="tostring">💡 toString() 메서드</h2>
 <blockquote>
 <p>JDKObject-kosta StudentTest2.java</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>- 객체를 문자열로 표현하여 반환함
-- 재정의하여 객체에 대한 설명이나 특정 멤버 변수 값을 반환함
-    - String이나 Integer등 여러 JDK 클래스에서 toString() 메서드가 이미 재정의 되어 있음.
+<ul>
+<li>객체의 정보를 문자열로 표현하여 반환함</li>
+<li>재정의하여 객체에 대한 설명이나 특정 멤버 변수 값을 반환함<ul>
+<li>String이나 Integer등 여러 JDK 클래스에서 toString() 메서드가 이미 재정의 되어 있음.</li>
+</ul>
+</li>
+<li>디버깅과 로깅에 유용하게 사용된다.</li>
+<li>
+<p>Object가 toString()을 갖고있으므로 오버라이딩 해서 여러군데 사용할 수 있다.</p>
+</li>
+<li>
+<p>Object 가 제공하는 toString() 메서드는 기본적으로 패키지를 포함한 객체의 이름과 객체의 참조값(해시 코드)를 16진수로 제공한다.</p>
+<ul>
+<li>해시 코드: 객체의 참조값</li>
+</ul>
+</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;@&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">toHexString</span><span class="p">(</span><span class="n">hashCode</span><span class="p">());</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
 </code></pre></div>
-<ol>
-<li>boolean equals(Object obj) 메서드</li>
-</ol>
+<br></p>
+<p>⭐️ println()과 toString()은 같은 결과를 반환한다. </p>
+<ul>
+<li><code>System.out.println()</code> 메서드는 사실 내부에서 <code>toString()</code> 을 호출하기 때문이다.</li>
+<li>
+<p>println() 을 사용할 때, <code>toString()</code> 을 직접 호출할 필요 없이 객체를 바로 전달하면 객체의 정보를 출력할 수 있다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">println</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="c1">//...</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">valueOf</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">obj</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;null&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="tostring_1">🍀 toString() 오버라이딩 예제</h3>
+<blockquote>
+<p>Car, Dog 클래스 </p>
+</blockquote>
+<ul>
+<li>Dog 클래스에서 toString을 재정의 했다.</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Car</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="kd">private</span><span class="w">  </span><span class="n">String</span><span class="w"> </span><span class="n">carName</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Car</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">carName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">carName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">carName</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">dogName</span><span class="p">;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Dog</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">dogName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">dogName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dogName</span><span class="p">;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Dog{&quot;</span><span class="w"> </span><span class="o">+</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">                </span><span class="s">&quot;dogName=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">dogName</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">                </span><span class="s">&quot;, age=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">+</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="p">}</span>
+</code></pre></div>
+<br></p>
+<blockquote>
+<p>ToStringMain2</p>
+</blockquote>
+<ul>
+<li>Car 인스턴트는 toString()을 재정의 하지 않았기 때문에, 기본 toString() 메서드를 사용한다 </li>
+<li>Dog 인스턴트는 toString()을 재정의 하여 객체의 상태를 명확하게 확인 가능</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ToStringMain2</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(</span><span class="s">&quot;Model Y&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;멍멍이1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;멍멍이2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;1. 단순 toString 호출&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">car</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">  </span><span class="c1">// lang.object.tostring.Car@452b3a41</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="c1">// toString()을 오버라이딩 한 dog</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dog1</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">  </span><span class="c1">//Dog{dogName=&#39;멍멍이1&#39;, age=1}</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dog2</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span><span class="w">  </span><span class="c1">//Dog{dogName=&#39;멍멍이2&#39;, age=2}</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">        </span><span class="c1">// 사실 println 내부 로직에서 toString을 호출한다.</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;2. println 내부에서 toString 호출&quot;</span><span class="p">);</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">car</span><span class="p">);</span><span class="w">  </span><span class="c1">// lang.object.tostring.Car@452b3a41</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dog1</span><span class="p">);</span><span class="w">  </span><span class="c1">//Dog{dogName=&#39;멍멍이1&#39;, age=1}</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">dog2</span><span class="p">);</span><span class="w">  </span><span class="c1">//Dog{dogName=&#39;멍멍이2&#39;, age=2}</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="m">1</span>.<span class="w"> </span>단순<span class="w"> </span>toString<span class="w"> </span>호출
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>lang.object.tostring.Car@452b3a41
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Dog<span class="o">{</span><span class="nv">dogName</span><span class="o">=</span><span class="s1">&#39;멍멍이1&#39;</span>,<span class="w"> </span><span class="nv">age</span><span class="o">=</span><span class="m">1</span><span class="o">}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Dog<span class="o">{</span><span class="nv">dogName</span><span class="o">=</span><span class="s1">&#39;멍멍이2&#39;</span>,<span class="w"> </span><span class="nv">age</span><span class="o">=</span><span class="m">2</span><span class="o">}</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="m">1</span>.<span class="w"> </span>println<span class="w"> </span>내부에서<span class="w"> </span>toString<span class="w"> </span>호출
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>lang.object.tostring.Car@452b3a41
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>Dog<span class="o">{</span><span class="nv">dogName</span><span class="o">=</span><span class="s1">&#39;멍멍이1&#39;</span>,<span class="w"> </span><span class="nv">age</span><span class="o">=</span><span class="m">1</span><span class="o">}</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Dog<span class="o">{</span><span class="nv">dogName</span><span class="o">=</span><span class="s1">&#39;멍멍이2&#39;</span>,<span class="w"> </span><span class="nv">age</span><span class="o">=</span><span class="m">2</span><span class="o">}</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="m">1</span>.<span class="w"> </span>Object<span class="w"> </span>다형성<span class="w"> </span>활용
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>객체<span class="w"> </span>정보<span class="w"> </span>출력:<span class="w"> </span>lang.object.tostring.Car@452b3a41
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>객체<span class="w"> </span>정보<span class="w"> </span>출력:<span class="w"> </span>Dog<span class="o">{</span><span class="nv">dogName</span><span class="o">=</span><span class="s1">&#39;멍멍이1&#39;</span>,<span class="w"> </span><span class="nv">age</span><span class="o">=</span><span class="m">1</span><span class="o">}</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>객체<span class="w"> </span>정보<span class="w"> </span>출력:<span class="w"> </span>Dog<span class="o">{</span><span class="nv">dogName</span><span class="o">=</span><span class="s1">&#39;멍멍이2&#39;</span>,<span class="w"> </span><span class="nv">age</span><span class="o">=</span><span class="m">2</span><span class="o">}</span>
+</code></pre></div>
+<p><br></p>
+<blockquote>
+<p>ObjectPrinter.print(Object obj)</p>
+</blockquote>
+<p><img alt="alt text" src="../../../../kosta/JavaNote/image-32.png" /></p>
+<p><img alt="alt text" src="../../../../kosta/JavaNote/image-33.png" /></p>
+<p>⭐️ ObjectPrinter클래스는 OCP 원칙을 지키고 있다.</p>
+<ul>
+<li>구체적인 Car, Dog에 의존하는 것이 아니라 추상적인 Object에 의존하기 때문에 OCP원칙을 지키고 있다.<ul>
+<li>Open : 새로운 클래스를 추가하고, toString() 을 오버라이딩해서 기능을 확장할 수 있다. </li>
+<li>Closed : 새로운 클래스를 추가해도 Object 와 toString() 을 사용하는 클라이언트 코드인 ObjectPrinter 는 변경하지 않아도 된다.</li>
+</ul>
+</li>
+<li>새로운 클래스를 추가하고 toString()메서드를 새롭게 오버라이딩 해서 기능을 확장할 수 있었다.</li>
+<li>이러한 변화에도 클라이언트 코드인 ObjectPrinter는 변경할 필요가 없다.</li>
+</ul>
+<p><img alt="alt text" src="../../../../kosta/JavaNote/image-34.png" /></p>
+<p><br></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ObjectPrinter</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;객체 정보 출력: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">obj</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">string</span><span class="p">);</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ToStringMain2</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(</span><span class="s">&quot;Model Y&quot;</span><span class="p">);</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;멍멍이1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;멍멍이2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;3. Object 다형성 활용&quot;</span><span class="p">);</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span><span class="c1">// static 이라서 바로 부를 수 있다.</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">        </span><span class="n">ObjectPrinter</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">car</span><span class="p">);</span><span class="w"> </span><span class="c1">// 객체 정보 출력: lang.object.tostring.Car@452b3a41</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">        </span><span class="n">ObjectPrinter</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">dog1</span><span class="p">);</span><span class="w">  </span><span class="c1">// 객체 정보 출력: Dog{dogName=&#39;멍멍이1&#39;, age=1}</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">        </span><span class="n">ObjectPrinter</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">dog2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 객체 정보 출력: Dog{dogName=&#39;멍멍이2&#39;, age=2}</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="p">}</span>
+</code></pre></div>
+<p><br></p>
+<blockquote>
+<p>객체의 참조값 직접 출력</p>
+</blockquote>
+<ul>
+<li><code>toString()</code> 이나 <code>hashCode()</code> 를 재정의하게 되면 객체의 참조값을 출력할 수 없다. 이때는 다음 코드를 사용하면 객체의 참조값을 출력할 수 있다.</li>
+<li>예) dog1의 toString이 오버라이딩 되어있더라도 참조값을 볼 수 있는 방법</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ToStringMain2</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="n">Car</span><span class="w"> </span><span class="n">car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Car</span><span class="p">(</span><span class="s">&quot;Model Y&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;멍멍이1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="n">Dog</span><span class="w"> </span><span class="n">dog2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Dog</span><span class="p">(</span><span class="s">&quot;멍멍이2&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="c1">// 객체의 참조값 직접 출력</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">hexString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">toHexString</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">identityHashCode</span><span class="p">(</span><span class="n">dog1</span><span class="p">));</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hexString = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">hexString</span><span class="p">);</span><span class="w">  </span><span class="c1">//  refValue = 72ea2f77</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">}</span>
+</code></pre></div>
+<p><br></p>
+<h3 id="vs">⚒️ 참고) 정적 vs 동적 의존관계</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">의존관계 유형</th>
+<th style="text-align: center;">설명</th>
+<th style="text-align: center;">예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">정적 의존관계</td>
+<td style="text-align: center;"><code>컴파일</code> 시간에 결정되는 클래스 간의 관계. <br> 코드 분석만으로 의존관계 파악 가능.</td>
+<td style="text-align: center;"><code>ObjectPrinter</code>가 <code>Object</code> 클래스를 사용하는 관계</td>
+</tr>
+<tr>
+<td style="text-align: center;">동적 의존관계</td>
+<td style="text-align: center;"><code>런타임</code>에 결정되며, 어떤 인스턴스가 사용될지 실행해야 알 수 있음. <br> a인스턴스의 실제 타입에 따라 달라짐.</td>
+<td style="text-align: center;"><code>ObjectPrinter.print(Object obj)</code>에서 <code>Car</code> 또는 <code>Dog</code>가 전달될 수 있음</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boolean-equalsobject-obj">💡 boolean equals(Object obj) 메서드</h2>
 <blockquote>
 <p>JDKObject-kosta - StudentTest3.java</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code>- 두 인스턴스 주소 값을 비교하여 boolean 값을 반환 해주는 메서드이다.
-- 주소 값이 같다면 당연히 같은 인스턴스임
-- 서로 다른 주소 값을 가질 때도 같은 인스턴스라고 정의할 수 있는 경우가 있음
-    - 논리적 동일성: 재정의하여 두 인스턴스가 논리적으로 동일함의 여부를 구현함
-    - 인스턴스가 다르더라도 논리적으로 동일한 경우 true를 반환하도록 재정의할 수 있음
-    - 같은 학번, 같은 사번, 같은 아이디의 회원
-</code></pre></div>
-<ol>
-<li>
-<p>int hashCode() 메서드</p>
+<ul>
+<li>두 인스턴스 주소 값을 비교하여 boolean 값을 반환 해주는 메서드이다.</li>
+<li>주소 값이 같다면 당연히 같은 인스턴스임</li>
+<li>서로 다른 주소 값을 가질 때도 같은 인스턴스라고 정의할 수 있는 경우가 있음<ul>
+<li>논리적 동일성: 재정의하여 두 인스턴스가 논리적으로 동일함의 여부를 구현함</li>
+<li>인스턴스가 다르더라도 논리적으로 동일한 경우 true를 반환하도록 재정의할 수 있음</li>
+<li>같은 학번, 같은 사번, 같은 아이디의 회원</li>
+</ul>
 </li>
+</ul>
+<p><br></p>
+<h3 id="equals">⚒️ 동일성(==)과 동등성(equals())</h3>
+<ol>
+<li><code>동일성(Identity)</code> : == 연산자를 사용해서 두 객체의 참조가 동일한 객체를 가리키고 있는지 확인 </li>
+<li><code>동등성(Equality)</code> : equals() 메서드를 사용하여 두 객체가 논리적으로 동등한지 확인</li>
+</ol>
+<blockquote>
+<p>동일성과 동등성을 비교 예제</p>
+</blockquote>
+<ul>
+<li>Object가 기본으로 제공하는 equals() 는 <code>==</code> 으로 동일성 비교를 제공한다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EqualsMainV1</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="n">UserV1</span><span class="w"> </span><span class="n">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserV1</span><span class="p">(</span><span class="s">&quot;id-100&quot;</span><span class="p">);</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="n">UserV1</span><span class="w"> </span><span class="n">user2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserV1</span><span class="p">(</span><span class="s">&quot;id-100&quot;</span><span class="p">);</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;identity = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">user1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">user2</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;equality = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">user2</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p>id(고객번호)가 같으면 논리적으로 같은 객체로 정의하는 예제</p>
+</blockquote>
+<ul>
+<li>equals()는 Object 타입을 매개변수로 사용한다. 따라서 객체의 특정 값을 사용하려면 다운캐스팅이 필요
+하다.</li>
+<li>UserV2에 있는 id 는 String 이다. 문자열 비교를 위해 <code>==</code> 이 아니라 equals()를 사용했다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">UserV2</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">UserV2</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="c1">// 간단 버전</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">obj</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">        </span><span class="n">UserV2</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">UserV2</span><span class="p">)</span><span class="w"> </span><span class="n">obj</span><span class="p">;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">id</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="na">id</span><span class="p">);</span><span class="w">  </span><span class="c1">// 문자열 비교</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="cm">/*  정확한 equals() 구현</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="cm">    @Override</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="cm">    public boolean equals(Object object) {</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="cm">        if (this == object) return true;</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="cm">        if (object == null || getClass() != object.getClass()) return false;</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="cm">        UserV2 userV2 = (UserV2) object;</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="cm">        return Objects.equals(id, userV2.id);</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="cm">    }</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="cm">    */</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">identity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nv">equality</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="equals_1">⚒️ equals 언제 사용하는걸까?</h3>
+<ul>
+<li>동일성 비교가 항상 필요한 것은 아니다. </li>
+<li>동일성 비교가 필요한 경우에만 equals()를 재정의하면 된다. </li>
+<li>equals() hashcode()가 보통 함께 사용된다.</li>
+</ul>
+<p><br></p>
+<h2 id="int-hashcode">💡 int hashCode() 메서드</h2>
+<ul>
 <li>
 <p>해시(hash)</p>
 <ul>
@@ -870,17 +1372,12 @@
 <li>해시 함수는 객체의 특정 정보(키 값)을 매개변수 값으로 넣으면 그 객체가 저장되어야 할 위치를 반환함</li>
 <li>hashCode()는 인스턴스의 저장 주소를 반환홤</li>
 <li>힙 메모리에 인스턴스가 저장되는 방식이 hash 방식</li>
-<li>
-<p>인스턴스가 다르더라도 논리적으로 동일한 경우 true를 반환하도록 재정의 할 수 있음</p>
-</li>
-<li>
-<p>두 인스턴스가 같음</p>
-<ul>
-<li>두 인스턴스에 대한 equals()의 반환 값이 true</li>
-<li>두 인스턴스에 대한 hashCode()값을 반환</li>
+<li>인스턴스가 다르더라도 논리적으로 동일한 경우 true를 반환하도록 재정의 할 수 있음</li>
 </ul>
-</li>
-</ol>
+<h3 id="_1">두 인스턴스가 같음</h3>
+<div class="highlight"><pre><span></span><code>- 두 인스턴스에 대한 equals()의 반환 값이 true
+- 두 인스턴스에 대한 hashCode()값을 반환
+</code></pre></div>
 
 
 
@@ -914,7 +1411,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../04/25.%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 인터페이스">
+          <a href="../../04/25.%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 인터페이스">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
