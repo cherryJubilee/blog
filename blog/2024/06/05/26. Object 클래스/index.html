@@ -544,26 +544,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/project/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    project
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../category/devops/" class="md-nav__link">
         
   
@@ -825,6 +805,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    해시(hash)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashcode" class="md-nav__link">
+    hashCode() 메서드
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     두 인스턴스가 같음
   </a>
@@ -1072,12 +1066,8 @@
 </ul>
 </li>
 <li>디버깅과 로깅에 유용하게 사용된다.</li>
-<li>
-<p>Object가 toString()을 갖고있으므로 오버라이딩 해서 여러군데 사용할 수 있다.</p>
-</li>
-<li>
-<p>Object 가 제공하는 toString() 메서드는 기본적으로 패키지를 포함한 객체의 이름과 객체의 참조값(해시 코드)를 16진수로 제공한다.</p>
-<ul>
+<li>Object가 toString()을 갖고 있으므로 오버라이딩 해서 객체에 대한 정보를 알기 위한 용도로 사용할 수 있다.</li>
+<li>Object 가 제공하는 toString() 메서드는 기본적으로 패키지를 포함한 객체의 이름과 객체의 참조값(해시 코드)를 16진수로 제공한다.<ul>
 <li>해시 코드: 객체의 참조값</li>
 </ul>
 </li>
@@ -1294,7 +1284,7 @@
 <p>동일성과 동등성을 비교 예제</p>
 </blockquote>
 <ul>
-<li>Object가 기본으로 제공하는 equals() 는 <code>==</code> 으로 동일성 비교를 제공한다.</li>
+<li>Object가 기본으로 제공하는 equals() 는 <code>==</code> 으로 동일성 비교를 제공한다. ⭐️</li>
 </ul>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EqualsMainV1</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
@@ -1302,11 +1292,10 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="n">UserV1</span><span class="w"> </span><span class="n">user1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserV1</span><span class="p">(</span><span class="s">&quot;id-100&quot;</span><span class="p">);</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="n">UserV1</span><span class="w"> </span><span class="n">user2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UserV1</span><span class="p">(</span><span class="s">&quot;id-100&quot;</span><span class="p">);</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;identity = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">user1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">user2</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;equality = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">user2</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;identity = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">user1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">user2</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;equality = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">user1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">user2</span><span class="p">));</span><span class="w">  </span><span class="c1">// false</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span>
 </code></pre></div>
 <blockquote>
 <p>id(고객번호)가 같으면 논리적으로 같은 객체로 정의하는 예제</p>
@@ -1354,26 +1343,30 @@
 </ul>
 <p><br></p>
 <h2 id="int-hashcode">💡 int hashCode() 메서드</h2>
-<ul>
-<li>
-<p>해시(hash)</p>
-<ul>
-<li>정보를 저장하거나 검색할 때 사용하는 자료구조</li>
-<li>index = hash(key)
+<h3 id="hash">해시(hash)</h3>
+<div class="highlight"><pre><span></span><code>-   정보를 저장하거나 검색할 때 사용하는 자료구조
+-   index = hash(key)
     index -&gt; 저장위치
     hash -&gt; 해시함수
     key -&gt; 객체 정보
-    객테의 해시 코드 값이 반환됨(메모리 위치 값)</li>
-</ul>
-</li>
-<li>
-<p>정보를 어디에 저장할 것인지, 어디서 가져올 것인지 해시 함수를 사용하여 구현함</p>
-</li>
+- 객체의 해시 코드 값이 반환됨(메모리 위치 값)
+</code></pre></div>
+<ul>
+<li>정보를 어디에 저장할 것인지, 어디서 가져올 것인지 해시 함수를 사용하여 구현함</li>
 <li>해시 함수는 객체의 특정 정보(키 값)을 매개변수 값으로 넣으면 그 객체가 저장되어야 할 위치를 반환함</li>
-<li>hashCode()는 인스턴스의 저장 주소를 반환홤</li>
+<li>hashCode()는 인스턴스의 저장 주소를 반환홤 -&gt; 모든 객체가 자신만의 해시 코드를 표현할 수 있는 기능 제공</li>
 <li>힙 메모리에 인스턴스가 저장되는 방식이 hash 방식</li>
-<li>인스턴스가 다르더라도 논리적으로 동일한 경우 true를 반환하도록 재정의 할 수 있음</li>
+<li>인스턴스가 다르더라도 논리적으로 동일한 경우 true를 반환하도록 재정의할 수 있음</li>
 </ul>
+<h3 id="hashcode">hashCode() 메서드</h3>
+<ul>
+<li>보통 오버라이딩(제정의)해서 사용한다. </li>
+<li>객체의 참조값을 기반으로 해시코드를 생성한다. 즉 객체의 인스턴스가 다르면 해시코드도 다르다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Object</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">();</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="_1">두 인스턴스가 같음</h3>
 <div class="highlight"><pre><span></span><code>- 두 인스턴스에 대한 equals()의 반환 값이 true
 - 두 인스턴스에 대한 hashCode()값을 반환
