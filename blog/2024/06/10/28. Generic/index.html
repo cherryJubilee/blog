@@ -690,15 +690,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#generic-1" class="md-nav__link">
-    🍀 Generic 사용하지 않았을 때 예제 1
+  <a href="#generic_1" class="md-nav__link">
+    🍀 Generic 사용하지 않았을 때
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    🍀 제네릭을 사용하여 보완 예제
+    🍀 제네릭을 사용하여 보완
   </a>
   
 </li>
@@ -741,12 +741,18 @@
     💡 타입 매개변수 제한
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="💡 타입 매개변수 제한">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#vs" class="md-nav__link">
     ⚒️ 제네릭 타입 vs 제네릭 메서드
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -913,7 +919,7 @@
 <li>제네릭 프로그램은 참조 자료형이 변환될 때 이에 대한 검증을 컴파일러가 하므로 안정적임</li>
 <li>컬렉션 프레임워크도 많은 부분이 제네릭으로 구현되어 있음</li>
 </ul>
-<h3 id="generic-1">🍀 Generic 사용하지 않았을 때 예제 1</h3>
+<h3 id="generic_1">🍀 Generic 사용하지 않았을 때</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ThreeDPrinter</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Powder</span><span class="w"> </span><span class="n">material</span><span class="p">;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -993,7 +999,7 @@
 <ul>
 <li>다형성을 지키기 위해 Object를 사용하는 하였지만 문제는 타입 안전성이 보장되지 않는다. 제네릭을 사용하면 이러한 문제를 컴파일 시점에 미리 감지하고 해결할 수 있다.</li>
 </ul>
-<h3 id="_1">🍀 제네릭을 사용하여 보완 예제</h3>
+<h3 id="_1">🍀 제네릭을 사용하여 보완</h3>
 <blockquote>
 <p>ThreeDPrinter3</p>
 </blockquote>
@@ -1119,7 +1125,7 @@
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">biggerDog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Animal<span class="o">{</span><span class="nv">name</span><span class="o">=</span><span class="s1">&#39;멍멍이2&#39;</span>,<span class="w"> </span><span class="nv">size</span><span class="o">=</span><span class="m">200</span><span class="o">}</span>
 </code></pre></div>
 <p><br></p>
-<h2 id="vs">⚒️ 제네릭 타입 vs 제네릭 메서드</h2>
+<h3 id="vs">⚒️ 제네릭 타입 vs 제네릭 메서드</h3>
 <table>
 <thead>
 <tr>
