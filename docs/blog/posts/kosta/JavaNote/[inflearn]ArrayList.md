@@ -552,11 +552,191 @@ public void remove(int index, Object element) {
 ![alt text](image-44.png)
 
 
-
-
 📌 중간에 있는 항목을 추가하거나 삭제하는 경우   
 
 - 연결 리스트는 인덱스를 사용해서 노드를 추가할 위치를 찾는데 O(n)
 - 위치를 찾고 노드를 추가하는데 O(1)
 - 따라서 O(n)이 걸린다.
 - 엥 배열리스트랑 성능이 별 다를게 없는데...?
+
+
+### 배열 리스트와 연결 리스트의 성능 비교
+
+| 기능             | ArrayList (배열 리스트) | LinkedList (연결 리스트) |
+|:------------------:|:--------------------------:|:---------------------------:|
+| 인덱스 조회      | O(1)                     | O(n)                      |
+| 검색             | O(n)                     | O(n)                      |
+| 앞에 추가/삭제   | O(n)                     | O(1)                      |
+| 뒤에 추가/삭제   | O(1)              | O(n), O(1) <- 자바가 제공하는 이중 연결 리스트인   경우                 |
+| 평균 추가/삭제   | O(n)                 | O(n)                 |
+
+
+
+## 연결리스트에 제네릭 도입
+
+<details>
+<summary>연결리스트에 제네릭 도입 코드 (MyLinkedListV3)</summary>
+
+```java
+package collection.link;
+
+// 제네릭 적용
+public class MyLinkedListV3<E> {
+
+    private Node<E> first;
+    private int size = 0;
+
+    public void add(E e) {
+        Node<E> newNode = new Node<>(e);
+        if(first == null){
+            first = newNode;
+        } else {
+            Node<E> lastNode = getLastNode();
+            lastNode.next = newNode;
+        }
+        size++;
+    }
+
+    // 첫 번째 위치에 데이터 추가 코드
+    public void add(int index, E e){
+        Node<E> newnode = new Node<>(e);
+        if(index == 0) {
+            newnode.next = first;
+            first = newnode;
+        } else {  // 첫번째가 아닌 중간위치에 데이터 추가 코드
+            Node<E> prevnode = getNode(index - 1);
+            newnode.next = prevnode.next;
+            prevnode.next = newnode;
+        }
+        size++;
+    }
+
+    // 첫 번째 위치 데이터 삭제
+    public E remove(int index) {
+        Node<E> removeNode = getNode(index);
+        E removedItem = removeNode.item;  // 삭제할 아이템
+        if(index == 0) {
+            first = removeNode.next;
+        } else {
+            Node<E> prevNode = getNode(index - 1);
+            prevNode.next = removeNode.next;
+        }
+        removeNode.item = null;
+        removeNode.next = null;
+        size--;
+        return removedItem;
+    }
+
+    private Node<E> getLastNode() {
+        Node<E> x = first;
+        while(x.next != null) {
+            x = x.next;
+        }
+        return x;
+    }
+
+    // 특정 인덱스에 있는 노드의 데이터(item) 값 반환
+    public E get(int index) {
+        Node<E> node = getNode(index);
+        return node.item;
+    }
+
+    // 특정 인덱스에 있는 노드를 반환
+    private Node<E> getNode(int index) {
+        Node<E> x = first;
+        for (int i = 0; i < index; i++) {
+            x = x.next;
+        }
+        return x;
+    }
+
+    // 특정 인덱스에 있는 요소를 새 요소로 교체하고, 이전 요소를 반환
+    public E set(int index, E element) {
+        Node<E> x = getNode(index);
+        E oldValue = x.item;
+        x.item = element;
+        return oldValue;
+    }
+
+    // 리스트에서 특정 요소의 인덱스를 찾기
+    public int indexOf(E o) {
+        int index = 0;
+        for (Node<E> x = first; x != null; x = x.next) {
+            if (o.equals(x.item))
+                return index;
+            index++;
+        }
+        return -1;
+    }
+
+    public int size() {
+        return size;
+    }
+    @Override
+    public String toString() {
+        return "MyLinkedListV1{" +
+                "first=" + first +
+                ", size=" + size +
+                '}';
+    }
+    // 코드 추가, 중첩클래스
+    public static class Node<E> {
+
+        E item;
+        Node<E> next;
+
+        public Node(E item) {
+            this.item = item;
+        }
+
+        @Override
+        public String toString() {
+            // 가변인 stringBuilder 사용
+            StringBuilder sb = new StringBuilder();
+            Node<E> x = this;
+            sb.append("[");
+            while (x !=null) {
+                sb.append(x.item);
+                if(x.next != null) {
+                    sb.append("->");
+                }
+                x = x.next;
+            }
+            sb.append("]");
+
+            return sb.toString();
+        }
+
+    }
+}
+
+```
+
+</details>
+
+
+
+<details>
+<summary>연결리스트에 제네릭 도입 코드 (MyLinkedListV3Main)</summary>
+
+```java
+public class MyLinkedListV3Main {
+    public static void main(String[] args) {
+
+        MyLinkedListV3<String> stringList = new MyLinkedListV3<>();
+        stringList.add("a");
+        stringList.add("b");
+        stringList.add("c");
+        String string = stringList.get(0);
+        System.out.println("string = " + string);  // string = a
+
+        MyLinkedListV3<Integer> intList = new MyLinkedListV3<>();
+        intList.add(1);
+        intList.add(2);
+        intList.add(3);
+        Integer integer = intList.get(0);
+        System.out.println("integer = " + integer);  // integer = 1
+    }
+}
+```
+</details>
