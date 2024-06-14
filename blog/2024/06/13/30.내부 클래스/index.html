@@ -12,6 +12,8 @@
         <link rel="prev" href="../../12/29.%20%EC%BB%AC%EB%A0%89%EC%85%98%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/">
       
       
+        <link rel="next" href="../../14/31.%20%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
+      
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
@@ -682,7 +684,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 내부클래스 개념
+      💡 서론
     </span>
   </a>
   
@@ -691,16 +693,58 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 이너클래스 종류
+      💡 이너클래스
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 정적 내부 클래스 메서드
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 지역 내부 클래스
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 지역 내부 클래스">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      💡 객체 생성하기
+      🍀 지역 내부 클래스 예제
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 익명 내부 클래스
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 내부클래스 정리
     </span>
   </a>
   
@@ -779,7 +823,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -805,37 +849,226 @@
 </blockquote>
 <!-- more -->
 
-<h2 id="_2">💡 내부클래스 개념</h2>
-<h2 id="_3">💡 이너클래스 종류</h2>
+<h2 id="_2">💡 서론</h2>
+<ol>
+<li>클래스 내부<ul>
+<li>필드, 메서드, 생성자</li>
+<li>이너 클래스, 이너 인터페이스</li>
+</ul>
+</li>
+<li>Inner Class<ul>
+<li>클래스 내부에 선언한 클래스</li>
+<li>대개 이 이너클래스와 외부 클래스가 밀접한 관련이 있기 때문</li>
+</ul>
+</li>
+</ol>
+<h2 id="_3">💡 이너클래스</h2>
+<ol>
+<li>클래스 내부에 포함되는 이너클래스(inner class)</li>
+<li>종류<ul>
+<li>인스턴스 내부 클래스</li>
+<li>정적 내부 클래스</li>
+<li>지역 내부 클래스</li>
+<li>익명 내부 클래스</li>
+</ul>
+</li>
+</ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 아우터 클래스</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 인스턴스 이너클래스</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 정적 이너 클래스</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">void</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 지역 (이너)클래스</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="kd">class</span> <span class="nc">D</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="_4">💡 객체 생성하기</h2>
 <ol>
-<li>먼저 아우터 클래스의 객체를 생성</li>
+<li>
+<p>변수 유형과 내부 클래스 유형 비교하기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">class</span> <span class="nc">ABC</span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 인스턴스 변수</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 정적변수</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">class</span> <span class="nc">ABC</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 외부 클래스</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">In</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 인스턴스 내부 클래스</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SIn</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 정적 내부 클래스</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>객체 생성하기</p>
+</li>
+<li>
+<p>먼저 아우터 클래스의 객체를 생성</p>
+</li>
 <li>이후 생성한 아우터 클래스 객체의 참조 변수를 이용해 객체 내부에 있는 이너 클래스의 생성자 호출함</li>
 <li>
 <p>문법</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">참조</span><span class="w"> </span><span class="n">변수</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">아웃</span><span class="w"> </span><span class="nf">클래스</span><span class="p">();</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="p">.</span><span class="na">이너</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">이너</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">참조</span><span class="w"> </span><span class="n">변수</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">참조</span><span class="w"> </span><span class="n">변수</span><span class="p">.</span><span class="na">new</span><span class="w"> </span><span class="n">이너</span><span class="w"> </span><span class="nf">클래스</span><span class="p">();</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span><span class="w">  </span><span class="c1">// 아우터 클래스</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 이너 클래스</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">A</span><span class="p">.</span><span class="na">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">B</span><span class="p">();</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">참조</span><span class="w"> </span><span class="n">변수</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">아웃</span><span class="w"> </span><span class="nf">클래스</span><span class="p">();</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="p">.</span><span class="na">이너</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">이너</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">참조</span><span class="w"> </span><span class="n">변수</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">아웃</span><span class="w"> </span><span class="n">클래스</span><span class="w"> </span><span class="n">참조</span><span class="w"> </span><span class="n">변수</span><span class="p">.</span><span class="na">new</span><span class="w"> </span><span class="n">이너</span><span class="w"> </span><span class="nf">클래스</span><span class="p">();</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kd">class</span> <span class="nc">A</span><span class="p">{</span><span class="w">  </span><span class="c1">// 아우터 클래스</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 이너 클래스</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">A</span><span class="p">.</span><span class="na">B</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="na">B</span><span class="p">();</span>
 </code></pre></div>
 </li>
 </ol>
+<h2 id="5">5. 정적 내부 클래스 메서드</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>일반 메서드 사용 가능 여부</th>
+<th>정적 메서드 사용 가능 여부</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>외부 클래스의 인스턴스 변수</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>외부 클래스의 정적 변수</td>
+<td>o</td>
+<td>o</td>
+</tr>
+<tr>
+<td>정적 내부 클래스의 인스턴스 변수</td>
+<td>o</td>
+<td>x</td>
+</tr>
+<tr>
+<td>정적 내부 클래스의 정적 변수</td>
+<td>o</td>
+<td>o</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 지역 내부 클래스</h2>
+<h3 id="_4">🍀 지역 내부 클래스 예제</h3>
+<details>
+<summary> [내부] 지역 클래스 예제 </summary>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta3</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">class</span> <span class="nc">Outer</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">outNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="n">Runnable</span><span class="w"> </span><span class="nf">getRunnable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">   </span><span class="c1">// 지역 변수</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="kd">class</span> <span class="nc">MyRunnable</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Runnable</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 로컬 이너 클래스</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">localNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// 지역 내부 클래스의 인스턴스 변수</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">            </span><span class="nd">@Override</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">            </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">                </span><span class="c1">// i = 10; 매개변수는 상수로 바뀌므로 값을변경할 수 없음</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">                </span><span class="c1">//num = 11; 지역변수는  상수로 바뀌므로 값을변경할 수 없음</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;매개변수&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;지역변수&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;지역 내부 클래스의 인스턴스 변수&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">localNum</span><span class="p">);</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;외부 클래스의 인스턴스 변수&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">outNum</span><span class="p">);</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;외부 클래스의 정적 변수&quot;</span><span class="w">  </span><span class="o">+</span><span class="w"> </span><span class="n">sNum</span><span class="p">);</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyRunnable</span><span class="p">();</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="p">}</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">localInnerTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">         </span><span class="n">Outer</span><span class="w"> </span><span class="n">outer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Outer</span><span class="p">();</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">         </span><span class="n">Runnable</span><span class="w"> </span><span class="n">runnable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">outer</span><span class="p">.</span><span class="na">getRunnable</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w"> </span><span class="c1">// 메서드 호출</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">         </span><span class="n">runnable</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>매개변수100
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>지역변수100
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>지역<span class="w"> </span>내부<span class="w"> </span>클래스의<span class="w"> </span>인스턴스<span class="w"> </span>변수10
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>외부<span class="w"> </span>클래스의<span class="w"> </span>인스턴스<span class="w"> </span>변수100
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>외부<span class="w"> </span>클래스의<span class="w"> </span>정적<span class="w"> </span>변수200
+</code></pre></div>
+
+</details>
+
+<h2 id="7">7. 익명 내부 클래스</h2>
+<ul>
+<li>클래스 이름을 사용하지 않는 클래스</li>
+<li>이름이 없는 클래스<ul>
+<li>지역 내부 클래스의 MyRunnable 클래스 이름은 실제로 호출되는 경우가 없음</li>
+</ul>
+</li>
+<li>클래스의 이름을 생략하고 주로 하나의 인터페이스나 하나의 추상클래스를 구현하여 반환</li>
+<li>인터페이스나 추상 클래스 자료형의 변수에 직접 대입하여 클래스를 생성하거나 지역 내부 클래스의 메서드 내부에서 생성하여 반환할 수 있음</li>
+<li>widget의 이벤트 핸들러에 활용됨.</li>
+</ul>
+<h2 id="_5">📌 내부클래스 정리</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">종류</th>
+<th style="text-align: center;">구현 위치</th>
+<th style="text-align: center;">사용할 수 있는 외부 클래스 변수</th>
+<th style="text-align: center;">생성 방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">인스턴스 내부 클래스</td>
+<td style="text-align: center;">외부 클래스 멤버 변수와 동일</td>
+<td style="text-align: center;">외부 인스턴스 변수, 외부 전역 변수</td>
+<td style="text-align: center;">외부클래스를 먼저 만든 후 내부클래스 생성</td>
+</tr>
+<tr>
+<td style="text-align: center;">정적 내부 클래스</td>
+<td style="text-align: center;">외부 클래스 멤버 변수와 동일</td>
+<td style="text-align: center;">외부 전역 변수</td>
+<td style="text-align: center;">외부클래스와 무관하게 생성</td>
+</tr>
+<tr>
+<td style="text-align: center;">지역 내부 클래스</td>
+<td style="text-align: center;">메서드 내부</td>
+<td style="text-align: center;">외부 전역 변수, 외부 인스턴스 변수</td>
+<td style="text-align: center;">메서드 호출할 때 생성</td>
+</tr>
+<tr>
+<td style="text-align: center;">익명 내부 클래스</td>
+<td style="text-align: center;">메서드 내부 변수에 대입하여 직접 구현</td>
+<td style="text-align: center;">외부 전역 변수, 외부 인스턴스 변수</td>
+<td style="text-align: center;">메서드, 호출할 때 생성, 인터페이스 타입에 대입할 변수 new 연산자를 사용해서 생성</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -884,6 +1117,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../../14/31.%20%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="md-footer__link md-footer__link--next" aria-label="Next: 함수형 프로그래밍">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                함수형 프로그래밍
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
