@@ -20,7 +20,7 @@
     
     
       
-        <title>내부 클래스 - hyehye_hye's blog</title>
+        <title>중첩클래스 - hyehye_hye's blog</title>
       
     
     
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              내부 클래스
+              중첩클래스
             
           </span>
         </div>
@@ -733,16 +733,67 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      7. 익명 내부 클래스
+      📌 익명 내부 클래스
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 익명 내부 클래스">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-printer-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      new Printer() {body}
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      익명 클래스 특징
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      익명 클래스 장단점
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 익명 클래스 예제
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 익명클래스 정리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       📌 내부클래스 정리
     </span>
@@ -823,7 +874,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -843,9 +894,9 @@
         
 
 
-<h1 id="_1">내부 클래스</h1>
+<h1 id="_1">중첩클래스</h1>
 <blockquote>
-<p>내부 클래스</p>
+<p>내부 클래스, 지역 클래스, 정적 중첩 클래스, 익명 클래스</p>
 </blockquote>
 <!-- more -->
 
@@ -1021,7 +1072,7 @@
 
 </details>
 
-<h2 id="7">7. 익명 내부 클래스</h2>
+<h2 id="_5">📌 익명 내부 클래스</h2>
 <ul>
 <li>클래스 이름을 사용하지 않는 클래스</li>
 <li>이름이 없는 클래스<ul>
@@ -1031,8 +1082,72 @@
 <li>클래스의 이름을 생략하고 주로 하나의 인터페이스나 하나의 추상클래스를 구현하여 반환</li>
 <li>인터페이스나 추상 클래스 자료형의 변수에 직접 대입하여 클래스를 생성하거나 지역 내부 클래스의 메서드 내부에서 생성하여 반환할 수 있음</li>
 <li>widget의 이벤트 핸들러에 활용됨.</li>
+<li>지역클래스의 생성과 사용을 한 번에 수행한다.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span><span class="n">Printer</span><span class="w"> </span><span class="n">printer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Printer</span><span class="p">(){</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="c1">//body</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
+</code></pre></div></li>
 </ul>
-<h2 id="_5">📌 내부클래스 정리</h2>
+<h3 id="new-printer-body"><code>new Printer() {body}</code></h3>
+<ul>
+<li>익명 클래스는 클래스의 본문(body)을 정의하면서 동시에 생성한다. <code>new</code> 다음에 바로 상속 받으면서 구현 할 부모 타입을 입력하면 된다.</li>
+<li><code>{body}</code> 부분에 <code>Printer</code> 인터페이스를 구현한 코드를 작성<ul>
+<li>익명 클래스의 본문</li>
+</ul>
+</li>
+<li>⭐️ <code>Printer</code> 를 상속(구현) 하면서 바로 생성하는 것</li>
+</ul>
+<h3 id="_6">익명 클래스 특징</h3>
+<ol>
+<li>익명 클래스는 이름 없는 지역 클래스를 선언하면서 동시에 생성한다.</li>
+<li>익명 클래스는 부모 클래스를 상속 받거나, 또는 인터페이스를 구현해야 한다. 익명 클래스를 사용할 때는 상위 클 래스나 인터페이스가 필요하다.</li>
+<li>익명 클래스는 말 그대로 이름이 없다. 이름을 가지지 않으므로, 생성자를 가질 수 없다. (기본 생성자만 사용됨) 익명 클래스는 <code>AnonymousOuter$1</code> 과 같이 자바 내부에서 바깥 클래스 이름 + <code>$</code> + 숫자로 정의된다. 익명 클 래스가 여러개면 <code>$1</code> , <code>$2</code> , <code>$3</code> 으로 숫자가 증가하면서 구분된다.</li>
+</ol>
+<h3 id="_7">익명 클래스 장단점</h3>
+<ol>
+<li><code>장점</code>: 익명 클래스를 사용하면 클래스를 별도로 정의하지 않고도 인터페이스나 추상 클래스를 즉석에서 구현할 수 있어 코드 가 더 간결해진다. 하지만, 복잡하거나 재사용이 필요한 경우에는 별도의 클래스를 정의하는 것이 좋다.</li>
+<li>
+<p><code>단점</code>: 익명 클래스는 단 한 번만 인스턴스를 생생할 수 있다. 다음과 같이 여러 번 생성이 필요하다면 익명 클래스를 사용할 수 없다. 대신에 지역 클래스를 선언하고 사용하면 된다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Printer</span><span class="w"> </span><span class="n">printer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalPrinter</span><span class="p">();</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">printer1</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">Printer</span><span class="w"> </span><span class="n">printer2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LocalPrinter</span><span class="p">();</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">printer2</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="_8">🍀 익명 클래스 예제</h3>
+<blockquote>
+<p>익명 클래스 사용</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AnonymousOuter</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">     </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">outInstanceVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">process</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">paramVar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">         </span><span class="kt">int</span><span class="w"> </span><span class="n">localVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">         </span><span class="n">Printer</span><span class="w"> </span><span class="n">printer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Printer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">             </span><span class="nd">@Override</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">             </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                 </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;value=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">value</span><span class="p">);</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                 </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;localVar=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">localVar</span><span class="p">);</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">                 </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;paramVar=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">paramVar</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">                 </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;outInstanceVar=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">outInstanceVar</span><span class="p">);</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="p">}</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="p">};</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">         </span><span class="n">printer</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;printer.class=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">printer</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p">}</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">         </span><span class="n">AnonymousOuter</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AnonymousOuter</span><span class="p">();</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">         </span><span class="n">main</span><span class="p">.</span><span class="na">process</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h3 id="_9">🛠️ 익명클래스 정리</h3>
+<ul>
+<li>익명 클래스는 이름이 없는 지역 클래스이다.</li>
+<li>특정 부모 클래스(인터페이스)를 상속 받고 바로 생성하는 경우 사용한다.</li>
+<li>지역 클래스가 일회성으로 사용되는 경우나 간단한 구현을 제공할 때 사용한다.</li>
+</ul>
+<h2 id="_10">📌 내부클래스 정리</h2>
 <table>
 <thead>
 <tr>
