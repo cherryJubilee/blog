@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../14/31.%20%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
+        <link rel="prev" href="../33.%20%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/">
       
       
       
@@ -754,6 +754,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sort-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 알게 된 점 : sort, sorted 차이
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🍎 알게 된 점 : sort, sorted 차이">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. sort
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. sorted
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ 정리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -827,7 +869,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              9 min read
+                              10 min read
                             
                           </span>
                         </div>
@@ -1331,6 +1373,32 @@ partitioningBy(): 스트림의 요소를 조건에 따라 두 그룹으로 분�
 
 </details>
 
+<h2 id="sort-sorted">🍎 알게 된 점 : sort, sorted 차이</h2>
+<p>Java Stream API에서 sort와 sorted는 각각 컬렉션(Collection)과 스트림(Stream)에서 정렬을 수행하는 메소드이다.</p>
+<h3 id="1-sort">1. sort</h3>
+<p>위치: List 인터페이스에 정의됨
+기능: 리스트의 요소를 정렬함. 리스트 자체를 변경함(원본 리스트가 정렬됨).
+사용법: 리스트에 sort 메소드를 호출하면 해당 리스트의 요소들이 정렬됩니다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">   </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cherry&quot;</span><span class="p">));</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">   </span><span class="n">list</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">Comparator</span><span class="p">.</span><span class="na">naturalOrder</span><span class="p">());</span><span class="w"> </span><span class="c1">// 리스트 자체가 정렬됨</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">list</span><span class="p">);</span><span class="w"> </span><span class="c1">// [apple, banana, cherry]</span>
+</code></pre></div>
+<h3 id="2-sorted">2. sorted</h3>
+<p>위치: Stream 인터페이스에 정의됨
+기능: 스트림의 요소를 정렬함. 정렬된 새로운 스트림을 반환함(원본 스트림은 변경되지 않음).
+사용법: 스트림에 sorted 메소드를 호출하면 정렬된 스트림을 얻을 수 있습니다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">   </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cherry&quot;</span><span class="p">));</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">   </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sortedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">   </span><span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">   </span><span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span><span class="w"> </span><span class="c1">// 새로운 정렬된 리스트 생성</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">   </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sortedList</span><span class="p">);</span><span class="w"> </span><span class="c1">// [apple, banana, cherry]</span>
+</code></pre></div>
+<h3 id="_7">🛠️ 정리</h3>
+<ul>
+<li><code>sort</code>: 리스트 자체를 정렬함. 원본 리스트가 변경됨. 주로 컬렉션의 요소를 정렬할 때 사용</li>
+<li><code>sorted</code>: 스트림의 요소를 정렬하여 새로운 스트림을 반환함. 원본 리스트는 변경되지 않음. 스트림 파이프라인 내에서 정렬 작업을 수행할 때</li>
+</ul>
+
 
 
   
@@ -1363,7 +1431,7 @@ partitioningBy(): 스트림의 요소를 조건에 따라 두 그룹으로 분�
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../14/31.%20%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 함수형 프로그래밍">
+          <a href="../33.%20%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 예외처리">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1373,7 +1441,7 @@ partitioningBy(): 스트림의 요소를 조건에 따라 두 그룹으로 분�
                 Previous
               </span>
               <div class="md-ellipsis">
-                함수형 프로그래밍
+                예외처리
               </div>
             </div>
           </a>
