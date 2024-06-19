@@ -754,6 +754,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 바이트 단위 스트림
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 문자 단위 스트림
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 보조스트림
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍎 소캣 통신 - 스트림 사용하기
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -827,7 +863,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              8 min read
                             
                           </span>
                         </div>
@@ -902,13 +938,13 @@
 <li>
 <p>바이트 스트림</p>
 <ul>
-<li><code>FileInputStream</code>,<code>FileOutputStream</code>, <code>BufferedInputStream</code>, <code>BufferedOutputStream</code></li>
+<li><code>FileInputStream</code>, <code>FileOutputStream</code>, <code>BufferedInputStream</code>, <code>BufferedOutputStream</code></li>
 </ul>
 </li>
 <li>
 <p>문자 스트림</p>
 <ul>
-<li><code>FileReader</code>,<code>FileWriter</code>, <code>BufferedWriter</code>, <code>BufferedWriter</code></li>
+<li><code>FileReader</code>, <code>FileWriter</code>, <code>BufferedWriter</code>, <code>BufferedWriter</code></li>
 </ul>
 </li>
 </ol>
@@ -1031,6 +1067,236 @@
 </code></pre></div>
 
 </details>
+
+<h2 id="_7">🍎 바이트 단위 스트림</h2>
+<ol>
+<li>
+<p>Input 시스템의 주요 하위 클래스</p>
+<ul>
+<li><code>FileInputStream</code> : 파일에서 바이트 단위로 자료를 읽음</li>
+<li><code>ByteArrayInputStream</code> : 바이트 배열 메모리에서 바이트 단위로 자료를 읽음</li>
+<li><code>FilterInputStream</code> : 기반 스트림에서 자료를 읽을 때 추가 기능을 제공하는 보조 스트림의 상위 클래스임</li>
+</ul>
+</li>
+<li>
+<p>InputStream의 바이트 자료를 읽기 위한 주요 메서드</p>
+<ul>
+<li><code>int read()</code><ul>
+<li>입력 스트림으로부터 한 바이트의 자료를 읽음</li>
+<li>읽은 자료의 바이트 수르르 반환함</li>
+</ul>
+</li>
+<li><code>int read(byte[] b)</code><ul>
+<li>입력 스트림으로부터 b[] 크기의 자료를 b[]에 읽음</li>
+<li>읽은 자료의 바이트 수를 반환함</li>
+</ul>
+</li>
+<li><code>int read(byte[] b, int off, int len)</code><ul>
+<li>입력 스트림으로부터 b[] 크기의 자료를 b[]의 off 변수 위치부터 저장하여 len만큼 읽음</li>
+<li>읽은 자료의 바이트 수를 반환함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>OutputStream의 시스템의 주요 하위 클래스</p>
+<ul>
+<li>바이트 단위로 쓰는 스트링 중 최상위 스트림</li>
+<li><code>FileOutputStream</code> : 파일에서 바이트 단위로 자료를 읽음</li>
+<li><code>ByteArrayOutputStream</code> : 바이트 배열 메모리에서 바이트 단위로 자료를 읽음</li>
+<li><code>FilterOutputStream</code> : 기반 스트림에서 자료를 읽을 때 추가 기능을 제공하는 보조 스트림의 상위 클래스임</li>
+</ul>
+</li>
+<li>
+<p>OutputStream의 바이트 자료를 읽기 위한 주요 메서드</p>
+<ul>
+<li><code>void write(int b)</code>
+    -</li>
+<li><code>void write(byte[] b)</code><ul>
+<li>b[] 배열에 있는 자료를 출력</li>
+</ul>
+</li>
+<li><code>void write(byte[] b, int off, int len)</code><ul>
+<li>출력을 위해 잠시 자료가 머무르는 출력 버퍼를 강제로 비워 자료 출력</li>
+</ul>
+</li>
+<li><code>void flush()</code><ul>
+<li>출력을 위해 잠시 자료가 머무르는 출력 버퍼를 강제로 비워 자료 출력</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="_8">🍎 문자 단위 스트림</h2>
+<ol>
+<li>
+<p>Reader()</p>
+<ul>
+<li>문자 단위로 읽는 스트림 중 최상위 스트림</li>
+<li>하위 클래스<ul>
+<li><code>FileReader</code>:</li>
+<li><code>InputStreamReader</code>: 바이트 단위로 읽은 자료를 문자로 변환해주는 보조 스트림 클래스임</li>
+<li><code>BufferedReader</code>: 문자로 읽을 때 배열을 제공하여 한꺼번에 읽을 수있는 기능을 제공해 주는 보조 스트림</li>
+</ul>
+</li>
+<li>읽는 메서드 제공<ul>
+<li><code>int read()</code> : 파일로부터 한 문자를 읽음. 읽은 값을 반환함</li>
+<li><code>int read(char[] cbuf)</code> : 파일로 부터 cbuf 배열에 문자를 읽음</li>
+<li><code>int read(char[] cbuf, int off, int len)</code> : cbuf 배열에</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Writer</p>
+<ul>
+<li>문자 단위로 출력하는 스트림 중 최상위 스트림</li>
+<li>하위 클래스<ul>
+<li><code>FileWriter</code>:</li>
+<li><code>InputStreamWriter</code>: 바이트 단위로 읽은 자료를 문자로 변환해주는 보조 스트림 클래스임</li>
+<li><code>BufferedWriter</code>: 문자로 읽을 때 배열을 제공하여 한꺼번에 출력할 수 있는 기능을 제공해 주는 보조 스트림</li>
+</ul>
+</li>
+<li>쓰는 메서드 제공<ul>
+<li><code>void write()</code> : 한 문자를 파일에 출력함</li>
+<li><code>void write(char[] cbuf)</code> : 문자 배열 cbuf의 내용을 파일에 출력함</li>
+<li><code>void write(char[] cbuf, int off, int len)</code> : 문자 배열 cbuf의 off번 째 문자부터 len개수만큼 파일에 출력 함</li>
+<li><code>void write(string str)</code> :</li>
+<li><code>void write(string str, int off, int len)</code> :</li>
+<li><code>void flush()</code> : 파일에 출력하기 전에 자료가 있는 공간(출력 버퍼)을 비워 출력함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="_9">🍎 보조스트림</h2>
+<ol>
+<li>입출력 대상이 되는 파일이나 네트워크에 직접 쓰거나 읽는 기능은 없음</li>
+<li>보조 기능을 추가하는 스트림</li>
+<li>
+<p>FileInputStream, FilterOutputStream은 보조 스트림의 상위 클래스임</p>
+<ul>
+<li>생성자의 매개변수로 기반스트림으로 정의</li>
+<li>FilterOutputStream(OutputStream )</li>
+<li>FilterInputStream(OutputStream )</li>
+</ul>
+</li>
+<li>
+<p>InputStreamReader 사용하기</p>
+<blockquote>
+<p>kosta3 - InputStreamReaderTest 파일 코드</p>
+</blockquote>
+</li>
+<li>
+<p>Buffered 스트림</p>
+<ul>
+<li>더 빠르게 입출력을 실행할 수있는 버퍼링 기능 제공</li>
+<li>BufferedInputStream<ul>
+<li>바이트 단위로 읽는 스트림에 버퍼링 기능 제공</li>
+</ul>
+</li>
+<li>BufferedOutputStream<ul>
+<li>바이트 단위로 출력하는 스트림에 버퍼링 기능 제공</li>
+</ul>
+</li>
+<li>BufferedReader<ul>
+<li>문자 단위로 읽는 스트림에 버퍼링 기능 제공</li>
+</ul>
+</li>
+<li>BufferedWriter<ul>
+<li>문자 단위로 쓰는 스트림에 버퍼링 기능 제공</li>
+</ul>
+</li>
+</ul>
+<p><details>
+<summary> FileCopyTest (보조스트림 적용 전) </summary></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta3</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileCopyTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">milisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">FileOutputStream</span><span class="w"> </span><span class="n">fos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">&quot;copied.pdf&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">                </span><span class="n">FileInputStream</span><span class="w"> </span><span class="n">fis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">&quot;origin.pdf&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="n">milisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span><span class="w"> </span><span class="c1">// 파일 복사를 시작하기 전 시간</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fis</span><span class="p">.</span><span class="na">read</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">                </span><span class="n">fos</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="n">milisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">milisecond</span><span class="p">;</span><span class="w"> </span><span class="c1">// 파일을 복사하는데 걸린 시간</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; 파일을 복사하는데 &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">milisecond</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;(1/1000) 초 시간이 소요되었습니다. &quot;</span><span class="p">);</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w"> </span>파일을<span class="w"> </span>복사하는데<span class="w"> </span><span class="m">1947</span><span class="o">(</span><span class="m">1</span>/1000<span class="o">)</span><span class="w"> </span>초<span class="w"> </span>시간이<span class="w"> </span>소요되었습니다.
+</code></pre></div>
+</details>
+<p><details>
+<summary> FileCopyTest2 (보조스트림 적용 후) </summary></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta3</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedInputStream</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedOutputStream</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileInputStream</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileOutputStream</span><span class="p">;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1">//버퍼스트림 적용</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">FileCopyTest2</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">milisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">FileOutputStream</span><span class="w"> </span><span class="n">fos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">&quot;copied.pdf&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">                </span><span class="n">FileInputStream</span><span class="w"> </span><span class="n">fis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">&quot;origin.pdf&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">                </span><span class="n">BufferedInputStream</span><span class="w"> </span><span class="n">bis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedInputStream</span><span class="w"> </span><span class="p">(</span><span class="n">fis</span><span class="p">);</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">                </span><span class="n">BufferedOutputStream</span><span class="w"> </span><span class="n">bos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedOutputStream</span><span class="w"> </span><span class="p">(</span><span class="n">fos</span><span class="p">);</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">                </span><span class="p">){</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">            </span><span class="n">milisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span><span class="w"> </span><span class="c1">// 파일 복사를 시작하기 전 시간</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bis</span><span class="p">.</span><span class="na">read</span><span class="p">())</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">                </span><span class="n">bos</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">            </span><span class="n">milisecond</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">milisecond</span><span class="p">;</span><span class="w"> </span><span class="c1">// 파일을 복사하는데 걸린 시간</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; 파일을 복사하는데 &quot;</span><span class="w"> </span><span class="o">+</span><span class="n">milisecond</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;(1/1000) 초 시간이 소요되었습니다. &quot;</span><span class="p">);</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>파일을<span class="w"> </span>복사하는데<span class="w"> </span><span class="m">26</span><span class="o">(</span><span class="m">1</span>/1000<span class="o">)</span><span class="w"> </span>초<span class="w"> </span>시간이<span class="w"> </span>소요되었습니다.
+</code></pre></div>
+</details>
+</li>
+</ol>
+<h2 id="-">🍎 소캣 통신 - 스트림 사용하기</h2>
+<ol>
+<li>
+<p>채팅 프로그램</p>
+<ul>
+<li>서버 -클라이언트 통신</li>
+<li>
+<p>소켓 통신</p>
+<ul>
+<li>Socket 클래스 제공</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Socket</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Socket</span><span class="p">();</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">InputStream</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">socket</span><span class="p">.</span><span class="na">getInputStream</span><span class="p">();</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">OutputStream</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">socket</span><span class="p">.</span><span class="na">getOutputStream</span><span class="p">();</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+</ol>
 
 
 
