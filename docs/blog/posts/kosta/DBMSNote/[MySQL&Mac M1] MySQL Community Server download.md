@@ -33,7 +33,7 @@ categories:
 
 > 시스템 환경설정 => MySQL -> Stop&Start Button
 
-![alt text](./image/image-2.png)
+![alt text](./image/image-7.png)
 
 ## 터미널로 MySQL 서버 시작/종료
 
