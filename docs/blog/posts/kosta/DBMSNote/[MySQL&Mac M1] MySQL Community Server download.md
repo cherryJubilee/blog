@@ -42,6 +42,16 @@ sudo /usr/local/mysql/support-files/mysql.server start
 sudo /usr/local/mysql/support-files/mysql.server stop
 ```
 
+## Workbench 연결 확인
+
+> 로컬로 연결
+
+![alt text](./image/image-5.png)
+
+> 왼쪽 aws lightsail과 ip가 다른것 확인 가능
+
+![alt text](./image/image-6.png)
+
 ## sakila, work 스키마 추가
 
 > 샘플 데이터베이스 다운로드
