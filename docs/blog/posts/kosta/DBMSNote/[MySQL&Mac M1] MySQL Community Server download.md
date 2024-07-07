@@ -27,7 +27,7 @@ categories:
 
 `https://dev.mysql.com/downloads/mysql/`
 
-![alt text](./image/image-1.png)
+![alt text](../DBMSNote/image/image-1.png)
 
 ## MySQL 서버 시작/종료
 
@@ -46,11 +46,11 @@ sudo /usr/local/mysql/support-files/mysql.server stop
 
 > 로컬로 연결
 
-![alt text](./image/image-5.png)
+![alt text](../DBMSNote/image/image-5.png)
 
 > 왼쪽 aws lightsail과 ip가 다른것 확인 가능
 
-![alt text](./image/image-6.png)
+![alt text](../DBMSNote/image/image-6.png)
 
 ## sakila, work 스키마 추가
 
@@ -73,7 +73,7 @@ mysql -u root -p
 
 > 샘플 데이터베이스 로드하기
 
-![alt text](./image/image-3.png)
+![alt text](../DBMSNote/image/image-3.png)
 
 ```bash
 SOURCE ~/Downloads/world-db/world.sql;
@@ -88,4 +88,4 @@ use world;
 SELECT * FROM city WHERE CountryCode = 'ARG';
 ```
 
-![alt text](./image/image-4.png)
+![alt text](../DBMSNote/image/image-4.png)
