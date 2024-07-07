@@ -746,38 +746,32 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="SQL 문법">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ddl" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
     <span class="md-ellipsis">
-      DDL
+      MySQL 환경 구성 확인
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#dml" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#mysql-shell" class="md-nav__link">
     <span class="md-ellipsis">
-      DML
+      MySQL shell 접속하기
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#dcl" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#rdbms" class="md-nav__link">
     <span class="md-ellipsis">
-      DCL
+      RDBMS 기본 용어
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -854,7 +848,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -925,9 +919,128 @@
 </li>
 </ol>
 <h2 id="sql_2">SQL 문법</h2>
-<h3 id="ddl">DDL</h3>
-<h3 id="dml">DML</h3>
-<h3 id="dcl">DCL</h3>
+<ol>
+<li>
+<p>DDL</p>
+<ul>
+<li>Data Define Language</li>
+<li>데이터 정의 언어</li>
+<li>데이터베이스를 정의하는 언어.</li>
+<li>테이블 스키마를 관리하는 언어.</li>
+<li>CREATE, ALTER, DROP, TRUNCATE</li>
+</ul>
+</li>
+<li>
+<p>DML</p>
+<ul>
+<li>Data Manipulation Language</li>
+<li>데이터 조작 언어</li>
+<li>데이터베이스에 입력된 데이터를 조회,입력,수정,삭제</li>
+<li>SELECT, INSERT, UPDATE, DELETE</li>
+</ul>
+</li>
+<li>
+<p>DCL</p>
+<ul>
+<li>Data Control Language</li>
+<li>데이터 제어 언어</li>
+<li>데이터베이스에 접근하거나 객체에 권한을 부여 등의 역할</li>
+<li>GRANT, REVOKE, COMMIT, ROLLBACK</li>
+</ul>
+</li>
+</ol>
+<h2 id="mysql">MySQL 환경 구성 확인</h2>
+<ol>
+<li>접속<ul>
+<li>mysql -u root -p</li>
+</ul>
+</li>
+<li>select @@hostname;<ul>
+<li>MySQL 서버가 설치된 컴퓨터 이름 확인</li>
+</ul>
+</li>
+<li>show databases;<ul>
+<li>데이터베이스를 보여줌</li>
+</ul>
+</li>
+<li>use world;<ul>
+<li>특정 데이터베이스(world)를 선택함</li>
+</ul>
+</li>
+<li>show tables;<ul>
+<li>현재 선택된 DB에 속한 테이블 명을 보여줌</li>
+</ul>
+</li>
+<li>desc city;<ul>
+<li>city 테이블의 스키마(각 컬럼의 이름과 타입)을 보여줌</li>
+</ul>
+</li>
+<li>
+<p><code>select * from city</code>;</p>
+<ul>
+<li>
+<p>city 테이블의 레코드를 모두 표시함 : <code>select * from city where CountryCode='KOR'</code>;</p>
+</li>
+<li>
+<p>city 테이블에서 국가코드가 'KOR'인 레코드를 찾아 표시함 :<code>select \* from city where Population &gt; 9000000</code>;</p>
+</li>
+<li>
+<p>city 테이블에서 인구가 9백만이 넘는 레코드를 찾아 표시함</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="mysql-shell">MySQL shell 접속하기</h2>
+<ol>
+<li>MySQL JS &gt; \help</li>
+<li>MySQL JS &gt; \sql</li>
+<li>MySQL SQL &gt; \connect root@localhost:3306</li>
+<li>MySQL localhost:3306 ssl SQL &gt; show databases;</li>
+</ol>
+<h2 id="rdbms">RDBMS 기본 용어</h2>
+<ol>
+<li>스키마(Schema)<ul>
+<li>DB, 테이블 정의 내역</li>
+</ul>
+</li>
+<li>SQL 쿼리 (SQL Query)<ul>
+<li>관계형 DBMS에서 사용하는 전용 질의언어</li>
+<li>대소문자 가리지 않음</li>
+</ul>
+</li>
+<li>기본키 (Primary Key:PK)<ul>
+<li>테이블에서 하나의 레코드를 지정할 수 있는 하나 이상의 컬럼집합</li>
+<li>예) 주민등록번호, 사원번호</li>
+</ul>
+</li>
+<li>외래키 (Foreign Key:FK)<ul>
+<li>어떤 테이블의 기본키가 다른 테이블의 컬럼에 들어 있을 경우</li>
+</ul>
+</li>
+<li>테이블 (Table)<ul>
+<li>정보들의 묶음단위<ul>
+<li>예) 학교, 학생, 교수,....</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>컬럼 (Column)<ul>
+<li>테이블을 구성하는 정보들<ul>
+<li>예) 학생테이블 - 이름, 주소, 전화번호, 나이, 성별....</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>레코드 (Record)<ul>
+<li>테이블에 들어 있는 여러가지 인스턴스 하나하나를 지정</li>
+<li>예) 학과테이블<ul>
+<li>국어교육학과, 컴퓨터공학, 수학과, 경영학과....</li>
+</ul>
+</li>
+<li>기본키(PK)로 구별가능</li>
+</ul>
+</li>
+</ol>
 
 
 

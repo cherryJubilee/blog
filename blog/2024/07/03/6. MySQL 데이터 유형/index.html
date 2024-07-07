@@ -12,6 +12,8 @@
         <link rel="prev" href="../../02/5.%20javascript/">
       
       
+        <link rel="next" href="../4.SELECT/">
+      
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
@@ -862,6 +864,95 @@
 </tbody>
 </table>
 </li>
+<li>
+<p>실수형</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">데이터 타입</th>
+<th style="text-align: center;">데이터 크기(byte)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">FLOAT</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;">DOUBLE</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h1 id="3-type-casting">3 숫자형 변환 (type casting)</h1>
+<h2 id="_2">문자형</h2>
+<ol>
+<li>
+<p>고정 길이 문자형</p>
+<ul>
+<li>char(n)</li>
+<li>실제 값을 입력하지 않아도 지정한 만큼 저장 공간 사용함</li>
+</ul>
+</li>
+</ol>
+<p>6) 가변 길이 문자형</p>
+<div class="highlight"><pre><span></span><code>- varchar(n)
+- 실제 입력한 값의 크기만큼만 저장 공간 사용함
+- 디스크 비용 저렴해지고 관리 차원에 varchar 타입으로 사용하는 추세
+</code></pre></div>
+<h2 id="text">TEXT 문자형</h2>
+<h2 id="blob-binary-large-object">BLOB (Binary Large Object)</h2>
+<h2 id="_3">참고 사항</h2>
+<ol>
+<li>문자 집합 (character set)</li>
+<li>
+<p>콜레이션 (collation)</p>
+<ul>
+<li>문자열 데이터가 담긴 열의 비교나 정렬 순서를 위한 규칙</li>
+</ul>
+</li>
+</ol>
+<h2 id="_4">날짜형 및 시간형</h2>
+<ol>
+<li>
+<p>날짜와 시간을 저장하는 데이터 유형</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">데이터 유형</th>
+<th style="text-align: center;">형식</th>
+<th style="text-align: center;">데이터 크기 (byte)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">TIME</td>
+<td style="text-align: center;">HH:MI:SS</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">DATE</td>
+<td style="text-align: center;">YYYY-MM-DD</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">DATETIME</td>
+<td style="text-align: center;">YYYY-MM-DD HH:MI:SS</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">TIMESTAMP</td>
+<td style="text-align: center;">YYYY-MM-DD HH:MI:SS</td>
+<td style="text-align: center;">4</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>문자형과 날짜형 변환</p>
+</li>
 </ol>
 
 
@@ -911,6 +1002,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../4.SELECT/" class="md-footer__link md-footer__link--next" aria-label="Next: MySQL 데이터 유형">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MySQL 데이터 유형
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
