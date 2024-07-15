@@ -167,3 +167,34 @@ show databases
 
 ![alt text](image-9.png)
 ![alt text](image-10.png)
+
+## 📌 (0715) MySQL world DB 다운로드
+
+```bash
+ssh -i ~/LightsailDefaultKey-ap-northeast-2.pem ubuntu@3.34.255.183
+ wget https://downloads.mysql.com/docs/world-db.zip
+```
+
+![alt text](image/image-11.png)
+
+```bash
+unzip world-db.zip
+cd world-db
+```
+
+### mysql 접속
+
+-   비밀번호 까지 치면 접속 완료
+
+    ```bash
+    mysql -u kosta -p
+    ```
+
+-   world 데이터베이스 추가 확인
+
+    ```mysql
+    show databases;
+    source /home/ubuntu/world-db/world.sql
+    ```
+
+    ![alt text](image/image.png)
