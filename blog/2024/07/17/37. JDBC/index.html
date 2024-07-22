@@ -12,6 +12,8 @@
         <link rel="prev" href="../../16/12.%20%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%20%EA%B0%9D%EC%B2%B4/">
       
       
+        <link rel="next" href="../../22/1.%20%EA%B8%B0%EB%B3%B8/">
+      
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
@@ -422,6 +424,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../category/backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../category/java/" class="md-nav__link">
         
   
@@ -805,6 +827,96 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 데이터 삭제
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 데이터 삭제">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 데이터 삭제 예시 (DELETE)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 데이터 조회(읽기)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 데이터 조회(읽기)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-resultset" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. ResultSet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-boolean-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. boolean next()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    <span class="md-ellipsis">
+      💡 query
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 트랜젝션(transaction)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 트랜젝션(transaction)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 게시판 만들기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1019,7 +1131,7 @@
 <details>
 <summary> 테이블에 INSERT 예시 </summary>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.mysql</span><span class="p">;</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.mysql</span><span class="p">;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
@@ -1035,9 +1147,9 @@
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">            </span><span class="c1">//  연결하기</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">            </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="na">getConnection</span><span class="p">(</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">              </span><span class="s">&quot;jdbc:mysql://127.0.0.1:3306&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">              </span><span class="s">&quot;root&quot;</span><span class="p">,</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">              </span><span class="s">&quot;pass123#&quot;</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">            </span><span class="s">&quot;jdbc:mysql://127.0.0.1:3306&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="s">&quot;root&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">            </span><span class="s">&quot;pass123#&quot;</span>
 <a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">            </span><span class="p">);</span>
 <a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="o">+</span>
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">                    </span><span class="s">&quot;insert into jdbc.users (userid, username, userpassword, userage, useremail) &quot;</span><span class="o">+</span>
@@ -1085,7 +1197,7 @@
 <details>
 <summary> 테이블 UPDATE 예시 </summary>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.mysql</span><span class="p">;</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.mysql</span><span class="p">;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
@@ -1143,14 +1255,14 @@
 <a id="__codelineno-9-56" name="__codelineno-9-56" href="#__codelineno-9-56"></a><span class="p">}</span>
 </code></pre></div>
 
-## 📌 데이터 삭제
+</details>
 
-### 🍀 데이터 삭제 예시 (DELETE)
-
+<h2 id="_3">📌 데이터 삭제</h2>
+<h3 id="delete">🍀 데이터 삭제 예시 (DELETE)</h3>
 <details>
 <summary> 테이블 DELETE 예시 </summary>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.mysql</span><span class="p">;</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.mysql</span><span class="p">;</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.Connection</span><span class="p">;</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.sql.DriverManager</span><span class="p">;</span>
@@ -1208,41 +1320,83 @@
 <a id="__codelineno-10-56" name="__codelineno-10-56" href="#__codelineno-10-56"></a><span class="p">}</span>
 </code></pre></div>
 
-## 📌 데이터 조회(읽기)
+</details>
 
+<h2 id="_4">📌 데이터 조회(읽기)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">boards</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">bwriter</span><span class="o">=</span><span class="s1">&#39;kosta1&#39;</span><span class="p">;</span>
 </code></pre></div>
-
-### ResultSet
-
--   select 문에 기술된 컬럼으로 구성된 행의 집합(row)
--   커서가 있는 행의 데이터만 읽을 수 있음
--   커서 : 행을 가르키는 포인터를 말함
--   실제 가져온 데이터 행의 앞과 뒤에 beforeFirst()행과 afterLast()행을 가르킴
--   첫번 째 데이터 행인 first행을 읽으려면 커서를 이동시켜야 함
--   next() 메소드 사용
-
-|  데이터 행   |     날짜      |      내용      |   커서 위치   |
-| :----------: | :-----------: | :------------: | :-----------: |
-| 최초커서위치 |               |                | beforeFirst() |
-|      4       | 비오는 수요일 | 장마가 시작됨1 |    first()    |
-|      5       | 비오는 목요일 | 장마가 시작됨2 |               |
-|      6       | 비오는 금요일 | 장마가 시작됨3 |    next()     |
-|      7       | 비오는 토요일 | 장마가 시작됨4 |               |
-|      8       | 비오는 일요일 | 장마가 시작됨5 |    last()     |
-|              |               |                |  afterLast()  |
-
-### boolean next()
-
-    -   이동한 행에 데이터가 있으면 true를 없으면 false를 리턴함
-
-## 💡 query
-
+<h3 id="1-resultset">1. ResultSet</h3>
+<ul>
+<li>select 문에 기술된 컬럼으로 구성된 행의 집합(row)</li>
+<li>커서가 있는 행의 데이터만 읽을 수 있음</li>
+<li>커서 : 행을 가르키는 포인터를 말함</li>
+<li>실제 가져온 데이터 행의 앞과 뒤에 beforeFirst()행과 afterLast()행을 가르킴</li>
+<li>첫번 째 데이터 행인 first행을 읽으려면 커서를 이동시켜야 함</li>
+<li>next() 메소드 사용</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">데이터 행</th>
+<th style="text-align: center;">날짜</th>
+<th style="text-align: center;">내용</th>
+<th style="text-align: center;">커서 위치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">최초커서위치</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">beforeFirst()</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">비오는 수요일</td>
+<td style="text-align: center;">장마가 시작됨1</td>
+<td style="text-align: center;">first()</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">비오는 목요일</td>
+<td style="text-align: center;">장마가 시작됨2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">비오는 금요일</td>
+<td style="text-align: center;">장마가 시작됨3</td>
+<td style="text-align: center;">next()</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">비오는 토요일</td>
+<td style="text-align: center;">장마가 시작됨4</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">비오는 일요일</td>
+<td style="text-align: center;">장마가 시작됨5</td>
+<td style="text-align: center;">last()</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">afterLast()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-boolean-next">2. boolean next()</h3>
+<div class="highlight"><pre><span></span><code>-   이동한 행에 데이터가 있으면 true를 없으면 false를 리턴함
+</code></pre></div>
+<h2 id="query">💡 query</h2>
 <details>
 <summary>[query9.sql] JDBC 실습할 때 사용한 쿼리 </summary>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">drop</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">users</span><span class="p">;</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="n">userid</span><span class="w">      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w">     </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">username</span><span class="w">    </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w">     </span><span class="k">not</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
@@ -1291,25 +1445,33 @@
 
 </details>
 
-## 📌 트랜젝션(transaction)
-
-1. 기능처리의 최소 단위
-    - 소작업들을 분리할 수 없음
-    - 전체를 하나로 본다.
-2. 하나의 기능은 여러 가지 소작업들로 구성될 수 있음
-3. 트랜젝션은 소작업들이 모두 성공하거나 모두 실패해야함
-    - 커밋(commit)
-        - DML문(SELECT, INSERT, UPDATE, DELETE)을 실행할 때마다 자동 커밋이 되고 있었음
-    - 콜백(rollback)
-4. 계좌이체
-    - 출금 작업, 입금 작업으로 구성된 트랜잭션임
-    - 출금과 입금 작업 중 하나만 성공할 수 없음
-    - 모두 성공하거나 모두 실패되어야 함
-
-## 📌 게시판 만들기
-
-> JDBC를 활용한 게시판 구현하기
-
+<h2 id="transaction">📌 트랜젝션(transaction)</h2>
+<ol>
+<li>기능처리의 최소 단위<ul>
+<li>소작업들을 분리할 수 없음</li>
+<li>전체를 하나로 본다.</li>
+</ul>
+</li>
+<li>하나의 기능은 여러 가지 소작업들로 구성될 수 있음</li>
+<li>트랜젝션은 소작업들이 모두 성공하거나 모두 실패해야함<ul>
+<li>커밋(commit)<ul>
+<li>DML문(SELECT, INSERT, UPDATE, DELETE)을 실행할 때마다 자동 커밋이 되고 있었음</li>
+</ul>
+</li>
+<li>콜백(rollback)</li>
+</ul>
+</li>
+<li>계좌이체<ul>
+<li>출금 작업, 입금 작업으로 구성된 트랜잭션임</li>
+<li>출금과 입금 작업 중 하나만 성공할 수 없음</li>
+<li>모두 성공하거나 모두 실패되어야 함</li>
+</ul>
+</li>
+</ol>
+<h3 id="_5">🍀 게시판 만들기</h3>
+<blockquote>
+<p>JDBC를 활용한 게시판 구현하기</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>
 </code></pre></div>
 
@@ -1360,6 +1522,22 @@
             </div>
           </a>
         
+        
+          
+          <a href="../../22/1.%20%EA%B8%B0%EB%B3%B8/" class="md-footer__link md-footer__link--next" aria-label="Next: servlet">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                servlet
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
