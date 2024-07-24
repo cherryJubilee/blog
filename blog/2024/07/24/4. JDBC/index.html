@@ -762,11 +762,11 @@
         <li class="md-nav__item">
   <a href="#jdbc_1" class="md-nav__link">
     <span class="md-ellipsis">
-      ⭐️ JDBC 연결
+      📌 JDBC 연결
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⭐️ JDBC 연결">
+    <nav class="md-nav" aria-label="📌 JDBC 연결">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -786,11 +786,11 @@
         <li class="md-nav__item">
   <a href="#connection-pool" class="md-nav__link">
     <span class="md-ellipsis">
-      커넥션 풀 (Connection Pool)
+      📌 커넥션 풀 (Connection Pool)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="커넥션 풀 (Connection Pool)">
+    <nav class="md-nav" aria-label="📌 커넥션 풀 (Connection Pool)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -901,10 +901,19 @@
 
 
 <h1 id="jdbc">JDBC</h1>
-<p>JDBC연결하기</p>
+<p>JDBC 연결하는 3가지 방법</p>
+<ol>
+<li>기본 생성자</li>
+<li>외부 매개변수를 통한 생성자 오버로딩</li>
+<li>ServletContext를 사용한 생성자 오버로딩 ⭐️</li>
+</ol>
+<p>JDNI를 이용한 데이터베이스 Connection Pool 관리</p>
+<ul>
+<li>context.xml, server.xml 설정</li>
+</ul>
 <!-- more -->
 
-<h2 id="jdbc_1">⭐️ JDBC 연결</h2>
+<h2 id="jdbc_1">📌 JDBC 연결</h2>
 <ul>
 <li><a href="https://dev.mysql.com/downloads/connector/j/">https://dev.mysql.com/downloads/connector/j/</a></li>
 <li>platform Independent 선택</li>
@@ -1097,7 +1106,7 @@
 
 </details>
 
-<h2 id="connection-pool">커넥션 풀 (Connection Pool)</h2>
+<h2 id="connection-pool">📌 커넥션 풀 (Connection Pool)</h2>
 <ol>
 <li>어플리케이션이 시작될 때, 커넥션 객체를 미리 생성해두면, 데이터베이스 연결이 필요할 때마다 준비된 커넥션 객체를 사용</li>
 <li><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image8.png" /></li>
