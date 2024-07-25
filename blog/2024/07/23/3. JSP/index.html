@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../3.%20JSP/">
+        <link rel="prev" href="../../22/1.%20%EA%B8%B0%EB%B3%B8/">
       
       
-        <link rel="next" href="../../24/4.%20JDBC/">
+        <link rel="next" href="../Level1/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>프로그래머스 레벨1 - hyehye_hye's blog</title>
+        <title>JSP - hyehye_hye's blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#jsp" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              프로그래머스 레벨1
+              JSP
             
           </span>
         </div>
@@ -762,83 +762,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#240723-x-n" class="md-nav__link">
+  <a href="#directive" class="md-nav__link">
     <span class="md-ellipsis">
-      [240723] x만큼 간격이 있는 n개의 숫자
+      지시어 (Directive)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="[240723] x만큼 간격이 있는 n개의 숫자">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✔️ 문제 설명
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="✔️ 문제 설명">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      제한 조건
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      입출력 예시
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#directive_1" class="md-nav__link">
     <span class="md-ellipsis">
-      ✔️ 풀이과정
+      스크립트 요소 (Directive)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="✔️ 풀이과정">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      정답
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#int-long" class="md-nav__link">
-    <span class="md-ellipsis">
-      왜 int가 아닌 long을 사용하는가? 🤔
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -904,7 +841,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/algorithm/">algorithm</a></span>
+                              <a href="../../../../category/backend/">Backend</a></span>
                         </div>
                       </li>
                     
@@ -935,64 +872,93 @@
         
 
 
-<h1 id="1">프로그래머스 레벨1</h1>
-<p>매일 하루에 한 문제씩 알고리즘 풀기(24/07/23~)</p>
+<h1 id="jsp">JSP</h1>
 <!-- more -->
 
-<h2 id="240723-x-n">[240723] x만큼 간격이 있는 n개의 숫자</h2>
-<h3 id="_1">✔️ 문제 설명</h3>
-<p>함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다. 다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.</p>
-<h4 id="_2">제한 조건</h4>
-<p>x는 -10000000 이상, 10000000 이하인 정수입니다.
-n은 1000 이하인 자연수입니다.</p>
-<h4 id="_3">입출력 예시</h4>
-<table>
-<thead>
-<tr>
-<th>x</th>
-<th>n</th>
-<th>answer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>5</td>
-<td>[2, 4, 6, 8, 10]</td>
-</tr>
-<tr>
-<td>4</td>
-<td>3</td>
-<td>[4, 8, 12]</td>
-</tr>
-<tr>
-<td>-4</td>
-<td>2</td>
-<td>[-4, -8]</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_4">✔️ 풀이과정</h2>
-<h3 id="_5">정답</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">long</span><span class="o">[]</span><span class="w"> </span><span class="nf">solution</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="kt">long</span><span class="o">[]</span><span class="w"> </span><span class="n">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">long</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">            </span><span class="n">answer</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">answer</span><span class="p">;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
-</code></pre></div>
-<h3 id="int-long">왜 int가 아닌 long을 사용하는가? 🤔</h3>
-<ul>
-<li>int 타입은 -2,147,483,648에서 2,147,483,647까지의 값을 표현할 수 있다. 하지만 x가 -10,000,000 또는 10,000,000과 같이 큰 값일 때, n이 1,000이라면 곱셈 결과는 -10,000,000,000,000 또는 10,000,000,000,000이 되어,int의 범위를 초과한다.</li>
-<li>long 타입은 -9,223,372,036,854,775,808에서 9,223,372,036,854,775,807까지의 값을 표현할 수 있어 처리가능하다.</li>
+<h2 id="directive">지시어 (Directive)</h2>
+<ol>
+<li>page 지시어<ul>
+<li>import 속성</li>
+<li>errorPage 속성 : 에러 페이지 지정</li>
+<li>IsErrorPage 속성 : 에러 페이지 (true 값 설정)</li>
 </ul>
-<p><br />
-<br />
-<br />
-<br /></p>
+</li>
+<li>include 지시어<ul>
+<li>여러 페이지에서 반복되어 사용하는 내용을 삽입해야 하는 경우 사용</li>
+<li>&lt;% include file = "포함할 파일의 경로" %&gt;</li>
+</ul>
+</li>
+</ol>
+<h2 id="directive_1">스크립트 요소 (Directive)</h2>
+<ol>
+<li>
+<p>서블릿 (자바코드)로 변환됨</p>
+<ul>
+<li>_jspService() 메서드가 생성됨</li>
+</ul>
+</li>
+<li>
+<p>선언부</p>
+<ul>
+<li>멤버변수, 메서드 선언
+  -_jspService() 메서드 "외부"에 선언됨</li>
+<li>형식<ul>
+<li>&lt;%! 메소드 선언 %&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>스크립트릿 (scriptlet)</p>
+<ul>
+<li>자바 코드를 작성하는 영역</li>
+<li>서블릿 변환시 _jspService()메서드 "내부"에 기술됨</li>
+<li>형식<ul>
+<li>&lt;% %&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>표현식(expression)</p>
+<ul>
+<li>웹 브라우저 화면에 출력할 때 사용</li>
+<li>형식<ul>
+<li>&lt;%= 자바 표현식%&gt;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<details>
+<summary>jsp 스크립트 사용 예제</summary>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">&lt;%!</span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">num2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span><span class="k">%&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">&lt;html&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;head&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nt">&lt;title&gt;</span>Insert<span class="w"> </span>title<span class="w"> </span>here<span class="nt">&lt;/title&gt;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">&lt;/head&gt;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nt">&lt;body&gt;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">&lt;%</span><span class="w"> </span><span class="c1">// 스크립트 자바 코드</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">%&gt;</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>덧셈<span class="w"> </span>결과<span class="w"> </span>:<span class="w"> </span><span class="k">&lt;%=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="k">%&gt;</span><span class="w"> </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>덧셈<span class="w"> </span>결과2<span class="w"> </span>:<span class="w"> </span><span class="k">&lt;%=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span><span class="w"> </span><span class="k">%&gt;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="nt">&lt;/body&gt;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+
+</details>
+
+<p><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image10.png" /></p>
 
 
 
@@ -1026,7 +992,7 @@ n은 1000 이하인 자연수입니다.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../3.%20JSP/" class="md-footer__link md-footer__link--prev" aria-label="Previous: JSP">
+          <a href="../../22/1.%20%EA%B8%B0%EB%B3%B8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: servlet">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1036,20 +1002,20 @@ n은 1000 이하인 자연수입니다.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                JSP
+                servlet
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../24/4.%20JDBC/" class="md-footer__link md-footer__link--next" aria-label="Next: JDBC">
+          <a href="../Level1/" class="md-footer__link md-footer__link--next" aria-label="Next: 프로그래머스 레벨1">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                JDBC
+                프로그래머스 레벨1
               </div>
             </div>
             <div class="md-footer__button md-icon">
