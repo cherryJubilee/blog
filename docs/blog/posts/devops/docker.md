@@ -176,10 +176,10 @@ docker push cherryjubilee/ballang:0.1
 
 ⭐️ 도커 이미지 생성된 것 확인 (로컬(테스트용) 배포용 이미지, 배포용 이미지)
 
-![alt text](image.png)
+![alt text](img/image2.png)
 
 ⭐️ health-check 결과 200 응답!
-![alt text](image-1.png)
+![alt text](img/image1.png)
 
 <br>
 <br>
