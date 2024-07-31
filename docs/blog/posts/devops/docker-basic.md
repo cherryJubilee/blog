@@ -361,7 +361,7 @@ docker exec -it c98 bash # 실행중인 컨테이너이기 때문에 가능
 bash-4.4# java -version # jdk 깔려있는지 버전 확인
 ```
 
-![alt text](image-10.png)
+![alt text](img/image14.png)
 
 😎 👀 종료된 컨테이너에서 디버깅하고 싶다면?
 
@@ -408,7 +408,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     docker exec -it a9a bash
     ```
 
-    ![alt text](image-12.png)
+    ![alt text](img/image15.png)
 
 > 2️⃣ 폴더 안에있는 모든 파일 복사하기
 
@@ -429,7 +429,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     docker exec -it 539 bash
     ```
 
-    ![alt text](image-13.png)
+    ![alt text](img/image16.png)
 
 > 3️⃣ 와일드 카드 사용해보기
 
@@ -451,7 +451,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     docker exec -it 280 bash
     ```
 
-    ![alt text](image-14.png)
+    ![alt text](img/image17.png)
 
 > 4️⃣ .dockerignore 사용해보기
 
@@ -473,7 +473,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     docker exec -it 3ec bash
     ```
 
-    ![alt text](image-15.png)
+    ![alt text](img/image18.png)
 
 ### 3. ENTRYPOINT
 
@@ -502,12 +502,12 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     hello
     ```
 
-    ![alt text](image-16.png)
+    ![alt text](img/image19.png)
 
 ### 🍀 [실습] 백엔드 프로젝트(Spring Boot) 프로젝트를 Docker로 실행시키기
 
 1. spring 프로젝트 셋팅
-   ![alt text](image-17.png)
+   ![alt text](img/image20.png)
 2. 간단한 코드 작성
 
     - AppController
@@ -604,7 +604,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     $ git -v # 컨테이너 내에 git이 잘 설치됐는 지 확인
     ```
 
-    ![alt text](image-18.png)
+    ![alt text](img/image21.png)
 
 ### 5. WORKDIR
 
@@ -639,7 +639,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     $ ls
     ```
 
-    ![alt text](image-19.png)
+    ![alt text](img/image22.png)
 
 -   예제 : WORKDIR을 썼을 때 파일 구성 보기
 
@@ -662,7 +662,7 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
     $ ls
     ```
 
-    ![alt text](image-20.png)
+    ![alt text](img/image23.png)
 
 ### 6. EXPOSE
 
@@ -682,11 +682,147 @@ bash-4.4# java -version # jdk 깔려있는지 버전 확인
 
 ### 🍀 NestJS 프로젝트를 도커로 실행하기
 
-![alt text](image-21.png)
+![alt text](img/image24.png)
 
 ### ⭐️ # [실습] 웹 프론트엔드 프로젝트(HTML, CSS, Nginx)를 Docker로 배포하기
 
 ## ✅ Docker Compose
+
+아래 명령어를 docker compose로 띄워보기
+
+```shell
+docker run --name webserver[컨테이너 이름] -d -p 8080:8080 nginx[이미지]
+```
+
+> compose.yml
+
+-   확실히 명령어가 간소해졌다.
+-   뒤에서 배우지만, 다수의 컨테이너를 관리하기에 용이하다.
+
+```yml
+services:
+    my-web-server:
+        container_name: webserver
+        image: nginx
+        ports: -80:80
+```
+
+```shell
+docker compose up # 포그라운드
+docker compose up -d  #  백그라운드
+docker ps
+docker compose down
+```
+
+### Docker compose CLI 명령어
+
+compsoe.yml에 정의된 컨테이너 중 실행중인 컨테이너만 보여준다.
+
+```shell
+docker compose ps
+```
+
+compsoe.yml에 정의된 컨테이너 중 중지된 것도 보여주기
+
+```shell
+docker compose ps -a
+```
+
+로그 확인하기
+
+```shell
+docker compose logs
+```
+
+이미지를 다시 빌드해서 실행시킬 때
+
+```shell
+docker compose up --build
+```
+
+도커 허브에서 최신 이미지를 가져와서 compsoe.yml의 이미지를 업데이트 해준다.
+
+```shell
+docker compose pull
+```
+
+#### 🍀 docker compose로 redis 실행하기
+
+docker run -d -p 6379:6379 redis
+
+```yml
+services:
+    my-cache-server:
+        image: redis
+        ports:
+            - 6379:6379
+```
+
+```shell
+docker compose up -d
+docker compose ps
+docker  ps
+docker compose logs
+docker exec -it 042 bash
+docker compose down
+```
+
+#### 🍀 docker compose로 mysql 실행하기
+
+$ docker run -e MYSQL_ROOT_PASSWORD=pass123! -p 3306:3306 -v /Users/hyewon/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql
+
+> compose.yml
+
+```yml
+services:
+    my-db:
+        image: mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: pass123#
+        volumes:
+            - ./mysql_data:/var/lib/mysql
+        ports:
+            - 3306:3306
+```
+
+🚨 에러
+
+-   3306포트를 다른데서 사용중이다. 결국 docker compose up -d 를 못했음.
+-   아직 mysql_data 파일이 생성 안됨ㅠㅠ
+
+```shell
+Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:3306 -> 0.0.0.0:0: listen tcp 0.0.0.0:3306: bind: address already in use
+```
+
+-   결국 호스트의 포트 번호 수정
+
+    ```yml
+    ports:
+        - 3307:3306
+    ```
+
+```shell
+docker compose  up -d
+docker compose ps
+docker ps
+# 로그인 잘 되어있는지 확인, GUI툴(디비버, 워크벤치)로도 확인 가능
+docker exec -it [컨테이너 아이디]  bash
+docker compose down # 다운해도 데이터는 남아있다.docker compose down
+```
+
+-   volume의 경로에 데이터가 저장되고 있는 지 확인
+
+    ![alt text](img/image25.png)
+
+#### 🍀 docker compose로 백엔드(spring boot) 실행하기
+
+Dockerfile 이미지를 매번 새롭게 로드할 것이다.
+
+```shell
+docker compose up -d --build
+```
+
+#### 🍀 docker compose로 백엔드(Nest.js) 실행하기
 
 <br>
 
