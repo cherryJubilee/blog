@@ -963,6 +963,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="✅ Docker Compose">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker compose CLI 명령어
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker compose CLI 명령어">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-redis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 docker compose로 redis 실행하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 docker compose로 mysql 실행하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-spring-boot" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 docker compose로 백엔드(spring boot) 실행하기
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose-nestjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 docker compose로 백엔드(Nest.js) 실행하기
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1056,7 +1113,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              14 min read
+                              16 min read
                             
                           </span>
                         </div>
@@ -1384,7 +1441,7 @@
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>c98<span class="w"> </span>bash<span class="w"> </span><span class="c1"># 실행중인 컨테이너이기 때문에 가능</span>
 <a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>bash-4.4#<span class="w"> </span>java<span class="w"> </span>-version<span class="w"> </span><span class="c1"># jdk 깔려있는지 버전 확인</span>
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-10.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image14.png" /></p>
 <p>😎 👀 종료된 컨테이너에서 디버깅하고 싶다면?</p>
 <p>지금까지는 아래 2가지 방법을 사용했다.</p>
 <div class="highlight"><pre><span></span><code>1.   docker logs
@@ -1428,7 +1485,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>my-server
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>a9a<span class="w"> </span>bash
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-12.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image15.png" /></p>
 </li>
 </ul>
 <blockquote>
@@ -1448,7 +1505,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>my-server
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="m">539</span><span class="w"> </span>bash
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-13.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image16.png" /></p>
 </li>
 </ul>
 <blockquote>
@@ -1470,7 +1527,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>my-server
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="m">280</span><span class="w"> </span>bash
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-14.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image17.png" /></p>
 </li>
 </ul>
 <blockquote>
@@ -1491,7 +1548,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>my-server
 <a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>3ec<span class="w"> </span>bash
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-15.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image18.png" /></p>
 </li>
 </ul>
 <h3 id="3-entrypoint">3. ENTRYPOINT</h3>
@@ -1516,13 +1573,13 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>docker<span class="w"> </span>logs<span class="w"> </span>52e
 <a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>hello
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-16.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image19.png" /></p>
 </li>
 </ul>
 <h3 id="spring-boot-docker">🍀 [실습] 백엔드 프로젝트(Spring Boot) 프로젝트를 Docker로 실행시키기</h3>
 <ol>
 <li>spring 프로젝트 셋팅
-   <img alt="alt text" src="../../../../devops/image-17.png" /></li>
+   <img alt="alt text" src="../../../../devops/img/image20.png" /></li>
 <li>
 <p>간단한 코드 작성</p>
 <ul>
@@ -1609,7 +1666,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>
 <a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>$<span class="w"> </span>git<span class="w"> </span>-v<span class="w"> </span><span class="c1"># 컨테이너 내에 git이 잘 설치됐는 지 확인</span>
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-18.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image21.png" /></p>
 </li>
 </ul>
 <h3 id="5-workdir">5. WORKDIR</h3>
@@ -1640,7 +1697,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>
 <a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>$<span class="w"> </span>ls
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-19.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image22.png" /></p>
 </li>
 <li>
 <p>예제 : WORKDIR을 썼을 때 파일 구성 보기</p>
@@ -1659,7 +1716,7 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>
 <a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>$<span class="w"> </span>ls
 </code></pre></div>
-<p><img alt="alt text" src="../../../../devops/image-20.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image23.png" /></p>
 </li>
 </ul>
 <h3 id="6-expose">6. EXPOSE</h3>
@@ -1678,16 +1735,116 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 </ul>
 <p><br></p>
 <h3 id="nestjs">🍀 NestJS 프로젝트를 도커로 실행하기</h3>
-<p><img alt="alt text" src="../../../../devops/image-21.png" /></p>
+<p><img alt="alt text" src="../../../../devops/img/image24.png" /></p>
 <h3 id="html-css-nginx-docker">⭐️ # [실습] 웹 프론트엔드 프로젝트(HTML, CSS, Nginx)를 Docker로 배포하기</h3>
 <h2 id="docker-compose">✅ Docker Compose</h2>
+<p>아래 명령어를 docker compose로 띄워보기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>webserver<span class="o">[</span>컨테이너<span class="w"> </span>이름<span class="o">]</span><span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:8080<span class="w"> </span>nginx<span class="o">[</span>이미지<span class="o">]</span>
+</code></pre></div>
+<blockquote>
+<p>compose.yml</p>
+</blockquote>
+<ul>
+<li>확실히 명령어가 간소해졌다.</li>
+<li>뒤에서 배우지만, 다수의 컨테이너를 관리하기에 용이하다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>services:
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>    my-web-server:
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>        container_name: webserver
+<a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a>        image: nginx
+<a id="__codelineno-59-5" name="__codelineno-59-5" href="#__codelineno-59-5"></a>        ports: -80:80
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span><span class="c1"># 포그라운드</span>
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w">  </span><span class="c1">#  백그라운드</span>
+<a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>docker<span class="w"> </span>ps
+<a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<h3 id="docker-compose-cli">Docker compose CLI 명령어</h3>
+<p>compsoe.yml에 정의된 컨테이너 중 실행중인 컨테이너만 보여준다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p>compsoe.yml에 정의된 컨테이너 중 중지된 것도 보여주기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span>-a
+</code></pre></div>
+<p>로그 확인하기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
+</code></pre></div>
+<p>이미지를 다시 빌드해서 실행시킬 때</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
+</code></pre></div>
+<p>도커 허브에서 최신 이미지를 가져와서 compsoe.yml의 이미지를 업데이트 해준다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>pull
+</code></pre></div>
+<h4 id="docker-compose-redis">🍀 docker compose로 redis 실행하기</h4>
+<p>docker run -d -p 6379:6379 redis</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>services:
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>    my-cache-server:
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>        image: redis
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>        ports:
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>            - 6379:6379
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>docker<span class="w">  </span>ps
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="m">042</span><span class="w"> </span>bash
+<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<h4 id="docker-compose-mysql">🍀 docker compose로 mysql 실행하기</h4>
+<p>$ docker run -e MYSQL_ROOT_PASSWORD=pass123! -p 3306:3306 -v /Users/hyewon/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql</p>
+<blockquote>
+<p>compose.yml</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>services:
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>    my-db:
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>        image: mysql
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a>        environment:
+<a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>            MYSQL_ROOT_PASSWORD: pass123#
+<a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a>        volumes:
+<a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a>            - ./mysql_data:/var/lib/mysql
+<a id="__codelineno-68-8" name="__codelineno-68-8" href="#__codelineno-68-8"></a>        ports:
+<a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a>            - 3306:3306
+</code></pre></div>
+<p>🚨 에러</p>
+<ul>
+<li>3306포트를 다른데서 사용중이다. 결국 docker compose up -d 를 못했음.</li>
+<li>아직 mysql_data 파일이 생성 안됨ㅠㅠ</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>Ports<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>available:<span class="w"> </span>exposing<span class="w"> </span>port<span class="w"> </span>TCP<span class="w"> </span><span class="m">0</span>.0.0.0:3306<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">0</span>.0.0.0:0:<span class="w"> </span>listen<span class="w"> </span>tcp<span class="w"> </span><span class="m">0</span>.0.0.0:3306:<span class="w"> </span>bind:<span class="w"> </span>address<span class="w"> </span>already<span class="w"> </span><span class="k">in</span><span class="w"> </span>use
+</code></pre></div>
+<ul>
+<li>
+<p>결국 호스트의 포트 번호 수정</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>ports:
+<a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>    - 3307:3306
+</code></pre></div>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>docker<span class="w"> </span>compose<span class="w">  </span>up<span class="w"> </span>-d
+<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+<a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>docker<span class="w"> </span>ps
+<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="c1"># 로그인 잘 되어있는지 확인, GUI툴(디비버, 워크벤치)로도 확인 가능</span>
+<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="o">[</span>컨테이너<span class="w"> </span>아이디<span class="o">]</span><span class="w">  </span>bash
+<a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span><span class="c1"># 다운해도 데이터는 남아있다.docker compose down</span>
+</code></pre></div>
+<ul>
+<li>
+<p>volume의 경로에 데이터가 저장되고 있는 지 확인</p>
+<p><img alt="alt text" src="../../../../devops/img/image25.png" /></p>
+</li>
+</ul>
+<h4 id="docker-compose-spring-boot">🍀 docker compose로 백엔드(spring boot) 실행하기</h4>
+<p>Dockerfile 이미지를 매번 새롭게 로드할 것이다.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</code></pre></div>
+<h4 id="docker-compose-nestjs">🍀 docker compose로 백엔드(Nest.js) 실행하기</h4>
 <p><br></p>
 <h2 id="aws-ec2">✅ AWS EC2에 서버 배포하기</h2>
 <p><br></p>
 <h2 id="aws-ec2-docker">✅ AWS EC2에 Docker를 활용해 배포하기</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>```
-<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>
-<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>```
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>```
+<a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>
+<a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>```
 </code></pre></div>
 
 
