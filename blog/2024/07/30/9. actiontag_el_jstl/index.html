@@ -1,0 +1,1505 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../29/7.%20%EC%BF%A0%ED%82%A4_8.%EC%84%B8%EC%85%98/">
+      
+      
+        <link rel="next" href="../docker-basic/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+    
+    
+      
+        <title>JSP action tag, el, jstl - hyehye_hye's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.78cf6014.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum+Gothic:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nanum Gothic";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jsp-action-tag-el-jstl" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://cherryjubilee.github.io/blog" title="hyehye_hye&#39;s blog" class="md-header__button md-logo" aria-label="hyehye_hye's blog" data-md-component="logo">
+      
+  <img src="../../../../../cherry.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hyehye_hye's blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JSP action tag, el, jstl
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://cherryjubilee.github.io/blog" title="hyehye_hye&#39;s blog" class="md-nav__button md-logo" aria-label="hyehye_hye's blog" data-md-component="logo">
+      
+  <img src="../../../../../cherry.svg" alt="logo">
+
+    </a>
+    hyehye_hye's blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    배움에 욕심이 많은 주니어 개발자 박혜원입니다.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 July
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 June
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 May
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 February
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 January
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/backend/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backend
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/devops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/algorithm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    java
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/db/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    db
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/front/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    front
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/javascript/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Javascript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/spring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/quiz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    quiz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/study/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    study
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/react/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    react
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#action-tag" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 액션 태그 (action tag)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-language-el" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 표현 언어 (Expression Language, EL)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jstl" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 JSTL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jstl-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 JSTL - CORE 태그
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 JSTL - CORE 태그">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jstl_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 JSTL 예제
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/u/112672507?v=4" alt="Hyewon Park">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>Hyewon Park</strong><br>
+                      Backend Developer
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-07-30 00:00:00" class="md-ellipsis">Jul 30, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/backend/">Backend</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              9 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="jsp-action-tag-el-jstl">JSP action tag, el, jstl</h1>
+<!-- more -->
+
+<blockquote>
+<p>개요</p>
+</blockquote>
+<h2 id="action-tag">📌 액션 태그 (action tag)</h2>
+<ol>
+<li>JSP 표준 태그</li>
+<li>
+<p><code>&lt;jsp:forward&gt;</code></p>
+<ul>
+<li>현재 페이지에 들어온 요청을 다음 페이지로 보내는 기능</li>
+<li>현재 페이지에서 다음 페이지로 요청을 포워딩하는 기능</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">&lt;jsp:forward page=&quot;nextPage.jsp&quot;/&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p><jsp:param></p>
+<ul>
+<li>다른 페이지에 값을 전달해주는 액션 태그</li>
+<li>nextPage.jsp로 요청을 포워딩하면서 username 파라미터에 JohnDoe 값 전달
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">&lt;jsp:forward page=&quot;nextPage.jsp&quot;&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;jsp:param</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;username&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;JohnDoe&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">&lt;/jsp:forward&gt;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ol>
+<h2 id="expression-language-el">📌 표현 언어 (Expression Language, EL)</h2>
+<ol>
+<li>스크립트 언어</li>
+<li>
+<p>사용법</p>
+<ul>
+<li>${ 속성 }</li>
+<li>${username}</li>
+<li>영역에 저장된 속성값 출력</li>
+</ul>
+</li>
+<li>
+<p>내장 객체</p>
+<ul>
+<li>4가지 영역에 접근하기 위한 내장 객체<ul>
+<li><code>pageScope</code><ul>
+<li>pageContext 내장 객체와 같이 page 영역에 저장된 속성값을 읽어옴</li>
+</ul>
+</li>
+<li><code>requestScope</code><ul>
+<li>request 내장 객체와 같이 request 영역에 저장된 속성값을 읽어옴</li>
+</ul>
+</li>
+<li><code>sessionScope</code><ul>
+<li>session 내장 객체와 같이 session 영역에 저장된 속성값을 읽어옴</li>
+</ul>
+</li>
+<li><code>applicationScope</code><ul>
+<li>application 내장 객체와 같이 application 영역에 저장된 속성값을 읽어옴</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>form 값 처리</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;p&gt;</span>Parameter:<span class="w"> </span>${param.paramName}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">&lt;p&gt;</span>Parameter<span class="w"> </span>Values:<span class="w"> </span>${paramValues.paramName[0]}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+<ul>
+<li><code>param</code><ul>
+<li>단일 매개변수 값을 가져온다.</li>
+<li>request.getParameter("매개변수명")</li>
+</ul>
+</li>
+<li><code>paramValues</code><ul>
+<li>매개변수의 여러 값을 배열로 가져온다.</li>
+<li>request.getParameterValues("매개변수명")</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>객체 전달</p>
+<ul>
+<li>객체를 영역에 저장한 후, 내장 객체의 영역이 공유됨</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">&lt;%</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">User</span><span class="p">(</span><span class="s">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">));</span><span class="w"> </span><span class="k">%&gt;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&lt;p&gt;</span>User<span class="w"> </span>Name:<span class="w"> </span>${requestScope.user.name}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;p&gt;</span>User<span class="w"> </span>Age:<span class="w"> </span>${requestScope.user.age}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>기타 내장 객체</p>
+<ul>
+<li>cookie, header, headerValues, initParam, pageContext</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;p&gt;</span>Cookie:<span class="w"> </span>${cookie.cookieName.value}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">&lt;p&gt;</span>Header:<span class="w"> </span>${header.headerName}<span class="nt">&lt;/p&gt;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;p&gt;</span>Init<span class="w"> </span>Param:<span class="w"> </span>${initParam.paramName}<span class="nt">&lt;/p&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p>collection</p>
+<p><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image.png" /></p>
+<p><details>
+<summary>colleciton 예제  HelloJSP5-EL5</summary></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">kr.co.kosta.el</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PersonDTO</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PersonDTO</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="c1">//super();</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PersonDTO</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="c1">//super();</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getName</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setName</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">name</span><span class="p">;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.HashMap&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;javax.print.attribute.HashAttributeSet&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.logging.Handler&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.Map&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;kr.co.kosta.el.PersonDTO&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.List&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.ArrayList&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;kr.co.kosta.util.CookieManager&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="k">&lt;%</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;홍길동&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PersonDTO</span><span class="p">(</span><span class="s">&quot;이방원&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">70</span><span class="p">));</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="n">pageContext</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;person&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="p">);</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;세종&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;훈민정음&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;태종&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;왕권&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;moon&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;국방 강화&quot;</span><span class="p">);</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="n">pageContext</span><span class="p">.</span><span class="na">setAttribute</span><span class="p">(</span><span class="s">&quot;king&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">map</span><span class="p">);</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="k">%&gt;</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="nt">&lt;html&gt;</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="nt">&lt;head&gt;</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="nt">&lt;title&gt;</span>Insert<span class="w"> </span>title<span class="w"> </span>here<span class="nt">&lt;/title&gt;</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="nt">&lt;/head&gt;</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="nt">&lt;body&gt;</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>0번째<span class="w"> </span>요소:<span class="w"> </span>${person[0]}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>1번째<span class="w"> </span>요소:<span class="w"> </span>${person[1].name},<span class="w"> </span>${person[1].age}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>0번째<span class="w"> </span>요소:<span class="w"> </span>${king[&quot;세종&quot;]},<span class="w"> </span>${king[&#39;태종&#39;]},<span class="w"> </span>${king.moon}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>1번째<span class="w"> </span>요소:<span class="w"> </span>${king[&quot;세종&quot;]},<span class="w"> </span>${king[&#39;태종&#39;]},<span class="w"> </span>${king.moon}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="nt">&lt;/body&gt;</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>EL연산자들</p>
+</li>
+<li>
+<p>산수, 비교, 논리연산자</p>
+</li>
+</ol>
+<details>
+<summary></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>
+</code></pre></div>
+
+</details>
+
+<h2 id="jstl">📌 JSTL</h2>
+<ol>
+<li>JSP Standard Tag Library</li>
+<li>
+<p>코어태그</p>
+<ul>
+<li>set, remove</li>
+<li>if</li>
+<li>choose, when, otherwise</li>
+<li>forEach, forTokens</li>
+<li>import, redirect, url</li>
+<li>catch</li>
+</ul>
+</li>
+<li>
+<p>국제화 태그</p>
+<ul>
+<li>숫자</li>
+<li>날짜, 타임존</li>
+<li>로케일</li>
+</ul>
+</li>
+<li>
+<p>JSTL 사용하기 위한 선언</p>
+<ul>
+<li><code>&lt;%@ taglib prefix="c" uri="jakarta.tags.core" %&gt;</code></li>
+<li>jar 다운로드 후 lib아래 넣기<ul>
+<li><a href="https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api/3.0.0">https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api/3.0.0</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl/3.0.1">https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl/3.0.1</a>
+  <img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image16.png" /></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="jstl-core">📌 JSTL - CORE 태그</h2>
+<ol>
+<li>
+<p><code>&lt;c:set&gt;</code></p>
+<ul>
+<li>setAttribute() 메서드와 동일 기능</li>
+<li>변수 생성 형식</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;변수명&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;값&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;영역&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</code></pre></div>
+<ul>
+<li>변수나 자바 빈즈나 컬랙션 생성할 때 사용<ul>
+<li>속성<ul>
+<li><code>target</code>: 자바빈즈 생성</li>
+<li><code>property</code> : 멤버변수 값 지정</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;c:remove&gt;</code></p>
+<ul>
+<li><c:set> 태그로 설정한 변수를 제거할 때 사용</li>
+<li>removeAttribute() 메서드와 같은 역할</li>
+<li>영역 지정하지 않을 경우 동일한 이름의 변수가 있다면 한꺼번에 삭제함<ul>
+<li>영역 지정한 후 삭제해야 안전</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;c:if&gt;</code></p>
+<ul>
+<li>자바의 if와 동일</li>
+<li>else가 없음</li>
+<li>속성<ul>
+<li>var, scope</li>
+<li>test<ul>
+<li>if문에서 사용할 조건 지정</li>
+<li>값으로 EL이 아닌 일반 값이 오면 무조건 false 반환</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="jstl_1">🍀 JSTL 예제</h3>
+<ul>
+<li>scope에 request를 적용해야 el태그 내에서 requestScope. 사용하여 변수에 접근 가능<ul>
+<li><code>scope="request" =&gt; ${requestScope.psersonVar.name}</code></li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>JSTL c:set 예제</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;kr.co.kosta.el.PersonDTO&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.Date&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">taglib</span><span class="w"> </span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="n">uri</span><span class="o">=</span><span class="s">&quot;jakarta.tags.core&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nt">&lt;html&gt;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nt">&lt;head&gt;</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="nt">&lt;title&gt;</span>Insert<span class="w"> </span>title<span class="w"> </span>here<span class="nt">&lt;/title&gt;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="nt">&lt;/head&gt;</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="nt">&lt;body&gt;</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;directVar&quot;</span><span class="w"> </span><span class="na">value =</span><span class="w"> </span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;elVar&quot;</span><span class="w"> </span><span class="na">value =</span><span class="w"> </span><span class="s">&quot;${ directVar mod 5 } &quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;datavar&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;</span><span class="k">&lt;%=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Date</span><span class="p">()</span><span class="w"> </span><span class="k">%&gt;</span><span class="s">&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${pageScope.directVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${elVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${datavar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a><span class="w">    </span><span class="cm">&lt;!-- 자바 빈즈 생성 : scope 사용 --&gt;</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;psersonVar&quot;</span><span class="w"> </span><span class="na">value=</span><span class="w"> </span><span class="s">&#39;</span><span class="k">&lt;%=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PersonDTO</span><span class="p">(</span><span class="s">&quot;이성계&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">%&gt;</span><span class="s">&#39;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;request&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>이름:<span class="w"> </span>${requestScope.psersonVar.name}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a><span class="w">    </span><span class="cm">&lt;!-- 자바 빈즈 생성2 : property 사용 --&gt;</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;psersonVar2&quot;</span><span class="w"> </span><span class="na">value=</span><span class="w"> </span><span class="s">&quot;</span><span class="k">&lt;%=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PersonDTO</span><span class="p">()</span><span class="w"> </span><span class="k">%&gt;</span><span class="s">&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;request&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;${psersonVar2}&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;name&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;하륜&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">target=</span><span class="s">&quot;${psersonVar2}&quot;</span><span class="w"> </span><span class="na">property=</span><span class="s">&quot;age&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;60&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33" href="#__codelineno-11-33"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>이름:<span class="w"> </span>${psersonVar2.name}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-11-34" name="__codelineno-11-34" href="#__codelineno-11-34"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>이름:<span class="w"> </span>${psersonVar2.age}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-11-35" name="__codelineno-11-35" href="#__codelineno-11-35"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36" href="#__codelineno-11-36"></a>
+<a id="__codelineno-11-37" name="__codelineno-11-37" href="#__codelineno-11-37"></a><span class="nt">&lt;/body&gt;</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38" href="#__codelineno-11-38"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+
+</details>
+
+<p><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image14.png" /></p>
+<ul>
+<li>위 예제와 거의 동일하며 list 사용</li>
+</ul>
+<details>
+<summary>JSTL c:set 예제2 (collection list 사용)</summary>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;kr.co.kosta.el.PersonDTO&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">&lt;%@</span><span class="n">page</span><span class="w"> </span><span class="n">import</span><span class="o">=</span><span class="s">&quot;java.util.ArrayList&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">taglib</span><span class="w"> </span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="n">uri</span><span class="o">=</span><span class="s">&quot;jakarta.tags.core&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="k">&lt;%</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PersonDTO</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PersonDTO</span><span class="p">(</span><span class="s">&quot;김김&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">));</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PersonDTO</span><span class="p">(</span><span class="s">&quot;박박&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">60</span><span class="p">));</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="k">%&gt;</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="nt">&lt;html&gt;</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="nt">&lt;head&gt;</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="nt">&lt;title&gt;</span>Insert<span class="w"> </span>title<span class="w"> </span>here<span class="nt">&lt;/title&gt;</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="nt">&lt;/head&gt;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="nt">&lt;body&gt;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;personlist&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;</span><span class="k">&lt;%=</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="k">%&gt;</span><span class="s">&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;request&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="nt">&lt;li&gt;</span>이름<span class="w"> </span>:<span class="w">  </span>${requestScope.personlist[0].name}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="nt">&lt;li&gt;</span>나이<span class="w"> </span>:<span class="w">  </span>${requestScope.personlist[0].age}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="nt">&lt;li&gt;</span>이름<span class="w"> </span>:<span class="w">  </span>${personlist[1].name}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="nt">&lt;li&gt;</span>나이<span class="w"> </span>:<span class="w">  </span>${personlist[1].age}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="nt">&lt;/body&gt;</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+
+</details>
+
+<p><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image15.png" /></p>
+<details>
+<summary>JSTL c:remove 예제</summary>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">taglib</span><span class="w"> </span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="n">uri</span><span class="o">=</span><span class="s">&quot;jakarta.tags.core&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;scoreVar&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;변수값이 Page 영역에 저장됨&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;page&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;scoreVar&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;변수값이 Request 영역에 저장됨&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;request&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;scoreVar&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;변수값이 Session 영역에 저장됨&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;scoreVar&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;변수값이 Application 영역에 저장됨&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;application&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="nt">&lt;html&gt;</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="nt">&lt;head&gt;</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="nt">&lt;title&gt;</span>Insert<span class="w"> </span>title<span class="w"> </span>here<span class="nt">&lt;/title&gt;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="nt">&lt;/head&gt;</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="nt">&lt;body&gt;</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${requestScope.scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${sessionScope.scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${applicationScope.scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">    </span><span class="nt">&lt;c:remove</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;scoreVar&quot;</span><span class="w"> </span><span class="na">scope=</span><span class="s">&quot;session&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">    </span><span class="nt">&lt;ul&gt;</span>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${requestScope.scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${sessionScope.scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="w">        </span><span class="nt">&lt;li&gt;</span>${applicationScope.scoreVar}<span class="nt">&lt;/li&gt;</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">    </span><span class="nt">&lt;/ul&gt;</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="nt">&lt;/body&gt;</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+
+</details>
+
+<p><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image17.png" /></p>
+<details>
+<summary>JSTL c:if 예제</summary>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="n">language</span><span class="o">=</span><span class="s">&quot;java&quot;</span><span class="w"> </span><span class="n">contentType</span><span class="o">=</span><span class="s">&quot;text/html; charset=UTF-8&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="n">pageEncoding</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="k">&lt;%@</span><span class="w"> </span><span class="n">taglib</span><span class="w"> </span><span class="n">prefix</span><span class="o">=</span><span class="s">&quot;c&quot;</span><span class="w"> </span><span class="n">uri</span><span class="o">=</span><span class="s">&quot;jakarta.tags.core&quot;</span><span class="k">%&gt;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nt">&lt;html&gt;</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nt">&lt;head&gt;</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="nt">&lt;meta</span><span class="w"> </span><span class="na">charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="nt">&lt;title&gt;</span>Insert<span class="w"> </span>title<span class="w"> </span>here<span class="nt">&lt;/title&gt;</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="nt">&lt;/head&gt;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="nt">&lt;body&gt;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;number&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="nt">&lt;c:set</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;string&quot;</span><span class="w"> </span><span class="na">value=</span><span class="s">&quot;jsp입니다.&quot;</span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span><span class="nt">&lt;c:if</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;${number mod 2 eq 0 }&quot;</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;result&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">    </span>${number}는<span class="w"> </span>짝수이다.
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">    </span><span class="nt">&lt;/c:if&gt;</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">    </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span>${result<span class="w"> </span>}<span class="w">  </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">    </span><span class="nt">&lt;c:if</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;100&quot;</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;result2&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">    </span>test<span class="w"> </span>속성값으로<span class="w"> </span>EL이<span class="w"> </span>아닌<span class="w"> </span>정수를<span class="w"> </span>지정함
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">    </span><span class="nt">&lt;/c:if&gt;</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a><span class="w">    </span>${result2<span class="w"> </span>}<span class="w"> </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a><span class="w">    </span><span class="nt">&lt;c:if</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;result3&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a><span class="w">    </span>test<span class="w"> </span>속성값으로<span class="w"> </span>일반<span class="w"> </span>값으로<span class="w"> </span>true<span class="w"> </span>사용<span class="w"> </span>하면<span class="w"> </span>true<span class="w"> </span>(예외적인<span class="w"> </span>경우)
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="w">    </span><span class="nt">&lt;/c:if&gt;</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="w">    </span>${result3<span class="w"> </span>}<span class="w"> </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a><span class="w">    </span><span class="nt">&lt;c:if</span><span class="w"> </span><span class="na">test=</span><span class="s">&quot;TRUE&quot;</span><span class="w"> </span><span class="na">var=</span><span class="s">&quot;result4&quot;</span><span class="nt">&gt;</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a><span class="w">    </span>test<span class="w"> </span>속성값으로<span class="w"> </span>일반<span class="w"> </span>값으로<span class="w"> </span>true<span class="w"> </span>사용<span class="w"> </span>하면<span class="w"> </span>true<span class="w"> </span>(예외적인<span class="w"> </span>경우)
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a><span class="w">    </span><span class="nt">&lt;/c:if&gt;</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a><span class="w">    </span>${result4<span class="w"> </span>}<span class="w"> </span><span class="nt">&lt;br</span><span class="w"> </span><span class="nt">/&gt;&lt;br</span><span class="w"> </span><span class="nt">/&gt;</span>
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a><span class="nt">&lt;/body&gt;</span>
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a><span class="nt">&lt;/html&gt;</span>
+</code></pre></div>
+
+</details>
+
+<p><img alt="alt text" src="../../../../kosta/SetvletJSPNote/img/image18.png" /></p>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../29/7.%20%EC%BF%A0%ED%82%A4_8.%EC%84%B8%EC%85%98/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 쿠키 &amp; 세션">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                쿠키 & 세션
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../docker-basic/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker 기본">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Docker 기본
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Hyewon Park
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/cherryJubilee/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/cherryJubilee" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.top", "navigation.footer", "content.tabs.link"], "search": "../../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -12,7 +12,7 @@
         <link rel="prev" href="../../25/5.%20%EB%82%B4%EC%9E%A5%EA%B0%9D%EC%B2%B4/">
       
       
-        <link rel="next" href="../../30/docker-basic/">
+        <link rel="next" href="../../30/9.%20actiontag_el_jstl/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -424,11 +424,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/devops/" class="md-nav__link">
+      <a href="../../../../category/backend/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    devops
+    Backend
   </span>
   
 
@@ -444,11 +444,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/backend/" class="md-nav__link">
+      <a href="../../../../category/devops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Backend
+    devops
   </span>
   
 
@@ -801,6 +801,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="🥖 세션">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#db" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 세션과 DB를 이용한 로그인
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs" class="md-nav__link">
+    <span class="md-ellipsis">
+      쿠키 VS 세션
+    </span>
+  </a>
+  
 </li>
       
     </ul>
@@ -876,7 +900,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -1013,7 +1037,29 @@
 <br></p>
 <h2 id="_4">🥖 세션</h2>
 <ol>
-<li>클라이언트가 웹 브라우저를 통해 서버에 접속한 후 요청을 하고 웹 브라우저가 닫히고 서버와의 접속 종료</li>
+<li>
+<p>클라이언트가 웹 브라우저를 통해 서버에 접속한 후 요청을 하고 웹 브라우저가 닫히고 서버와의 접속 종료하는 하나의 단위</p>
+<ul>
+<li>서버에 접속해 있는 동안 그 상태를 유지하는 것</li>
+</ul>
+</li>
+</ol>
+<h3 id="db">🍀 세션과 DB를 이용한 로그인</h3>
+<ol>
+<li>로그인 페이지</li>
+<li>DAO(Data Transfer Object) &amp; DAO(Data Access Object) 패턴<ul>
+<li>DTO<ul>
+<li>계층 사이에서 데이터를 교환하기 위해 생성하는 객체</li>
+</ul>
+</li>
+<li>DAO<ul>
+<li>데이터베이스의 데이터에 접근하기 위한 객체</li>
+<li>JDBC API 통해 구현함</li>
+<li>CRUD를 통해 구현함</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>session<span class="w"> </span>설정<span class="w"> </span>확인
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>세션<span class="w"> </span>유지<span class="w"> </span>기간<span class="w"> </span>:<span class="w"> </span><span class="m">1200</span>
@@ -1031,6 +1077,38 @@
 <ul>
 <li>session 폴더 만들고 xml 파일 갖고오고, JDBC 폴더 갖구옴</li>
 </ul>
+<h2 id="vs">쿠키 VS 세션</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">쿠키</th>
+<th style="text-align: center;">세션</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>저장위치</strong></td>
+<td style="text-align: center;">클라이언트 PC에 text로 저장</td>
+<td style="text-align: center;">웹 서버에 Object 타입으로 저장</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>보안</strong></td>
+<td style="text-align: center;">보안에 취약</td>
+<td style="text-align: center;">보안에 안전함</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>속도</strong></td>
+<td style="text-align: center;">세션 빠름</td>
+<td style="text-align: center;">쿠키보다 느림</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>유지시간</strong></td>
+<td style="text-align: center;">설정된 시간만큼 존재</td>
+<td style="text-align: center;">web.xml에 설정</td>
+</tr>
+</tbody>
+</table>
 <p><br>
 <br>
 <br>
@@ -1085,13 +1163,13 @@
         
         
           
-          <a href="../../30/docker-basic/" class="md-footer__link md-footer__link--next" aria-label="Next: Docker 기본">
+          <a href="../../30/9.%20actiontag_el_jstl/" class="md-footer__link md-footer__link--next" aria-label="Next: JSP action tag, el, jstl">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Docker 기본
+                JSP action tag, el, jstl
               </div>
             </div>
             <div class="md-footer__button md-icon">
