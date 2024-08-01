@@ -1192,11 +1192,36 @@
 </li>
 </ul>
 </li>
+<li>
+<p><code>&lt;c:choose&gt;</code>, <code>&lt;c:when&gt;</code>, <code>&lt;c:otherwise&gt;</code></p>
+<ul>
+<li>다중 조건시 사용</li>
+</ul>
+</li>
+<li>
+<p><code>&lt;c:forEach&gt;</code></p>
+<ul>
+<li>반복을 위해 사용</li>
+<li>형태</li>
+<li>속성<ul>
+<li><code>varStatus</code> : 속성을 통해 추가적인 정보 획득할 수 있는 속성<ul>
+<li>count : 반복 횟수</li>
+<li>index : var에 지정한 현재 루프의 변수값(index) 반환</li>
+<li>current : var에 지정한 현재 루프의 변수값 반환</li>
+<li>first : 루프의 처음일 때 true 반환</li>
+<li>last : 루프의 마지막일 때 true 반환</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
+<p><br /></p>
 <h3 id="jstl_1">🍀 JSTL 예제</h3>
 <ul>
 <li>scope에 request를 적용해야 el태그 내에서 requestScope. 사용하여 변수에 접근 가능<ul>
-<li><code>scope="request" =&gt; ${requestScope.psersonVar.name}</code></li>
+<li><code>scope="request" =&gt; ${requestScope.personVar.name}</code></li>
 </ul>
 </li>
 </ul>

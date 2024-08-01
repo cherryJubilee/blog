@@ -1003,15 +1003,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#docker-compose-nestjs" class="md-nav__link">
-    <span class="md-ellipsis">
-      🍀 docker compose로 백엔드(Nest.js) 실행하기
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1023,9 +1014,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-compose-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Docker Compose를 활용해 2개 이상의 컨테이너 관리하기
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#aws-ec2" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ AWS EC2에 서버 배포하기
+      📌 AWS EC2에 서버 배포하기
     </span>
   </a>
   
@@ -1034,7 +1034,7 @@
         <li class="md-nav__item">
   <a href="#aws-ec2-docker" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ AWS EC2에 Docker를 활용해 배포하기
+      📌 AWS EC2에 Docker를 활용해 배포하기
     </span>
   </a>
   
@@ -1113,7 +1113,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              16 min read
+                              20 min read
                             
                           </span>
                         </div>
@@ -1776,75 +1776,288 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 <div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>pull
 </code></pre></div>
 <h4 id="docker-compose-redis">🍀 docker compose로 redis 실행하기</h4>
-<p>docker run -d -p 6379:6379 redis</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>services:
-<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>    my-cache-server:
-<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>        image: redis
-<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>        ports:
-<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>            - 6379:6379
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
-<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>docker<span class="w">  </span>ps
-<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
-<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="m">042</span><span class="w"> </span>bash
-<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
-</code></pre></div>
-<h4 id="docker-compose-mysql">🍀 docker compose로 mysql 실행하기</h4>
-<p>$ docker run -e MYSQL_ROOT_PASSWORD=pass123! -p 3306:3306 -v /Users/hyewon/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql</p>
 <blockquote>
-<p>compose.yml</p>
+<p>Docker CLI로 컨테이너를 실행시킬 때</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>services:
-<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>    my-db:
-<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>        image: mysql
-<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a>        environment:
-<a id="__codelineno-68-5" name="__codelineno-68-5" href="#__codelineno-68-5"></a>            MYSQL_ROOT_PASSWORD: pass123#
-<a id="__codelineno-68-6" name="__codelineno-68-6" href="#__codelineno-68-6"></a>        volumes:
-<a id="__codelineno-68-7" name="__codelineno-68-7" href="#__codelineno-68-7"></a>            - ./mysql_data:/var/lib/mysql
-<a id="__codelineno-68-8" name="__codelineno-68-8" href="#__codelineno-68-8"></a>        ports:
-<a id="__codelineno-68-9" name="__codelineno-68-9" href="#__codelineno-68-9"></a>            - 3306:3306
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span>redis
 </code></pre></div>
+<blockquote>
+<p>Docker Compose로 컨테이너를 실행시킬 때</p>
+</blockquote>
+<ol>
+<li>
+<p>compose.yml 파일 작성</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>services:
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>    my-cache-server:
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>        image: redis
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>        ports:
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>            - 6379:6379
+</code></pre></div>
+</li>
+<li>
+<p>compose 파일 실행 및 현황보기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>docker<span class="w">  </span>ps
+</code></pre></div>
+</li>
+<li>
+<p>컨테이너 실행시킬 때 에러없는지 로그 확인</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
+</code></pre></div>
+</li>
+<li>
+<p>Redis 컨테이너 접속</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="o">[</span>컨테이너ID<span class="o">]</span><span class="w"> </span>bash
+</code></pre></div>
+</li>
+<li>
+<p>컨테이너에서 redis 사용해보기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>$<span class="w"> </span>redis-cli
+<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>
+<a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a><span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>jscode
+<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>get<span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+</li>
+<li>
+<p>compose로 실행된 컨테이너 삭제</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+</li>
+</ol>
+<h4 id="docker-compose-mysql">🍀 docker compose로 mysql 실행하기</h4>
+<blockquote>
+<p>Docker CLI로 컨테이너를 실행시킬 때</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>$<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span><span class="nv">MYSQL_ROOT_PASSWORD</span><span class="o">=</span>pass123!<span class="w"> </span>-p<span class="w"> </span><span class="m">3306</span>:3306<span class="w"> </span>-v<span class="w"> </span>/Users/hyewon/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql<span class="w"> </span>-d<span class="w"> </span>mysql
+</code></pre></div>
+<blockquote>
+<p>Docker Compose로 MySQL 실행시키기</p>
+</blockquote>
+<ol>
+<li>
+<p>compose.yml 파일 작성</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>services:
+<a id="__codelineno-74-2" name="__codelineno-74-2" href="#__codelineno-74-2"></a>    my-db:
+<a id="__codelineno-74-3" name="__codelineno-74-3" href="#__codelineno-74-3"></a>        image: mysql
+<a id="__codelineno-74-4" name="__codelineno-74-4" href="#__codelineno-74-4"></a>        environment:
+<a id="__codelineno-74-5" name="__codelineno-74-5" href="#__codelineno-74-5"></a>            MYSQL_ROOT_PASSWORD: pass123#
+<a id="__codelineno-74-6" name="__codelineno-74-6" href="#__codelineno-74-6"></a>        volumes:
+<a id="__codelineno-74-7" name="__codelineno-74-7" href="#__codelineno-74-7"></a>            - ./mysql_data:/var/lib/mysql
+<a id="__codelineno-74-8" name="__codelineno-74-8" href="#__codelineno-74-8"></a>        ports:
+<a id="__codelineno-74-9" name="__codelineno-74-9" href="#__codelineno-74-9"></a>            - 3306:3306
+</code></pre></div>
+</li>
+</ol>
 <p>🚨 에러</p>
 <ul>
-<li>3306포트를 다른데서 사용중이다. 결국 docker compose up -d 를 못했음.</li>
+<li>3306포트를 이미 mysql workbench에서 사용중이다. 결국 docker compose up -d 를 못했음.</li>
 <li>아직 mysql_data 파일이 생성 안됨ㅠㅠ</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>Ports<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>available:<span class="w"> </span>exposing<span class="w"> </span>port<span class="w"> </span>TCP<span class="w"> </span><span class="m">0</span>.0.0.0:3306<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">0</span>.0.0.0:0:<span class="w"> </span>listen<span class="w"> </span>tcp<span class="w"> </span><span class="m">0</span>.0.0.0:3306:<span class="w"> </span>bind:<span class="w"> </span>address<span class="w"> </span>already<span class="w"> </span><span class="k">in</span><span class="w"> </span>use
+<div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>Error<span class="w"> </span>response<span class="w"> </span>from<span class="w"> </span>daemon:<span class="w"> </span>Ports<span class="w"> </span>are<span class="w"> </span>not<span class="w"> </span>available:<span class="w"> </span>exposing<span class="w"> </span>port<span class="w"> </span>TCP<span class="w"> </span><span class="m">0</span>.0.0.0:3306<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">0</span>.0.0.0:0:<span class="w"> </span>listen<span class="w"> </span>tcp<span class="w"> </span><span class="m">0</span>.0.0.0:3306:<span class="w"> </span>bind:<span class="w"> </span>address<span class="w"> </span>already<span class="w"> </span><span class="k">in</span><span class="w"> </span>use
 </code></pre></div>
 <ul>
 <li>
 <p>결국 호스트의 포트 번호 수정</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>ports:
-<a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>    - 3307:3306
+<div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>ports:
+<a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>    - 3307:3306
 </code></pre></div>
 </li>
-</ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>docker<span class="w"> </span>compose<span class="w">  </span>up<span class="w"> </span>-d
-<a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
-<a id="__codelineno-71-3" name="__codelineno-71-3" href="#__codelineno-71-3"></a>docker<span class="w"> </span>ps
-<a id="__codelineno-71-4" name="__codelineno-71-4" href="#__codelineno-71-4"></a><span class="c1"># 로그인 잘 되어있는지 확인, GUI툴(디비버, 워크벤치)로도 확인 가능</span>
-<a id="__codelineno-71-5" name="__codelineno-71-5" href="#__codelineno-71-5"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span><span class="o">[</span>컨테이너<span class="w"> </span>아이디<span class="o">]</span><span class="w">  </span>bash
-<a id="__codelineno-71-6" name="__codelineno-71-6" href="#__codelineno-71-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span><span class="c1"># 다운해도 데이터는 남아있다.docker compose down</span>
+<li>
+<p>compose 파일 실행시키기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
+</li>
+<li>
+<p>compose 실행 현황 보기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+<a id="__codelineno-78-2" name="__codelineno-78-2" href="#__codelineno-78-2"></a>docker<span class="w"> </span>ps
+</code></pre></div>
+</li>
+<li>
+<p>잘 작동하는 지 GUI툴(DBeaver, 워크벤치)에 연결시켜보기</p>
+</li>
+<li>
+<p>volume의 경로에 데이터가 저장되고 있는 지 확인하기</p>
 <ul>
 <li>
 <p>volume의 경로에 데이터가 저장되고 있는 지 확인</p>
+<ul>
+<li>mysql_data 폴더 생겼다.</li>
+</ul>
 <p><img alt="alt text" src="../../../../devops/img/image25.png" /></p>
 </li>
 </ul>
-<h4 id="docker-compose-spring-boot">🍀 docker compose로 백엔드(spring boot) 실행하기</h4>
-<p>Dockerfile 이미지를 매번 새롭게 로드할 것이다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</li>
+<li>
+<p>compose로 실행된 컨테이너 삭제</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
 </code></pre></div>
-<h4 id="docker-compose-nestjs">🍀 docker compose로 백엔드(Nest.js) 실행하기</h4>
+</li>
+</ul>
+<h4 id="docker-compose-spring-boot">🍀 docker compose로 백엔드(spring boot) 실행하기</h4>
+<ol>
+<li>
+<p>프로젝트 세팅
+   <img alt="alt text" src="../../../../devops/img/image26.png" /></p>
+</li>
+<li>
+<p>DockerFile 작성</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a>FROM openjdk:17-jdk
+<a id="__codelineno-80-2" name="__codelineno-80-2" href="#__codelineno-80-2"></a>COPY build/libs/\*SNAPSHOT.jar /app.jar
+<a id="__codelineno-80-3" name="__codelineno-80-3" href="#__codelineno-80-3"></a>ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;/app.jar&quot;]
+</code></pre></div>
+</li>
+<li>
+<p>Spring Boot 프로젝트 빌드하기</p>
+<p><img alt="alt text" src="../../../../devops/img/image27.png" /></p>
+</li>
+<li>
+<p>compose.yml 파일 작성하기</p>
+<ul>
+<li><code>build: .</code> : <code>compose.yml</code>이 존재하는 디렉토리(<code>.</code>)에 있는 <code>Dockerfile</code>로 이미지를 생성해 컨테이너를 띄우겠다는 의미이다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a>services:
+<a id="__codelineno-81-2" name="__codelineno-81-2" href="#__codelineno-81-2"></a>    my-server:
+<a id="__codelineno-81-3" name="__codelineno-81-3" href="#__codelineno-81-3"></a>        build: .
+<a id="__codelineno-81-4" name="__codelineno-81-4" href="#__codelineno-81-4"></a>        ports:
+<a id="__codelineno-81-5" name="__codelineno-81-5" href="#__codelineno-81-5"></a>            - 8081:8080
+</code></pre></div>
+</li>
+<li>
+<p>compose 파일 실행시키기</p>
+<ul>
+<li><code>--build</code>: Dockerfile 이미지를 매번 새롭게 로드할 것이다.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</code></pre></div>
+</li>
+<li>
+<p>compose 실행 현황 보기</p>
+<p><img alt="alt text" src="../../../../devops/img/image28.png" /></p>
+</li>
+<li>
+<p>localhost:8081으로 들어가보기</p>
+<p><img alt="alt text" src="../../../../devops/img/image29.png" /></p>
+</li>
+</ol>
+<h2 id="docker-compose-2">📌 Docker Compose를 활용해 2개 이상의 컨테이너 관리하기</h2>
+<blockquote>
+<p>Spring Boot, MySQL 컨테이너 동시에 띄워보기</p>
+</blockquote>
+<ol>
+<li>
+<p>Spring Boot 프로젝트 셋팅</p>
+<p><img alt="alt text" src="../../../../devops/img/image30.png" /></p>
+</li>
+<li>
+<p>AppController</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="nd">@RestController</span>
+<a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AppController</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">)</span>
+<a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">home</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span>
+<a id="__codelineno-83-6" name="__codelineno-83-6" href="#__codelineno-83-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-83-7" name="__codelineno-83-7" href="#__codelineno-83-7"></a><span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>application.yml에 DB 연결을 위한 정보 작성하기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="w"> </span>spring:
+<a id="__codelineno-84-2" name="__codelineno-84-2" href="#__codelineno-84-2"></a><span class="w"> </span>datasource:
+<a id="__codelineno-84-3" name="__codelineno-84-3" href="#__codelineno-84-3"></a><span class="w">     </span>url:<span class="w"> </span>jdbc:mysql://localhost:3306/mydb
+<a id="__codelineno-84-4" name="__codelineno-84-4" href="#__codelineno-84-4"></a><span class="w">     </span>username:<span class="w"> </span>root
+<a id="__codelineno-84-5" name="__codelineno-84-5" href="#__codelineno-84-5"></a><span class="w">     </span>password:<span class="w"> </span>pwd1234
+<a id="__codelineno-84-6" name="__codelineno-84-6" href="#__codelineno-84-6"></a><span class="w">     </span>driver-class-name:<span class="w"> </span>com.mysql.cj.jdbc.Driver
+</code></pre></div>
+</li>
+<li>
+<p>테스트코드는 삭제한다.</p>
+</li>
+<li>
+<p>Dockerfile 작성하기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a>FROM<span class="w"> </span>openjdk:17-jdk
+<a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a>
+<a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a>COPY<span class="w"> </span>build/libs/*SNAPSHOT.jar<span class="w"> </span>/app.jar
+<a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a>
+<a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a>ENTRYPOINT<span class="w"> </span><span class="o">[</span><span class="s2">&quot;java&quot;</span>,<span class="w"> </span><span class="s2">&quot;-jar&quot;</span>,<span class="w"> </span><span class="s2">&quot;/app.jar&quot;</span><span class="o">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>compose.yml 파일 작성하기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a>services:
+<a id="__codelineno-86-2" name="__codelineno-86-2" href="#__codelineno-86-2"></a>    my-server:
+<a id="__codelineno-86-3" name="__codelineno-86-3" href="#__codelineno-86-3"></a>        build: .
+<a id="__codelineno-86-4" name="__codelineno-86-4" href="#__codelineno-86-4"></a>        ports:
+<a id="__codelineno-86-5" name="__codelineno-86-5" href="#__codelineno-86-5"></a>            - 8080:8080
+<a id="__codelineno-86-6" name="__codelineno-86-6" href="#__codelineno-86-6"></a>        # my-db의 컨테이너가 생성되고 healthy 하다고 판단 될 때, 해당 컨테이너를 생성한다.
+<a id="__codelineno-86-7" name="__codelineno-86-7" href="#__codelineno-86-7"></a>        depends_on:
+<a id="__codelineno-86-8" name="__codelineno-86-8" href="#__codelineno-86-8"></a>            my-db:
+<a id="__codelineno-86-9" name="__codelineno-86-9" href="#__codelineno-86-9"></a>                condition: service_healthy
+<a id="__codelineno-86-10" name="__codelineno-86-10" href="#__codelineno-86-10"></a>    my-db:
+<a id="__codelineno-86-11" name="__codelineno-86-11" href="#__codelineno-86-11"></a>        image: mysql
+<a id="__codelineno-86-12" name="__codelineno-86-12" href="#__codelineno-86-12"></a>        environment:
+<a id="__codelineno-86-13" name="__codelineno-86-13" href="#__codelineno-86-13"></a>            MYSQL_ROOT_PASSWORD: pwd1234
+<a id="__codelineno-86-14" name="__codelineno-86-14" href="#__codelineno-86-14"></a>            MYSQL_DATABASE: mydb # MySQL 최초 실행 시 mydb라는 데이터베이스를 생성해준다.
+<a id="__codelineno-86-15" name="__codelineno-86-15" href="#__codelineno-86-15"></a>        volumes:
+<a id="__codelineno-86-16" name="__codelineno-86-16" href="#__codelineno-86-16"></a>            - ./mysql_data:/var/lib/mysql
+<a id="__codelineno-86-17" name="__codelineno-86-17" href="#__codelineno-86-17"></a>        ports:
+<a id="__codelineno-86-18" name="__codelineno-86-18" href="#__codelineno-86-18"></a>            - 3306:3306
+<a id="__codelineno-86-19" name="__codelineno-86-19" href="#__codelineno-86-19"></a>        healthcheck:
+<a id="__codelineno-86-20" name="__codelineno-86-20" href="#__codelineno-86-20"></a>            test: [&quot;CMD&quot;, &quot;mysqladmin&quot;, &quot;ping&quot;] # MySQL이 healthy 한 지 판단할 수 있는 명령어
+<a id="__codelineno-86-21" name="__codelineno-86-21" href="#__codelineno-86-21"></a>            interval: 5s # 5초 간격으로 체크
+<a id="__codelineno-86-22" name="__codelineno-86-22" href="#__codelineno-86-22"></a>            retries: 10 # 10번까지 재시도
+</code></pre></div>
+</li>
+<li>
+<p>Spring 프로젝트 빌드</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>$<span class="w"> </span>./gradlew<span class="w"> </span>clean<span class="w"> </span>build
+</code></pre></div>
+</li>
+<li>
+<p>compose.yml 파일 실행하기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a>$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>**--build**
+</code></pre></div>
+</li>
+<li>
+<p>compose 실행 현황 보기</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a>$<span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>ps
+<a id="__codelineno-89-2" name="__codelineno-89-2" href="#__codelineno-89-2"></a>$<span class="w"> </span>docker<span class="w"> </span>ps
+<a id="__codelineno-89-3" name="__codelineno-89-3" href="#__codelineno-89-3"></a>$<span class="w"> </span>docker<span class="w"> </span>logs<span class="w"> </span><span class="o">[</span>Container<span class="w"> </span>ID<span class="o">]</span>
+</code></pre></div>
+</li>
+</ol>
+<p>🚨 에러 발생
+spring boot 컨테이너 로그를 열어보면 아래 사진과 같은 에러메시지가 떠있다. DB와 연결이 제대로 이루어지지 않았을 떄 발생하는 에러이다.
+<img alt="alt text" src="../../../../devops/img/image32.png" /></p>
+<p>MySQL이 잘 작동하는지 확인하기 위해 DB GUI툴을 통해 연결했는데, 정상적으로 연결이 된다.
+<img alt="alt text" src="../../../../devops/img/image33.png" /></p>
+<p>✔️ Spring Boot가 MySQL에 연결이 안되는 이유는?</p>
+<p><img alt="alt text" src="../../../../devops/img/image34.png" /></p>
+<p>각각의 컨테이너는 자신만의 네트워크망과 IP 주소를 가지고 있다. 호스트 컴퓨터 입장에서 localhost는 호스트 컴퓨터를 가리키지만, Spring Boot 컨테이너 입장에서 localhost는 Spring Boot 컨테이너를 가리킨다.<br />
+<br />
+그런데 Spring Boot의 코드를 작성할 때 DB 정보를 아래와 같이 입력했었다. Spring Boot가 실행되는 환경인 컨테이너 입장에서 localhost:3306라는 주소는, Spring Boot 컨테이너 내부에 있는 3306번 포트와 연결을 시도하게 된다. 하지만 Spring Boot가 실행되는 컨테이너 내부의 3306번 포트에는 아무것도 실행되고 있지 않다. 이러한 구조상의 문제 때문에 Spring Boot가 MySQL에 연결이 안 되고 있었던 것이다.</p>
+<p>Spring Boot의 컨테이너에서 다른 컨테이너에 존재하는 MySQL에 연결하는 방법 -&gt; compose.yml에서 정의한 Service 이름으로 서로 통신할 수 있다!</p>
+<p>우리가 이전에 작성했던 compose.yml을 보면 각 컨테이너에 service 이름(my-server, mysql)을 작성했었다. 이 서비스의 이름이 컨테이너의 주소를 뜻하게 된다. 해당 컨테이너의 IP주소와 같은 역할을 한다.</p>
+<p><img alt="alt text" src="../../../../devops/img/image35.png" /></p>
+<p>Spring Boot의 DB 정보(application.yml)에 작성된 localhost를 mysql로 수정하고 다시 실행하면 된다.</p>
+<p><img alt="alt text" src="../../../../devops/img/image31.png" /></p>
+<p><br />
+<br /></p>
+<blockquote>
+<p>Spring Boot, MySQL, Redis 컨테이너 동시에 띄워보기</p>
+</blockquote>
 <p><br></p>
-<h2 id="aws-ec2">✅ AWS EC2에 서버 배포하기</h2>
+<h2 id="aws-ec2">📌 AWS EC2에 서버 배포하기</h2>
 <p><br></p>
-<h2 id="aws-ec2-docker">✅ AWS EC2에 Docker를 활용해 배포하기</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>```
-<a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>
-<a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>```
+<h2 id="aws-ec2-docker">📌 AWS EC2에 Docker를 활용해 배포하기</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>
 </code></pre></div>
 
 

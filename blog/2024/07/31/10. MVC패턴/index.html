@@ -786,6 +786,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      게시판 만들기
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -899,9 +908,7 @@
 <li>JSP 페이지</li>
 <li>사용자에게 보여지는 부분</li>
 </ul>
-<blockquote>
-<p>게시판 만들기</p>
-</blockquote>
+<h2 id="_1">게시판 만들기</h2>
 <ol>
 <li>누구나 글 작성 가능</li>
 <li>글쓰기 시 비밀번호 입력<ul>
@@ -913,7 +920,16 @@
 </ul>
 </li>
 <li>일반적인 흐름</li>
+<li>요청명 정의
+   | 기능 | 매핑방법 | 요청명 | controller(servlet) | view(jsp) |
+   |-------------|------------|-------------------------|------------------------|-------------------|
+   | 목록보기 | web.xml | /mvcboard.list.do | ListController | /board/list.jsp |
+   | 글쓰기 | web.xml | /mvcboard.list.do | ListController | /board/list.jsp |</li>
 </ol>
+<blockquote>
+<p>목록보기
+1. 프로세스</p>
+</blockquote>
 
 
 
