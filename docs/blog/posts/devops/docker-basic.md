@@ -748,46 +748,86 @@ docker compose pull
 
 #### 🍀 docker compose로 redis 실행하기
 
-docker run -d -p 6379:6379 redis
-
-```yml
-services:
-    my-cache-server:
-        image: redis
-        ports:
-            - 6379:6379
-```
+> Docker CLI로 컨테이너를 실행시킬 때
 
 ```shell
-docker compose up -d
-docker compose ps
-docker  ps
-docker compose logs
-docker exec -it 042 bash
-docker compose down
+docker run -d -p 6379:6379 redis
 ```
+
+> Docker Compose로 컨테이너를 실행시킬 때
+
+1.  compose.yml 파일 작성
+
+    ```yml
+    services:
+        my-cache-server:
+            image: redis
+            ports:
+                - 6379:6379
+    ```
+
+2.  compose 파일 실행 및 현황보기
+
+    ```shell
+    docker compose up -d
+    docker compose ps
+    docker  ps
+    ```
+
+3.  컨테이너 실행시킬 때 에러없는지 로그 확인
+
+    ```shell
+    docker compose logs
+    ```
+
+4.  Redis 컨테이너 접속
+
+    ```shell
+    docker exec -it [컨테이너ID] bash
+    ```
+
+5.  컨테이너에서 redis 사용해보기
+
+    ```shell
+    $ redis-cli
+
+    127.0.0.1:6379> set 1 jscode
+    127.0.0.1:6379> get 1
+    ```
+
+6.  compose로 실행된 컨테이너 삭제
+
+    ```shell
+    docker compose down
+    ```
 
 #### 🍀 docker compose로 mysql 실행하기
 
+> Docker CLI로 컨테이너를 실행시킬 때
+
+```shell
 $ docker run -e MYSQL_ROOT_PASSWORD=pass123! -p 3306:3306 -v /Users/hyewon/Documents/Develop/docker-mysql/mysql_data:/var/lib/mysql -d mysql
-
-> compose.yml
-
-```yml
-services:
-    my-db:
-        image: mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: pass123#
-        volumes:
-            - ./mysql_data:/var/lib/mysql
-        ports:
-            - 3306:3306
 ```
+
+> Docker Compose로 MySQL 실행시키기
+
+1. compose.yml 파일 작성
+
+    ```yml
+    services:
+        my-db:
+            image: mysql
+            environment:
+                MYSQL_ROOT_PASSWORD: pass123#
+            volumes:
+                - ./mysql_data:/var/lib/mysql
+            ports:
+                - 3306:3306
+    ```
 
 🚨 에러
 
--   3306포트를 다른데서 사용중이다. 결국 docker compose up -d 를 못했음.
+-   3306포트를 이미 mysql workbench에서 사용중이다. 결국 docker compose up -d 를 못했음.
 -   아직 mysql_data 파일이 생성 안됨ㅠㅠ
 
 ```shell
@@ -801,40 +841,221 @@ Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:3
         - 3307:3306
     ```
 
-```shell
-docker compose  up -d
-docker compose ps
-docker ps
-# 로그인 잘 되어있는지 확인, GUI툴(디비버, 워크벤치)로도 확인 가능
-docker exec -it [컨테이너 아이디]  bash
-docker compose down # 다운해도 데이터는 남아있다.docker compose down
-```
+2. compose 파일 실행시키기
 
--   volume의 경로에 데이터가 저장되고 있는 지 확인
+    ```shell
+    docker compose up -d
+    ```
 
-    ![alt text](img/image25.png)
+3. compose 실행 현황 보기
+
+    ```shell
+    docker compose ps
+    docker ps
+    ```
+
+4. 잘 작동하는 지 GUI툴(DBeaver, 워크벤치)에 연결시켜보기
+
+5. volume의 경로에 데이터가 저장되고 있는 지 확인하기
+
+    - volume의 경로에 데이터가 저장되고 있는 지 확인
+
+        - mysql_data 폴더 생겼다.
+
+        ![alt text](img/image25.png)
+
+6. compose로 실행된 컨테이너 삭제
+
+    ```shell
+    docker compose down
+    ```
 
 #### 🍀 docker compose로 백엔드(spring boot) 실행하기
 
-Dockerfile 이미지를 매번 새롭게 로드할 것이다.
+1. 프로젝트 세팅
+   ![alt text](img/image26.png)
 
-```shell
-docker compose up -d --build
-```
+2. DockerFile 작성
 
-#### 🍀 docker compose로 백엔드(Nest.js) 실행하기
+    ```yml
+    FROM openjdk:17-jdk
+    COPY build/libs/\*SNAPSHOT.jar /app.jar
+    ENTRYPOINT ["java", "-jar", "/app.jar"]
+    ```
+
+3. Spring Boot 프로젝트 빌드하기
+
+    ![alt text](img/image27.png)
+
+4. compose.yml 파일 작성하기
+
+    - `build: .` : `compose.yml`이 존재하는 디렉토리(`.`)에 있는 `Dockerfile`로 이미지를 생성해 컨테이너를 띄우겠다는 의미이다.
+
+    ```yml
+    services:
+        my-server:
+            build: .
+            ports:
+                - 8081:8080
+    ```
+
+5. compose 파일 실행시키기
+
+    - `--build`: Dockerfile 이미지를 매번 새롭게 로드할 것이다.
+
+    ```shell
+    $ docker compose up -d --build
+    ```
+
+6. compose 실행 현황 보기
+
+    ![alt text](img/image28.png)
+
+7. localhost:8081으로 들어가보기
+
+    ![alt text](img/image29.png)
+
+## 📌 Docker Compose를 활용해 2개 이상의 컨테이너 관리하기
+
+> Spring Boot, MySQL 컨테이너 동시에 띄워보기
+
+1. Spring Boot 프로젝트 셋팅
+
+    ![alt text](img/image30.png)
+
+2. AppController
+
+    ```java
+    @RestController
+    public class AppController {
+        @GetMapping("/")
+        public String home() {
+            return "Hello, World!";
+        }
+    }
+    ```
+
+3. application.yml에 DB 연결을 위한 정보 작성하기
+
+    ```bash
+
+     spring:
+     datasource:
+         url: jdbc:mysql://localhost:3306/mydb
+         username: root
+         password: pwd1234
+         driver-class-name: com.mysql.cj.jdbc.Driver
+    ```
+
+4. 테스트코드는 삭제한다.
+
+5. Dockerfile 작성하기
+
+    ```shell
+    FROM openjdk:17-jdk
+
+    COPY build/libs/*SNAPSHOT.jar /app.jar
+
+    ENTRYPOINT ["java", "-jar", "/app.jar"]
+    ```
+
+6. compose.yml 파일 작성하기
+
+    ```yml
+    services:
+        my-server:
+            build: .
+            ports:
+                - 8080:8080
+            # my-db의 컨테이너가 생성되고 healthy 하다고 판단 될 때, 해당 컨테이너를 생성한다.
+            depends_on:
+                my-db:
+                    condition: service_healthy
+        my-db:
+            image: mysql
+            environment:
+                MYSQL_ROOT_PASSWORD: pwd1234
+                MYSQL_DATABASE: mydb # MySQL 최초 실행 시 mydb라는 데이터베이스를 생성해준다.
+            volumes:
+                - ./mysql_data:/var/lib/mysql
+            ports:
+                - 3306:3306
+            healthcheck:
+                test: ["CMD", "mysqladmin", "ping"] # MySQL이 healthy 한 지 판단할 수 있는 명령어
+                interval: 5s # 5초 간격으로 체크
+                retries: 10 # 10번까지 재시도
+    ```
+
+7. Spring 프로젝트 빌드
+
+    ```bash
+    $ ./gradlew clean build
+    ```
+
+8. compose.yml 파일 실행하기
+
+    ```bash
+    $ docker compose up -d **--build**
+    ```
+
+9. compose 실행 현황 보기
+
+    ```bash
+    $ docker compose ps
+    $ docker ps
+    $ docker logs [Container ID]
+    ```
+
+🚨 에러 발생
+spring boot 컨테이너 로그를 열어보면 아래 사진과 같은 에러메시지가 떠있다. DB와 연결이 제대로 이루어지지 않았을 떄 발생하는 에러이다.
+![alt text](img/image32.png)
+
+MySQL이 잘 작동하는지 확인하기 위해 DB GUI툴을 통해 연결했는데, 정상적으로 연결이 된다.
+![alt text](img/image33.png)
+
+✔️ Spring Boot가 MySQL에 연결이 안되는 이유는?
+
+![alt text](img/image34.png)
+
+각각의 컨테이너는 자신만의 네트워크망과 IP 주소를 가지고 있다. 호스트 컴퓨터 입장에서 localhost는 호스트 컴퓨터를 가리키지만, Spring Boot 컨테이너 입장에서 localhost는 Spring Boot 컨테이너를 가리킨다.  
+<br />
+그런데 Spring Boot의 코드를 작성할 때 DB 정보를 아래와 같이 입력했었다. Spring Boot가 실행되는 환경인 컨테이너 입장에서 localhost:3306라는 주소는, Spring Boot 컨테이너 내부에 있는 3306번 포트와 연결을 시도하게 된다. 하지만 Spring Boot가 실행되는 컨테이너 내부의 3306번 포트에는 아무것도 실행되고 있지 않다. 이러한 구조상의 문제 때문에 Spring Boot가 MySQL에 연결이 안 되고 있었던 것이다.
+
+Spring Boot의 컨테이너에서 다른 컨테이너에 존재하는 MySQL에 연결하는 방법 -> compose.yml에서 정의한 Service 이름으로 서로 통신할 수 있다!
+
+우리가 이전에 작성했던 compose.yml을 보면 각 컨테이너에 service 이름(my-server, mysql)을 작성했었다. 이 서비스의 이름이 컨테이너의 주소를 뜻하게 된다. 해당 컨테이너의 IP주소와 같은 역할을 한다.
+
+![alt text](img/image35.png)
+
+Spring Boot의 DB 정보(application.yml)에 작성된 localhost를 mysql로 수정하고 다시 실행하면 된다.
+
+![alt text](img/image31.png)
+
+<br />
+<br />
+
+> Spring Boot, MySQL, Redis 컨테이너 동시에 띄워보기
 
 <br>
 
-## ✅ AWS EC2에 서버 배포하기
+## 📌 AWS EC2에 서버 배포하기
 
 <br>
 
-## ✅ AWS EC2에 Docker를 활용해 배포하기
-
-````
+## 📌 AWS EC2에 Docker를 활용해 배포하기
 
 ```
 
 ```
-````
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
