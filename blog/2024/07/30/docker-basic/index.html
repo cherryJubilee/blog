@@ -278,6 +278,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../archive/2024/08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024 August
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../archive/2024/07/" class="md-nav__link">
         
   
@@ -424,6 +444,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../category/db/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    db
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../category/backend/" class="md-nav__link">
         
   
@@ -489,26 +529,6 @@
   
   <span class="md-ellipsis">
     java
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/db/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    db
   </span>
   
 
@@ -1017,24 +1037,6 @@
   <a href="#docker-compose-2" class="md-nav__link">
     <span class="md-ellipsis">
       📌 Docker Compose를 활용해 2개 이상의 컨테이너 관리하기
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws-ec2" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 AWS EC2에 서버 배포하기
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws-ec2-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      📌 AWS EC2에 Docker를 활용해 배포하기
     </span>
   </a>
   
@@ -2031,8 +2033,8 @@ ENTRYPOINT [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;sleep 500&quot;] # 500�
 spring boot 컨테이너 로그를 열어보면 아래 사진과 같은 에러메시지가 떠있다. DB와 연결이 제대로 이루어지지 않았을 떄 발생하는 에러이다.
 <img alt="alt text" src="../../../../devops/img/image32.png" /></p>
 <p>MySQL이 잘 작동하는지 확인하기 위해 DB GUI툴을 통해 연결했는데, 정상적으로 연결이 된다.
-<img alt="alt text" src="../../../../devops/img/image33.png" /></p>
-<p>✔️ Spring Boot가 MySQL에 연결이 안되는 이유는?</p>
+<img alt="alt text" src="../../../../devops/img/image33.png" />
+✔️ Spring Boot가 MySQL에 연결이 안되는 이유는?</p>
 <p><img alt="alt text" src="../../../../devops/img/image34.png" /></p>
 <p>각각의 컨테이너는 자신만의 네트워크망과 IP 주소를 가지고 있다. 호스트 컴퓨터 입장에서 localhost는 호스트 컴퓨터를 가리키지만, Spring Boot 컨테이너 입장에서 localhost는 Spring Boot 컨테이너를 가리킨다.<br />
 <br />
@@ -2047,17 +2049,7 @@ spring boot 컨테이너 로그를 열어보면 아래 사진과 같은 에러�
 <blockquote>
 <p>Spring Boot, MySQL, Redis 컨테이너 동시에 띄워보기</p>
 </blockquote>
-<p><br></p>
-<h2 id="aws-ec2">📌 AWS EC2에 서버 배포하기</h2>
-<p><br></p>
-<h2 id="aws-ec2-docker">📌 AWS EC2에 Docker를 활용해 배포하기</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a>
 </code></pre></div>
 
 
