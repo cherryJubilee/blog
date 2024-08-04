@@ -1012,7 +1012,6 @@ spring boot 컨테이너 로그를 열어보면 아래 사진과 같은 에러�
 
 MySQL이 잘 작동하는지 확인하기 위해 DB GUI툴을 통해 연결했는데, 정상적으로 연결이 된다.
 ![alt text](img/image33.png)
-
 ✔️ Spring Boot가 MySQL에 연결이 안되는 이유는?
 
 ![alt text](img/image34.png)
@@ -1035,26 +1034,6 @@ Spring Boot의 DB 정보(application.yml)에 작성된 localhost를 mysql로 수
 <br />
 
 > Spring Boot, MySQL, Redis 컨테이너 동시에 띄워보기
-
-<br>
-
-## 📌 AWS EC2에 서버 배포하기
-
-<br>
-
-## 📌 AWS EC2에 Docker를 활용해 배포하기
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
 
 ```
 
