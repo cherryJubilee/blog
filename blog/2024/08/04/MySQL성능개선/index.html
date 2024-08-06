@@ -1288,8 +1288,10 @@
 <p>위 SQL문을 봤을 때 부서 컬럼으로 인덱스를 생성할 경우 성능이 향상되리라 짐작할 수 있다. 하지만 부서, 이름 순으로 구성된 멀티 컬럼 인덱스를 이미 만들어 뒀기 때문에, 부서 컬럼의 인덱스를 따로 또 만들 필요는 없다.</p>
 <p>✅ 멀티 컬럼 인덱스를 일반 인덱스처럼 활용하지 못하는 경우도 있다.</p>
 <p>정렬을 자세히 잘 살펴보면 이름 기준으로 정렬이 되어 있지는 않다. 왜냐면 같은 부서를 가진 데이터끼리만 정렬을 시켰기 때문이다. 실제로 아래 SQL문을 실행시킬 때 인덱스를 활용하지 못한다.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">users</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="err">이름</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;이재현&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>```sql
+SELECT * FROM users
+WHERE 이름 = &#39;이재현&#39;;
+```
 </code></pre></div>
 <p>따라서 멀티 컬럼 인덱스에서 일반 인덱스처럼 활용할 수 있는 건 처음에 배치된 컬럼들뿐이다.</p>
 <p>✅ 대분류 → 중분류 → 소분류’ 컬럼순으로 구성하기<br />
