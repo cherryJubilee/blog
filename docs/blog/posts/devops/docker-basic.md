@@ -15,7 +15,7 @@ categories:
 
 ## ✅ Docker CLI 익히기
 
-중단된 컨테이너 한번에 삭제
+중단된 컨테이너 한번에 삭제하기
 
 ```bash
 docker rm  ${docker ps -qa}
