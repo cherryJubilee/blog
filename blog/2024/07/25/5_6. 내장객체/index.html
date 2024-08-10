@@ -444,6 +444,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../category/spring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../category/db/" class="md-nav__link">
         
   
@@ -569,26 +589,6 @@
   
   <span class="md-ellipsis">
     Javascript
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/spring/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    spring
   </span>
   
 
@@ -784,16 +784,127 @@
         <li class="md-nav__item">
   <a href="#implicit-object" class="md-nav__link">
     <span class="md-ellipsis">
-      내장 객체(implicit Object)
+      ✔️ 내장 객체(implicit Object)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✔️ 내장 객체(implicit Object)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request" class="md-nav__link">
+    <span class="md-ellipsis">
+      request 객체
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      response 객체
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out" class="md-nav__link">
+    <span class="md-ellipsis">
+      out 객체
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    <span class="md-ellipsis">
+      application 객체
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✔️ exception 객체
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#request" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      request 객체
+      ✔️ 내장객체 4가지 영역
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✔️ 내장객체 4가지 영역">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. page 영역
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. request 영역
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. session 영역
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. application 영역
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✔️ API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dto" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✔️ DTO 패턴
     </span>
   </a>
   
@@ -872,7 +983,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -893,9 +1004,18 @@
 
 
 <h1 id="_1">내장 객체</h1>
+<p>내장 객체 4가지 영역에 대한 설명과 DTO 패턴 설명</p>
+<ul>
+<li>page 영역</li>
+<li>request 영역</li>
+<li>session 영역</li>
+<li>application 영역</li>
+</ul>
 <!-- more -->
 
-<h2 id="implicit-object">내장 객체(implicit Object)</h2>
+<hr>
+
+<h2 id="implicit-object">✔️ 내장 객체(implicit Object)</h2>
 <ol>
 <li>요청과 응답, 화면 출력 등 웹 프로그래밍에 있어 필수로 사용하는 객체</li>
 <li>특징<ul>
@@ -904,10 +1024,104 @@
 </ul>
 </li>
 </ol>
-<h2 id="request">request 객체</h2>
+<h3 id="request">request 객체</h3>
 <ol>
 <li>클라이언트가 전송한 요청 정보를 담고 있는 객체</li>
-<li>요청 헤더 밑 쿠키 정보 읽기</li>
+<li>요청 헤더 밑 쿠키 정보 읽기
+   예) 환경 정보 읽기</li>
+</ol>
+<h3 id="response">response 객체</h3>
+<ol>
+<li>요청에 대한 응답을 웹 브라우저로 보내주는 역할을 함</li>
+<li>리다이렉트 (redirect)<ul>
+<li>sendRedirect()</li>
+<li>페이지 이동하기</li>
+</ul>
+</li>
+</ol>
+<h3 id="out">out 객체</h3>
+<h3 id="application">application 객체</h3>
+<ol>
+<li>웹 프로젝트 당 하나만 생성됨</li>
+<li>모든 JSP 페이지에서 접근가능함</li>
+<li>ServletContext 타입</li>
+<li>용도<ul>
+<li>웹 애플리케이션 전반에서 이용하는 정보를 저장 혹은 얻어오는 데 사용함</li>
+</ul>
+</li>
+</ol>
+<h2 id="exception">✔️ exception 객체</h2>
+<ol>
+<li>HTTP 에러 코드</li>
+<li>예외 처리를 위해 사용함</li>
+</ol>
+<h2 id="4">✔️ 내장객체 4가지 영역</h2>
+<blockquote>
+<p>웹 페이지(page)들 =&gt; 하나의 요청(request)을 처리 =&gt; 요청들이 모여 하나의 세션(session)을 형성 =&gt; 다시 세션들이 모여 하나의 웹 애플리케이션(application)을 이룸</p>
+</blockquote>
+<h3 id="1-page">1. page 영역</h3>
+<div class="highlight"><pre><span></span><code>-   동일 페이지에서만 공유됨, 페이지를 벗어나면 소멸
+-   jsp 페이지마다 하나씩 생성됨
+-   pageContext 객체를 할당받게 됨
+-   이 객체에 저장된 정보를 해당 페이지에서만 사용할 수 있음 이 페이지를 벗어나면 소멸됨
+-   include 지시어로 포함한 파일은 하나의 페이지로 통합되므로 page 영역 공유됨
+</code></pre></div>
+<h3 id="2-request">2. request 영역</h3>
+<div class="highlight"><pre><span></span><code>-   하나의 요청에 의해 호출된 페이지, 포워드된 페이지까지 공유됨
+-   클라이언트 요청을 할때마다 새로운 request 객체가 생성됨
+-   같은 요청을 처리하는 데 사용되는 모든 JSP 페이지가 공유함
+-   현재 페이지와 포워드된 페이지까지 공유
+</code></pre></div>
+<h3 id="3-session">3. session 영역</h3>
+<div class="highlight"><pre><span></span><code>-   클라이언트가 웹 브라우저를 최초로 열고난 후 닫을 때까지 모든 페이지는 session 객체를 공유함
+-   세션
+    -   클라이언트가 서버에 접속해 있는 상태, 단위
+    -   로그인 상태를 유지하는 동안 사용됨
+    -   웹 브라우저를 닫으면 자동으로 로그아웃이 됨
+        -   session 삭제됨
+</code></pre></div>
+<h3 id="4-application">4. application 영역</h3>
+<div class="highlight"><pre><span></span><code>-   한 번 저장되면 웹 애플리케이션이 종료될 때까지 유지됨
+-   웹 애플리케이션은 단 하나의 application 객체만 생성함
+-   클라이언트가 요청하는 모든 페이지가 application 객체를 공유하게 됨
+-   웹 서버를 시작할 때 만들어짐. 웹 서버를 내릴 때 삭제됨.
+    -   application 영역에 한 번 저장된 정보는 페이지를 이동하거나, 웹 브라우저를
+        닫았다가 새롭게 접속(로그인)해도 유지됨
+</code></pre></div>
+<h2 id="api">✔️ API</h2>
+<blockquote>
+<p><code>setAttribute(String name, Object value)</code></p>
+</blockquote>
+<ul>
+<li>각 영역에 속성을 저장함</li>
+</ul>
+<blockquote>
+<p><code>getAttribute(String name)</code></p>
+</blockquote>
+<ul>
+<li>영역에 저장된 속성값을 얻어옴</li>
+</ul>
+<blockquote>
+<p><code>removeAttribute(String name)</code></p>
+</blockquote>
+<ul>
+<li>영역에 저장된 속성 삭제함</li>
+</ul>
+<h2 id="dto">✔️ DTO 패턴</h2>
+<ol>
+<li>Data Transfer Object</li>
+<li>주로 데이터를 저장하거나 전송하는데 쓰이는 객체</li>
+<li>데이터만 있는 객체라 하여 값 객체(Value Object)라고도 함</li>
+<li>자바빈즈(beans) 규약에 따라 작성함<ul>
+<li>기본 패키지 이외의 패키지에 저장</li>
+<li>private 접근 지정자 사용</li>
+<li>게터/세터 메서드의 접근 지정자는 public<ul>
+<li>멤버 변수에 접근하기 위함</li>
+</ul>
+</li>
+<li>기본 생성자가 있어야 함</li>
+</ul>
+</li>
 </ol>
 
 
