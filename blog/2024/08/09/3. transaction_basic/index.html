@@ -448,7 +448,27 @@
         
   
   <span class="md-ellipsis">
-    Spring
+    spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
   </span>
   
 
@@ -469,6 +489,26 @@
   
   <span class="md-ellipsis">
     db
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/inflearn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inflearn
   </span>
   
 
@@ -718,26 +758,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/http/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    HTTP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -815,7 +835,49 @@
         <li class="md-nav__item">
   <a href="#db" class="md-nav__link">
     <span class="md-ellipsis">
-      데이터베이스 연결 구조와 DB 세션
+      📌 데이터베이스 연결 구조와 DB 세션
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 자동 커밋, 수동 커밋
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 자동 커밋, 수동 커밋">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      자동 커밋
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      수동 커밋
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍀 트랜잭션 예제
     </span>
   </a>
   
@@ -883,7 +945,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/spring/">Spring</a>, 
+                              <a href="../../../../category/spring/">spring</a>, 
                               <a href="../../../../category/db/">db</a></span>
                         </div>
                       </li>
@@ -895,7 +957,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -945,7 +1007,7 @@
 <li>REPEATABLE READ(반복 가능한 읽기)</li>
 <li>SERIALIZABLE(직렬화 가능)</li>
 </ol>
-<h2 id="db">데이터베이스 연결 구조와 DB 세션</h2>
+<h2 id="db">📌 데이터베이스 연결 구조와 DB 세션</h2>
 <p><img alt="alt text" src="../../../../kosta/%5Binflearn%5Dspring/image-10.png" /></p>
 <ul>
 <li>커넥션을 연결하면 데이터베이스 서버 내부에서 세션이 만들어진다.<ul>
@@ -953,6 +1015,47 @@
 </ul>
 </li>
 </ul>
+<h2 id="_2">📌 자동 커밋, 수동 커밋</h2>
+<h3 id="_3">자동 커밋</h3>
+<ul>
+<li>자동 커밋 : 각각의 쿼리 실행 직후 자동으로 커밋을 호출한다.</li>
+<li>쿼리를 실행할 때 마다 자동으로 커밋이 되어버리기 때문에, 트랜잭션 기능을 사용할 수 없다.</li>
+<li>commit, rollback을 직접 호출하면서 트랜잭션 기능을 수행하기 위해서는 자동커밋을 꺼야한다.</li>
+<li>
+<p>자동 커밋 모드 설정</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">set</span><span class="w"> </span><span class="n">autocommit</span><span class="w"> </span><span class="k">true</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">자동</span><span class="w"> </span><span class="err">커밋</span><span class="w"> </span><span class="err">모드</span><span class="w"> </span><span class="err">설정</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">member</span><span class="p">(</span><span class="n">member_id</span><span class="p">,</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;data1&#39;</span><span class="p">,</span><span class="mi">10000</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="err">자동</span><span class="w"> </span><span class="err">커밋</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">member</span><span class="p">(</span><span class="n">member_id</span><span class="p">,</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;data2&#39;</span><span class="p">,</span><span class="mi">10000</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="err">자동</span><span class="w"> </span><span class="err">커밋</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="_4">수동 커밋</h3>
+<ul>
+<li>보통 수동 커밋 모드를 설정한다 = 트랜잭션을 시작한다 라고 한다</li>
+<li>
+<p>수동 커밋 모드 설정</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">set</span><span class="w"> </span><span class="n">autocommit</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">member</span><span class="p">(</span><span class="n">member_id</span><span class="p">,</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;data3&#39;</span><span class="p">,</span><span class="mi">10000</span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">member</span><span class="p">(</span><span class="n">member_id</span><span class="p">,</span><span class="w"> </span><span class="n">money</span><span class="p">)</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;data4&#39;</span><span class="p">,</span><span class="mi">10000</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">commit</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="err">수동</span><span class="w"> </span><span class="err">커밋</span>
+</code></pre></div>
+</li>
+</ul>
+<h2 id="_5">🍀 트랜잭션 예제</h2>
+<ul>
+<li>세션1, 세션2가 있다고 가정하자</li>
+<li>세션1에서 수동커밋보드로 데이터를 insert하더라도 세션2에서는 데이터를 확인할 수 없다.</li>
+<li>세션1에서 커밋을 한다. 모든 세션에서 데이터를 확인할 수 있다.</li>
+</ul>
+<details>
+<summary></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+</code></pre></div>
+
+</details>
 
 
 

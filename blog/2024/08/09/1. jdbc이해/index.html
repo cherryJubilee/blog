@@ -448,7 +448,27 @@
         
   
   <span class="md-ellipsis">
-    Spring
+    spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
   </span>
   
 
@@ -469,6 +489,26 @@
   
   <span class="md-ellipsis">
     db
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/inflearn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inflearn
   </span>
   
 
@@ -718,26 +758,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/http/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    HTTP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -782,7 +802,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      다양한 데이터 접근 기술
+      📌 다양한 데이터 접근 기술
     </span>
   </a>
   
@@ -791,7 +811,7 @@
         <li class="md-nav__item">
   <a href="#h2" class="md-nav__link">
     <span class="md-ellipsis">
-      H2 데이터베이스 설정
+      📌 H2 데이터베이스 설정
     </span>
   </a>
   
@@ -800,11 +820,11 @@
         <li class="md-nav__item">
   <a href="#jdbc" class="md-nav__link">
     <span class="md-ellipsis">
-      JDBC
+      📌 JDBC
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="JDBC">
+    <nav class="md-nav" aria-label="📌 JDBC">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -816,14 +836,20 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sql-mapper" class="md-nav__link">
     <span class="md-ellipsis">
-      SQL Mapper
+      📌 SQL Mapper
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="📌 SQL Mapper">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#sql-mapper-vs-orm" class="md-nav__link">
@@ -901,8 +927,9 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/spring/">Spring</a>, 
-                              <a href="../../../../category/db/">db</a></span>
+                              <a href="../../../../category/spring/">spring</a>, 
+                              <a href="../../../../category/db/">db</a>, 
+                              <a href="../../../../category/inflearn/">inflearn</a></span>
                         </div>
                       </li>
                     
@@ -937,16 +964,17 @@
 
 <!-- more -->
 
-<h2 id="_1">다양한 데이터 접근 기술</h2>
+<h2 id="_1">📌 다양한 데이터 접근 기술</h2>
 <ul>
 <li>JDBC</li>
 <li>JdbcTemplate</li>
 <li>MyBatis</li>
 <li>JPA</li>
 <li>Spring Data JPA</li>
-<li>
-<p>Querydsl</p>
-</li>
+<li>Querydsl</li>
+</ul>
+<p><br></p>
+<ol>
 <li>
 <p>스프링 프로젝트 설정</p>
 <p><img alt="alt text" src="../../../../kosta/%5Binflearn%5Dspring/image.png" /></p>
@@ -955,8 +983,8 @@
 <p>build.gradle 파일</p>
 <p><img alt="alt text" src="../../../../kosta/%5Binflearn%5Dspring/image-1.png" /></p>
 </li>
-</ul>
-<h2 id="h2">H2 데이터베이스 설정</h2>
+</ol>
+<h2 id="h2">📌 H2 데이터베이스 설정</h2>
 <div class="highlight"><pre><span></span><code>&gt; https://www.h2database.com
 </code></pre></div>
 <ol>
@@ -986,7 +1014,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="jdbc">JDBC</h2>
+<p><br></p>
+<h2 id="jdbc">📌 JDBC</h2>
 <p>JDBC(Java Database Connectivity)는 JAVA에서 DB에 접속할 수 있도록 하는 자바 API이다.</p>
 <blockquote>
 <p>JDBC 등장 이유</p>
@@ -995,6 +1024,7 @@
 <li>데이터베이스를 다른 종류의 데이터베이스로 변경하면 애플리케이션 서버에 개발된 데이터베이스 사용 코드도 함께 변경해야된다.</li>
 <li>개발자가 각각 데이터베이스마다 커넥션 연결, SQL전달, 그리고 그 결과를 응답 받는 방법을 새로 학습해야 하는데 번거로움이 있었다.</li>
 </ol>
+<p><br></p>
 <h3 id="jdbc_1">JDBC 표준 인터페이스</h3>
 <blockquote>
 <p>자바는 아래와 같이 표준 인터페이스를 정의해두고, 개발자가 이 표준 인터페이스만 사용해서 개발할 수 있도록 했다.</p>
@@ -1002,7 +1032,7 @@
 <ol>
 <li>연결 : <code>java.sql.Connection</code></li>
 <li>SQL을 담은 내용 : <code>java.sql.Statement</code></li>
-<li>SQL 요창 응답 : <code>java.sql.ResultSet</code></li>
+<li>SQL 요청 응답 : <code>java.sql.ResultSet</code></li>
 </ol>
 <blockquote>
 <p>JDBC 드라이버</p>
@@ -1012,7 +1042,8 @@
 <p>표준화의 한계</p>
 </blockquote>
 <p>각각의 데이터베이스마다 SQL, 데이터타입 등의 일부 사용법 다르다. 결국 데이터베이스를 변경하면 JDBC 코드는 변경하지 않아도 되지만 SQL은 해당 데이터베이스에 맞도록 변경 해야한다. JPA(Java Persistence API)를 사용하면 이렇게 각각의 데이터베이스마다 다른 SQL을 정의해야 하는 문제도 많은 부분 해결할 수 있다.</p>
-<h3 id="sql-mapper">SQL Mapper</h3>
+<p><br></p>
+<h2 id="sql-mapper">📌 SQL Mapper</h2>
 <ul>
 <li>JDBC를 편하게 사용하도록 도와주는 것<ul>
 <li>SQL 응답 결과를 객체로 편리하게 변환해준다.</li>
@@ -1031,7 +1062,7 @@
 <p>prestatement 는 statement를 상속받은것이다. prestatement는 파라미터를 바인딩 할 수 있다. 기능이 더 많음
 또한 SQL Injection공격을 예방하기 위해서 사용한다.</p>
 <p>데이터를 변경할 때 =&gt; executeUpdate()
-데이터를 조회할 때 =&gt; executeQuery();
+데이터를 조회할 때(select) =&gt; executeQuery();
 executeQuery는 resultSet을 반환한다.</p>
 <p>@Data 어노테이션을 사용하면 Lombok이 equals 메서드를 오버라이드하여 객체의 필드 값을 비교하도록 설정합니다.
 isEqualTo는 @Data 어노테이션에 의해 자동 생성된 equals 메서드를 사용하여 주소값이 아닌 필드 값을 비교합니다.</p>

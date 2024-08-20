@@ -448,7 +448,27 @@
         
   
   <span class="md-ellipsis">
-    Spring
+    spring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/http/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HTTP
   </span>
   
 
@@ -469,6 +489,26 @@
   
   <span class="md-ellipsis">
     db
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/inflearn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inflearn
   </span>
   
 
@@ -718,26 +758,6 @@
 
               
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../category/http/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    HTTP
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -782,7 +802,7 @@
         <li class="md-nav__item">
   <a href="#db-connection" class="md-nav__link">
     <span class="md-ellipsis">
-      DB Connection 과정
+      📌 DB Connection 과정
     </span>
   </a>
   
@@ -791,7 +811,7 @@
         <li class="md-nav__item">
   <a href="#connection-pool" class="md-nav__link">
     <span class="md-ellipsis">
-      Connection Pool
+      📌 Connection Pool
     </span>
   </a>
   
@@ -800,11 +820,11 @@
         <li class="md-nav__item">
   <a href="#datasource" class="md-nav__link">
     <span class="md-ellipsis">
-      DataSource
+      📌 DataSource
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="DataSource">
+    <nav class="md-nav" aria-label="📌 DataSource">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -910,7 +930,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/spring/">Spring</a>, 
+                              <a href="../../../../category/spring/">spring</a>, 
                               <a href="../../../../category/db/">db</a></span>
                         </div>
                       </li>
@@ -946,7 +966,7 @@
 
 <!-- more -->
 
-<h2 id="db-connection">DB Connection 과정</h2>
+<h2 id="db-connection">📌 DB Connection 과정</h2>
 <p>jdbc 드라이버는 데이터베이스 커넥션을 매번 획득했다.
 데이터베이스 커넥션을 획득하는 과정은 다음과 같다. 커넥션을 새로 생성하기 위해 리소스를 매번 사용해야하고, 고객들이 애플리케이션을 사용할 떄 SQL문을 실행하는 시간 뿐만 아니라 커넥션을 새로 만드는 시간도 추가되어 응답속도에 영향을 미치게 된다. 이러한 문제를 해결하기 위해 커넥션을 미리 생성해두고 사용하는 커넥션풀 이라는 방법이 나왔다.</p>
 <ol>
@@ -957,7 +977,7 @@
 <li>DB는 커넥션 생성이 완료되었다는 응답을 보낸다.</li>
 <li>DB 드라이버는 커넥션 객체를 생성해서 클라이언트에 반환한다.</li>
 </ol>
-<h2 id="connection-pool">Connection Pool</h2>
+<h2 id="connection-pool">📌 Connection Pool</h2>
 <p>애플리케이션 로직에서 DB드라이버를 통해 새로운 커넥션을 획득하는 것이 아니라, 커넥션 풀을 통해 이미 생성된 커넥션을 객체 참조로 가져다 쓰는 것이다.</p>
 <blockquote>
 <p>Drive Connection 과정 2가지</p>
@@ -967,7 +987,7 @@
 <li>신규 커넥션 생성</li>
 <li>커넥션 풀에 미리 생성된 것 조회</li>
 </ol>
-<h2 id="datasource">DataSource</h2>
+<h2 id="datasource">📌 DataSource</h2>
 <blockquote>
 <p>커넥션을 획득하는 방법을 추상화하는 인터페이스</p>
 </blockquote>
@@ -1151,20 +1171,19 @@
 <a id="__codelineno-6-53" name="__codelineno-6-53" href="#__codelineno-6-53"></a><span class="p">}</span>
 </code></pre></div>
 
-🤔 왜 별도의 쓰레드를 사용해서 커넥션 풀에 커넥션을 채우는 것일까?  
-커넥션 풀에 커넥션을 채우는 것은 상대적으로 오래 걸리는 일이다. 애플리케이션을 실행할 때 커넥션 풀을 채울 때 까 지 마냥 대기하고 있다면 애플리케이션 실행 시간이 늦어진다. 따라서 이렇게 별도의 쓰레드를 사용해서 커넥션 풀을 채 워야 애플리케이션 실행 시간에 영향을 주지 않는다.
-
-🤔 정해둔 커넥션풀 최대 개수를 모두 채운다면?  
--> 몇초간 대기하다가 에러발생
-
-🤔 커넥션 풀에서 커넥션 획득  
-커넥션 풀에서 커넥션을 획득하고 그 결과를 출력했다. 여기서는 커넥션 풀에서 커넥션을 2개 획득하고 반환하지는 않았다. 따라서 풀에 있는 10개의 커넥션 중에 2개를 가지고 있는 상태이다. 그래서 마지막 로그를 보면 사용중인 커넥션
-`active=2` , 풀에서 대기 상태인 커넥션 `idle=8` 을 확인할 수 있다.
-
--   `MyPool - After adding stats (total=10, active=2, idle=8, waiting=0)`
-
 </details>
 
+<p>🤔 왜 별도의 쓰레드를 사용해서 커넥션 풀에 커넥션을 채우는 것일까?<br />
+커넥션 풀에 커넥션을 채우는 것은 상대적으로 오래 걸리는 일이다. 애플리케이션을 실행할 때 커넥션 풀을 채울 때 까 지 마냥 대기하고 있다면 애플리케이션 실행 시간이 늦어진다. 따라서 이렇게 별도의 쓰레드를 사용해서 커넥션 풀을 채 워야 애플리케이션 실행 시간에 영향을 주지 않는다.</p>
+<p>🤔 정해둔 커넥션풀 최대 개수를 모두 채운다면?<br />
+-&gt; 몇초간 대기하다가 에러발생</p>
+<p>🤔 커넥션 풀에서 커넥션 획득<br />
+커넥션 풀에서 커넥션을 획득하고 그 결과를 출력했다. 여기서는 커넥션 풀에서 커넥션을 2개 획득하고 반환하지는 않았다. 따라서 풀에 있는 10개의 커넥션 중에 2개를 가지고 있는 상태이다. 그래서 마지막 로그를 보면 사용중인 커넥션
+<code>active=2</code> , 풀에서 대기 상태인 커넥션 <code>idle=8</code> 을 확인할 수 있다.</p>
+<ul>
+<li><code>MyPool - After adding stats (total=10, active=2, idle=8, waiting=0)</code></li>
+</ul>
+</details>
 <h3 id="datasource-3">🍀 Datasource 예제3</h3>
 <blockquote>
 <p>driverManager</p>
