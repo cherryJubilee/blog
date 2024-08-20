@@ -4,12 +4,12 @@ authors:
     - hyewon
 date: 2024-08-13
 categories:
-    - Spring
+    - HTTP
 ---
 
 # HTTP 상태코드
 
-> HTTP 상태코드
+> HTTP 상태코드 1xx, 2xx, 3xx, 4xx, 5xx에 대해 알아보자
 
 <!-- more -->
 
