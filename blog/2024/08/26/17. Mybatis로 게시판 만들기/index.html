@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../17/10.%20%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85%28DI%29/">
+        <link rel="prev" href="../../21/14.%20AOP/">
       
-      
-        <link rel="next" href="../../26/17.%20Mybatis%EB%A1%9C%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>AOP - hyehye_hye's blog</title>
+        <title>Mybatis로 게시판 만들기 - hyehye_hye's blog</title>
       
     
     
@@ -71,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aop" class="md-skip">
+        <a href="#mybatis" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AOP
+              Mybatis로 게시판 만들기
             
           </span>
         </div>
@@ -802,9 +800,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aop_1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      AOP
+      게시물 리스트 페이지네이션 적용
     </span>
   </a>
   
@@ -861,7 +859,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-08-21 00:00:00" class="md-ellipsis">Aug 21, 2024</time>
+                        <time datetime="2024-08-26 00:00:00" class="md-ellipsis">Aug 26, 2024</time>
                       </div>
                     </li>
                     
@@ -883,7 +881,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -903,48 +901,66 @@
         
 
 
-<h1 id="aop">AOP</h1>
+<h1 id="mybatis">Mybatis로 게시판 만들기</h1>
+<ul>
+<li>DTO, DAO 사용</li>
+<li>페이지네이션</li>
+</ul>
 <!-- more -->
 
-<p>여러 메서드에 공통 코드를 추가해야 하는 경우 공통코드를 분리하는 것
-(부가기능) 코드를 자동으로 (핵심기능)에 추가한다면 어디에 가능한가?</p>
+<h2 id="_1">게시물 리스트 페이지네이션 적용</h2>
+<p><img alt="alt text" src="../../../../kosta/SpringNote/img/image-1.png" /></p>
+<blockquote>
+<p>Domain -&gt; PageResolver</p>
+</blockquote>
 <ul>
-<li>Before</li>
-<li>After</li>
-<li>Around</li>
-</ul>
-<h2 id="aop_1">AOP</h2>
-<ol>
-<li>관점지향 프로그래밍</li>
-<li>
-<p>관심사의 분리 (Seperation of Concerns)</p>
-<ul>
-<li>핵심관심모듈<ul>
-<li>핵심 기능 (Core Concerns)<ul>
-<li>업무 로직을 포함하는 기능</li>
-<li>계좌이체, 입출금, 이자계산</li>
+<li>[💡주의] 정수 나눗셈의 문제: 자바에서 두 개의 정수(int)를 나누면, 결과는 정수로 반한다. 예를 들어, 41 / 10은 4가 됩니다. 이는 소수점을 무시하고, 정수 부분만 반환하기 때문이다.<ul>
+<li>41 / 10 = 4 (정수 나눗셈) -&gt; 41 / 10 = 4페이지</li>
+<li>41 / 10.0 = 4.1 (부동소수점 나눗셈) -&gt; Math.ceil(4.1)은 5 (전체 페이지 수는 5페이지)</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>보조(횡단)관심모듈 (Cross cutting concerns)<ul>
-<li>핵심기능을 도와주는 부가적인 기능<ul>
-<li>부가기능(advice)을 동적으로 추가해주는 기능</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>AOP는 OOP를 더욱 OOP답게 만들어줄 수 있다.</p>
-<ul>
-<li>객체지향의 기본 원칙을 적용하여도 핵심기능에서 부가 기능을 분리해서 모듈화하는 것은 매우 어려움</li>
-</ul>
-</li>
-<li>소프트웨어 재사용 방안중 하나임</li>
-<li>AOP는 애플리케이션 로직을 담당하는 코드에 부가 관련 코드를 분리해서 별도의 모듈로 관리하게 해주는 강력한 기술임</li>
-</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">com.kosta.september.domain</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">PageResolver</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">totalCnt</span><span class="p">;</span><span class="w">  </span><span class="c1">// 총 게시물 개수</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pageSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// 한 페이지당 게시물 개수</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NAV_SIZE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c1">// page pagination size</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">totalPage</span><span class="p">;</span><span class="w"> </span><span class="c1">// 전페 페이지 개수</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">page</span><span class="p">;</span><span class="w"> </span><span class="c1">// 현재 페이지</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">beginPage</span><span class="p">;</span><span class="w"> </span><span class="c1">// 화면에 보여줄 첫 페이지</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">endPage</span><span class="p">;</span><span class="w"> </span><span class="c1">// 화면에 보여줄 마지막 페이지</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">showNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// 이후를 보여줄지 여부 (endPage == totalPage showNext는 false)</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">showPrev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">  </span><span class="c1">// 이전을 보여줄지 여부 (beginPage == 1 아니면 showPrev는 true)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1">// 생성자</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">   </span><span class="kd">public</span><span class="w"> </span><span class="nf">PageResolver</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">totalCnt</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">page</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">totalCnt</span><span class="p">,</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">PageResolver</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">totalCnt</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">page</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pageSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">totalCnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">totalCnt</span><span class="p">;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">pageSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pageSize</span><span class="p">;</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="p">;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">totalPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">ceil</span><span class="p">(</span><span class="n">totalCnt</span><span class="o">/</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">pageSize</span><span class="p">);</span><span class="w"> </span><span class="c1">// 전체 페이지 개수</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">beginPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">page</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">NAV_SIZE</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">NAV_SIZE</span><span class="w"> </span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c1">// 첫 페이지 숫자</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">endPage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">beginPage</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="na">NAV_SIZE</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">totalPage</span><span class="p">);</span><span class="w"> </span><span class="c1">// 마지막 페이지 숫자</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">showPrev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">beginPage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">showNext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endPage</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">totalPage</span><span class="p">;</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">        </span><span class="n">s</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="p">}</span>
+</code></pre></div>
 
 
 
@@ -978,7 +994,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../17/10.%20%EC%9D%98%EC%A1%B4%EC%84%B1%EC%A3%BC%EC%9E%85%28DI%29/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 의존성 주입">
+          <a href="../../21/14.%20AOP/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AOP">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -988,27 +1004,11 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                의존성 주입
+                AOP
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../26/17.%20Mybatis%EB%A1%9C%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-footer__link md-footer__link--next" aria-label="Next: Mybatis로 게시판 만들기">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Mybatis로 게시판 만들기
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
