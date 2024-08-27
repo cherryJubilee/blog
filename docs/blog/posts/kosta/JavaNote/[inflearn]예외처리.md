@@ -5,6 +5,7 @@ authors:
 date: 2024-06-09
 categories:
     - Java
+    - inflearn
 ---
 
 # 예외처리

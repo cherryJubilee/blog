@@ -5,15 +5,26 @@ authors:
 date: 2024-06-12
 categories:
     - java
+    - inflearn
 ---
 
-# 컬렉션 프레임워크
+# 컬렉션 프레임워크 - Set
 
-> 컬렉션 프레임워크 (Hash)
+> 컬렉션 프레임워크중 Set에 대해 알아보자. 그리고 hashCode와 equals의 중요성 알아보기
+
+1. hashSet()
+2. LinkedHashSet()
+3. TreeSet()
 
 <!-- more -->
 
 ## 💡 List vs Set
+
+> 간단 정리
+
+-   List: 순서가 있으며 중복을 허용하는 요소의 집합. ArrayList, LinkedList, Vector
+-   Set: 순서가 없고 중복을 허용하지 않는 요소의 집합. HashSet, LinkedHashSet, TreeSet
+-   Map: 고유한 키와 그 키에 연결된 값의 쌍으로 이루어진 데이터의 집합. HashMap, LinkedHashMap, TreeMap
 
 ### List
 
@@ -316,7 +327,194 @@ public class HashStart4 {
     -   9 % 10 = 9
     -   9번 인덱스 안에 [99, 9]를 저장하는 것이다.
 -   예시 (조회) -만약 99를 조회한다고 가정했을 때, 9번 인덱스에있는 모든 값을 검색할 값과 하나씩 비교한다.
-
-![alt text](image-58.png)
+    ![해시 충돌 조회](image-58.png)
+-   최악의 경우
+    -   9, 19, 29, 99인 경우 9번 인덱스에 가서 저장한 데이터의 수 만큼 반복 해서 비교해야됨.
+    -   O(N)
+    -   하지만 대부분의 경우 분포가 되어있을 것이고, 확률적으로 충돌 날 수도 있다.
 
 ### 해시 충돌 구현
+
+> 순서
+
+1. 배열선언
+
+    - 배열의 이름은 buckets이다. 배열안에 단순 값이 들어가는 것이 아니라, 해시 충돌을 고려해서 배열안에 배열이 들어가야한다.
+    - 배열안에 배열 대신 더 편리하게 사용할 수 있는 연결리스트 사용했다.
+    - 즉 배열 안에 연결리스트가 들어있고, 연결리스트 안에 데이터가 들어가는 구조이다.
+        - buckets -> 배열
+        - bucket -> 연결리스트
+        - 연결리스트 내에 데이터들
+
+    ```java
+    LinkedList<Integer>[] buckets = new LinkedList[CAPACITY]
+    ```
+
+2. 데이터 등록
+
+    - 우선 hashIndex를 구한다.
+    - 해시 인덱스로 배열의 인덱스를 찾는다. 배열에는 연결리스트가 들어있다.
+    - set은 중복을 허용하지 않으므로, 바구니에 값을 저장하기 전에 contains()를 이용해 중복여부 확인한다.
+        - O(N)의 성능을 가진다.
+        - 하지만 해시 충돌이 발생하지 않으면 데이터가 1개만 들어있으므로 O(1)의 성능을 가진다.
+
+    ```java
+    private static void add(LinkedList<Integer>[] buckets, int value) {
+        int hashIndex = hashIndex(value);
+        LinkedList<Integer> bucket = buckets[hashIndex]; //O(1)
+        if (!bucket.contains(value)) { //O(n)
+            bucket.add(value);
+        }
+    }
+    ```
+
+3. 데이터 검색
+
+    - 해시 인덱스로 배열의 인덱스를 찾는다. 여기에는 연결 리스트가 들어있다.
+    - 연결 리스트의 `bucket.contains(searchValue)` 메서드를 사용해서 찾는 데이터가 있는지 확인한다.
+    - 연결 리스트의 `contains()` 는 모든 항목을 다 순회하기 때문에 O(n)의 성능이다.
+        - 하지만 해시 충돌이 발생하지 않으면 데이터가 1개만 들어있기 때문에 O(1)의 성능을 가진다.
+
+    ```java
+    private static boolean contains(LinkedList<Integer>[] buckets, int searchValue)
+    {
+        int hashIndex = hashIndex(searchValue);
+        LinkedList<Integer> bucket = buckets[hashIndex]; //O(1)
+        return bucket.contains(searchValue); //O(n)
+    }
+    ```
+
+<details>
+<summary> 해시 충돌 전체 코드 </summary>
+
+```java
+package collection.set;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+
+public class HashStart5 {
+    static final int CAPACITY = 10;
+
+    public static void main(String[] args) {
+        //{1, 2, 5, 8, 14, 99}
+        // 배열안에 배열을 링크드리스트를 통해 표현
+        LinkedList<Integer>[] buckets = new LinkedList[CAPACITY]; // 링크드리스트를 넣을 수 있는 배열 생성
+        System.out.println("buckets = " + Arrays.toString(buckets));
+        for (int i = 0; i < CAPACITY; i++) {
+            buckets[i] = new LinkedList<>();
+        }
+
+        add(buckets, 1);
+        add(buckets, 2);
+        add(buckets, 5);
+        add(buckets, 8);
+        add(buckets, 14);
+        add(buckets, 99);
+        add(buckets, 9); //중복
+        System.out.println("buckets = " + Arrays.toString(buckets));
+
+        //검색
+        int searchValue = 9;
+        boolean contains = contains(buckets, searchValue);
+        System.out.println("buckets.contains(" + searchValue + ") = " + contains);
+    }
+
+    private static boolean contains(LinkedList<Integer>[] buckets, int searchValue) {
+
+        int hashIndex = hashIndex(searchValue);
+        LinkedList<Integer> bucket = buckets[hashIndex]; //O(1)
+        return bucket.contains(searchValue);
+    }
+
+    private static void add(LinkedList<Integer>[] buckets, int value) {
+        int hashIndex = hashIndex(value);
+        LinkedList<Integer> bucket = buckets[hashIndex]; // O(1)
+        if (!bucket.contains(value)) { // O(n)
+            bucket.add(value);
+        }
+    }
+
+    private static int hashIndex(int value) {
+        return value % CAPACITY;
+    }
+}
+```
+
+```shell
+buckets = [null, null, null, null, null, null, null, null, null, null]
+buckets = [[], [1], [2], [], [14], [5], [], [], [8], [99, 9]]
+buckets.contains(9) = true
+```
+
+</details>
+
+## 💡 자바가 제공하는 Set
+
+### 1️⃣ HashSet
+
+-   구현: 해시 자료 구조를 사용해서 요소를 저장한다.
+-   순서: 요소들은 특정한 순서 없이 저장된다. 즉, 요소를 추가한 순서를 보장하지 않는다.
+-   시간 복잡도: `HashSet` 의 주요 연산(추가, 삭제, 검색)은 평균적으로 `O(1)` 시간 복잡도를 가진다.
+-   용도: 데이터의 유일성만 중요하고, 순서가 중요하지 않은 경우에 적합하다.
+
+### 2️⃣ LinkedHashSet
+
+-   구현: `LinkedHashSet` 은 `HashSet` 에 연결 리스트를 추가해서 요소들의 순서를 유지한다.
+-   순서: 요소들은 추가된 순서대로 유지된다. 즉, 순서대로 조회 시 요소들이 추가된 순서대로 반환된다.
+-   시간 복잡도: `LinkedHashSet` 도 `HashSet` 과 마찬가지로 주요 연산에 대해 평균 `O(1)` 시간 복잡도를 가진다.
+-   용도: 데이터의 유일성과 함께 삽입 순서를 유지해야 할 때 적합하다.
+-   참고: 연결 링크를 유지해야 하기 때문에 `HashSet` 보다는 조금 더 무겁다.
+
+### 3️⃣ TreeSet
+
+-   구현: `TreeSet` 은 이진 탐색 트리를 개선한 레드-블랙 트리를 내부에서 사용한다.
+-   순서: 요소들은 정렬된 순서로 저장된다. 순서의 기준은 비교자( `Comparator` )로 변경할 수 있다. 비교자는 뒤에 서 다룬다.
+-   시간 복잡도: 주요 연산들은 `O(log n)` 의 시간 복잡도를 가진다. 따라서 `HashSet` 보다는 느리다.
+-   용도: 데이터들을 정렬된 순서로 유지하면서 집합의 특성을 유지해야 할 때 사용한다. 예를 들어, 범위 검색이나 정렬된 데이터가 필요한 경우에 유용하다. 참고로 입력된 순서가 아니라 데이터 값의 순서이다. 예를 들어 3, 1, 2 를 순서대로 입력해도 1, 2, 3 순서로 출력된다.
+
+```java
+public class JavaSetMain {
+     public static void main(String[] args) {
+         run(new HashSet<>());
+         run(new LinkedHashSet<>());
+         run(new TreeSet<>());
+}
+     private static void run(Set<String> set) {
+         System.out.println("set = " + set.getClass());
+         set.add("C");
+         set.add("B");
+         set.add("A");
+         set.add("1");
+         set.add("2");
+         Iterator<String> iterator = set.iterator();
+         while (iterator.hasNext()) {
+             System.out.print(iterator.next() + " ");
+         }
+         System.out.println();
+     }
+}
+```
+
+```bash
+set = class java.util.HashSet A1B2C
+set = class java.util.LinkedHashSet CBA12
+set = class java.util.TreeSet 12ABC
+```
+
+## equals, hashCode
+
+-   해시 인덱스가 충돌할 경우 해시 인덱스에 있는 데이터들을 하나하나 비교해서 찾아야 한다. 이때 equals()를 사용한다.
+-   equals()는 언제 사용될까?
+    ![alt text](image-59.png)
+    -   "JPA"를 조회할 때 해시 인덱스는 0이다. 따라서 배열의 `0` 번 인덱스를 조회한다. 여기에는 `[hi, JPA]` 라는 회원 두 명이 있다. 이것을 하나하나 비교해야 한다. 이때 `equals()` 를 사용해서 비교한다.
+-   따라서 해시 자료 구조를 사용할 때는 `hashCode()` 는 물론이고, `equals()` 도 반드시 재정의해야 한다.
+-   자바 제공하는 기본 클래스들은 대부분 `hashCode()` , `equals()` 를 함께 재정의해 두었다.
+
+<br>
+
+> Object의 기본 기능
+
+-   `hashCode()` : 객체의 참조값을 기반으로 해시 코드를 반환한다.
+-   `equals()` : `==` 동일성 비교를 한다. 따라서 객체의 참조값이 같아야 `true` 를 반환한다.
+-   따라서 클래스를 만들때 재정의하지 않는다면, 해시 자료구조에서 Object가 기본으로 제공하는 hashCode, equals를 사용하게 된다. 그러면 단순히 인스턴스 참조(주소지)를 기반으로 작동하게 된다.
