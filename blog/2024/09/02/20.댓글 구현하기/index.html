@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../10/3.%20%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%99%98%EA%B2%BD/">
+        <link rel="prev" href="../../../08/27/17.%20Mybatis%EB%A1%9C%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0/">
       
       
-        <link rel="next" href="../../14/Spring/">
+        <link rel="next" href="../19.AJAX/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Java 면접 준비 - hyehye_hye's blog</title>
+        <title>댓글 구현하기 - hyehye_hye's blog</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#java" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Java 면접 준비
+              댓글 구현하기
             
           </span>
         </div>
@@ -822,36 +822,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      객체지향 프로그래밍?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      💡객체지향 특징
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vs" class="md-nav__link">
-    <span class="md-ellipsis">
-      인터페이스 vs 추상화 클래스
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-solid" class="md-nav__link">
-    <span class="md-ellipsis">
-      객체지향 설계 5대 원칙 (SOLID)
+      댓글기능 구현 순서
     </span>
   </a>
   
@@ -908,7 +881,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-05-13 00:00:00" class="md-ellipsis">May 13, 2024</time>
+                        <time datetime="2024-09-02 00:00:00" class="md-ellipsis">Sep 2, 2024</time>
                       </div>
                     </li>
                     
@@ -919,8 +892,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/study/">study</a>, 
-                              <a href="../../../../category/java/">java</a></span>
+                              <a href="../../../../category/spring/">spring</a></span>
                         </div>
                       </li>
                     
@@ -931,7 +903,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              1 min read
                             
                           </span>
                         </div>
@@ -951,64 +923,19 @@
         
 
 
-<h1 id="java">Java 면접 준비</h1>
-<blockquote>
-<p>Java 면접 리스트, 객체지향이란?</p>
-</blockquote>
+<h1 id="_1">댓글 구현하기</h1>
+<ul>
+<li>AJAX 이용</li>
+</ul>
 <!-- more -->
 
-<h3 id="_1">객체지향 프로그래밍?</h3>
-<ul>
-<li>객체지향으로 의존성을 관리함으로써 변경 영향을 최소화하고 독립적인 배포가 가능해지며 독립적인 개발이 가능해집니다.<ol>
-<li><code>코드 재사용 용이</code>: 남이 만든 클래스를 가지고 와서 이용할수도 있고, 상속을 통해 확장해서 사용 가능</li>
-<li><code>유지보수 쉬움</code>: 수정해야 할 부분이 클래스 내부에 멤버변수 또는 메서드로 존재하기 때문에 해당 부분만 수정하면 된다.</li>
-<li><code>대형 플젝에 적합</code>: 클래스 단위로 모듈화시켜 개발할 수 있다.</li>
-</ol>
-</li>
-</ul>
-<h3 id="_2">💡객체지향 특징</h3>
+<h2 id="_2">댓글기능 구현 순서</h2>
 <ol>
-<li>추상화(abstraction)</li>
-<li>캡슐화</li>
-<li>상속(inheritance)</li>
-<li>다형성(polymorphism)</li>
-</ol>
-<h3 id="vs">인터페이스 vs 추상화 클래스</h3>
-<h3 id="5-solid">객체지향 설계 5대 원칙 (SOLID)</h3>
-<ol>
-<li>
-<p>단일 책임의 원칙  </p>
-<ul>
-<li>하나의 클래스에 너무 많은 역할과 책임을 주지말자!!  </li>
-<li>목적에 맞게 속성과 메서드를 구성함으로써 관련된 책임만 주어야 한다.</li>
-</ul>
-</li>
-<li>
-<p>개방-폐쇄 원칙</p>
-<ul>
-<li>확장에는 열려있고, 변경에는 닫혀있어야 한다.</li>
-</ul>
-</li>
-<li>
-<p>리스코프치환 원칙</p>
-<ul>
-<li>하위클래스의 인스턴스는 상위 클래스의 인스턴스 역할을 하는데 문제가 없어야 한다.</li>
-</ul>
-</li>
-<li>
-<p>인터페이스 분리 원칙</p>
-<ul>
-<li>상황에 맞는 메서드만 제공하자!</li>
-<li>즉, 비대한 인터페이스보단 더 작고 구체적dls 인터페이스로 분리해야한다.</li>
-</ul>
-</li>
-<li>
-<p>의존-역전의 원칙 (DIP)</p>
-<ul>
-<li>추상적인 것은 자신보다 구체적인 것에 의존하지 않고, 변화하기 쉬운 것에 의존해서는 안됨</li>
-<li>구체적으론 구현 클래스에 의존하지 말고, 인터페이스에 의존해야 하는 원칙입니다.</li>
-</ul>
-</li>
+<li>DB 테이블 생성</li>
+<li>Mapper XML 작성</li>
+<li>DAO 작성(&amp; 테스트)</li>
+<li>Service 작성(&amp; 테스트)</li>
+<li>Controller 작성(&amp; 테스트)</li>
 </ol>
 
 
@@ -1043,7 +970,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../10/3.%20%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%99%98%EA%B2%BD/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 클라우드 환경">
+          <a href="../../../08/27/17.%20Mybatis%EB%A1%9C%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EB%A7%8C%EB%93%A4%EA%B8%B0/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mybatis로 게시판 만들기">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1053,20 +980,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                클라우드 환경
+                Mybatis로 게시판 만들기
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../14/Spring/" class="md-footer__link md-footer__link--next" aria-label="Next: Spring 면접 준비">
+          <a href="../19.AJAX/" class="md-footer__link md-footer__link--next" aria-label="Next: AJAX">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Spring 면접 준비
+                AJAX
               </div>
             </div>
             <div class="md-footer__button md-icon">
