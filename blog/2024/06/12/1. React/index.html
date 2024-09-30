@@ -815,6 +815,116 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#react_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      React란
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="React란">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 Props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 리액트 훅(Hooks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 조건부 랜더링
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#react-router" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 React Router
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 React Router">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      라우팅
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spa" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 SPA 방식 특징
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-router_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      🍏 React Router(패키지)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      하위 컴포넌트 생성 방법
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -886,7 +996,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              6 min read
                             
                           </span>
                         </div>
@@ -907,10 +1017,366 @@
 
 
 <h1 id="react">React</h1>
-<blockquote></blockquote>
+<blockquote>
+<p>React Router</p>
+</blockquote>
 <!-- more -->
 
 <p><img alt="react-evolution" src="../../../../kosta/ReactNote/image/image.png" /></p>
+<h2 id="react_1">React란</h2>
+<ol>
+<li>
+<p>현대 프레임워크 핵심요소</p>
+<ol>
+<li>화면과 데이터의 분리 그리고 렌더링<ul>
+<li>데이터의 변경사항을 감지하여 자동으로 화면으로 그려주기 위한 독자적인 방법들 고안해냄</li>
+</ul>
+</li>
+<li>React의 1)에 대한 기법들<ul>
+<li>JSX<ul>
+<li>JavaScript에 HTML을 결합한 템플릿</li>
+</ul>
+</li>
+<li>Virtual DOM<ul>
+<li>JSX를 통해 실제 DOM이 아닌 가상 DOM 데이터 구조를 만들어냄</li>
+</ul>
+</li>
+<li>JSX와 Virtual DOM 그리고 re-rendering<ul>
+<li>데이터의 변경을 감지하고, JSX로 새로운 가상 DOM을 생성하여
+  기존의 가상 DOM과 비교함.</li>
+<li>변경된 부분만 실제 DOM에 반영함으로써,
+  불필요한 DOM 조작을 줄여 성능을 최적화하는 방식</li>
+</ul>
+</li>
+<li>컴포넌트 기반 아키텍쳐<ul>
+<li>React는 화면과 데이터의 분리라는 개념을 공유하면서도,
+  데이터 관리와 UI 업데이트를 합친 컴포넌트 중심 접근 방식 제시함</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>리액트 컴포넌트 (React Component)</p>
+<ol>
+<li>html에서 화면을 구성하는 요소로도 볼수 있음 (버튼, 링크, 이미지 등)</li>
+<li>이미 작성한 컴포넌트를 재사용 =&gt; 개발 속도 빠라짐, 유지보수 유리함</li>
+<li>
+<p>컴포넌트는 JavaScript 파일내의 하나의 함수로 작성하거나 JavaScript 파일 자체로도 작성할 수 있음.</p>
+</li>
+<li>
+<p>컴포넌트 활용하기</p>
+<ul>
+<li>
+<p>App.jsx에 작성된 내용도 하나의 컴포넌트임</p>
+<ul>
+<li>return() 내에 출력할 내용을 작성<ul>
+<li>하나의 태그로 감싸야 함</li>
+<li><div></div> 태그도 사용 가능</li>
+<li>&lt;&gt;  태그를 주로 사용함<ul>
+<li>Fragment라고 함</li>
+<li>HTML 트리 구조에서 흔적을 남기지 않고 그룹화 해줌</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>컴포넌트 작성 (JSX 파일)</p>
+<ul>
+<li>JSX는 리액트에서 사용하는 파일<ul>
+<li>JavaScript 코드 안에 HTML과 유사한 코드를 작성할 수 있게 해줌</li>
+<li>리액트 컴포넌트를 정의하고 UI를 구성하는데 매우 유용함</li>
+<li>브라우저에서 직접 실행되지 않으며, Babel이나 Vite와 같은 변환기를 통해
+  JavaScript로 변환 후 실행됨</li>
+<li>리액트 자체 빌드도구 덕분에 _.js, _.jsx로 작성해도 아무 문제 없이 실행됨</li>
+<li>JSX 문법<ul>
+<li>{ JS표현식 }</li>
+<li>중괄호 {}를 사용하여 JavaScript 표현식을 JSX안에 포함할 수 있음.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>컴포넌트 생성</p>
+<ul>
+<li>src 폴더 내에 Component1.jsx 파일 생성</li>
+</ul>
+</li>
+<li>
+<p>컴포넌트 적용</p>
+<ul>
+<li>App.jsx에서 Component1.jsx import</li>
+</ul>
+</li>
+<li>
+<p>컴포넌트에 함수가 2개 이상인 경우</p>
+<ul>
+<li>하나의 함수에 default 적용하는 경우<ul>
+<li>default를 작성한 함수는 { }로 import를 하지 않음</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>JSX 파일 내에서 JavaScript 변수 사용</p>
+<ul>
+<li>Component3.jsx에 함수 내에 변수 선언하기</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p><br></p>
+<h3 id="props">🍏 Props</h3>
+<ul>
+<li>Properties (특성) 약자</li>
+<li>부모 컴포넌트에서 자식 컴포넌트로 전달되는 데이터(객체,배열)나 함수</li>
+<li>컴포넌트 간의 데이터를 전달하기 위해 사용되는 리액트 객체</li>
+<li>
+<p>props 전달</p>
+<ul>
+<li>Child.jsx에서 props를 받기 위해 함수 수정<ul>
+<li>부모로부터 전달받은 props를 직접 받으려면 {} 안에 속성 이름 작성함</li>
+<li>props를 전달받는 경우<ul>
+<li>props.속성이름 행태로 값 사용함</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>App.jsx에서 보내는 문법<ul>
+<li>import 한 컴포넌트 태그 내에 속성이름=값 형태로 작성하여 전달</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>여러 개의 값 전달</p>
+<ul>
+<li>Child2.jsx<ul>
+<li>중괄호 안에 전달받는 속성 이름을 콤마(,)로 구분하여 나열</li>
+<li>props를 전달받는 경우</li>
+</ul>
+</li>
+<li>App.jsx에서 보내는 문법<ul>
+<li>숫자를 보내는 경우 {} 안에 작성</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>JavaScript Object를 포함하여 여러 개 값 전달</p>
+</li>
+<li>Child3.jsx<ul>
+<li>중괄호 안에 전달받는 속성 이름을 콤마(,)로 구분하여 나열</li>
+<li>props를 전달받는 경우</li>
+</ul>
+</li>
+</ul>
+<p><br></p>
+<h3 id="state">🍏 State</h3>
+<ol>
+<li>
+<p>Props는 리액트 컴포넌트의 특성을 나타냄</p>
+<ul>
+<li>부모 컴포넌트에가 자식 컴포넌트에 데이터를 전달할 수 있음.</li>
+<li>자식 컴포넌트에서는 변경이 불가능함</li>
+</ul>
+</li>
+<li>
+<p>State</p>
+<ul>
+<li>'상태'</li>
+<li>리액트 컴포넌트의 현재 상태를 의미함</li>
+<li>이 컴포넌트 상태는 변경이 가능<ul>
+<li>사용자 입력 등에 따라 변경 될 수 있음</li>
+</ul>
+</li>
+<li>한 컴포넌트 안에서 유동적인 데이터를 다룰때에 사용됨</li>
+<li>컴포넌트 안에서 데이터가 변경되고 그 내용이 화면에 반영되어야 할 때에 사용함<ul>
+<li>state 변경되면 리액트는 자동으로 해당 컴포넌트와 자식 컴포넌트를 다시 렌더링 함</li>
+</ul>
+</li>
+<li>State를 가지는 컴포넌트를 생성하기 위해서는 리엑트가 제공하는 useState()를 사용해야 함</li>
+</ul>
+</li>
+</ol>
+<p><br></p>
+<h3 id="hooks">🍏 리액트 훅(Hooks)</h3>
+<ul>
+<li>함수형 컴포넌트에서 상태와 생명주기 기능을 사용할 수 있도록 해주는 기능</li>
+<li>클래스 인스턴스를 생성하지 않으므로 빠름</li>
+<li>
+<p>다양한 종류의 훅이 있으며, 대표적으로 useState, useEffect, useCallback 등이 있음</p>
+</li>
+<li>
+<p>Hooks 사용</p>
+<ul>
+<li>버튼 작성</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">          </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">              </span><span class="p">&lt;&gt;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">                  </span><span class="p">....</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">              </span><span class="p">&lt;/&gt;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">          </span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>const 배열 = useState(데이터 초깃값)</p>
+<ul>
+<li>배열[0] : 데이터 초깃값이 들어간 변수</li>
+<li>배열[1] : 데이터를 수정할 수 있는 set 함수</li>
+</ul>
+</li>
+<li>
+<p>const [State 변수명, set함수명] = useState(데이터 초깃값)</p>
+</li>
+<li>
+<p>리액트의 useState 훅은 함수로, 생성할 State 변수의 초기값을 매개변수로 전달하여 호출함</p>
+<ul>
+<li>결과값으로는 배열을 반환함</li>
+<li>반환된 배열에는 useState 함수를 호출할 때에 설정한 초기값이 할당된 변수,
+    해당 변수를 수정하기 위한 set함수가 포함됨 (구조 분해 할당, Destructuring assignment)</li>
+</ul>
+</li>
+<li>
+<p>ex) 버튼을 클릭했을 때 up()함수를 호출함</p>
+</li>
+<li>
+<p>폼 작성1</p>
+<ul>
+<li>input 태그 작성</li>
+<li>입력값을 state에 담기<ul>
+<li>input에 값을 입력하면 inputName()함수에서 입력값을 콘솔에 출력하기</li>
+<li>name이라는 state를 정의하여 입력값을 담기</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>폼 작성2</p>
+<ul>
+<li>회원 정보를 입력 받는 폼 정의</li>
+<li>입력 정보를 profile이라는 하나의 object로 state 지정</li>
+<li>inputUpdate()<ul>
+<li>입력한 값 name, value를 콘솔에 출력함</li>
+</ul>
+</li>
+<li>객체 비구조 할당 (Object Destructuring assignment)<ul>
+<li>const {name, value} = e.target</li>
+</ul>
+</li>
+<li>
+<p>state에 값 담기</p>
+<ul>
+<li>
+<p>전개 연산자 (spread operator)</p>
+<ul>
+<li>배열이나 객체의 요소를 개별 요소로 분리할 때 사용하는 연산자</li>
+<li>
+<p>객체 값을 복사할 때 활용함</p>
+</li>
+<li>
+<p>예) setProfile({...profile, [name:]: value, })</p>
+<ul>
+<li>...profile : 기존 profile에 담긴값을 그대로 가져옴</li>
+<li>[name:]: value, : 새롭게 추가된 값은 바꿔줌</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="_1">🍏 조건부 랜더링</h3>
+<ol>
+<li>state 값에 따라 화면에 보여줄 요소를 다르게 하는 것</li>
+<li>
+<p>삼항 연산자 활용함</p>
+<ul>
+<li>조건에 따라 실행할 내용을 구분할 수 있도록 하는 연산자</li>
+<li>문법</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">[</span>조건<span class="o">]</span><span class="w"> </span>?<span class="w"> </span>실행블록1<span class="o">((</span>참인경우<span class="o">)</span><span class="w"> </span><span class="o">)</span><span class="w"> </span>:<span class="w"> </span>실행블록2<span class="o">((</span>거짓인경우<span class="o">))</span>
+</code></pre></div>
+</li>
+<li>
+<p>적용하기</p>
+<ul>
+<li>조건에 대한 변수(isLogin)를 state로 지정하기 =&gt; 값이 바뀜에 따라 화면에 보여지는 내용을 바꿈</li>
+<li>버튼을 클릭할 때마다 isLogin의 반대 값을 isLogin 값으로 저장<ul>
+<li>로그인상태(Logout), 로그아웃상태(Login) 출력</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="react-router">📌 React Router</h2>
+<h3 id="_2">라우팅</h3>
+<ol>
+<li>
+<p>URL</p>
+<ul>
+<li>'L'은 위치 제공자 (location)</li>
+<li>원하는 자원을 얻으려면 자원이 있는 경로와 쿼리 매개변수 등을 조합하여 웹 서버로 요청</li>
+<li>웹 서버에서 URL에 명시된 자원을 찾는 과정을 라우팅(routing)이라고 함</li>
+</ul>
+</li>
+<li>
+<p>보통 웹에서 라우팅은 항상 서버에서 일어남</p>
+<ul>
+<li>server-side routing</li>
+</ul>
+</li>
+<li>웹브라우저에서 발생하는 라우팅<ul>
+<li>client-side routing</li>
+<li>location, history 객체 기능으로 일어남</li>
+</ul>
+</li>
+</ol>
+<h3 id="spa">🍏 SPA 방식 특징</h3>
+<ol>
+<li>다중 페이지 앱 (MPA, multi page application)<ul>
+<li>웹서버와 웹브라우가 여러 HTML 파일 주고 받는 방식</li>
+</ul>
+</li>
+<li>단일 페이지 앱 (SPA, single page application)<ul>
+<li>라우팅이 웹 브라우저에서만 일어나는 웹 방식</li>
+</ul>
+</li>
+<li>SPA 방식 웹 앱<ul>
+<li>클라이언트 측 라우팅은 수많은 컴포넌트 중 특징 컴포넌트를 찾아 화면에 보여줌</li>
+<li>CSR은 프로그래밍은 URL을 입력하지만 서버에 전송하는 url이 아니므로 사용자가 보고있는 컴포넌트가 바뀌어도 화면 새로 고침(refresh)가 발생하지 않음</li>
+</ul>
+</li>
+</ol>
+<h3 id="react-router_1">🍏 React Router(패키지)</h3>
+<ol>
+<li>CSR 패키지</li>
+<li>리액트 훅 기술에 기반을 둠</li>
+<li>BrowserRouter -- 최상위 컴포넌트</li>
+</ol>
+<h3 id="_3">하위 컴포넌트 생성 방법</h3>
+<ol>
+<li>/주소요청에 Home, /info 주소요청에 Info컴포넌트를 화면에 랜더링</li>
+<li>function 함수이름 () {}</li>
+<li>const 함수이름 = () =&gt; {}</li>
+</ol>
 
 
 
